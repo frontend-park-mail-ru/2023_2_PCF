@@ -26,7 +26,6 @@ export class Router {
 
             if (linkElement) {
                 evt.preventDefault();
-                this.eventBus.publish(GLOBAL_EVENTS.linkClick);
                 this.go(linkElement.pathname);
             }
         });

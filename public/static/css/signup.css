@@ -61,3 +61,8 @@ body {
 .signup button:hover {
     background-color: #6C5DD2;
 }
+
+.error-label {
+    padding: 10px;
+    color: rgba(255, 0, 0, 0.54);
+}

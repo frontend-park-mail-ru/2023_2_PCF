@@ -11,6 +11,6 @@ let router = new Router();
 let login = new Login(document.getElementById("root"), () => router.go("/index"))
 let signup = new Signup(document.getElementById("root"), () => router.go("/index"))
 router.add("/login", () => (login.render()))
-router.add("/signup", () => signup.render())
+router.add("/signup", () => (signup.render()))
 
 router.start()
