@@ -76,8 +76,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build-templates": "handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js"
+    "build-templates": "handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js",
+    "eslint": "npx eslint ."
   },
   "author": "PCF",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.50.0"
+  }
 }
