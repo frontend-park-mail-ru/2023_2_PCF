@@ -1,6 +1,6 @@
 import { Api } from "../../modules/api.js";
 
-export class Login {
+export class Signup {
     constructor(parent = document.body, submitCallback = () => {}) {
         this.parent = parent;
         this.SubmitCallback = submitCallback;
@@ -12,15 +12,13 @@ export class Login {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = '../../static/css/login.css';
+        link.href = '../../static/css/signup.css';
         document.head.appendChild(link);
-        this.parent.innerHTML = Handlebars.templates["login.hbs"]();
-        this.form = this.parent.getElementsByClassName("login")[0];
+        this.parent.innerHTML = Handlebars.templates["signup.hbs"]();
+        this.form = this.parent.getElementsByClassName("signup")[0];
         this.form.addEventListener("submit", this.onSubmit.bind(this));
         this.errorLabel = this.form.getElementsByClassName("error-label")[0];
         this.errorLabel.style.visibility = "hidden";
-
-
     }
 
     onSubmit(event) {

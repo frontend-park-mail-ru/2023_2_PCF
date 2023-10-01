@@ -2,9 +2,7 @@ import { Ajax } from "./ajax.js";
 
 const URLS = {
     login: "/login",
-    /*logout: "/auth/logout",
-    singup: "/auth/signup",
-    feed: "/api/feed",*/
+    signup: "/signup",
 };
 
 const BACKEND_URL = "http://localhost:8000";

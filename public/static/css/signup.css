@@ -1,0 +1,63 @@
+body {
+    background-image: url('../img/register_page.png');
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.signup {
+    background-color: #202129;
+    color:white;
+    margin-left: 42px;
+    margin-bottom: 195px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #2D292B;
+    max-width: 400px;
+}
+
+.signup h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.signup h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.signup p {
+    margin-bottom: 10px;
+}
+
+.signup input[type="text"],
+.signup input[type="email"],
+.signup input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #323644;
+    background-color: #323644;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6C5DD2;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background-color: #6C5DD2;
+}

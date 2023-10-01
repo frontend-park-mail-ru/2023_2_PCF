@@ -1,5 +1,6 @@
 export const URLS = {
     login: "login",
+    signup : "signup"
 };
 
 export const BACKEND_URL = "http://localhost:8000";
