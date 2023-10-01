@@ -71,3 +71,8 @@ body {
     height: auto; 
     z-index: 1000; 
 }
+
+.error-label {
+    padding: 10px;
+    color: rgba(255, 0, 0, 0.54);
+}

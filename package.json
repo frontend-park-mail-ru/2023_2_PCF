@@ -75,7 +75,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build-templates": "handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js"
   },
   "author": "PCF",
   "license": "ISC"
