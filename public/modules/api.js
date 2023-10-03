@@ -13,7 +13,7 @@ export class Api{
     }
 
     static signup(data={}){
-        return Ajax.post(BACKEND_URL + URLS.singup, data)
+        return Ajax.post(BACKEND_URL + URLS.signup, data)
     }
 
     static logout(){
