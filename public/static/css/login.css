@@ -36,7 +36,7 @@ body {
     margin-bottom: 10px;
 }
 
-.login input[type="text"],
+.login input[type="email"],
 .login input[type="password"] {
     width: 100%;
     padding: 10px;

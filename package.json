@@ -76,7 +76,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build-templates": "handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js",
+    "build-templates": "handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js && handlebars public/components/signup/signup.hbs -f public/components/signup/signup.precompiled.js && handlebars public/components/list/list.hbs -f public/components/list/list.precompiled.js",
+
     "eslint": "npx eslint ."
   },
   "author": "PCF",
