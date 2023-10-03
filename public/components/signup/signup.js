@@ -29,12 +29,12 @@ export class Signup {
             inputsValue[input.id] = input.value;
         });
 
-        Api.login(inputsValue).then(
+        Api.signup(inputsValue).then(
             (response) => {
                 if (response.status < 300) {
                     this.SubmitCallback();
                 } else {
-                    this.showError("Неверный e-mail или пароль")
+                    this.showError("Неверные данные")
                 }
             }
         );
