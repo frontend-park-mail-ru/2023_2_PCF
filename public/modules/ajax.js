@@ -1,9 +1,3 @@
-export const URLS = {
-    login: "login",
-    signup : "signup"
-};
-
-export const BACKEND_URL = "http://localhost:8000";
 
 export class Ajax {
     static get(params = {}) {
@@ -17,7 +11,11 @@ export class Ajax {
             .then(
                 (response) => {
                     status = response.status;
-                    return response.json();
+                    const contentType = response.headers.get("content-type")
+                    if ( contentType && contentType.indexOf("application/json") !== -1 )
+                        return response.json();
+                    else
+                        return Promise.resolve(null);
                 },
                 (error) => {
                     console.error(error); // ошибка отправки
@@ -46,10 +44,14 @@ export class Ajax {
             .then(
                 (response) => {
                     status = response.status;
-                    return response.json();
+                    const contentType = response.headers.get("content-type")
+                    if ( contentType && contentType.indexOf("application/json") !== -1 )
+                        return response.json();
+                    else
+                        return Promise.resolve(null);
                 },
                 (error) => {
-                    console.error(error); // ошибка отправки
+                    console.error(error);
                 }
             )
             .then((parsedJson) => {

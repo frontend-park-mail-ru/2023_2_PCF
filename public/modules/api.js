@@ -11,4 +11,12 @@ export class Api{
     static login(data={}){
         return Ajax.post(BACKEND_URL + URLS.login, data);
     }
+
+    static signup(data={}){
+        return Ajax.post(BACKEND_URL + URLS.singup, data)
+    }
+
+    static logout(){
+        return Ajax.get(BACKEND_URL + URLS.logout)
+    }
 }
