@@ -1,11 +1,11 @@
 import { Ajax } from "./ajax.js";
 
 const URLS = {
-    login: "/login",
-    signup: "/signup",
+    login: "/auth",
+    signup: "/user",
 };
 
-const BACKEND_URL = "http://localhost:8000";
+const BACKEND_URL = "http://localhost:8080";
 
 export class Api{
     static login(data={}){
