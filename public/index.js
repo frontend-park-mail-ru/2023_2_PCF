@@ -15,6 +15,5 @@ let list = new List(document.getElementById("root"), () => router.go("/index"))
 router.add("/login", () => (login.render()))
 router.add("/signup", () => (signup.render()))
 router.add("/list", () => (list.render()))
-router.add("/", () => (login.render()))
 
 router.start()

@@ -9,6 +9,7 @@ export class Login {
     }
 
     render() {
+        history.pushState('', 'AdHub', "/login");
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
