@@ -101,16 +101,6 @@ export class List {
     }
 }
 
-function getSessionToken() {
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-        const [name, value] = cookie.split('=');
-        if (name === 'session_token') {
-            return decodeURIComponent(value);
-        }
-    }
-    return null;
-}
 
 
 

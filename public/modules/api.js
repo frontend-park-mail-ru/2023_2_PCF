@@ -1,5 +1,4 @@
 import { Ajax } from "./ajax.js";
-import Cookies from "js-cookie";
 
 const URLS = {
     login: "/auth",
@@ -20,7 +19,7 @@ export class Api{
 
     static getAds() {
 // Извлекаем значение токена из куки
-        const token = Cookies.get("token");
+        const token = getSessionToken();
 
 // Проверяем, что токен существует
         if (!token) {
@@ -38,4 +37,15 @@ export class Api{
     static logout(){
         return Ajax.get(BACKEND_URL + URLS.logout)
     }
+}
+
+function getSessionToken() {
+    const cookies = document.cookie.split('; ');
+    for (const cookie of cookies) {
+        const [name, value] = cookie.split('=');
+        if (name === 'session_token') {
+            return decodeURIComponent(value);
+        }
+    }
+    return null;
 }
