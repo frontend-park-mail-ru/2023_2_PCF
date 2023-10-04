@@ -1,12 +1,16 @@
 <form class="signup">
-    <h1>Начни свою рекламную кампанию</h1>
-    <h2>Создать новый аккаунт</h2>
+    <p class="campaign-text">Начни свою рекламную кампанию</p>
+    <h1>Создать новый аккаунт</h1>
     <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
-
-    <input type="text" placeholder="Имя" id="f_name">
-    <input type="text" placeholder="Фамилия" id="l_name">
+    <div class="name-fields">
+        <input type="text" placeholder="Имя" id="f_name">
+        <input type="text" placeholder="Фамилия" id="l_name">
+    </div>
     <input type="email" placeholder="Почта" id="login">
     <input type="password" placeholder="Пароль" id="password">
     <div class="error-label"></div>
-    <button>Создать аккаунт</button>
+    <div class="name-fields-button">
+        <button class="sign-with-account">Войти с помощью</button>
+        <button class="sign-create-account">Создать аккаунт</button>
+    </div>
 </form>

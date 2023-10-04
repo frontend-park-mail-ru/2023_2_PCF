@@ -9,6 +9,16 @@ body {
     background-color: #f4f4f4;
 }
 
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-fields input {
+    flex: 1; 
+    margin-right: 25px; 
+}
+
 .signup {
     background-color: #202129;
     color:white;
@@ -21,18 +31,23 @@ body {
 }
 
 .signup h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 13px;
 }
 
-.signup h2 {
+/* .signup h2 {
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: bold;
-}
+} */
 
-.signup p {
+/* .signup p {
     margin-bottom: 10px;
+} */
+.campaign-text {
+    margin-bottom: 0;
 }
 
 .signup input[type="text"],
@@ -41,33 +56,63 @@ body {
     color: white;
     margin-top: 20px;
     width: 100%;
+    height: 35px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #323644;
     background-color: #323644;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 16px;
+    text-align: center;
+}
+.signup input[type="email"],
+.signup input[type="password"] {
+    width: 554px;
+
+}
+.signup input[type="password"]{
+    /* background-color: #565C6A; */  /* это должен быть ховер */
+}
+
+
+.sign-create-account{
+    background-color: #6C5DD2;
+}
+
+.sign-with-account{
+    background-color: #565C6A;
 }
 
 .signup button {
     display: block;
-    width: 200px;
-    height: 50px;
+    width: 274px;
+    height: 60px;
     padding: 10px;
-    background-color: #6C5DD2;
     border: none;
     border-radius: 25px;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0 ;
 
 }
+/* .sign-create-account{
+    background-color: #6C5DD2;
+}
+
+.sign-with-account{
+    background-color: #565C6A;
+} */
 
 .signup button:hover {
     background-color: #513bde;
 }
 
+.name-fields-button{
+    display: flex;
+    justify-content: space-between;
+    width: 574px;
+}
 
 .error-label {
     padding: 10px;
