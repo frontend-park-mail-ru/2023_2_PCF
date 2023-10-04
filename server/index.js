@@ -39,6 +39,6 @@ const server = http.createServer((request, response) => {
     });
 });
 
-debug.log("Starting server...");
+debug.log(`Starting server at port ${SERVER_PORT}`);
 server.listen(SERVER_PORT);
 
