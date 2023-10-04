@@ -19,7 +19,8 @@ export class Api{
 
     static getAds() {
         // const token = getSessionToken();
-        fetch('http://84.23.53.167:8080/ping')
+        
+        return fetch('http://84.23.53.167:8080/ping')
         .then(response => {
             if (!response.ok) {
             throw new Error('Сетевая ошибка: ' + response.status);
