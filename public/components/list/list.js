@@ -48,7 +48,6 @@ export class List {
 
 
    render() {
-       var sessionToken = "token=" + getSessionToken()
         Api.getAds().then(
             (response) => {
                 if (response.status < 300) {
