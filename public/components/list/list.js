@@ -1,5 +1,6 @@
 import { Api } from "../../modules/api.js";
 const userAds = Api.getAds();
+console.log(userAds)
 const context = {
     userAds: null,
     mainDescription: null
