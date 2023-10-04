@@ -43,54 +43,19 @@
         <div class="container">
             <div class="lefted-box">
                 <div class="adlayout">
-
-                    <div class="currentAdElContainer">
-                        <div class="currentAdElInnerBox">
-                            <div class="currentAdElTopDecoration"></div>
-                            <div class="currentAdElInnerBackground"></div>
-                        </div>
-                        <div class="currentAdElDay">21</div>
-                        <div class="currentAdElWeekday">Wed</div>
-                        <div class="currentAdElTitle">Bento 3D</div>
-                        <div class="currentAdElSubtitle">Ui Design</div>
-                    </div>
-
-                    <div class="differentAdsContainer">
-                        <div class="adElContainer">
-                            <div class="adElInnerBox">
-                                <div class="adElTopDecoration"></div>
-                                <div class="adElInnerBackground"></div>
+                    {{#each userAds}}
+                        <div class="currentAdElContainer">
+                            <div class="currentAdElInnerBox">
+                                <div class="currentAdElTopDecoration"></div>
+                                <div class="currentAdElInnerBackground"></div>
                             </div>
-                            <div class="adElDay">21</div>
-                            <div class="adElWeekday">Wed</div>
-                            <div class="adElTitle">Bento 3D</div>
-                            <div class="adElSubtitle">Ui Design</div>
+                            <div class="currentAdElDay">{{ Id }}</div>
+                            <div class="currentAdElWeekday">Wed</div>
+                            <div class="currentAdElTitle">{{ Name }}</div>
+                            <div class="currentAdElSubtitle">{{ Sector }}</div>
                         </div>
-
-                        <div class="adElContainer">
-                            <div class="adElInnerBox">
-                                <div class="adElTopDecoration"></div>
-                                <div class="adElInnerBackground"></div>
-                            </div>
-                            <div class="adElDay">21</div>
-                            <div class="adElWeekday">Wed</div>
-                            <div class="adElTitle">Bento 3D</div>
-                            <div class="adElSubtitle">Ui Design</div>
-                        </div>
-
-                        <div class="adElContainer">
-                            <div class="adElInnerBox">
-                                <div class="adElTopDecoration"></div>
-                                <div class="adElInnerBackground"></div>
-                            </div>
-                            <div class="adElDay">21</div>
-                            <div class="adElWeekday">Wed</div>
-                            <div class="adElTitle">Bento 3D</div>
-                            <div class="adElSubtitle">Ui Design</div>
-                        </div>
-                    </div>
-                        <button class="edit-button">Добавить</button>  
-
+                    {{/each}}
+                        <button class="edit-button">Добавить</button>
 
 
                     <div>
