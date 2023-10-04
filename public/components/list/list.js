@@ -1,6 +1,11 @@
 import { Api } from "../../modules/api.js";
-const userAds = Api.getAds().then();
-console.log(userAds)
+Api.getAds().then(data => {
+    userAds = data;
+    console.log(userAds); 
+}).catch(error => {
+    console.error("Ошибка:", error);
+});
+// console.log(userAds)
 const context = {
     userAds: null,
     mainDescription: null
