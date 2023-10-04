@@ -44,6 +44,7 @@
             <div class="lefted-box">
                 <div class="adlayout">
                     {{#each userAds}}
+                        <a href="#" id="{{ Id }}">
                         <div class="currentAdElContainer">
                             <div class="currentAdElInnerBox">
                                 <div class="currentAdElTopDecoration"></div>
@@ -54,6 +55,7 @@
                             <div class="currentAdElTitle">{{ Name }}</div>
                             <div class="currentAdElSubtitle">{{ Sector }}</div>
                         </div>
+                        </a>
                     {{/each}}
                         <button class="edit-button">Добавить</button>
 
@@ -71,18 +73,7 @@
                 <div class="description">
                     <h2>Описание</h2>
                     <div class="text">
-                        <p>War Thunder – это самая масштабная бесплатная многопользовательская онлайн-игра из числа
-                            посвященных боевой технике. Доступны образцы времен самых разных войн и конфликтов – с
-                            начала XX века и до наших дней. Авиация, наземные силы и флот сражаются вместе в одном
-                            бою, как это и происходило в настоящих сражениях. В War Thunder можно поиграть на PC
-                            (Windows или Linux), Mac, PlayStation 4, PlayStation 5, Xbox One и Xbox Series X|S.</p>
-                        <p>В War Thunder вы можете опробовать тысячи реально существовавших моделей самолетов,
-                            ударных вертолетов, наземной техники и военных кораблей в самых разных боевых ситуациях,
-                            практически не представленных в других многопользовательских проектах. Вы будете
-                            отстреливаться из турелей бомбардировщика от висящих на хвосте врагов, прикрывать
-                            товарищей от налета авиации на скорострельной зенитке, обрушивать на противника град
-                            снарядов из эсминцем на торпедоносце.</p>
-                    
+                        <p>{{ mainDescription }}</p>
                 </div>
                 <button class="edit-button">Изменить</button>   
 

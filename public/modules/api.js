@@ -3,7 +3,7 @@ import { Ajax } from "./ajax.js";
 const URLS = {
     login: "/auth",
     signup: "/user",
-    getads: "/ads"
+    ad: "/ad"
 };
 
 const BACKEND_URL = "http://localhost:8080";
@@ -18,7 +18,7 @@ export class Api{
     }
 
     static getAds(data={}){
-        return Ajax.post(BACKEND_URL + URLS.getads, data);
+        return Ajax.get(BACKEND_URL + URLS.ad);
     }
 
     static logout(){
