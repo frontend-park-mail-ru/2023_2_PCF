@@ -6,7 +6,7 @@ const URLS = {
     ad: "/ad"
 };
 
-const BACKEND_URL = "http://localhost:8080";
+const BACKEND_URL = "http://84.23.53.167:8080";
 
 export class Api{
     static login(data={}){
@@ -18,7 +18,6 @@ export class Api{
     }
 
     static getAds() {
-    // Извлекаем значение токена из куки
         // const token = getSessionToken();
         fetch('http://84.23.53.167:8080/ping')
         .then(response => {
@@ -29,7 +28,7 @@ export class Api{
             return response.json();
         })
         .then(data => {
-            jsonData = data;
+            var jsonData = data;
             console.log(jsonData);
 
             return jsonData;
