@@ -19,7 +19,7 @@ export class Api{
 
     static getAds() {
 // Извлекаем значение токена из куки
-        const token = getSessionToken();
+        // const token = getSessionToken();
 
 // Проверяем, что токен существует
         if (!token) {
@@ -28,7 +28,7 @@ export class Api{
         }
 
 // Добавляем токен в параметры запроса
-        const queryParams = `?token=${token}`;
+        const queryParams = `?token`;
 
 // Отправляем GET-запрос с токеном
         return Ajax.get(BACKEND_URL + URLS.ad + queryParams);
