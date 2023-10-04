@@ -48,17 +48,17 @@ export class List {
 
 
    render() {
-        Api.getAds().then(
-            (response) => {
-                if (response.status < 300) {
-                    const ads = response.parsedJson;
-                    userAds.push(...ads)
-                    this.SubmitCallback();
-                } else {
-                    this.showError("Неверные данные")
-                }
-            }
-        )
+        // // Api.getAds().then(
+        //     (response) => {
+        //         if (response.status < 300) {
+        //             const ads = response.parsedJson;
+        //             userAds.push(...ads)
+        //             this.SubmitCallback();
+        //         } else {
+        //             this.showError("Неверные данные")
+        //         }
+        //     }
+        // // )
 
        context.userAds = userAds
         const link = document.createElement('link');
