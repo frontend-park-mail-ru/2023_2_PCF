@@ -10,7 +10,7 @@ import { List } from "./components/list/list.js";
 let router = new Router();
 
 let login = new Login(document.getElementById("root"), () => router.go("/list"))
-let signup = new Signup(document.getElementById("root"), () => router.go("/list"))
+let signup = new Signup(document.getElementById("root"), () => router.go("/login"))
 let list = new List(document.getElementById("root"), () => router.go("/index"))
 router.add("/login", () => (login.render()))
 router.add("/signup", () => (signup.render()))
