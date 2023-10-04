@@ -7,6 +7,7 @@ const SERVER_PORT = 8081;
 const page404 = fs.readFileSync("./public/index.html");
 
 const server = http.createServer((request, response) => {
+
     const { url } = request;
     debug.log("url: " + url);
     const normUrl = !url.includes(".") ? "/index.html" : url;

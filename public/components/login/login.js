@@ -34,6 +34,12 @@ export class Login {
         Api.login(inputsValue).then(
             (response) => {
                 if (response.status < 300) {
+                    const expiresDate = new Date();
+expiresDate.setHours(expiresDate.getHours() + 10);
+
+                    setCookie("session_token", response.parsedJson.token, {
+                      expires: expiresDate,
+                    });
                     this.SubmitCallback();
                 } else {
                     this.showError("Неверный e-mail или пароль")
@@ -46,4 +52,29 @@ export class Login {
         this.errorLabel.style.visibility = "visible";
         this.errorLabel.innerHTML = message;
     }
+}
+
+function setCookie(name, value, options = {}) {
+  options = {
+    path: "/",
+    // add other defaults here if necessary
+    ...options,
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie =
+    encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
 }
