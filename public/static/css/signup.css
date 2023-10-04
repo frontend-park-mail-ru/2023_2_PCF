@@ -71,7 +71,7 @@ body {
 
 }
 .signup input[type="password"]{
-    background-color: #565C6A;
+    /* background-color: #565C6A; */  /* это должен быть ховер */
 }
 
 
