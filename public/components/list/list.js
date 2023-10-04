@@ -49,7 +49,7 @@ export class List {
 
    render() {
        var sessionToken = "token=" + getSessionToken()
-        Api.getAds({sessionToken}).then(
+        Api.getAds().then(
             (response) => {
                 if (response.status < 300) {
                     const ads = response.parsedJson;
