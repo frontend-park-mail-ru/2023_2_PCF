@@ -37,6 +37,24 @@ const server = http.createServer((request, response) => {
         response.write(data);
         response.end();
     });
+
+    if (url === "/ping") {
+        fetch('http://84.23.53.167:8080/ping')
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Сетевая ошибка: ' + response.status);
+            }
+            // console.log(response.json())
+            return response.json();
+        })
+        .then(data => {
+            jsonData = data;
+            console.log(jsonData);
+        })
+        .catch(error => {
+            console.error('Произошла ошибка при запросе /ping:', error);
+        });
+}
 });
 
 debug.log(`Starting server at port ${SERVER_PORT}`);

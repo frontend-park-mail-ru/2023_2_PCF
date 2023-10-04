@@ -18,20 +18,37 @@ export class Api{
     }
 
     static getAds() {
-// Извлекаем значение токена из куки
+    // Извлекаем значение токена из куки
         // const token = getSessionToken();
+        fetch('http://84.23.53.167:8080/ping')
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Сетевая ошибка: ' + response.status);
+            }
+            // console.log(response.json())
+            return response.json();
+        })
+        .then(data => {
+            jsonData = data;
+            console.log(jsonData);
 
+            return jsonData;
+        })
+        .catch(error => {
+            console.error('Произошла ошибка при запросе /ping:', error);
+        });
+        
 // Проверяем, что токен существует
-        if (!token) {
-            console.error("Токен не найден в куки");
-            return Promise.reject("Токен не найден в куки");
-        }
+//         if (!token) {
+//             console.error("Токен не найден в куки");
+//             return Promise.reject("Токен не найден в куки");
+//         }
 
-// Добавляем токен в параметры запроса
-        const queryParams = `?token`;
+// // Добавляем токен в параметры запроса
+//         const queryParams = `?token`;
 
-// Отправляем GET-запрос с токеном
-        return Ajax.get(BACKEND_URL + URLS.ad + queryParams);
+// // Отправляем GET-запрос с токеном
+//         return Ajax.get(BACKEND_URL + URLS.ad + queryParams);
     }
 
     static logout(){

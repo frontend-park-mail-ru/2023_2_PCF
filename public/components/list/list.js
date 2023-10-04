@@ -1,42 +1,42 @@
 import { Api } from "../../modules/api.js";
-const userAds = [];
+const userAds = Api.getAds();
 const context = {
     userAds: null,
     mainDescription: null
 };
 
-/*const userAds = [
-    {
-        Id: "1",
-        Name: "Name1",
-        Description: "Desc1",
-        Sector: "Sec1",
-    },
-    {
-        Id: "2",
-        Name: "Name2",
-        Description: "Desc2",
-        Sector: "Sec2",
-    },
-    {
-        Id: "3",
-        Name: "Name3",
-        Description: "Desc3",
-        Sector: "Sec3",
-    },
-    {
-        Id: "4",
-        Name: "Name4",
-        Description: "Desc4",
-        Sector: "Sec4",
-    },
-    {
-        Id: "5",
-        Name: "Name5",
-        Description: "Desc5",
-        Sector: "Sec5",
-    },
-]; */
+// const userAds = [
+//     {
+//         Id: "1",
+//         Name: "Name1",
+//         Description: "Desc1",
+//         Sector: "Sec1",
+//     },
+//     {
+//         Id: "2",
+//         Name: "Name2",
+//         Description: "Desc2",
+//         Sector: "Sec2",s
+//     },
+//     {
+//         Id: "3",
+//         Name: "Name3",
+//         Description: "Desc3",
+//         Sector: "Sec3",
+//     },
+//     {
+//         Id: "4",
+//         Name: "Name4",
+//         Description: "Desc4",
+//         Sector: "Sec4",
+//     },
+//     {
+//         Id: "5",
+//         Name: "Name5",
+//         Description: "Desc5",
+//         Sector: "Sec5",
+//     },
+// ]; 
 export class List {
     constructor(parent = document.body, submitCallback = () => {}) {
         this.parent = parent;
