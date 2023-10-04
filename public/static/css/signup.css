@@ -14,20 +14,21 @@ body {
     color:white;
     margin-left: 42px;
     margin-bottom: 195px;
+    margin-top: 106px;
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 10px 10px 10px #2D292B;
-    max-width: 400px;
+    width: 600px;
 }
 
 .signup h1 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .signup h2 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .signup p {
@@ -37,6 +38,8 @@ body {
 .signup input[type="text"],
 .signup input[type="email"],
 .signup input[type="password"] {
+    color: white;
+    margin-top: 20px;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -48,7 +51,8 @@ body {
 
 .signup button {
     display: block;
-    width: 100%;
+    width: 200px;
+    height: 50px;
     padding: 10px;
     background-color: #6C5DD2;
     border: none;
@@ -56,13 +60,21 @@ body {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    margin: 0 auto;
+
 }
 
 .signup button:hover {
-    background-color: #6C5DD2;
+    background-color: #513bde;
 }
+
 
 .error-label {
     padding: 10px;
     color: rgba(255, 0, 0, 0.54);
+}
+.logo-right-bottom {
+    position: absolute;
+    bottom: 0px; 
+    right: 0px; 
 }

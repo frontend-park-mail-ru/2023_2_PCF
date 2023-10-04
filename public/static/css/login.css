@@ -12,13 +12,20 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+#image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px; 
+    height: auto; 
+}
 
 .login {
     background-color: #1F2027;
     margin-right: 116px;
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #3A3A47;
+    /* box-shadow: 0 0 10px #3A3A47; */
 }
 .login a {
     color: #6C5DD2;
@@ -27,20 +34,31 @@ body {
 
 .login h1 {
     color: white;
-    font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
+    font-size: 16px;
 }
 
 .login p {
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2{
+    margin-bottom: 1px;
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .login input[type="email"],
 .login input[type="password"] {
+    color: white;
+    margin-top: 20px;
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     background-color: #323644;
     border: 1px solid #323644;
     border-radius: 5px;
@@ -49,14 +67,16 @@ body {
 
 .login button {
     display: block;
-    width: 100%;
+    width: 150px;
+    height: 50px;
     padding: 10px;
     background-color: #6C5DD2;
     border: none;
     border-radius: 25px;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .login button:hover {
