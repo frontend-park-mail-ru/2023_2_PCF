@@ -2,17 +2,26 @@
   body {
     font-family: 'Istok Web', sans-serif;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 h1, h2, h3 {
     font-family: 'Istok Web', sans-serif;
     font-weight: 700; /* Применить полужирное начертание к заголовкам (если необходимо) */
 }
   body {
-    margin: 0;
     background-color: #1F2027;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+.logo-right-bottom {
+    display: none;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
 }
 
 .main-content {
@@ -22,7 +31,7 @@ h1, h2, h3 {
 .logo-container {
     display: flex;
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .logo {
@@ -40,15 +49,20 @@ h1, h2, h3 {
 
 .container {
     display: flex;
-    flex-grow: 1;
+    align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
+    justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
+    padding: 0px;
 }
 
 .sidebar {
     width: 175px;
+    margin-top: 40px;
     background-color: #242832;
     color: #fff;
     display: flex;
     flex-direction: column;
+    border-radius: 35px;
+    /* flex:1; */
 }
 
 .menu ul {
@@ -140,6 +154,23 @@ h1, h2, h3 {
     color: #fff;
 }
 
+.edit-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 146px;
+    height: 52px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.edit-button:hover {
+    background-color: #513bde;
+}
+
 /* Стили для .description */
 .description {
     width: 100%;
@@ -154,6 +185,7 @@ h1, h2, h3 {
 .description h2 {
     font-size: 24px; /* Размер шрифта для заголовка "Описание" */
     margin-bottom: 10px;
+    color: white;
 }
 .description .text {
     color: #fff;
