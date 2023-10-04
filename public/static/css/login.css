@@ -40,18 +40,21 @@ body {
 
 .login p {
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     font-size: 24px;
-    /* font-weight: bold; */
-
+    font-weight: bold;
 }
+
 h2{
+    margin-bottom: 1px;
+    color: white;
     font-weight: normal;
-    /* font-size: 16px; */
+    font-size: 16px;
 }
 
 .login input[type="email"],
 .login input[type="password"] {
+    color: white;
     margin-top: 20px;
     width: 100%;
     padding: 10px;

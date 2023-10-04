@@ -21,13 +21,14 @@ body {
 }
 
 .signup h1 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .signup h2 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .signup p {
@@ -37,6 +38,7 @@ body {
 .signup input[type="text"],
 .signup input[type="email"],
 .signup input[type="password"] {
+    color: white;
     margin-top: 20px;
     width: 100%;
     padding: 10px;
