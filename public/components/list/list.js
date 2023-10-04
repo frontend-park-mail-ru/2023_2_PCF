@@ -73,28 +73,28 @@ export class List {
     renderTemplate() {
         this.parent.innerHTML = Handlebars.templates["list.hbs"](context);
         // Обработчик для "Кнопка 1"
-        document.getElementById("1").addEventListener("click", () => {
+        document.getElementById("10").addEventListener("click", () => {
             context.mainDescription = userAds[0].description
             this.renderTemplate();
         });
 
         // Обработчик для "Кнопка 2"
-        document.getElementById("2").addEventListener("click", () => {
+        document.getElementById("11").addEventListener("click", () => {
             context.mainDescription = userAds[1].description
             this.renderTemplate();
         });
         // Обработчик для "Кнопка 3"
-        document.getElementById("3").addEventListener("click", () => {
+        document.getElementById("12").addEventListener("click", () => {
             context.mainDescription = userAds[2].description
             this.renderTemplate();
         });
         // Обработчик для "Кнопка 4"
-        document.getElementById("4").addEventListener("click", () => {
+        document.getElementById("13").addEventListener("click", () => {
             context.mainDescription = userAds[3].description
             this.renderTemplate();
         });
         // Обработчик для "Кнопка 5"
-        document.getElementById("5").addEventListener("click", () => {
+        document.getElementById("14").addEventListener("click", () => {
             context.mainDescription = userAds[4].description
             this.renderTemplate();
         });
