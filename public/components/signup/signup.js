@@ -1,4 +1,5 @@
 import { Api } from "../../modules/api.js";
+import { Validate } from "../../modules/validate.js"
 
 export class Signup {
     constructor(parent = document.body, submitCallback = () => {}) {
@@ -26,7 +27,26 @@ export class Signup {
         const inputs = this.form.querySelectorAll("input");
         const inputsValue = {};
         inputs.forEach((input) => {
-            inputsValue[input.id] = input.value;
+            if (input.id === "password") {
+                if (Validate.Password(inputsValue)) {
+                     inputsValue[input.id] = input.value;
+                    return;
+                } else {
+                    this.showError("Неверный пароль. Введите пароль от 3х символов.")
+                    return;
+                }
+            } else if (input.id === "login") {
+                if (Validate.Email(inputsValue)) {
+                     inputsValue[input.id] = input.value;
+                    return;
+                } else {
+                    this.showError("Неверный формат EMail.")
+                    return;
+                }
+            } else {
+                inputsValue[input.id] = input.value;
+            }
+
         });
 
         Api.signup(inputsValue).then(
