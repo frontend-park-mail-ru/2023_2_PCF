@@ -29,7 +29,7 @@ export class Login {
         event.preventDefault();
         const inputs = this.form.querySelectorAll("input");
         const inputsValue = {};
-        var errMessage;
+        var errMessage = "Неверные данные.";
         inputs.forEach((input) => {
             if (input.id === "password") {
                 if (Validate.Password(inputsValue)) {
