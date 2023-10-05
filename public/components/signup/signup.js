@@ -1,4 +1,5 @@
 import { Api } from "../../modules/api.js";
+import { Validate } from "../../modules/validate.js";
 
 export class Signup {
     constructor(parent = document.body, submitCallback = () => {}) {
