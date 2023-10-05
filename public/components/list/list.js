@@ -60,8 +60,6 @@ export class List {
         // // )
        Api.getAds().then(data => {
            userAds = data;
-           console.log(userAds[0].Description);
-           console.log(userAds[1]);
            context.userAds = userAds
            this.renderTemplate()
        }).catch(error => {
@@ -75,7 +73,7 @@ export class List {
         link.type = 'text/css';
         link.href = '../../static/css/list.css';
         document.head.appendChild(link);
-        
+
     }
     renderTemplate() {
         this.parent.innerHTML = Handlebars.templates["list.hbs"](context);
