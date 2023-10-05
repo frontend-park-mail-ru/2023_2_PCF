@@ -1,4 +1,5 @@
 import { Api } from "../../modules/api.js";
+let userAds = [];
 Api.getAds().then(data => {
     userAds = data;
     console.log(userAds); 
@@ -79,28 +80,28 @@ export class List {
         this.parent.innerHTML = Handlebars.templates["list.hbs"](context);
         // Обработчик для "Кнопка 1"
         document.getElementById("1").addEventListener("click", () => {
-            context.mainDescription = userAds[0].description
+            context.mainDescription = userAds[0].Description
             this.renderTemplate();
         });
 
         // Обработчик для "Кнопка 2"
         document.getElementById("2").addEventListener("click", () => {
-            context.mainDescription = userAds[1].description
+            context.mainDescription = userAds[1].Description
             this.renderTemplate();
         });
         // Обработчик для "Кнопка 3"
         document.getElementById("3").addEventListener("click", () => {
-            context.mainDescription = userAds[2].description
+            context.mainDescription = userAds[2].Description
             this.renderTemplate();
         });
         // Обработчик для "Кнопка 4"
         document.getElementById("4").addEventListener("click", () => {
-            context.mainDescription = userAds[3].description
+            context.mainDescription = userAds[3].Description
             this.renderTemplate();
         });
         // Обработчик для "Кнопка 5"
         document.getElementById("5").addEventListener("click", () => {
-            context.mainDescription = userAds[4].description
+            context.mainDescription = userAds[4].Description
             this.renderTemplate();
         });
     }
