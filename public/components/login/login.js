@@ -34,7 +34,7 @@ export class Login {
                    inputsValue[input.id] = input.value;
                   return;
               } else {
-                  this.showError("Неверный пароль. Введите пароль от 3х символов.")
+                  self.showError("Неверный пароль. Введите пароль от 3х символов.")
                   return;
               }
           } else if (input.id === "login") {
@@ -42,7 +42,7 @@ export class Login {
                    inputsValue[input.id] = input.value;
                   return;
               } else {
-                  this.showError("Неверный формат EMail.")
+                  self.showError("Неверный формат EMail.")
                   return;
               }
           } else {
