@@ -32,7 +32,7 @@ export class Login {
         var errMessage = "Неверные данные.";
         inputs.forEach((input) => {
             if (input.id === "password") {
-                if (Validate.Password(inputsValue)) {
+                if (Validate.Password(input.value)) {
                      inputsValue[input.id] = input.value;
                     return;
                 } else {
@@ -40,7 +40,7 @@ export class Login {
                     return;
                 }
             } else if (input.id === "login") {
-                if (Validate.Email(inputsValue)) {
+                if (Validate.Email(input.value)) {
                      inputsValue[input.id] = input.value;
                     return;
                 } else {
