@@ -60,7 +60,8 @@ export class List {
         // // )
        Api.getAds().then(data => {
            userAds = data;
-           console.log(userAds);
+           console.log(userAds[0]);
+           console.log(userAds[1]);
        }).catch(error => {
            console.error("Ошибка:", error);
        });
