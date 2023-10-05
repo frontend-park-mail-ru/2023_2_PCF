@@ -26,13 +26,14 @@ export class Signup {
         event.preventDefault();
         const inputs = this.form.querySelectorAll("input");
         const inputsValue = {};
+        var errMessage;
         inputs.forEach((input) => {
             if (input.id === "password") {
                 if (Validate.Password(inputsValue)) {
                      inputsValue[input.id] = input.value;
                     return;
                 } else {
-                    this.showError("Неверный пароль. Введите пароль от 3х символов.")
+                    errMessage = "Неверный пароль. Введите пароль от 3х символов.";
                     return;
                 }
             } else if (input.id === "login") {
@@ -40,7 +41,7 @@ export class Signup {
                      inputsValue[input.id] = input.value;
                     return;
                 } else {
-                    this.showError("Неверный формат EMail.")
+                    errMessage =  "Неверный формат EMail.";
                     return;
                 }
             } else {
@@ -54,7 +55,7 @@ export class Signup {
                 if (response.status < 300) {
                     this.SubmitCallback();
                 } else {
-                    this.showError("Неверные данные")
+                    this.showError(errMessage)
                 }
             }
         );

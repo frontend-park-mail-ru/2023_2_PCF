@@ -29,27 +29,28 @@ export class Login {
         event.preventDefault();
         const inputs = this.form.querySelectorAll("input");
         const inputsValue = {};
+        var errMessage;
         inputs.forEach((input) => {
             if (input.id === "password") {
                 if (Validate.Password(inputsValue)) {
-                    inputsValue[input.id] = input.value;
+                     inputsValue[input.id] = input.value;
                     return;
                 } else {
-                    this.showError("Неверный пароль. Введите пароль от 3х символов.")
+                    errMessage = "Неверный пароль. Введите пароль от 3х символов.";
                     return;
                 }
             } else if (input.id === "login") {
                 if (Validate.Email(inputsValue)) {
-                    inputsValue[input.id] = input.value;
+                     inputsValue[input.id] = input.value;
                     return;
                 } else {
-                    this.showError("Неверный формат EMail.")
+                    errMessage =  "Неверный формат EMail.";
                     return;
                 }
             } else {
                 inputsValue[input.id] = input.value;
             }
-
+        
         });
 
         Api.login(inputsValue).then(
@@ -62,7 +63,7 @@ export class Login {
                     });
                     this.SubmitCallback();
                 } else {
-                    this.showError("Неверный e-mail или пароль")
+                    this.showError(errMessage)
                 }
             }
         );
