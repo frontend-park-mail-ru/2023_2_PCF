@@ -1,17 +1,9 @@
 import { Api } from "../../modules/api.js";
 let userAds = [];
-Api.getAds().then(data => {
-    userAds = data;
-    console.log(userAds); 
-}).catch(error => {
-    console.error("Ошибка:", error);
-});
-// console.log(userAds)
 const context = {
     userAds: null,
     mainDescription: null
 };
-
 // const userAds = [
 //     {
 //         Id: "1",
@@ -66,6 +58,13 @@ export class List {
         //         }
         //     }
         // // )
+       Api.getAds().then(data => {
+           userAds = data;
+           console.log(userAds);
+       }).catch(error => {
+           console.error("Ошибка:", error);
+       });
+// console.log(userAds)
 
        context.userAds = userAds
         const link = document.createElement('link');
