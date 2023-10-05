@@ -62,19 +62,20 @@ export class List {
            userAds = data;
            console.log(userAds[0].Description);
            console.log(userAds[1]);
+           context.userAds = userAds
+           this.renderTemplate()
        }).catch(error => {
            console.error("Ошибка:", error);
        });
 // console.log(userAds)
 
-       context.userAds = userAds
+
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
         link.href = '../../static/css/list.css';
         document.head.appendChild(link);
-        this.renderTemplate()
-
+        
     }
     renderTemplate() {
         this.parent.innerHTML = Handlebars.templates["list.hbs"](context);
