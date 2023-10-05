@@ -16,7 +16,7 @@ export class Validate {
      */
 
     static Password(password) {
-        var passwordPattern = /^[a-zA-Z0-9._-]{3,30}$/;
+        var passwordPattern = /^[a-zA-Z0-9._-]+$/;
         
         return passwordPattern.test(password)
     }
