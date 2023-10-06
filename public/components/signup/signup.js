@@ -27,6 +27,7 @@ export class Signup {
     const inputs = this.form.querySelectorAll('input');
     const inputsValue = {};
     let errMessage = 'Неверные данные.';
+    let err = true;
     inputs.forEach((input) => {
       if (input.id === 'password') {
         if (Validate.Password(input.value)) {
@@ -34,11 +35,13 @@ export class Signup {
           return;
         } else {
           errMessage = 'Неверный пароль. Введите пароль от 6ти символов.';
+          err = false;
           return;
         }
       } else if (input.id === 'login') {
         if (Validate.Email(input.value)) {
           inputsValue[input.id] = input.value;
+          err = false;
           return;
         } else {
           errMessage = 'Неверный формат EMail.';
@@ -48,16 +51,20 @@ export class Signup {
         inputsValue[input.id] = input.value;
       }
     });
-
-    Api.signup(inputsValue).then(
-        (response) => {
-          if (response.status < 300) {
-            this.SubmitCallback();
-          } else {
-            this.showError(errMessage);
-          }
-        },
-    );
+    
+    if (err) {
+      Api.signup(inputsValue).then(
+          (response) => {
+            if (response.status < 300) {
+              this.SubmitCallback();
+            } else {
+              this.showError(errMessage);
+            }
+          },
+      );
+    } else {
+        this.showError(errMessage);
+    }
   }
 
   showError(message) {
