@@ -30,7 +30,7 @@ export class Login {
     let errMessage = 'Неверные данные.';
     inputs.forEach((input) => {
       if (input.id === 'password') {
-        if (Validate.password(input.value)) {
+        if (Validate.Password(input.value)) {
           inputsValue[input.id] = input.value;
           return;
         } else {
@@ -38,7 +38,7 @@ export class Login {
           return;
         }
       } else if (input.id === 'login') {
-        if (Validate.email(input.value)) {
+        if (Validate.Email(input.value)) {
           inputsValue[input.id] = input.value;
           return;
         } else {
