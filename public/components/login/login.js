@@ -33,6 +33,7 @@ export class Login {
       if (input.id === 'password') {
         if (Validate.Password(input.value)) {
           inputsValue[input.id] = input.value;
+          err = true;
           return;
         } else {
           errMessage = 'Неверный пароль. Введите пароль от 6ти символов.';
@@ -42,10 +43,11 @@ export class Login {
       } else if (input.id === 'login') {
         if (Validate.Email(input.value)) {
           inputsValue[input.id] = input.value;
-          err = false;
+          err = true;
           return;
         } else {
           errMessage = 'Неверный формат EMail.';
+          err = false;
           return;
         }
       } else {
