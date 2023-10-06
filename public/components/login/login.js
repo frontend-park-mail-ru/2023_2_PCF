@@ -36,7 +36,7 @@ export class Login {
                      inputsValue[input.id] = input.value;
                     return;
                 } else {
-                    errMessage = "Неверный пароль. Введите пароль от 3х символов.";
+                    errMessage = "Неверный пароль. Введите пароль от 6ти символов.";
                     return;
                 }
             } else if (input.id === "login") {

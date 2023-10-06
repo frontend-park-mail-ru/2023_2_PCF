@@ -35,7 +35,8 @@ h1, h2, h3 {
 }
 
 .logo {
-    width: 80px; /* Уменьшил размер логотипа */
+    margin: 20px;
+    width: 50px; /* Уменьшил размер логотипа */
     height: auto;
     margin-right: 10px; /* Добавил небольшой отступ между логотипом и текстом */
 }
@@ -51,7 +52,7 @@ h1, h2, h3 {
     display: flex;
     align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
     justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
-    padding: 0px;
+    padding: 20px;
 }
 
 .sidebar {
@@ -93,10 +94,9 @@ h1, h2, h3 {
 }
 
 
-.menu ul li a:hover {
+.menu ul li:hover {
     background-color: #6C5DD2;
 }
-
 
 .main-content {
     flex-grow: 1;
