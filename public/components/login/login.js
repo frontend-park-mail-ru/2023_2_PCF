@@ -28,6 +28,7 @@ export class Login {
     const inputs = this.form.querySelectorAll('input');
     const inputsValue = {};
     let errMessage = 'Неверные данные.';
+    let err = true;
     inputs.forEach((input) => {
       if (input.id === 'password') {
         if (Validate.Password(input.value)) {
@@ -35,11 +36,13 @@ export class Login {
           return;
         } else {
           errMessage = 'Неверный пароль. Введите пароль от 6ти символов.';
+          err = false;
           return;
         }
       } else if (input.id === 'login') {
         if (Validate.Email(input.value)) {
           inputsValue[input.id] = input.value;
+          err = false;
           return;
         } else {
           errMessage = 'Неверный формат EMail.';
@@ -49,22 +52,26 @@ export class Login {
         inputsValue[input.id] = input.value;
       }
     });
-
-    Api.login(inputsValue).then(
-        (response) => {
-          if (response.status < 300) {
-            const expiresDate = new Date();
-            expiresDate.setHours(expiresDate.getHours() + 10);
-            setCookie('session_token', response.parsedJson.token, {
-              expires: expiresDate,
-            });
-            this.SubmitCallback();
-          } else {
-            this.showError(errMessage);
-          }
-        },
-    );
-  }
+    
+    if (err) {
+      Api.login(inputsValue).then(
+          (response) => {
+            if (response.status < 300) {
+              const expiresDate = new Date();
+              expiresDate.setHours(expiresDate.getHours() + 10);
+              setCookie('session_token', response.parsedJson.token, {
+                expires: expiresDate,
+              });
+              this.SubmitCallback();
+            } else {
+              this.showError(errMessage);
+            }
+          },
+      );
+    } else {
+        this.showError(errMessage);
+    }
+  } 
 
   showError(message) {
     this.errorLabel.style.visibility = 'visible';
