@@ -20,7 +20,7 @@ export default class Login {
     this.form = this.parent.getElementsByClassName('login')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
-    this.errorLabel.style.visibility = 'hidden';
+    this.errorLabel.classList.add('hidden')
   }
 
   onSubmit(event) {
@@ -76,7 +76,8 @@ export default class Login {
   } 
 
   showError(message) {
-    this.errorLabel.style.visibility = 'visible';
+    this.errorLabel.classList.remove('hidden')
+    this.errorLabel.classList.add('visible')
     this.errorLabel.innerHTML = message;
   }
 }
