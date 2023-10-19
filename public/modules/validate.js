@@ -1,4 +1,4 @@
-export class Validate {
+export default class Validate {
   /**
      *  Валидация данных почты
      *  @param {string} email - Введенные данные

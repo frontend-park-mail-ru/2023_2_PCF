@@ -1,5 +1,5 @@
 
-export class Ajax {
+export default class Ajax {
   static get(params = {}) {
     let status;
 

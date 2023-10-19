@@ -1,7 +1,7 @@
-import {Api} from '../../modules/api.js';
-import {Validate} from '../../modules/validate.js';
+import Api from '../../modules/api.js';
+import Validate from '../../modules/validate.js';
 
-export class Signup {
+export default class Signup {
   constructor(parent = document.body, submitCallback = () => {}) {
     this.parent = parent;
     this.SubmitCallback = submitCallback;

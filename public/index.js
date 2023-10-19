@@ -1,10 +1,10 @@
 'use strict';
 
 
-import {Router} from './modules/router.js';
-import {Login} from './components/login/login.js';
-import {Signup} from './components/signup/signup.js';
-import {List} from './components/list/list.js';
+import Router from './modules/router.js';
+import Login from './components/login/login.js';
+import Signup from './components/signup/signup.js';
+import List from './components/list/list.js';
 
 
 const router = new Router();

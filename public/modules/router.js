@@ -1,4 +1,4 @@
-export class Router {
+export default class Router {
   constructor(routes = new Map) {
     this.routes = routes;
     this.current = null;
@@ -6,7 +6,8 @@ export class Router {
 
   go(path) {
     console.log('go  ' + path);
-    if (this.current === path) return;
+    if (this.current === path)
+      return;
     this.current = path;
     window.history.pushState(null, null, path);
     if (!this.routes.has(path)) {

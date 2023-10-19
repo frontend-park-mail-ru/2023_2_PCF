@@ -1,4 +1,4 @@
-import {Ajax} from './ajax.js';
+import Ajax from './ajax.js';
 
 const URLS = {
   login: '/auth',
@@ -8,7 +8,7 @@ const URLS = {
 
 const BACKEND_URL = 'http://84.23.53.167:8080';
 
-export class Api {
+export default class Api {
   static login(data={}) {
     return Ajax.post(BACKEND_URL + URLS.login, data);
   }

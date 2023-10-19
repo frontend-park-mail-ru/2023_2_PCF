@@ -1,11 +1,11 @@
-import {Api} from '../../modules/api.js';
+import Api from '../../modules/api.js';
 let userAds = [];
 const context = {
-  userAds: null,
+  userAds: userAds,
   mainDescription: null,
 };
 
-export class List {
+export default class List {
   constructor(parent = document.body, submitCallback = () => {}) {
     this.parent = parent;
     this.SubmitCallback = submitCallback;
@@ -16,8 +16,8 @@ export class List {
 
   render() {
     Api.getAds().then((data) => {
-      userAds = data;
-      context.userAds = userAds;
+      userAds.length = 0;
+      userAds.push(...data);
       this.renderTemplate();
     }).catch((error) => {
       console.error('Ошибка:', error);
