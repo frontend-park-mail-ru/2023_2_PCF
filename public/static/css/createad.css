@@ -1,0 +1,312 @@
+
+body {
+    font-family: 'Istok Web', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700; /* Применить полужирное начертание к заголовкам (если необходимо) */
+}
+  body {
+    background-color: #1F2027;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.logo-right-bottom {
+    display: none;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.main-content {
+    background-color: #1F2027;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    /* padding: 20px; */
+}
+
+.logo-container img {
+    width: 32px;
+    height: 46px;
+}
+
+.logo {
+    width: 80px; /* Уменьшил размер логотипа */
+    height: auto;
+    margin-right: 10px; /* Добавил небольшой отступ между логотипом и текстом */
+}
+
+.logo-text p {
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
+}
+
+.container {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
+    justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
+    padding: 0px;
+}
+
+.sidebar {
+    width: 175px;
+    height: 100vh; /* Занимает всю высоту экрана */
+    background-color: #242832;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* border-radius: 35px; */
+    position: fixed; /* Фиксируем на одном месте */
+    top: 0; /* Прибиваем к верху */
+    left: 0; /* Прибиваем к левому краю */
+}
+
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.menu ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu ul li a:hover {
+    background-color: #6C5DD2;
+}
+.menu p{
+    color: #61636A;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0px 0; 
+    margin-left: 175px;  /* Это соответствует ширине вашего sidebar */
+
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Размещаем блоки с пробелом между ними */
+    align-items: flex-start; /* Выравниваем блоки сверху */
+    margin: 20px 0; /* Добавляем отступы снизу и сверху */
+}
+
+
+.centered-box {
+    flex: 0 0 90%; 
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    justify-content: start;
+    border-radius: 35px;
+    height: 940px;
+    background-color: #242832;
+    padding: 20px; 
+    gap: 20px; 
+    position: relative;
+
+    /* overflow: hidden; */
+}
+
+.left-block, .right-block {
+    flex: 1;
+    box-sizing: border-box
+}
+.centered-box .container {
+    background: #323644;
+    border-radius: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+    padding: 4px 17px;
+}
+
+.centered-box .container.small {
+    width: 263px;
+    height: 70px;
+}
+
+.centered-box .container.medium {
+    width: 347px;
+    height: 70px;
+    margin-left: 36px;
+}
+
+.centered-box .container.large {
+    width: 512px;
+    height: 70px;
+}
+
+.centered-box .container.xlarge {
+    width: 676px;
+    height: 70px;
+}
+
+.centered-box .container.xxlarge {
+    width: 676px;
+    height: 224px;
+}
+.container.large {
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Центрирует элементы по вертикали */
+}
+
+.text-input {
+    flex-grow: 1; /* Позволяет input расти и занимать все доступное пространство */
+    margin-right: 10px; /* Добавляет небольшой отступ справа от input */
+}
+
+
+
+.text {
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.text-input, .text-input:focus {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    color: white;  
+    box-sizing: border-box; 
+}
+
+.text-input textarea {
+    resize: vertical;  
+}
+
+.label {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web';
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.gradient-box {
+    width: 426px;
+    height: 417px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-bottom: 20px;
+
+}
+.file-input {
+    display: none; 
+}
+
+.photo-upload-label:hover .gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+}
+.action-box {
+    width: 262px;
+    height: 52px;
+    padding: 10px;
+    background: #131517;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 50px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    border: none; /* Убрать стандартные стили кнопки */
+    cursor: pointer; /* Сделать курсор рукой */
+    font-family: inherit; /* Унаследовать шрифт */
+    color: inherit; /* Унаследовать цвет текста */
+    font-size: inherit; /* Унаследовать размер шрифта */
+}
+.action-box:hover {
+    background: #6C5DD2;
+}
+
+.cross-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.cross-icon > div {
+    position: absolute;
+    border: 2px white solid;
+    background: rgba(217, 217, 217, 0);
+    border-radius: 7px;
+}
+
+.horizontal {
+    width: 14px;
+    height: 0px;
+    left: 3px;
+    top: 11px;
+}
+
+.vertical {
+    width: 14px;
+    height: 0px;
+    left: 9px;
+    top: 3px;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+}
+
+.bold-label {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web';
+    font-weight: 700;
+    word-wrap: break-word;
+    
+    
+}
+
+
+
