@@ -132,6 +132,7 @@ h1, h2, h3 {
 
 .centered-box {
     flex: 0 0 90%; 
+    /* max-width: 90%;   добавьте это свойство */
     display: flex;
     flex-direction: row; 
     align-items: flex-start;
@@ -142,13 +143,18 @@ h1, h2, h3 {
     padding: 20px; 
     gap: 20px; 
     position: relative;
-
-    /* overflow: hidden; */
+    box-sizing: border-box;
+    /* overflow: hidden;  добавьте это свойство, если хотите обрезать содержимое, выходящее за границы */
 }
+
+
 
 .left-block, .right-block {
     flex: 1;
     box-sizing: border-box
+}
+.left-block{
+    margin-right: 20px;
 }
 .centered-box .container {
     background: #323644;
@@ -175,7 +181,11 @@ h1, h2, h3 {
     width: 512px;
     height: 70px;
 }
-
+.flex-row {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    gap: 10px; /* Расстояние между элементами */
+}
 .centered-box .container.xlarge {
     width: 676px;
     height: 70px;
@@ -185,12 +195,11 @@ h1, h2, h3 {
     width: 676px;
     height: 224px;
 }
-.container.large {
+/* .container.large {
     display: flex;
-    justify-content: space-between; /* Распределяет пространство между элементами */
-    align-items: center; /* Центрирует элементы по вертикали */
-}
-
+    justify-content: space-between; 
+    align-items: center; 
+} */
 .button-container {
     display: flex;
     align-items: center;
@@ -246,10 +255,9 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-
 .text-input {
-    flex-grow: 1; /* Позволяет input расти и занимать все доступное пространство */
-    margin-right: 10px; /* Добавляет небольшой отступ справа от input */
+    flex-grow: 1; 
+    margin-right: 10px; 
 }
 
 
@@ -301,68 +309,83 @@ h1, h2, h3 {
 .photo-upload-label:hover .gradient-box {
     border: 2px solid rgba(68, 44, 177, 0.5); 
 }
-.action-box {
+
+.btn-container {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+}
+
+
+.btn {
     width: 262px;
-    height: 52px;
+    height: 72px;
     padding: 10px;
-    background: #131517;
     border-radius: 20px;
-    display: inline-flex;
+    vertical-align: middle;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    position: absolute;
-    bottom: 50px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    border: none; /* Убрать стандартные стили кнопки */
-    cursor: pointer; /* Сделать курсор рукой */
-    font-family: inherit; /* Унаследовать шрифт */
-    color: inherit; /* Унаследовать цвет текста */
-    font-size: inherit; /* Унаследовать размер шрифта */
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none; 
+    transition: background-color 0.2s ease;
 }
-.action-box:hover {
-    background: #6C5DD2;
+
+.btn:hover {
+    filter: brightness(0.9);
+}
+
+.edit-btn {
+    background: #131517;
+    color: white;
+}
+
+.delete-btn {
+    background: #AD4343;
+    color: white;
+    gap: 20px;
+}
+
+.btn-text {
+    word-wrap: break-word;
 }
 
 .cross-icon {
+    position: relative;
     width: 20px;
     height: 20px;
-    position: relative;
 }
 
-.cross-icon > div {
+.horizontal-line, .vertical-line {
     position: absolute;
-    border: 2px white solid;
-    background: rgba(217, 217, 217, 0);
-    border-radius: 7px;
-}
-
-.horizontal {
+    height: 2px;
     width: 14px;
-    height: 0px;
-    left: 3px;
-    top: 11px;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform-origin: 50% 50%;
 }
 
-.vertical {
-    width: 14px;
-    height: 0px;
-    left: 9px;
-    top: 3px;
-    transform: rotate(90deg);
-    transform-origin: 0 0;
+.horizontal-line {
+    transform: translate(-50%, -50%);
 }
 
-.bold-label {
+.vertical-line {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.preview-img {
+    width: 386px;
+    height: 334px;
+    border-radius: 23px;
+}
+.content-title{
     color: white;
-    font-size: 16px;
-    font-family: 'Istok Web';
-    font-weight: 700;
-    word-wrap: break-word;
-    
-    
 }
-
-
-
+.content-description{
+    color: white;
+}

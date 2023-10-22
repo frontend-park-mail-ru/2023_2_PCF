@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>AdHub</title>
    <!-- <link rel="stylesheet" href="../../static/css/login.css"> -->
-    <link rel="stylesheet" href="../../static/css/createad.css">
+    <link rel="stylesheet" href="../../static/css/editpage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap" rel="stylesheet">
@@ -81,30 +81,42 @@
                         <div class="container large">
                             <input type="text" class="text-input" placeholder="Медиафайлы">
                         </div>
-                        <button class="button-container">
+                        <input type="file" id="fileInput" style="display: none;" />
+<button class="button-container" onclick="document.getElementById('fileInput').click();">
+    <div class="cross-icon">
+        <div class="horizontal-line"></div>
+        <div class="vertical-line"></div>
+    </div>
+    <div class="button-text">Загрузить</div>
+</button>
+
+                    </div>
+
+                      
+                      <div class="btn-container">
+                        <button class="btn edit-btn">
+                            <span class="btn-text">Редактировать</span>
+                        </button>
+                    
+                        <button class="btn delete-btn">
                             <div class="cross-icon">
                                 <div class="horizontal-line"></div>
                                 <div class="vertical-line"></div>
                             </div>
-                            <div class="button-text">Загрузить</div>
+                            <span class="btn-text">Удалить</span>
                         </button>
                     </div>
                 </div>
-                    <div class="right-block">
+                <div class="right-block">
                     <div class="label">Предпросмотр:</div>
-                    <label for="photoUpload" class="photo-upload-label">
-                        <input type="file" id="photoUpload" class="file-input" accept="image/*">
-                        <div class="gradient-box"></div>
-                    </label>                        <div class="label">Название:</div>
-                        <div class="label">Описание:</div>
+                    <img class="preview-img" src="../../static/img/image5.png" alt="Bento 3D Preview" />
+                    <div class="label">Название:</div>
+                    <div class="content-title">Bento 3D</div>
+                    <div class="label">Описание</div>
+                    <div class="content-description">
+                        War Thunder – это самая масштабная бесплатная многопользовательская онлайн-игра из числа посвященных боевой технике...
+                        (и так далее)
                     </div>
-                    <button class="action-box">
-                        <div class="cross-icon">
-                            <div class="horizontal"></div>
-                            <div class="vertical"></div>
-                        </div>
-                        <div class="bold-label">Создать</div>
-                    </button>
                 </div>
                 
                 </div>
