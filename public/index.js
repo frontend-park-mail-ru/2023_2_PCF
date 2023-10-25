@@ -6,6 +6,16 @@ import Login from './components/login/login.js';
 import Signup from './components/signup/signup.js';
 import List from './components/list/list.js';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+        .then((reg) => {
+            console.log('sw registered', reg);
+        })
+        .catch((e) => {
+            console.error(e);
+        });
+}
+
 
 const router = new Router();
 
