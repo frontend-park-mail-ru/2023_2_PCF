@@ -82,13 +82,13 @@
                             <input type="text" class="text-input" placeholder="Медиафайлы">
                         </div>
                         <input type="file" id="fileInput" style="display: none;" />
-<button class="button-container" onclick="document.getElementById('fileInput').click();">
-    <div class="cross-icon">
-        <div class="horizontal-line"></div>
-        <div class="vertical-line"></div>
-    </div>
-    <div class="button-text">Загрузить</div>
-</button>
+                        <button class="button-container" onclick="document.getElementById('fileInput').click();">
+                            <div class="cross-icon">
+                                <div class="horizontal-line"></div>
+                                <div class="vertical-line"></div>
+                            </div>
+                            <div class="button-text">Загрузить</div>
+                        </button>
 
                     </div>
 
@@ -98,13 +98,30 @@
                             <span class="btn-text">Редактировать</span>
                         </button>
                     
-                        <button class="btn delete-btn">
+                        <button class="btn delete-btn" onclick="toggleConfirmationBlock()">
                             <div class="cross-icon">
                                 <div class="horizontal-line"></div>
                                 <div class="vertical-line"></div>
                             </div>
                             <span class="btn-text">Удалить</span>
+                            
                         </button>
+                        <div id="confirmation-block" class="centered-banner" style="display: none; width: 606px; height: 201px; position: relative">
+                        <div style="width: 606px; height: 201px; position: relative">
+                              <div style="width: 606px; height: 201px; left: 0px; top: 0px; position: absolute; background: #242832; border-radius: 34px"></div>
+                              <div style="left: 57px; top: 28px; position: absolute; color: white; font-size: 20px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Вы точно хотите удалить рекламное объявление?</div>
+                              <div style="width: 262px; height: 72px; padding: 10px; left: 25px; top: 102px; position: absolute; background: #AD4343; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                                <div style="width: 20px; height: 20px; position: relative">
+                                  <div style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 7px; border: 2px white solid"></div>
+                                  <div style="width: 14px; height: 0px; left: 3px; top: 11px; position: absolute; border: 2px white solid"></div>
+                                </div>
+                                <div style="color: white; font-size: 16px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Подтвердить</div>
+                              </div>
+                              <div style="width: 262px; height: 72px; padding: 10px; left: 320px; top: 103px; position: absolute; background: #131517; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                                <div style="color: white; font-size: 16px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Отмена</div>
+                              </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="right-block">
@@ -130,5 +147,15 @@
 <script src="/components/signup/signup.precompiled.js"> </script>
 <script src="/components/list/list.precompiled.js"> </script>
 <script type="module" src="./index.js"></script>
+<script>
+    function toggleConfirmationBlock() {
+        var block = document.getElementById("confirmation-block");
+        if (block.style.display === "none") {
+            block.style.display = "block";
+        } else {
+            block.style.display = "none";
+        }
+    }
+    </script>
 </body>
 </html>
