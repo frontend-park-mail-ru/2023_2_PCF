@@ -19,7 +19,16 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }
+            },
+            {
+                test: /\.precompiled.js$/,
+                include: /public/,
+                loader: 'handlebars-loader',
+            },
+            {
+                test: /\.(css)$/,
+                use: ['style-loader', 'css-loader'],
+            },
         ]
     }
 };

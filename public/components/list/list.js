@@ -1,4 +1,6 @@
 import Api from '../../modules/api.js';
+import css from '../../static/css/list.css'
+
 let userAds = [];
 const context = {
   userAds: userAds,
@@ -24,11 +26,7 @@ export default class List {
     });
 
 
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/list.css';
-    document.head.appendChild(link);
+  this.style = css;
   }
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['list.hbs'](context);
