@@ -1,6 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
-import css from '../../static/css/login.css'
+import css from '../../static/css/login.sass'
 
 export default class Login {
   constructor(parent = document.body, submitCallback = () => {}) {
