@@ -149,12 +149,13 @@ h1, h2, h3 {
 .centered-box {
     flex: 0 0 70%; /* Занимаем 75% ширины контейнера */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    /* align-items: center; */
     justify-content: start;
     border-radius: 35px;
     height: 940px;
-    text-align: center;
+    gap: 20px;
+    /* text-align: center; */
     background-color: #242832;
     padding: 20px; /* Добавляем отступы внутри блока */
 }
@@ -247,6 +248,9 @@ h1, h2, h3 {
     position: relative;
     margin-bottom: 40px;
 }
+.info-card:hover {
+    background-color: #261f8b; 
+}
 
 .circle {
     width: 57px;
@@ -281,14 +285,14 @@ h1, h2, h3 {
 }
 
 .text-large {
-    left: 38px;
+    left: 40px;
     top: 4px;
     font-size: 32px;
     font-weight: 700;
 }
 
 .text-status {
-    left: 110px;
+    left: 96px;
     top: 25px;
     font-size: 14px;
     font-weight: 400;
@@ -301,16 +305,52 @@ h1, h2, h3 {
     font-weight: 400;
 }
 
-.status-dot {
-    width: 9px;
-    height: 9px;
-    left: 95px;
-    top: 30px;
-    position: absolute;
-    border-radius: 9999px;
+
+.region-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-top: 40px
 }
 
+.region-title {
+    margin-right: 10px; /* Отступ между "Выбранные регионы:" и иконкой */
+}
 
+.region-details {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px; /* Отступ между иконкой и "Балашихой" */
+}
+
+.icon > div {
+    width: 8px;
+    height: 8px;
+    position: relative;
+}
+
+.icon > div > div {
+    width: 8px;
+    height: 8px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #705FCF;
+    border-radius: 9999px;
+    margin-top: 5px;
+
+}
+
+.region-name {
+    margin-top: 10px;
+}
 
 .custom-button {
     margin-bottom: 20px;
@@ -378,7 +418,10 @@ h1, h2, h3 {
     font-family: 'Istok Web', sans-serif;
     font-weight: 700;
 }
-
+.left-block, .right-block {
+    flex: 1;
+    box-sizing: border-box
+}
 .container-title {
     width: 340px;
     height: 403px;
@@ -421,8 +464,163 @@ h1, h2, h3 {
     text-align: right;
     padding-right: 1px;
 }
-.other-element {
-    width: 173px;
-    height: 124px;
+.custom-dropdown {
     position: relative;
+    display: inline-block;
+}
+
+.custom-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    /* background: #000; */
+    color: white;
+    min-width: 200px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+    font-family: 'Istok Web', sans-serif;
+}
+
+.custom-dropdown .dropdown-content div {
+    padding: 10px;
+    /* border-bottom: 1px solid #333; */
+}
+
+.custom-dropdown .dropdown-content div:last-child {
+    border-bottom: none;
+}
+
+.custom-dropdown .arrow-icon {
+    margin-top: 30px;
+    font-size: 16px;
+    color: white;
+    margin-left: 5px;
+}
+
+/* Отображение выпадающего меню при наведении */
+.custom-dropdown:hover .dropdown-content {
+    display: block;
+}
+.interests-box {
+    width: 340px;
+    height: 186px;
+    padding: 8px 17px;
+    background: #323644;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.gradient-box {
+    width: 380px;
+    height: 190px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-entry-label {
+    width: 100%;
+}
+
+.text-upload-label:hover .gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+}
+.text-input {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+.demographics-info {
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.info-item {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.age-range {
+    width: 65px;
+    height: 35px;
+    padding: 4px 17px;
+    background: #323644;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 11.34px;
+    letter-spacing: 0.40px;
+    word-wrap: break-word;
+}
+.btn-container {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+}
+.btn-text {
+    word-wrap: break-word;
+}
+
+.cross-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+/* .horizontal-line, .vertical-line {
+    position: absolute;
+    height: 2px;
+    width: 14px;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform-origin: 50% 50%;
+} */
+
+.btn {
+    width: 262px;
+    height: 72px;
+    padding: 10px;
+    border-radius: 20px;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none; 
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+    background: #131517;
+color: white;
+}
+
+.delete-btn {
+background: #AD4343;
+color: white;
+gap: 20px;
 }
