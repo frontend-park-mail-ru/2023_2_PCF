@@ -114,17 +114,13 @@
                     </div>
                     
                     <div class="right-block">
-                    <div class="interests-box">
-                        <div class="label">Интересы</div>
-                    </div>
-                    <!-- <label for="photoUpload" class="photo-upload-label">
-                        <input type="file" id="photoUpload" class="file-input" accept="image/*">
-                        <div class="gradient-box"></div>
-                    </label>  
-                    <label for="photoUpload" class="photo-upload-label">
-                        <input type="file" id="photoUpload" class="file-input" accept="image/*">
-                        <div class="gradient-box"></div>
-                    </label>  -->
+                        <div class="gradient-box" id="textEntryContainer">
+                            <label for="textEntry1" class="text-entry-label">
+                                <input type="text" id="textEntry1" class="text-input" placeholder="Введите ключевые фразы, через запятую">
+                                
+                            </label>
+                        </div>
+                    
                     <div class="gradient-box" id="textEntryContainer">
                     <label for="textEntry1" class="text-entry-label">
                         <input type="text" id="textEntry1" class="text-input" placeholder="Введите ключевые фразы, через запятую">
@@ -137,56 +133,63 @@
                     </label>
                 </div>
                 <div class="demographics-info">
-                    <div class="info-item">
-                        <div style="font-size: 24px;">Демография</div>
-                    </div>
-                    <div class="info-item">
-                        <div>Пол</div>
-                        <div>
-                            <input type="checkbox" id="anyGender">
-                            <label for="anyGender">Любой</label>
+                    <div class="info-column">
+                        <div class="info-item">
+                            <div style="font-size: 18px;">Демография</div>
                         </div>
-                        <div>
-                            <input type="checkbox" id="femaleGender">
-                            <label for="femaleGender">Женский</label>
+                        <div class="info-item">
+                            <div>Пол</div>
+                            <div>
+                                <input type="checkbox" id="anyGender">
+                                <label for="anyGender">Любой</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="femaleGender">
+                                <label for="femaleGender">Женский</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="maleGender">
+                                <label for="maleGender">Мужской</label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="checkbox" id="maleGender">
-                            <label for="maleGender">Мужской</label>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div>Возраст</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="age-range">
-                            <!-- <label for="ageFrom">От</label> -->
-                            <input type="text" id="ageFrom" class="text-input" placeholder="От">
-                        </div>
-                        <div class="age-range">
-                            <!-- <label for="ageTo">До</label> -->
-                            <input type="text" id="ageTo" class="text-input" placeholder="До">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                    </div> <!-- Закрытие первой колонки -->
                 
-
-            <!-- <div class="btn-container">
-                <button class="btn edit-btn">
-                    <span class="btn-text">Редактировать</span>
-                </button>
-            
-                <button class="btn delete-btn" onclick="toggleConfirmationBlock()">
-                    <div class="cross-icon">
-                        <div class="horizontal-line"></div>
-                        <div class="vertical-line"></div>
-                    </div>
-                    <span class="btn-text">Удалить</span>
-                    
-                </button>
-                </div> -->
+                    <div class="info-column info-item-right"> <!-- Начало второй колонки -->
+                        <div class="info-item">
+                            <div>Возраст</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="age-range-wrapper"> 
+                                <div class="age-range">
+                                    <input type="text" id="ageFrom" class="text-input" placeholder="От">
+                                </div>
+                                <div class="age-range">
+                                    <input type="text" id="ageTo" class="text-input" placeholder="До">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- Закрытие второй колонки -->
+                </div>
+                
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn edit-btn">
+                        <span class="btn-text">Редактировать</span>
+                    </button>
+                
+                    <button class="btn delete-btn" onclick="toggleConfirmationBlock()">
+                        <div class="cross-icon">
+                            <div class="horizontal-line"></div>
+                            <div class="vertical-line"></div>
+                        </div>
+                        <span class="btn-text">Удалить</span>
+                        
+                    </button>
+            </div>
+                
+            </div>
+               
             </div>
         </main>
     </div>
