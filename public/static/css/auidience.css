@@ -369,11 +369,11 @@ h1, h2, h3 {
 }
 
 .button-content {
-    width: 146px;
-    height: 52px;
+    width: 180px;
+    height: 42px;
     padding: 10px;
     background: #131517;
-    border-radius: 20px;
+    border-radius: 19px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -395,7 +395,7 @@ h1, h2, h3 {
     position: absolute;
     background: rgba(217, 217, 217, 0);
     border-radius: 7px;
-    border: 2px white solid;
+    border: 1.2px white solid;
 }
 
 .horizontal-line {
@@ -404,18 +404,18 @@ h1, h2, h3 {
     left: 3px;
     top: 11px;
     position: absolute;
-    border: 2px white solid;
+    border: 1px white solid;
 }
 
 .vertical-line {
-    width: 14px;
+    width: 17.5px;
     height: 0px;
-    left: 9px;
-    top: 3px;
+    left: 11.8px;
+    top: 1px;
     position: absolute;
     transform: rotate(90deg);
     transform-origin: 0 0;
-    border: 2px white solid;
+    border: 1px white solid;
 }
 
 .button-text {
@@ -622,10 +622,10 @@ h1, h2, h3 {
 } */
 
 .btn {
-    width: 222px;
+    width: 220px;
     height: 52px;
     padding: 10px;
-    border-radius: 18px;
+    border-radius: 19px;
     vertical-align: middle;
     justify-content: center;
     align-items: center;
