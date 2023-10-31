@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdHub</title>
+   <!-- <link rel="stylesheet" href="../../static/css/login.css"> -->
+    <link rel="stylesheet" href="../../static/css/editpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="root">
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="../../static/img/logo_ad.png" alt="Логотип" class="logo">
+                <div class="logo-text">
+                    <p>AdHub</p>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <p>Admin tools</p>
+                    <li>
+                        <img src="../../static/img/free-icon-home-7941430_2.png" alt="Иконка">
+                        <a href="#">Главная</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/free-icon-front-end-6489421_2.png" alt="Иконка">
+                        <a href="#">Кампания</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/free-icon-wallet-482541.png" alt="Иконка">
+                        <a href="#">Бюджет</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/free-icon-people-3633274.png" alt="Иконка">
+                        <a href="#">Аудитория</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/free-icon-cogwheel-6186867_2.png" alt="Иконка">
+                        <a href="#">Настройки</a>
+                    </li>
+                    <p>Profile</p>
+                    <li>
+                        <img src="../../static/img/free-icon-user-4743186.png" alt="Иконка">
+                        <a href="#">Профиль</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/free-icon-notification-8860191.png" alt="Иконка">
+                        <a href="#">Уведомления</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main class="main-content">
+            <div class="container">
+
+    
+                <div class="centered-box">
+                    <div class="left-block">
+                    <div class="container xlarge">
+                        <input type="text" class="text-input" placeholder="Заголовок">
+                    </div>
+                    <div class="container xxlarge">
+                        <textarea class="text-input" placeholder="Описание"></textarea>
+                    </div>
+                    <div class="container xlarge">
+                        <input type="text" class="text-input" placeholder="Ссылка на сайт">
+                    </div>
+                    <div style="display: flex;">
+                        <div class="container small">
+                            <input type="text" class="text-input" placeholder="Бюджет">
+                        </div>
+                        <div class="container medium">
+                            <input type="text" class="text-input" placeholder="Аудитория">
+                        </div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="container large">
+                            <input type="text" class="text-input" placeholder="Медиафайлы">
+                        </div>
+                        <input type="file" id="fileInput" style="display: none;" />
+                        <button class="button-container" onclick="document.getElementById('fileInput').click();">
+                            <div class="cross-icon">
+                                <div class="horizontal-line"></div>
+                                <div class="vertical-line"></div>
+                            </div>
+                            <div class="button-text">Загрузить</div>
+                        </button>
+
+                    </div>
+
+                      
+                      <div class="btn-container">
+                        <button class="btn edit-btn">
+                            <span class="btn-text">Редактировать</span>
+                        </button>
+                    
+                        <button class="btn delete-btn" onclick="toggleConfirmationBlock()">
+                            <div class="cross-icon">
+                                <div class="horizontal-line"></div>
+                                <div class="vertical-line"></div>
+                            </div>
+                            <span class="btn-text">Удалить</span>
+                            
+                        </button>
+                        <div id="confirmation-block" class="centered-banner" style="display: none; width: 606px; height: 201px; position: relative;  z-index: 999;">
+                        <div style="width: 606px; height: 201px; position: relative">
+                              <div style="width: 606px; height: 201px; left: 0px; top: 0px; position: absolute; background: #242832; border-radius: 34px"></div>
+                              <div style="left: 57px; top: 28px; position: absolute; color: white; font-size: 20px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Вы точно хотите удалить рекламное объявление?</div>
+                              <div style="width: 262px; height: 72px; padding: 10px; left: 25px; top: 102px; position: absolute; background: #AD4343; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                                <div style="width: 20px; height: 20px; position: relative">
+                                  <div style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 7px; border: 2px white solid"></div>
+                                  <div style="width: 14px; height: 0px; left: 3px; top: 11px; position: absolute; border: 2px white solid"></div>
+                                </div>
+                                <div style="color: white; font-size: 16px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Подтвердить</div>
+                              </div>
+                              <div style="width: 262px; height: 72px; padding: 10px; left: 320px; top: 103px; position: absolute; background: #131517; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                                <div style="color: white; font-size: 16px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Отмена</div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-block">
+                    <div class="label">Предпросмотр:</div>
+                    <img class="preview-img" src="../../static/img/image5.png" alt="Bento 3D Preview" />
+                    <div class="label">Название:</div>
+                    <div class="content-title">Bento 3D</div>
+                    <div class="label">Описание</div>
+                    <div class="content-description">
+                        War Thunder – это самая масштабная бесплатная многопользовательская онлайн-игра из числа посвященных боевой технике...
+                        (и так далее)
+                    </div>
+                </div>
+                
+                </div>
+            
+        </main>
+    </div>
+</div>
+<img id="image" class="logo-right-bottom" class="list-none" src="static/img/logo_ad.png" alt="Описание изображения">
+<script src="/handlebars/dist/handlebars.runtime.js"></script>
+<script src="/components/login/login.precompiled.js"> </script>
+<script src="/components/signup/signup.precompiled.js"> </script>
+<script src="/components/list/list.precompiled.js"> </script>
+<script type="module" src="./index.js"></script>
+<script>
+    let blurEnabled = false;
+
+    function toggleConfirmationBlock() {
+        var block = document.getElementById("confirmation-block");
+        if (block.style.display === "none") {
+            block.style.display = "block";
+        } else {
+            block.style.display = "none";
+        }
+        const background = document.querySelector('body');
+
+        if (blurEnabled) {
+            background.style.filter = 'blur(0)';
+            block.style.display = "block";
+        } else {
+            background.style.filter = 'blur(10px)';
+        }
+
+        blurEnabled = !blurEnabled;
+    }
+    </script>
+</body>
+</html>

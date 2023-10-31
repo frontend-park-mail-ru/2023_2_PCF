@@ -1,0 +1,391 @@
+
+body {
+    font-family: 'Istok Web', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700; /* Применить полужирное начертание к заголовкам (если необходимо) */
+}
+  body {
+    background-color: #1F2027;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.logo-right-bottom {
+    display: none;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.main-content {
+    background-color: #1F2027;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    /* padding: 20px; */
+}
+
+.logo-container img {
+    width: 32px;
+    height: 46px;
+}
+
+.logo {
+    width: 80px; /* Уменьшил размер логотипа */
+    height: auto;
+    margin-right: 10px; /* Добавил небольшой отступ между логотипом и текстом */
+}
+
+.logo-text p {
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
+}
+
+.container {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
+    justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
+    padding: 0px;
+}
+
+.sidebar {
+    width: 175px;
+    height: 100vh; /* Занимает всю высоту экрана */
+    background-color: #242832;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* border-radius: 35px; */
+    position: fixed; /* Фиксируем на одном месте */
+    top: 0; /* Прибиваем к верху */
+    left: 0; /* Прибиваем к левому краю */
+}
+
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.menu ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu ul li a:hover {
+    background-color: #6C5DD2;
+}
+.menu p{
+    color: #61636A;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0px 0; 
+    margin-left: 175px;  /* Это соответствует ширине вашего sidebar */
+
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Размещаем блоки с пробелом между ними */
+    align-items: flex-start; /* Выравниваем блоки сверху */
+    margin: 20px 0; /* Добавляем отступы снизу и сверху */
+}
+
+
+.centered-box {
+    flex: 0 0 90%; 
+    /* max-width: 90%;   добавьте это свойство */
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    justify-content: start;
+    border-radius: 35px;
+    height: 940px;
+    background-color: #242832;
+    padding: 20px; 
+    gap: 20px; 
+    position: relative;
+    box-sizing: border-box;
+    /* overflow: hidden;  добавьте это свойство, если хотите обрезать содержимое, выходящее за границы */
+}
+
+
+.left-block, .right-block {
+    flex: 1;
+    box-sizing: border-box
+}
+.left-block{
+    margin-right: 20px;
+}
+.centered-box .container {
+    background: #323644;
+    border-radius: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+    padding: 4px 17px;
+}
+
+.centered-box .container.small {
+    width: 263px;
+    height: 70px;
+}
+
+.centered-box .container.medium {
+    width: 347px;
+    height: 70px;
+    margin-left: 36px;
+}
+
+.centered-box .container.large {
+    width: 512px;
+    height: 70px;
+}
+.flex-row {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    gap: 10px; /* Расстояние между элементами */
+}
+.centered-box .container.xlarge {
+    width: 676px;
+    height: 70px;
+}
+
+.centered-box .container.xxlarge {
+    width: 676px;
+    height: 224px;
+}
+/* .container.large {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+} */
+.button-container {
+    display: flex;
+    align-items: center;
+    background: #131517;
+    border-radius: 20px;
+    padding: 10px;
+    width: 152px;
+    height: 70px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    gap: 10px;
+    outline: none; /* Убирает стандартный outline */
+    transition: background-color 0.2s ease; /* Добавляет плавный переход для фона кнопки */
+}
+
+.button-container:hover {
+    background: #2a2a2a; /* Изменяет цвет фона кнопки при наведении */
+}
+
+.button-container:active {
+    background: #0b0b0b; /* Изменяет цвет фона кнопки при нажатии */
+}
+
+.cross-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.horizontal-line, .vertical-line {
+    position: absolute;
+    height: 2px;
+    width: 14px;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform-origin: 50% 50%;
+}
+
+.horizontal-line {
+    transform: translate(-50%, -50%);
+}
+
+.vertical-line {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.button-text {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+}
+
+.text-input {
+    flex-grow: 1; 
+    margin-right: 10px; 
+}
+
+
+
+.text {
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.text-input, .text-input:focus {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    color: white;  
+    box-sizing: border-box; 
+}
+
+.text-input textarea {
+    resize: vertical;  
+}
+
+.label {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web';
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.gradient-box {
+    width: 426px;
+    height: 417px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-bottom: 20px;
+
+}
+.file-input {
+    display: none; 
+}
+
+.photo-upload-label:hover .gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+}
+
+.btn-container {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+}
+
+
+.btn {
+    width: 262px;
+    height: 72px;
+    padding: 10px;
+    border-radius: 20px;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none; 
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
+}
+
+.edit-btn {
+    background: #131517;
+    color: white;
+}
+
+.delete-btn {
+    background: #AD4343;
+    color: white;
+    gap: 20px;
+}
+
+.btn-text {
+    word-wrap: break-word;
+}
+
+.cross-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.horizontal-line, .vertical-line {
+    position: absolute;
+    height: 2px;
+    width: 14px;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform-origin: 50% 50%;
+}
+
+.horizontal-line {
+    transform: translate(-50%, -50%);
+}
+
+.vertical-line {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.preview-img {
+    width: 386px;
+    height: 334px;
+    border-radius: 23px;
+}
+.content-title{
+    color: white;
+}
+.content-description{
+    color: white;
+}
+
