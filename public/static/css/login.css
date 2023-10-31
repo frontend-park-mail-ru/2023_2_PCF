@@ -98,3 +98,11 @@ body {
     padding: 10px;
     color: rgba(255, 0, 0, 0.54);
 }
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
