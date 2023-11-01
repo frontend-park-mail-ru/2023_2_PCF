@@ -1,9 +1,5 @@
 import Api from '../../modules/api.js';
-let userAds = [];
-const context = {
-  userAds: userAds,
-  mainDescription: null,
-};
+import Validate from '../../modules/validate.js';
 
 export default class Company {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -13,52 +9,69 @@ export default class Company {
     this.errorLabel = null;
   }
 
-
   render() {
-    Api.getAds().then((data) => {
-      userAds.length = 0;
-      userAds.push(...data);
-      this.renderTemplate();
-    }).catch((error) => {
-      console.error('Ошибка:', error);
-    });
-
-
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = '../../static/css/company.css';
     document.head.appendChild(link);
+    this.parent.innerHTML = Handlebars.templates['company.hbs']();
+    this.form = this.parent.getElementsByClassName('company')[0];
+    this.form.addEventListener('submit', this.onSubmit.bind(this));
+    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
+    this.errorLabel.classList.add('hidden');
   }
-  renderTemplate() {
-    this.parent.innerHTML = Handlebars.templates['company.hbs'](context);
-    // Обработчик для "Кнопка 1"
-    document.getElementById('1').addEventListener('click', () => {
-      context.mainDescription = userAds[0].Description;
-      this.renderTemplate();
-    });
 
-    // Обработчик для "Кнопка 2"
-    document.getElementById('2').addEventListener('click', () => {
-      context.mainDescription = userAds[1].Description;
-      this.renderTemplate();
+  onSubmit(event) {
+    event.preventDefault();
+    const inputs = this.form.querySelectorAll('input');
+    const inputsValue = {};
+    let errMessage = 'Неверные данные.';
+    let err = true;
+    inputs.forEach((input) => {
+      if (input.id === 'password') {
+        if (Validate.Password(input.value)) {
+          inputsValue[input.id] = input.value;
+          err = true;
+          return;
+        } else {
+          errMessage = 'Неверный пароль. Введите пароль от 6ти символов.';
+          err = false;
+          return;
+        }
+      } else if (input.id === 'login') {
+        if (Validate.Email(input.value)) {
+          inputsValue[input.id] = input.value;
+          err = true;
+          return;
+        } else {
+          errMessage = 'Неверный формат EMail.';
+          err = false;
+          return;
+        }
+      } else {
+        inputsValue[input.id] = input.value;
+      }
     });
-    // Обработчик для "Кнопка 3"
-    document.getElementById('3').addEventListener('click', () => {
-      context.mainDescription = userAds[2].Description;
-      this.renderTemplate();
-    });
-    // Обработчик для "Кнопка 4"
-    document.getElementById('4').addEventListener('click', () => {
-      context.mainDescription = userAds[3].Description;
-      this.renderTemplate();
-    });
-    // Обработчик для "Кнопка 5"
-    document.getElementById('5').addEventListener('click', () => {
-      context.mainDescription = userAds[4].Description;
-      this.renderTemplate();
-    });
+    
+    if (err) {
+      Api.signup(inputsValue).then(
+          (response) => {
+            if (response.status < 300) {
+              this.SubmitCallback();
+            } else {
+              this.showError(errMessage);
+            }
+          },
+      );
+    } else {
+        this.showError(errMessage);
+    }
+  }
+
+  showError(message) {
+    this.errorLabel.classList.remove('hidden')
+    this.errorLabel.classList.add('visible')
+    this.errorLabel.innerHTML = message;
   }
 }
-
-
