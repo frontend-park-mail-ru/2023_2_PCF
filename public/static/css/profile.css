@@ -189,6 +189,8 @@ h1, h2, h3 {
     background-color: #513bde;
 }
 
+
+
 /* Стили для .description */
 .description {
     width: 100%;
@@ -207,6 +209,14 @@ h1, h2, h3 {
 }
 .description .text {
     color: #fff;
+}
+
+.text-container {
+    display: flex;
+    align-items: center;
+}
+.image-container-logo {
+    margin-right: 25px; 
 }
 
 .centered-box .text-container {

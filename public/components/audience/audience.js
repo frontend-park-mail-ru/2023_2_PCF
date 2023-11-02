@@ -1,7 +1,7 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
 
-export default class Auidience {
+export default class Audience {
   constructor(parent = document.body, submitCallback = () => {}) {
     this.parent = parent;
     this.SubmitCallback = submitCallback;
@@ -15,8 +15,8 @@ export default class Auidience {
     link.type = 'text/css';
     link.href = '../../static/css/audience.css';
     document.head.appendChild(link);
-    this.parent.innerHTML = Handlebars.templates['auidience.hbs']();
-    this.form = this.parent.getElementsByClassName('auidience')[0];
+    this.parent.innerHTML = Handlebars.templates['audience.hbs']();
+    this.form = this.parent.getElementsByClassName('audience')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
