@@ -4,7 +4,7 @@ const CACHE_URLS = [
     'index.html',
     'main.bundle.js',
     'static/css/list.css',
-    'static/css/login.css',
+    'static/css/login.sass',
     'static/css/signup.css'
 ];
 
