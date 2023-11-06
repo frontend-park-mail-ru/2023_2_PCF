@@ -1,5 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
+import css from '../../static/css/createad.css';
 
 export default class CreateAd {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -10,16 +11,12 @@ export default class CreateAd {
   }
 
   render() {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/createad.css';
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['createad.hbs']();
     this.form = this.parent.getElementsByClassName('createad')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
+    this.style = css;
   }
 
   onSubmit(event) {

@@ -11,7 +11,6 @@ export default class Signup {
   }
 
   render() {
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['signup.hbs']();
     this.form = this.parent.getElementsByClassName('signup')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));

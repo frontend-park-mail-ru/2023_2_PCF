@@ -1,5 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
+import css from '../../static/css/profile.css';
 
 export default class Profile {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -10,16 +11,12 @@ export default class Profile {
   }
 
   render() {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/profile.css';
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['profile.hbs']();
     this.form = this.parent.getElementsByClassName('profile')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
+    this.style = css;
   }
 
   onSubmit(event) {

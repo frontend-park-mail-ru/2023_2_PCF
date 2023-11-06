@@ -1,5 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
+import css from '../../static/css/editpage.css';
 
 export default class EditPage {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -10,16 +11,12 @@ export default class EditPage {
   }
 
   render() {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/editpage.css';
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['editpage.hbs']();
     this.form = this.parent.getElementsByClassName('editpage')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
+    this.style = css;
   }
 
   onSubmit(event) {
