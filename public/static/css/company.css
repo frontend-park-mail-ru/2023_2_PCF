@@ -1,5 +1,5 @@
 
-  body {
+body {
     font-family: 'Istok Web', sans-serif;
 }
 html, body {
@@ -31,7 +31,15 @@ h1, h2, h3 {
 .logo-container {
     display: flex;
     align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
     /* padding: 20px; */
+}
+
+.logo-container img {
+    width: 32px;
+    height: 46px;
 }
 
 .logo {
@@ -56,14 +64,17 @@ h1, h2, h3 {
 
 .sidebar {
     width: 175px;
-    margin-top: 40px;
+    height: 100vh; /* Занимает всю высоту экрана */
     background-color: #242832;
     color: #fff;
     display: flex;
     flex-direction: column;
-    border-radius: 35px;
-    /* flex:1; */
+    /* border-radius: 35px; */
+    position: fixed; /* Фиксируем на одном месте */
+    top: 0; /* Прибиваем к верху */
+    left: 0; /* Прибиваем к левому краю */
 }
+
 
 .menu ul {
     list-style-type: none;
@@ -96,12 +107,19 @@ h1, h2, h3 {
 .menu ul li a:hover {
     background-color: #6C5DD2;
 }
-
+.menu p{
+    color: #61636A;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
     margin: 0px 0; 
+    margin-left: 175px;  /* Это соответствует ширине вашего sidebar */
+
 }
 
 .container {
@@ -112,7 +130,7 @@ h1, h2, h3 {
 }
 
 .lefted-box {
-    max-width: 266;
+    max-width: 100%;
     flex: 0 0 20%;
     display: flex;
     flex-direction: column;
@@ -191,237 +209,117 @@ h1, h2, h3 {
     color: #fff;
 }
 
-.adlayout {
-    width: 224px;
-    height: 99px;
-    flex-shrink: 0;
+.centered-box .text-container {
+    align-self: flex-start;   
+    text-align: left;   
+    margin-left: 15px;     
+    color: white;
+    /* width: 100%;             */
 }
 
-.adDateImageLayout{
-    width: 57px;
-    height: 57.582px;
-    flex-shrink: 0;
+.text-container h1{
+    font-size: 24px;
+}
+.text-container h2{
+    font-size: 16px;
+}
+.text-container h3{
+    font-size: 14px;
 }
 
-.adDateImageLayout {
+.info-card {
+    width: 100%;
+    height: 50px;
     position: relative;
+    margin-bottom: 40px;
+}
+
+.circle {
     width: 57px;
-    height: 57.582px;
-    flex-shrink: 0;
-    background-image: url('../svg/dateElemet.svg');
-    background-size: cover; 
-}
-
-.adDateImageText {
-    color: #FFF;
-    font-family: Istok Web;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.dateText {
-    font-size: 20px;
-    margin-top: 8px;
-}
-
-.adNameText{
-    color: #FFF;
-font-family: Istok Web;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
-
-.adDescriptionText{
-    color: #FFF;
-font-family: Istok Web;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-
-
-.adElContainer {
-    width: 224px;
-    height: 99px;
-    position: relative;
-}
-
-.adElInnerBox {
-    width: 57px;
-    height: 57.58px;
-    left: 13px;
-    top: 6px;
-    position: absolute;
-}
-
-.adElTopDecoration {
-    width: 48.28px;
-    height: 21.52px;
-    left: 4.07px;
-    top: 36.06px;
-    position: absolute;
-    background: #FEF2DC;
-    border-radius: 13px;
-}
-
-.adElInnerBackground {
-    width: 57px;
-    height: 50.60px;
-    left: 0px;
+    height: 50px;
+    left: 30px;
     top: 0px;
     position: absolute;
-    background: #FEE1AF;
     border-radius: 16px;
 }
 
-.adElDay {
-    left: 31px;
-    top: 23px;
-    position: absolute;
-    color: white;
-    font-size: 20px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 700;
-    word-wrap: break-word;
-}
-
-.adElWeekday {
-    left: 30px;
-    top: 15px;
-    position: absolute;
-    color: white;
-    font-size: 11px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 700;
-    word-wrap: break-word;
-}
-
-.adElTitle {
-    width: 107px;
-    height: 33px;
-    left: 78px;
-    top: 12px;
-    position: absolute;
-    color: white;
-    font-size: 16px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 700;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-.adElSubtitle {
-    width: 107px;
-    height: 33px;
-    left: 78px;
-    top: 31px;
-    position: absolute;
-    color: white;
-    font-size: 14px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-
-.currentAdElContainer {
-    width: 208.16px;
-    height: 71.57px;
-    position: relative;
-}
-
-.currentAdElInnerBox {
-    width: 208.16px;
-    height: 71.57px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-}
-
-.currentAdElTopDecoration {
-    width: 195.63px;
-    height: 51.29px;
-    left: 6.56px;
-    top: 20.28px;
-    position: absolute;
-    background: #8575DF;
-    border-radius: 15px;
-}
-
-.currentAdElInnerBackground {
-    width: 208.16px;
+.rectangle {
+    width: 264px;
     height: 63.82px;
-    left: 0px;
-    top: 0px;
+    left: -10px;
+    top: -7px;
     position: absolute;
-    background: #705FCF;
     border-radius: 15px;
 }
 
-.currentAdElDay {
-    left: 31px;
-    top: 23px;
+.text-title, .text-large, .text-status, .currency {
     position: absolute;
     color: white;
-    font-size: 20px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 700;
+    font-family: Istok Web;
     word-wrap: break-word;
 }
 
-.currentAdElWeekday {
-    left: 30px;
-    top: 15px;
-    position: absolute;
-    color: white;
-    font-size: 11px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 700;
-    word-wrap: break-word;
-}
-
-.currentAdElTitle {
-    width: 107px;
-    height: 33px;
-    left: 78px;
-    top: 12px;
-    position: absolute;
-    color: white;
+.text-title {
+    left: 95px;
+    top: 5px;
     font-size: 16px;
-    font-family: 'Istok Web', sans-serif;
     font-weight: 700;
-    word-wrap: break-word;
-    text-align: left;
 }
 
-.currentAdElSubtitle {
-    width: 107px;
-    height: 33px;
-    left: 78px;
-    top: 31px;
-    position: absolute;
-    color: white;
+.text-large {
+    left: 38px;
+    top: 4px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text-status {
+    left: 110px;
+    top: 25px;
     font-size: 14px;
-    font-family: 'Istok Web', sans-serif;
     font-weight: 400;
-    word-wrap: break-word;
-    text-align: left;
 }
 
-.differentAdsContainer {
-    padding-top: 27px;
+.currency {
+    left: 6px;
+    top: 12px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
+.status-dot {
+    width: 9px;
+    height: 9px;
+    left: 95px;
+    top: 30px;
+    position: absolute;
+    border-radius: 9999px;
+}
 
-.btnContainer {
-    width: 126px;
-    height: 32px;
+.info-card:hover {
+    background-color: #705FCF; 
+}
+.info-card {
+    cursor: pointer; 
+    transition: transform 0.1s; 
+}
+
+.info-card:active {
+    transform: scale(0.95); 
+}
+
+.custom-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.button-content {
+    width: 146px;
+    height: 52px;
     padding: 10px;
     background: #131517;
     border-radius: 20px;
@@ -429,17 +327,16 @@ line-height: normal;
     align-items: center;
     gap: 10px;
     display: inline-flex;
-    
+    position: relative;
 }
 
-.btnIcon {
+.plus-icon {
     width: 20px;
     height: 20px;
     position: relative;
-    background-image: url("../svg/Group1.svg");
 }
 
-.btnIconCircle {
+.circle-border {
     width: 20px;
     height: 20px;
     left: 0px;
@@ -447,14 +344,32 @@ line-height: normal;
     position: absolute;
     background: rgba(217, 217, 217, 0);
     border-radius: 7px;
-    border: 2px white solid;
+    border: 1.2px white solid;
 }
 
-.btnLabel {
-    padding-left: 10px;
+.horizontal-line {
+    width: 14px;
+    height: 0px;
+    left: 3px;
+    top: 11px;
+    position: absolute;
+    border: 1px white solid;
+}
+
+.vertical-line {
+    width: 17.5px;
+    height: 0px;
+    left: 11.8px;
+    top: 1px;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    border: 1px white solid;
+}
+
+.button-text {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 700;
-    word-wrap: break-word;
 }
