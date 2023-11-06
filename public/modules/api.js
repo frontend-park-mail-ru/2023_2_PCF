@@ -17,52 +17,37 @@ export default class Api {
     return Ajax.post(BACKEND_URL + URLS.signup, data);
   }
 
-  static getAds() {
-    // const token = getSessionToken();
+  static getAdsList() {
+    return Ajax.get(BACKEND_URL + '/ad')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Сетевая ошибка: ' + response.status);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.error('Произошла ошибка при запросе /ad', error);
+      });
+  }
 
-    return fetch('http://84.23.53.167:8080/api/v1/ping')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Сетевая ошибка: ' + response.status);
-          }
-          // console.log(response.json())
-          return response.json();
-        })
-        .then((data) => {
-          const jsonData = data;
-          console.log(jsonData);
-
-          return jsonData;
-        })
-        .catch((error) => {
-          console.error('Произошла ошибка при запросе /ping:', error);
-        });
-
-    // Проверяем, что токен существует
-    //         if (!token) {
-    //             console.error("Токен не найден в куки");
-    //             return Promise.reject("Токен не найден в куки");
-    //         }
-
-    // // Добавляем токен в параметры запроса
-    //         const queryParams = `?token`;
-
-    // // Отправляем GET-запрос с токеном
-    //         return Ajax.get(BACKEND_URL + URLS.ad + queryParams);
+  static createAd(data = {}) {
+    return Ajax.post(BACKEND_URL + '/ad', data)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Сетевая ошибка: ' + response.status);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.error('Произошла ошибка при запросе создания объявления', error);
+      });
   }
 
   static logout() {
     return Ajax.get(BACKEND_URL + URLS.logout);
   }
-}
 
-function getSessionToken() {
-  const cookies = document.cookie.split('; ');
-  for (const cookie of cookies) {
-    const [name, value] = cookie.split('=');
-    if (name === 'session_token') {
-      return decodeURIComponent(value);
-    }
+  static createAudience(data = {}) {
+    return Ajax.post(BACKEND_URL + '/targetcreate', data)
   }
-  return null;
 }

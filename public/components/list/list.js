@@ -1,28 +1,24 @@
 import Api from '../../modules/api.js';
-let userAds = [];
+
 const context = {
-  userAds: userAds,
+  userAds: [],
   mainDescription: null,
 };
 
 export default class List {
-  constructor(parent = document.body, submitCallback = () => {}) {
+  constructor(parent = document.body) {
     this.parent = parent;
-    this.SubmitCallback = submitCallback;
-    this.form = null;
-    this.errorLabel = null;
   }
 
-
   render() {
-    Api.getAds().then((data) => {
-      userAds.length = 0;
-      userAds.push(...data);
-      this.renderTemplate();
-    }).catch((error) => {
-      console.error('Ошибка:', error);
-    });
-
+    Api.getAdsList()
+      .then((data) => {
+        context.userAds = data; // Устанавливаем полученные объявления в context
+        this.renderTemplate();
+      })
+      .catch((error) => {
+        console.error('Ошибка:', error);
+      });
 
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -30,35 +26,23 @@ export default class List {
     link.href = '../../static/css/list.css';
     document.head.appendChild(link);
   }
+
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['list.hbs'](context);
-    // Обработчик для "Кнопка 1"
-    document.getElementById('1').addEventListener('click', () => {
-      context.mainDescription = userAds[0].Description;
-      this.renderTemplate();
-    });
+    
+    // Очищаем существующие кнопки перед добавлением новых
+    const buttonContainer = document.getElementById('button-container');
+    buttonContainer.innerHTML = '';
 
-    // Обработчик для "Кнопка 2"
-    document.getElementById('2').addEventListener('click', () => {
-      context.mainDescription = userAds[1].Description;
-      this.renderTemplate();
-    });
-    // Обработчик для "Кнопка 3"
-    document.getElementById('3').addEventListener('click', () => {
-      context.mainDescription = userAds[2].Description;
-      this.renderTemplate();
-    });
-    // Обработчик для "Кнопка 4"
-    document.getElementById('4').addEventListener('click', () => {
-      context.mainDescription = userAds[3].Description;
-      this.renderTemplate();
-    });
-    // Обработчик для "Кнопка 5"
-    document.getElementById('5').addEventListener('click', () => {
-      context.mainDescription = userAds[4].Description;
-      this.renderTemplate();
+    // Создаем кнопки на основе количества объявлений
+    context.userAds.forEach((ad, index) => {
+      const button = document.createElement('button');
+      button.textContent = `Кнопка ${index + 1}`;
+      button.addEventListener('click', () => {
+        context.mainDescription = ad.Description;
+        this.renderTemplate();
+      });
+      buttonContainer.appendChild(button);
     });
   }
 }
-
-

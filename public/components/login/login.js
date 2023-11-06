@@ -54,24 +54,19 @@ export default class Login {
         inputsValue[input.id] = input.value;
       }
     });
-    
+
     if (err) {
       Api.login(inputsValue).then(
-          (response) => {
-            if (response.status < 300) {
-              const expiresDate = new Date();
-              expiresDate.setHours(expiresDate.getHours() + 10);
-              setCookie('session_token', response.parsedJson.token, {
-                expires: expiresDate,
-              });
-              this.SubmitCallback();
-            } else {
-              this.showError(errMessage);
-            }
-          },
+        (response) => {
+          if (response.status < 300) {
+            this.SubmitCallback();
+          } else {
+            this.showError(errMessage);
+          }
+        },
       );
     } else {
-        this.showError(errMessage);
+      this.showError(errMessage);
     }
   } 
 
@@ -80,29 +75,4 @@ export default class Login {
     this.errorLabel.classList.add('visible')
     this.errorLabel.innerHTML = message;
   }
-}
-
-function setCookie(name, value, options = {}) {
-  options = {
-    path: '/',
-    // add other defaults here if necessary
-    ...options,
-  };
-
-  if (options.expires instanceof Date) {
-    options.expires = options.expires.toUTCString();
-  }
-
-  let updatedCookie =
-    encodeURIComponent(name) + '=' + encodeURIComponent(value);
-
-  for (const optionKey in options) {
-    updatedCookie += '; ' + optionKey;
-    const optionValue = options[optionKey];
-    if (optionValue !== true) {
-      updatedCookie += '=' + optionValue;
-    }
-  }
-
-  document.cookie = updatedCookie;
 }

@@ -12,7 +12,7 @@ export default class Router {
     window.history.pushState(null, null, path);
     if (!this.routes.has(path)) {
       console.log('No path found ' + path);
-      this.routes.get('/login')();
+      this.routes.get('/notfound')();
       return;
     }
     this.routes.get(path)();

@@ -1,0 +1,176 @@
+<div class="container">
+  <div class="sidebar">
+    <div class="logo-container">
+      <img src="../../static/img/logo_ad.png" alt="Логотип" class="logo">
+      <div class="logo-text">
+        <p>AdHub</p>
+      </div>
+    </div>
+    <div class="menu">
+      <ul>
+        <p>Admin tools</p>
+        <li>
+          <img src="../../static/img/free-icon-home-7941430_2.png" alt="Иконка">
+          <a href="#">Главная</a>
+        </li>
+        <li>
+          <img src="../../static/img/free-icon-front-end-6489421_2.png" alt="Иконка">
+          <a href="#">Кампания</a>
+        </li>
+        <li>
+          <img src="../../static/img/free-icon-wallet-482541.png" alt="Иконка">
+          <a href="#">Бюджет</a>
+        </li>
+        <li>
+          <img src="../../static/img/free-icon-people-3633274.png" alt="Иконка">
+          <a href="#">Аудитория</a>
+        </li>
+        <li>
+          <img src="../../static/img/free-icon-cogwheel-6186867_2.png" alt="Иконка">
+          <a href="#">Настройки</a>
+        </li>
+        <p>Profile</p>
+        <li>
+          <img src="../../static/img/free-icon-user-4743186.png" alt="Иконка">
+          <a href="#">Профиль</a>
+        </li>
+        <li>
+          <img src="../../static/img/free-icon-notification-8860191.png" alt="Иконка">
+          <a href="#">Уведомления</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+        <main class="main-content">
+            <form class="createaudience" action="/" method="post">
+            <div class="container">
+                <div class="lefted-box">
+                    
+                    <div class="info-card">
+                        <div class="circle" style="background: #FEAFAF;"></div>
+                        <div class="text-title">Аудитория 1</div>
+                        <div class="text-large">А1</div>
+                        <div class="text-status">Видеоигры</div>
+                        <!-- <div class="status-dot" style="background: #FEAFAF;"></div> -->
+                        <div class="arrows"></div>
+                    </div>
+                    <button type="button" class="custom-button">
+                        <div class="button-content">
+                            <div class="plus-icon">
+                                <div class="circle-border"></div>
+                                <div class="horizontal-line"></div>
+                                <div class="vertical-line"></div>
+                            </div>
+                            <div class="button-text">Добавить</div>
+                        </div>
+                    </button>
+                </div>
+                
+    
+                <div class="centered-box">
+                    <div class="lefted-block">
+                    <div class="container-title">
+                        <div class="label">Регион</div>
+                        <div class="custom-dropdown">
+                            <input type="text" class="input-field" placeholder="Поиск">
+                            <div class="arrow-icon">Россия &#8249;</div>
+                            <div class="dropdown-content">
+                                <!-- <div>Россия</div> -->
+                                <input type="checkbox" id="regions">
+                                <label for="anyGender">Любой</label>
+                                <!-- <div>Московская область</div>
+                                <div>Москва</div>
+                                <div>Балашиха</div>
+                                <div>Мытищи</div> -->
+                            </div>
+                        </div>
+                        <div class="other-element"></div>
+                        
+                        </div>
+                        <div class="region-info">
+                            <div class="region-title">Выбранные регионы:
+                            <div class="region-details">
+                                <div class="icon">
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="region-name">Балашиха</div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="right-block">
+                        <div class="gradient-box" id="textEntryContainer">
+                            <label for="textEntry1" class="text-entry-label">
+                                <input type="text" id="interests" class="text-input" placeholder="Введите ключевые фразы, через запятую">
+                                
+                            </label>
+                        </div>
+                    
+                    <div class="gradient-box" id="textEntryContainer">
+                    <label for="textEntry1" class="text-entry-label">
+                        <input type="text" id="keys" class="text-input" placeholder="Введите ключевые фразы, через запятую">
+                        
+                    </label>
+                </div>
+                <div class="gradient-box">
+                    <label for="textEntry2" class="text-entry-label">
+                        <input type="text" id="tags" class="text-input" placeholder="Введите теги, через запятую">
+                    </label>
+                </div>
+                <div class="demographics-info">
+                    <div class="info-column">
+                        <div class="info-item">
+                            <div style="font-size: 18px;">Демография</div>
+                        </div>
+                        <div class="info-item">
+                            <div>Пол</div>
+                            <div>
+                                <input type="checkbox" id="anyGender">
+                                <label for="anyGendаer">Любой</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="femaleGender">
+                                <label for="femaleGender">Женский</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="maleGender">
+                                <label for="maleGender">Мужской</label>
+                            </div>
+                        </div>
+                    </div> <!-- Закрытие первой колонки -->
+                
+                    <div class="info-column info-item-right"> <!-- Начало второй колонки -->
+                        <div class="info-item">
+                            <div>Возраст</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="age-range-wrapper"> 
+                                <div class="age-range">
+                                    <input type="text" id="min_age" class="text-input" placeholder="От">
+                                </div>
+                                <div class="age-range">
+                                    <input type="text" id="max_age" class="text-input" placeholder="До">
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn edit-btn">
+                        <span class="btn-text">Создать</span>
+                    </button>
+            
+                </div>
+                
+            </div>
+               
+            </div>
+            </form>
+        </main>
+</div>

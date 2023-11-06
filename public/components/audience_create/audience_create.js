@@ -1,9 +1,9 @@
 import Api from '../../modules/api.js';
 
-export default class CreateAd {
+export default class CreateAudience {
   constructor(parent = document.body, submitCallback = () => {}) {
     this.parent = parent;
-    this.SubmitCallback = submitCallback;
+    this.submitCallback = submitCallback;
     this.form = null;
     this.errorLabel = null;
   }
@@ -12,10 +12,10 @@ export default class CreateAd {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = '../../static/css/createad.css';
+    link.href = '../../static/css/audience.css';
     document.head.appendChild(link);
-    this.parent.innerHTML = Handlebars.templates['createad.hbs']();
-    this.form = this.parent.getElementsByClassName('createad')[0];
+    this.parent.innerHTML = Handlebars.templates['audience_create.hbs'](); 
+    this.form = this.parent.getElementsByClassName('createaudience')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
@@ -29,16 +29,17 @@ export default class CreateAd {
     let errMessage = 'Неверные данные.';
     let err = true;
     inputs.forEach((input) => {
-      if (input.id === 'name' || input.id === 'description' || input.id === 'website_link' || input.id === 'budget' || input.id === 'target_id') {
+      // Проверьте идентификаторы полей и добавьте их в inputsValue
+      if (input.id === 'name' || input.id === 'gender' || input.id === 'min_age' || input.id === 'max_age' || input.id === 'interests' || input.id === 'tags' || input.id === 'keys' || input.id === 'regions') {
         inputsValue[input.id] = input.value;
       }
     });
-    
+
     if (err) {
-      Api.createAd(inputsValue).then(
+      Api.createAudience(inputsValue).then(
         (response) => {
           if (response.status === 201) {
-            this.SubmitCallback();
+            this.submitCallback();
           } else {
             this.showError(errMessage);
           }
