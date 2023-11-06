@@ -13,6 +13,16 @@ import NotFound from './components/notfound/notfound.js';
 import NotFoundAudience from './components/notfound_audience/notfound_audience.js';
 import Profile from './components/profile/profile.js';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+        .then((reg) => {
+            console.log('sw registered', reg);
+        })
+        .catch((e) => {
+            console.error(e);
+        });
+}
+
 
 const router = new Router();
 

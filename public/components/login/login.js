@@ -1,5 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
+import css from '../../static/css/login.sass'
 
 export default class Login {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -11,16 +12,12 @@ export default class Login {
 
   render() {
     history.pushState('', 'AdHub', '/login');
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/login.css';
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['login.hbs']();
     this.form = this.parent.getElementsByClassName('login')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden')
+    this.style = css;
   }
 
   onSubmit(event) {
