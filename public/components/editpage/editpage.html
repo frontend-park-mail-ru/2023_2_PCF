@@ -33,7 +33,7 @@
                     </li>
                     <li>
                         <img src="../../static/img/free-icon-wallet-482541.png" alt="Иконка">
-                        <a href="#">Бюджет</a>
+                        <a href="#" class="budget-link">Бюджет</a>
                     </li>
                     <li>
                         <img src="../../static/img/free-icon-people-3633274.png" alt="Иконка">
@@ -84,10 +84,7 @@
                         </div>
                         <input type="file" id="fileInput" style="display: none;" />
                         <button class="button-container" onclick="document.getElementById('fileInput').click();">
-                            <div class="cross-icon">
-                                <div class="horizontal-line"></div>
-                                <div class="vertical-line"></div>
-                            </div>
+
                             <div class="button-text">Загрузить</div>
                         </button>
 
@@ -119,9 +116,23 @@
                                     </div>
                                     <div class="button-text">Подтвердить</div>
                                 </div>
-                                <div class="button cancel-button">
+                                <div class="button confirmation-cancel-button">
                                     <div class="button-text">Отмена</div>
                                 </div>
+                            </div>
+                        </div>
+                        <div id="replenish-banner" class="outer-container">
+                            <div class="background-block"></div>
+                            <div class="header-text">Пополнить баланс:</div>
+                            <div class="button replenish-button">
+                                <div class="button-text">Пополнить</div>
+                            </div>
+                            <div class="button replenish-cancel-button">
+                                <div class="button-text">Отмена</div>
+                            </div>
+                            <div class="currency-text">Руб.</div>
+                            <div class="input-container">
+                                <input type="text" class="input-field" placeholder="Сумма">
                             </div>
                         </div>
                     </div>
@@ -156,25 +167,56 @@ function toggleConfirmationBlock() {
 
     if (block.style.display === "none") {
         block.style.display = "block";
-        overlay.style.display = "block"; // Показать затемнение
+        overlay.style.display = "block";    
     } else {
-        hideConfirmationBlock(); // Вызов функции скрытия блока
+        hideConfirmationBlock(); 
     }
-}
+}   
 
 function hideConfirmationBlock() {
-    var block = document.getElementById("confirmation-block");
+    var confirmationBlock = document.getElementById("confirmation-block");
+    var replenishBanner = document.getElementById("replenish-banner");
     var overlay = document.querySelector('.overlay');
-    block.style.display = "none";
+
+    if (confirmationBlock) {
+        confirmationBlock.style.display = "none";
+    }
+    if (replenishBanner) {
+        replenishBanner.style.display = "none";
+    }
     overlay.style.display = "none"; // Скрыть затемнение
 }
 
-// Добавление обработчика событий для кнопки "Отмена"
+function showReplenishBanner() {
+    var replenishBanner = document.getElementById("replenish-banner");
+    var overlay = document.querySelector('.overlay');
+    replenishBanner.style.display = 'block';
+    overlay.style.display = 'block'; // Показать затемнение
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    var cancelButton = document.querySelector('.cancel-button');
-    cancelButton.addEventListener('click', function() {
-        hideConfirmationBlock(); // Скрыть блок при нажатии на кнопку "Отмена"
-    });
+    var confirmationCancelButton = document.querySelector('.confirmation-cancel-button');
+    var replenishCancelButton = document.querySelector('.replenish-cancel-button');
+    var budgetLink = document.querySelector('.budget-link');
+
+    if (confirmationCancelButton) {
+        confirmationCancelButton.addEventListener('click', function() {
+            hideConfirmationBlock();
+        });
+    }
+
+    if (replenishCancelButton) {
+        replenishCancelButton.addEventListener('click', function() {
+            hideConfirmationBlock();
+        });
+    }
+
+    if (budgetLink) {
+        budgetLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            showReplenishBanner();
+        });
+    }
 });
     </script>
 </body>
