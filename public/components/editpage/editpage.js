@@ -75,3 +75,29 @@ export default class EditPage {
     this.errorLabel.innerHTML = message;
   }
 }
+function toggleConfirmationBlock() {
+  var block = document.getElementById("confirmation-block");
+  var overlay = document.querySelector('.overlay');
+
+  if (block.style.display === "none") {
+      block.style.display = "block";
+      overlay.style.display = "block"; // Показать затемнение
+  } else {
+      hideConfirmationBlock(); // Вызов функции скрытия блока
+  }
+}
+
+function hideConfirmationBlock() {
+  var block = document.getElementById("confirmation-block");
+  var overlay = document.querySelector('.overlay');
+  block.style.display = "none";
+  overlay.style.display = "none"; // Скрыть затемнение
+}
+
+// Добавление обработчика событий для кнопки "Отмена"
+document.addEventListener('DOMContentLoaded', function() {
+  var cancelButton = document.querySelector('.cancel-button');
+  cancelButton.addEventListener('click', function() {
+      hideConfirmationBlock(); // Скрыть блок при нажатии на кнопку "Отмена"
+  });
+});

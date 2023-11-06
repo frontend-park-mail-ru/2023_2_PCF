@@ -130,6 +130,7 @@ h1, h2, h3 {
 }
 
 .lefted-box {
+    position: relative;
     max-width: 100%;
     flex: 0 0 20%;
     display: flex;
@@ -145,9 +146,11 @@ h1, h2, h3 {
 
 
 .centered-box {
+    position: relative;
     flex: 0 0 70%; /* Занимаем 75% ширины контейнера */
     display: flex;
     flex-direction: column;
+    /* align-items: flex-start; */
     align-items: center;
     justify-content: start;
     border-radius: 35px;
@@ -209,13 +212,7 @@ h1, h2, h3 {
     color: #fff;
 }
 
-.centered-box .text-container {
-    align-self: flex-start;   
-    text-align: left;   
-    margin-left: 15px;     
-    color: white;
-    /* width: 100%;             */
-}
+
 
 .text-container h1{
     font-size: 24px;
@@ -308,7 +305,77 @@ h1, h2, h3 {
     transform: scale(0.95); 
 }
 
+.text-container {
+    display: flex;
+    justify-content: space-between; /* Равномерно распределяем пространство между текстовыми блоками */
+    width: 100%; /* Занимаем всю ширину родителя */
+}
+.lefted-text, .righted-text{
+    margin-top: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивает блоки слева */
+    text-align: left;
+}
+
+.box-image {
+    width: 100%;
+    height: 40%;
+    border-radius: 23px;
+}
+
+.box-title, .box-subtitle, .box-description {
+    color: white;
+    font-family: Istok Web;
+    word-wrap: break-word;
+    margin-left: 10px;
+}
+
+.box-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.box-subtitle {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.box-description {
+    font-size: 14px;
+    font-weight: 400;
+}
+/* .description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+} */
+.description-title {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    /* text-align: center;  */
+    word-wrap: break-word;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+}
+.description-text {
+    width: 515px;
+    height: 352px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    /* text-align: justify;  */
+    /* margin-top: 20px; */
+}
 .custom-button {
+    margin-bottom: 20px;
     background: none;
     border: none;
     cursor: pointer;

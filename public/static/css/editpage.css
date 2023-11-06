@@ -389,3 +389,87 @@ h1, h2, h3 {
     color: white;
 }
 
+.centered-banner {
+    display: none; /* скрыть по умолчанию */
+    width: 606px;
+    height: 201px;
+    position: fixed; /* используйте fixed для позиционирования над всеми элементами */
+    z-index: 999;
+    top: 50%; /* центрирование по вертикали */
+    left: 50%; /* центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* точное центрирование */
+    /* остальные стили... */
+}
+
+/* Стили для затемнения фона */
+.overlay {
+    display: none; /* скрыть по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* полупрозрачный черный */
+    z-index: 998; /* ниже, чем модальное окно */
+}
+
+.banner-background {
+    width: 606px;
+    height: 201px;
+    position: relative;
+    background: #242832;
+    border-radius: 34px;
+}
+
+.banner-text {
+    position: absolute;
+    left: 57px;
+    top: 28px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.button {
+    width: 262px;
+    height: 65px;
+    /* padding: 10px; */
+    position: absolute;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.confirm-button {
+    left: 25px;
+    top: 102px;
+    background: #AD4343;
+}
+
+.cancel-button {
+    left: 320px;
+    top: 103px;
+    background: #131517;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: rgba(217, 217, 217, 0);
+    border-radius: 7px;
+    border: 2px white solid;
+    /* Дополнительные стили для иконки, если нужны */
+}
+
+.button-text {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+}

@@ -11,6 +11,7 @@
 </head>
 <body>
 <div id="root">
+    <div class="overlay"></div>
     <div class="container">
         <div class="sidebar">
             <div class="logo-container">
@@ -106,22 +107,23 @@
                             <span class="btn-text">Удалить</span>
                             
                         </button>
-                        <!-- <div id="confirmation-block" class="centered-banner" style="display: none; width: 606px; height: 201px; position: relative;  z-index: 999;">
-                        <div style="width: 606px; height: 201px; position: relative">
-                              <div style="width: 606px; height: 201px; left: 0px; top: 0px; position: absolute; background: #242832; border-radius: 34px"></div>
-                              <div style="left: 57px; top: 28px; position: absolute; color: white; font-size: 20px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Вы точно хотите удалить рекламное объявление?</div>
-                              <div style="width: 262px; height: 72px; padding: 10px; left: 25px; top: 102px; position: absolute; background: #AD4343; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                                <div style="width: 20px; height: 20px; position: relative">
-                                  <div style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; background: rgba(217, 217, 217, 0); border-radius: 7px; border: 2px white solid"></div>
-                                  <div style="width: 14px; height: 0px; left: 3px; top: 11px; position: absolute; border: 2px white solid"></div>
+                        <div id="confirmation-block" class="centered-banner">
+                            <div class="banner-background">
+                                <div class="banner-text">
+                                    Вы точно хотите удалить рекламное объявление?
                                 </div>
-                                <div style="color: white; font-size: 16px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Подтвердить</div>
-                              </div>
-                              <div style="width: 262px; height: 72px; padding: 10px; left: 320px; top: 103px; position: absolute; background: #131517; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                                <div style="color: white; font-size: 16px; font-family: Istok Web; font-weight: 700; word-wrap: break-word">Отмена</div>
-                              </div>
+                                <div class="button confirm-button">
+                                    <div class="cross-icon">
+                                        <div class="horizontal-line"></div>
+                                        <!-- <div class="vertical-line"></div> -->
+                                    </div>
+                                    <div class="button-text">Подтвердить</div>
+                                </div>
+                                <div class="button cancel-button">
+                                    <div class="button-text">Отмена</div>
+                                </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="right-block">
@@ -148,25 +150,32 @@
 <script src="/components/list/list.precompiled.js"> </script>
 <script type="module" src="./index.js"></script>
 <script>
-    let blurEnabled = false;
+function toggleConfirmationBlock() {
+    var block = document.getElementById("confirmation-block");
+    var overlay = document.querySelector('.overlay');
 
-    function toggleConfirmationBlock() {
-        var block = document.getElementById("confirmation-block");
-        if (block.style.display === "none") {
-            block.style.display = "block";
-        } else {
-            block.style.display = "none";
-        }
-        const background = document.querySelector('body');
-
-        if (blurEnabled) {
-            background.style.filter = 'blur(0)';
-            block.style.display = "block";
-        } else {
-            background.style.filter = 'blur(10px)';
-        }
-        blurEnabled = !blurEnabled;
+    if (block.style.display === "none") {
+        block.style.display = "block";
+        overlay.style.display = "block"; // Показать затемнение
+    } else {
+        hideConfirmationBlock(); // Вызов функции скрытия блока
     }
+}
+
+function hideConfirmationBlock() {
+    var block = document.getElementById("confirmation-block");
+    var overlay = document.querySelector('.overlay');
+    block.style.display = "none";
+    overlay.style.display = "none"; // Скрыть затемнение
+}
+
+// Добавление обработчика событий для кнопки "Отмена"
+document.addEventListener('DOMContentLoaded', function() {
+    var cancelButton = document.querySelector('.cancel-button');
+    cancelButton.addEventListener('click', function() {
+        hideConfirmationBlock(); // Скрыть блок при нажатии на кнопку "Отмена"
+    });
+});
     </script>
 </body>
 
