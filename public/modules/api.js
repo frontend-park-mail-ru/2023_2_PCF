@@ -6,7 +6,7 @@ const URLS = {
   ad: '/ad',
 };
 
-const BACKEND_URL = 'http://84.23.53.167:8080';
+const BACKEND_URL = 'http://127.0.0.1:8080/api/v1';
 
 export default class Api {
   static login(data={}) {
@@ -20,7 +20,7 @@ export default class Api {
   static getAds() {
     // const token = getSessionToken();
 
-    return fetch('http://84.23.53.167:8080/ping')
+    return fetch('http://84.23.53.167:8080/api/v1/ping')
         .then((response) => {
           if (!response.ok) {
             throw new Error('Сетевая ошибка: ' + response.status);

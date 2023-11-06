@@ -39,7 +39,7 @@ const server = http.createServer((request, response) => {
   });
 
   if (url === '/ping') {
-    fetch('http://84.23.53.167:8080/ping')
+    fetch('http://84.23.53.167:8080/api/v1/ping')
         .then((response) => {
           if (!response.ok) {
             throw new Error('Сетевая ошибка: ' + response.status);
