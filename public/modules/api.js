@@ -45,6 +45,10 @@ export default class Api {
     return Ajax.get({url:BACKEND_URL + '/balanceget'});
   }
 
+  static getImage(filename) {
+    return Ajax.get({url:BACKEND_URL + '/file?file' + filename});
+  }
+
   static getUniqueLink(adid) {
     return Ajax.get({url:BACKEND_URL + '/aduniquelink?id=' + adid});
   }
