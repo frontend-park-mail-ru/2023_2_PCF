@@ -29,20 +29,41 @@ export default class List {
 
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['list.hbs'](context);
-    
-    // Очищаем существующие кнопки перед добавлением новых
-    const buttonContainer = document.getElementById('button-container');
-    buttonContainer.innerHTML = '';
 
-    // Создаем кнопки на основе количества объявлений
-    context.userAds.forEach((ad, index) => {
-      const button = document.createElement('button');
-      button.textContent = `Кнопка ${index + 1}`;
-      button.addEventListener('click', () => {
-        context.mainDescription = ad.Description;
-        this.renderTemplate();
+    // Очищаем существующий список объявлений перед добавлением новых
+    const adList = document.getElementById('ad-list');
+    adList.innerHTML = '';
+    console.log(context.userAds.parsedJson);
+    // Проверяем наличие userAds в context
+    if (context.userAds.parsedJson && Array.isArray(context.userAds.parsedJson)) {
+      context.userAds.parsedJson.forEach((ad, index) => {
+        const listItem = document.createElement('div');
+        listItem.innerHTML = `                        
+        <a href="${ad.id}">
+        <div class="currentAdElContainer">
+            <div class="currentAdElInnerBox">
+                <div class="currentAdElTopDecoration"></div>
+                <div class="currentAdElInnerBackground"></div>
+            </div>
+            <div class="currentAdElDay">${ad.id}</div>
+            <div class="currentAdElWeekday">Wed</div>
+            <div class="currentAdElTitle">${ad.name}</div>
+            <div class="currentAdElSubtitle">{{ ${ad.description}}}</div>
+        </div>
+        </a>`
+        listItem.textContent = ad.name;
+        listItem.addEventListener('click', () => {
+          this.showSelectedAd(ad);
+        });
+        adList.appendChild(listItem);
       });
-      buttonContainer.appendChild(button);
-    });
+    }
+  }
+
+  showSelectedAd(ad) {
+    const selectedAd = document.getElementById('selected-ad');
+    selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>`;
   }
 }
+
+

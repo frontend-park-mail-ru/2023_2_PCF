@@ -2,7 +2,7 @@
 export default class Ajax {
   static get(params = {}) {
     let status;
-
+    
     return fetch(params.url, {
       method: 'GET',
       mode: 'cors',
@@ -13,13 +13,14 @@ export default class Ajax {
               status = response.status;
               const contentType = response.headers.get('content-type');
               if ( contentType && contentType.indexOf('application/json') !== -1 ) {
+                console.log("d")
                 return response.json();
               } else {
                 return Promise.resolve(null);
               }
             },
             (error) => {
-              console.error(error); // ошибка отправки
+              console.error(error);
             },
         )
         .then((parsedJson) => {

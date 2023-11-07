@@ -18,29 +18,15 @@ export default class Api {
   }
 
   static getAdsList() {
-    return Ajax.get(BACKEND_URL + '/ad')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Сетевая ошибка: ' + response.status);
-        }
-        return response.json();
-      })
-      .catch((error) => {
-        console.error('Произошла ошибка при запросе /ad', error);
-      });
+    return Ajax.get({url:BACKEND_URL + '/ad'});
+  }
+
+  static getAudienceList() {
+    return Ajax.get({url:BACKEND_URL + '/targetlist'});
   }
 
   static createAd(data = {}) {
-    return Ajax.post(BACKEND_URL + '/ad', data)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Сетевая ошибка: ' + response.status);
-        }
-        return response.json();
-      })
-      .catch((error) => {
-        console.error('Произошла ошибка при запросе создания объявления', error);
-      });
+    return Ajax.post(BACKEND_URL + '/ad', data);
   }
 
   static logout() {

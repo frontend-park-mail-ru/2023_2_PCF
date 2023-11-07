@@ -43,20 +43,8 @@
         <div class="container">
             <div class="lefted-box">
                 <div class="adlayout">
-                    {{#each userAds}}
-                        <a href="#" id="{{ Id }}">
-                        <div class="currentAdElContainer">
-                            <div class="currentAdElInnerBox">
-                                <div class="currentAdElTopDecoration"></div>
-                                <div class="currentAdElInnerBackground"></div>
-                            </div>
-                            <div class="currentAdElDay">{{ Id }}</div>
-                            <div class="currentAdElWeekday">Wed</div>
-                            <div class="currentAdElTitle">{{ Name }}</div>
-                            <div class="currentAdElSubtitle">{{ Sector }}</div>
-                        </div>
-                        </a>
-                    {{/each}}
+                    <div id="ad-list">
+                    </div>
                         <a href="/createad"></a><button class="edit-button">Создать</button></a>
 
 
@@ -66,18 +54,18 @@
                 </div>
             </div>
 
-            <div class="centered-box">
-                <div class="image-container">
-                    <img src="../../static/img/image5.png" alt="Фото">
+                <div class="centered-box">
+                <div class="left-panel">
                 </div>
-                <div class="description">
-                    <h2>Описание</h2>
-                    <div class="text">
-                        <p>{{ mainDescription }}</p>
+                <div class="right-panel">
+                    <div id="selected-ad">
+                    <!-- Здесь будет отображаться выбранное объявление -->
+                    </div>
+                     <button class="edit-button">Изменить</button> 
                 </div>
-                <button class="edit-button">Изменить</button>   
+                </div>
+                  
 
-            </div>
         </div>
     </main>
 </div>

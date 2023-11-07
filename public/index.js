@@ -22,7 +22,7 @@ const signup = new Signup(document.getElementById('root'), () => router.go('/com
 const list = new List(document.getElementById('root'), () => router.go('/list'));
 const company = new Company(document.getElementById('root'), () => router.go('/company'));
 const audience = new Audience(document.getElementById('root'), () => router.go('/audience'));
-const audiencecreate = new AudienceCreate(document.getElementById('root'), () => router.go('/audiencecreate'));
+const audiencecreate = new AudienceCreate(document.getElementById('root'), () => router.go('/company'));
 const createad = new CreateAd(document.getElementById('root'), () => router.go('/createad'));
 const editpage = new EditPage(document.getElementById('root'), () => router.go('/editpage'));
 const notfound = new NotFound(document.getElementById('root'), () => router.go('/notfound'));
