@@ -29,6 +29,18 @@ export default class Api {
     return Ajax.post(BACKEND_URL + '/ad', data);
   }
 
+  static deleteAd(data = {}) {
+    return Ajax.post(BACKEND_URL + '/ad', data);
+  }
+
+  static getUser(data = {}) {
+    return Ajax.get({url:BACKEND_URL + '/usergetbytoken'});
+  }
+
+  static getBalance(data = {}) {
+    return Ajax.get({url:BACKEND_URL + '/balanceget'});
+  }
+
   static logout() {
     return Ajax.get(BACKEND_URL + URLS.logout);
   }
