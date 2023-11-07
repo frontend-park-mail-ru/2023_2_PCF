@@ -44,8 +44,24 @@ export default class Profile {
   }
 
   renderTemplate() {
+    const user = context.User; // Получаем данные пользователя из context
+    const balanceData = context.Balance; // Получаем данные о балансе из context
+  
+    // Находим элементы для отображения логина и баланса
+    const h2Element = document.querySelector('h2'); // Находим элемент <h2>
+    const moneyItemElement = document.querySelector('.money-item'); // Находим элемент с классом 'money-item'
+  
+    // Проверяем, есть ли данные пользователя и значение login
+    if (user && user.login) {
+      h2Element.textContent = user.login; // Заменяем текст в элементе <h2> значением login
+    }
+  
+    // Проверяем, есть ли данные о балансе и значение total_balance
+    if (balanceData && balanceData.total_balance !== undefined) {
+      moneyItemElement.textContent = balanceData.total_balance; // Заменяем текст в элементе на значение total_balance
+    }
+  
     console.log(context.User);
     console.log(context.Balance);
-
   }
 }
