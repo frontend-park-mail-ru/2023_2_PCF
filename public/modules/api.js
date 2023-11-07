@@ -9,24 +9,28 @@ const URLS = {
 const BACKEND_URL = 'http://127.0.0.1:8080/api/v1';
 
 export default class Api {
-  static login(data={}) {
+  static login(data = {}) {
     return Ajax.post(BACKEND_URL + URLS.login, data);
   }
 
-  static signup(data={}) {
+  static signup(data = {}) {
     return Ajax.post(BACKEND_URL + URLS.signup, data);
   }
 
   static getAdsList() {
-    return Ajax.get({url:BACKEND_URL + '/ad'});
+    return Ajax.get({ url: BACKEND_URL + "/ad" });
   }
 
   static getAudienceList() {
-    return Ajax.get({url:BACKEND_URL + '/targetlist'});
+    return Ajax.get({ url: BACKEND_URL + "/targetlist" });
   }
 
   static createAd(data = {}) {
-    return Ajax.post(BACKEND_URL + '/ad', data);
+    return Ajax.post(BACKEND_URL + "/ad", data);
+  }
+
+  static deleteAd(data = {}) {
+    return Ajax.post(BACKEND_URL + "/addelete", data);
   }
 
   static logout() {
@@ -34,6 +38,6 @@ export default class Api {
   }
 
   static createAudience(data = {}) {
-    return Ajax.post(BACKEND_URL + '/targetcreate', data)
+    return Ajax.post(BACKEND_URL + "/targetcreate", data);
   }
 }

@@ -1,0 +1,155 @@
+* [33m8beab41[m[33m ([m[1;36mHEAD -> [m[1;32mpcf-ad-delete[m[33m, [m[1;31morigin/pcf-ad-delete[m[33m, [m[1;31morigin/pcf-105[m[33m, [m[1;31morigin/pcf-100[m[33m, [m[1;32mpcf-100[m[33m)[m product
+* [33m5f03231[m ad and target create
+[31m|[m * [33m39b8e74[m[33m ([m[1;31morigin/pcf-103-hbs-for-all-page[m[33m)[m <PCF-103> bank is done
+[31m|[m * [33me07a2fd[m <PCF-103> page company is work
+[31m|[m[31m/[m  
+* [33m2fdeb24[m reverse brunch
+[32m|[m * [33m5e7f5b3[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m small merge fixes x2
+[32m|[m * [33md83b0fb[m small merge fixes
+[32m|[m *   [33me1bda01[m Merge pull request #10 from frontend-park-mail-ru/pcf-103-hbs-for-all-page
+[32m|[m [34m|[m[35m\[m  
+[32m|[m [34m|[m * [33m2beb347[m Update sw.js
+[32m|[m [34m|[m *   [33m7d849b7[m Merge branch 'develop' into pcf-103-hbs-for-all-page
+[32m|[m [34m|[m [36m|[m[34m\[m  
+[32m|[m [34m|[m [36m|[m[34m/[m  
+[32m|[m [34m|[m[34m/[m[36m|[m   
+[32m|[m * [36m|[m   [33m5727e1d[m Merge pull request #9 from frontend-park-mail-ru/pcf-85-add-sw
+[32m|[m [1;32m|[m[1;33m\[m [36m\[m  
+[32m|[m [1;32m|[m * [36m|[m [33mf891628[m basic sw added
+[32m|[m * [1;33m|[m [36m|[m   [33m50788ab[m Merge pull request #8 from frontend-park-mail-ru/pcf-87-add_bundler
+[32m|[m [1;34m|[m[1;35m\[m [1;33m\[m [36m\[m  
+[32m|[m [1;34m|[m * [1;33m|[m [36m|[m [33mf99d153[m sass added, login converted to sass
+[32m|[m [1;34m|[m * [1;33m|[m [36m|[m [33m61c89d1[m simple css loader added
+[32m|[m [1;34m|[m [1;33m|[m[1;33m/[m [36m/[m  
+[32m|[m [1;34m|[m * [36m|[m [33mdb6d1ce[m babel transpiling added
+[32m|[m [1;34m|[m * [36m|[m [33m4d03f5f[m trivial webpack usage added
+[32m|[m [1;34m|[m [1;35m|[m * [33m877cfe9[m htmls deleted
+[32m|[m [1;34m|[m[32m_[m[1;35m|[m[32m/[m  
+[32m|[m[32m/[m[1;34m|[m [1;35m|[m   
+* [1;34m|[m [1;35m|[m [33m09a1e8f[m <PCF-103> logo for profile
+* [1;34m|[m [1;35m|[m [33m1b98316[m <PCF-103>hbs is work
+* [1;34m|[m [1;35m|[m [33md7d64da[m <PCF-103> company page is work
+* [1;34m|[m [1;35m|[m [33ma63e486[m <PCF-103> all page is done and hbs for company doesnt work
+[1;34m|[m[1;34m/[m [1;35m/[m  
+* [1;35m|[m   [33mcd06260[m Merge pull request #7 from frontend-park-mail-ru/pcf-67-api-ad-list
+[1;36m|[m[31m\[m [1;35m\[m  
+[1;36m|[m * [1;35m\[m   [33mec533fb[m Merge branch 'develop' into pcf-67-api-ad-list
+[1;36m|[m [1;35m|[m[1;36m\[m [1;35m\[m  
+[1;36m|[m [1;35m|[m[1;36m/[m [1;35m/[m  
+[1;36m|[m[1;36m/[m[1;35m|[m [1;35m/[m   
+[1;36m|[m [1;35m|[m[1;35m/[m    
+[1;36m|[m * [33m9de33ee[m visibility classes added
+[1;36m|[m * [33m051f22e[m export default added, small reformat changes
+[1;36m|[m * [33mcdc8f23[m Update login.js
+[1;36m|[m * [33mdc4bfd4[m Update signup.js
+[1;36m|[m * [33m98da99b[m Update signup.js
+[1;36m|[m * [33m9153627[m Update login.js
+[1;36m|[m * [33ma1a63af[m Update login.js
+[1;36m|[m * [33m8adccab[m Update validate.js
+[1;36m|[m * [33md640b0c[m comments deleted
+[1;36m|[m * [33m29e7174[m ESlint
+[1;36m|[m * [33md0f52a6[m Fix front
+[1;36m|[m * [33m92615c5[m small fix
+[1;36m|[m * [33mfff8f0b[m small fix
+[1;36m|[m * [33m8ab49f1[m small fix
+[1;36m|[m * [33mc9fe116[m ds
+[1;36m|[m * [33md16ed7e[m more bugs fix
+[1;36m|[m * [33md6797f2[m more bugs fix
+[1;36m|[m * [33m3c32841[m small fixes
+[1;36m|[m * [33m9fa6b0c[m Show messages
+[1;36m|[m * [33m181c3de[m Add validation
+[1;36m|[m * [33m662d414[m deleted some console.logs
+[1;36m|[m * [33m57410db[m testing promises
+[1;36m|[m * [33mfdfd920[m test array props in prod
+[1;36m|[m * [33m155c465[m testing arrays in prod
+[1;36m|[m * [33m13ff5dd[m more list tweaks
+[1;36m|[m * [33m0bb6298[m small userAds tweaks
+[1;36m|[m * [33mf103322[m fuck
+[1;36m|[m * [33m4b2f4b3[m sad
+[1;36m|[m * [33m10c10e8[m asda
+[1;36m|[m * [33md0cc9dd[m ajsj
+[1;36m|[m * [33m5f308ee[m aaaa
+[1;36m|[m * [33m8b8a77e[m no render
+[1;36m|[m * [33mca79225[m new host
+[1;36m|[m * [33m534c86d[m sanya derzi
+[1;36m|[m * [33m177a483[m no token
+[1;36m|[m * [33m5c657e3[m last resort x3
+[1;36m|[m * [33mee4d07c[m last resort x2
+[1;36m|[m * [33m7454abb[m last resort
+[1;36m|[m * [33m1fc9833[m[33m ([m[1;31morigin/pcf-67-api-ad-list[m[33m)[m token update
+[1;36m|[m * [33m087f955[m ids added
+[1;36m|[m * [33m8ca4b80[m request tweak
+[1;36m|[m * [33m6535be8[m WIP buttons added
+[1;36m|[m * [33m0a9a22c[m WIP ads list
+[1;36m|[m [33m|[m * [33m119e9fe[m[33m ([m[1;31morigin/pcf-47-profile-site[m[33m)[m <PCF-47>: just a additions
+[1;36m|[m [33m|[m * [33maed19aa[m its work
+[1;36m|[m [33m|[m * [33m61fc2b2[m please help, im dead
+[1;36m|[m [33m|[m * [33me245985[m idk with page of auidience
+[1;36m|[m [33m|[m * [33m9380360[m <PCF-47>: editpage and createad is done
+[1;36m|[m [33m|[m * [33mdd7c9dc[m PCF-47: create ad is 90 of progress
+[1;36m|[m [33m|[m * [33m165dc85[m <PCF-47>: done profile page and company
+[1;36m|[m [33m|[m[1;36m/[m  
+[1;36m|[m[1;36m/[m[33m|[m   
+* [33m|[m [33m01f93b8[m ready validation
+[33m|[m[33m/[m  
+*   [33m5ab096e[m Merge pull request #5 from frontend-park-mail-ru/pcf-new-login
+[35m|[m[36m\[m  
+[35m|[m * [33m0d89bc1[m new page for login
+* [36m|[m   [33m4713993[m Merge pull request #4 from frontend-park-mail-ru/pcf-new-signup
+[1;31m|[m[1;32m\[m [36m\[m  
+[1;31m|[m * [36m|[m [33md0e765e[m changed password color
+[1;31m|[m * [36m|[m [33md119c80[m new signup
+[1;31m|[m [36m|[m[36m/[m  
+[1;31m|[m [36m|[m * [33m12b2414[m[33m ([m[1;31morigin/loginpage[m[33m)[m Small fixes
+[1;31m|[m [36m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[36m|[m   
+* [36m|[m [33m173e005[m Create .eslintignore
+* [36m|[m [33med19172[m Merge pull request #3 from frontend-park-mail-ru/pcf-new-wallpapers
+[1;34m|[m[36m\[m[36m|[m 
+[1;34m|[m * [33m2e443f2[m text size and color fixed
+[1;34m|[m * [33m7033247[m new design
+* [1;35m|[m   [33m63140ba[m Merge pull request #1 from frontend-park-mail-ru/pcf-46-build-router
+[1;36m|[m[31m\[m [1;35m\[m  
+[1;36m|[m * [1;35m\[m   [33mb0fb9d1[m[33m ([m[1;31morigin/pcf-46-build-router[m[33m, [m[1;32mpcf-46-build-router[m[33m)[m Merge branch 'pcf-46-build-router' of github.com:frontend-park-mail-ru/2023_2_PCF into pcf-46-build-router
+[1;36m|[m [32m|[m[33m\[m [1;35m\[m  
+[1;36m|[m [32m|[m * [1;35m\[m   [33m3cbfb8b[m Merge branch 'pcf-46-build-router' of https://github.com/frontend-park-mail-ru/2023_2_PCF into pcf-46-build-router
+[1;36m|[m [32m|[m [34m|[m[35m\[m [1;35m\[m  
+[1;36m|[m [32m|[m * [35m|[m [1;35m|[m [33m9b7716e[m now any invalid url leads to login
+[1;36m|[m [32m|[m [1;35m|[m [35m|[m[1;35m/[m  
+[1;36m|[m [32m|[m [1;35m|[m[1;35m/[m[35m|[m   
+[1;36m|[m * [1;35m|[m [35m|[m [33mfda11ef[m coockie push
+[1;36m|[m [35m|[m [1;35m|[m[35m/[m  
+[1;36m|[m [35m|[m[35m/[m[1;35m|[m   
+[1;36m|[m * [1;35m|[m [33m3838758[m Hehehe
+[1;36m|[m [1;35m|[m[1;35m/[m  
+[1;36m|[m * [33mcc00a9a[m build-template script updated, css fixed
+[1;36m|[m * [33ma721665[m eslint errors fixed
+[1;36m|[m * [33m2407035[m signup & login routes changed
+[1;36m|[m * [33m497ff7c[m singup-signup
+[1;36m|[m * [33m58de3f1[m AUE
+[1;36m|[m * [33mcd6e530[m AUE
+[1;36m|[m * [33m82257ea[m Add IDs
+[1;36m|[m * [33m9545572[m Add IDs
+[1;36m|[m * [33m235aa1c[m api & ajax updated
+[1;36m|[m * [33m7573b43[m list added
+[1;36m|[m * [33m9f67e04[m eslint added
+[1;36m|[m * [33m06af561[m signup and router fixed
+[1;36m|[m * [33m699cd13[m build templates script added, error-label added
+[1;36m|[m * [33m85c1d18[m signup added
+[1;36m|[m * [33m4e229b4[m background logo, login and signup layout added
+[1;36m|[m * [33m2949ee3[m basic structure and router added
+[1;36m|[m[1;36m/[m  
+[1;36m|[m * [33maec2d3a[m[33m ([m[1;31morigin/pcf-56-make-ad-page[m[33m, [m[1;32mpcf-56-make-ad-page[m[33m)[m some buttons added
+[1;36m|[m * [33m6e095f9[m page of add
+[1;36m|[m [36m|[m * [33m1bf5f79[m[33m ([m[1;31morigin/pcf-43-create-server[m[33m)[m Delete public/static/.DS_Store
+[1;36m|[m [36m|[m * [33m988be5b[m Delete .DS_Store
+[1;36m|[m [36m|[m * [33m5574d68[m Delete public/.DS_Store
+[1;36m|[m [36m|[m[36m/[m  
+[1;36m|[m *   [33mf7983e9[m first view
+[1;36m|[m [1;32m|[m[1;33m\[m  
+[1;36m|[m [1;32m|[m * [33mab656c8[m template stolen
+[1;36m|[m * [1;33m|[m [33m7d55e42[m test site
+[1;36m|[m [1;33m|[m[1;33m/[m  
+[1;36m|[m * [33mcba63e5[m PCF-43: First structure
+[1;36m|[m[1;36m/[m  
+* [33mec4693f[m[33m ([m[1;31morigin/pcf-103-2[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Initial commit

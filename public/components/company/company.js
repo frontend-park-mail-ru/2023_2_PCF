@@ -61,9 +61,47 @@ export default class Company {
   }
 
   showSelectedAd(ad) {
-    const selectedAd = document.getElementById('selected-ad');
+    const selectedAd = document.getElementById("selected-ad");
     selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>`;
+
+    // Создаём кнопки "Изменить" и "Удалить" и добавляем их в DOM
+    const editButton = document.createElement("button");
+    editButton.className = "edit-button";
+    editButton.textContent = "Изменить";
+    editButton.addEventListener("click", () => {
+      // Здесь должна быть логика для редактирования объявления
+    });
+
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "delete-ad-button";
+    deleteButton.textContent = "Удалить";
+    deleteButton.addEventListener("click", () => {
+      // Здесь должна быть логика для удаления объявления
+      if (confirm("Вы уверены, что хотите удалить это объявление?")) {
+        const requestData = {
+          ad_id: ad.id,
+        };
+        Api.deleteAd(requestData) // Предполагаем, что у Api есть метод deleteAd
+          .then(() => {
+            alert("Объявление удалено");
+            context.userAds = context.userAds.filter(
+              (item) => item.id !== ad.id
+            );
+            this.renderTemplate();
+            selectedAd.innerHTML = "";
+          })
+          .catch((error) => {
+            console.error("Ошибка при удалении объявления:", error);
+          });
+      }
+    });
+
+    // Добавляем кнопки в DOM
+    selectedAd.appendChild(editButton);
+    selectedAd.appendChild(deleteButton);
   }
+
+
 }
 
 
