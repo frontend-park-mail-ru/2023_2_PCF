@@ -176,7 +176,7 @@ h1, h2, h3 {
     background-color: black;
     color: white;
     border: none;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     border-radius: 20px;
     width: 146px;
     height: 52px;
@@ -186,6 +186,24 @@ h1, h2, h3 {
 }
 
 .edit-button:hover {
+    background-color: #513bde;
+}
+
+.edit-button-unique {
+    background-color: black;
+    color: white;
+    border: none;
+    /* padding: 10px 20px; */
+    margin-right: 20px;
+    border-radius: 20px;
+    width: 165px;
+    height: 52px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.edit-button-unique:hover {
     background-color: #513bde;
 }
 
