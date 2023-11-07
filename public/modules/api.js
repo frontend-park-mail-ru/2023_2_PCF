@@ -57,6 +57,13 @@ export default class Api {
     return Ajax.get(BACKEND_URL + URLS.logout);
   }
 
+  static deleteAd(data) {
+    return Ajax.post(BACKEND_URL + '/addelete', data);
+  }
+
+  static addBalance(data) {
+    return Ajax.post(BACKEND_URL + '/balanceadd', data);
+  }
   static createAudience(data = {}) {
     return Ajax.post(BACKEND_URL + '/targetcreate', data)
   }

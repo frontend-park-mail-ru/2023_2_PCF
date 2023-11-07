@@ -33,7 +33,7 @@ export default class CreateAd {
         inputsValue[input.id] = input.value;
       }
     });
-    
+    console.log(inputsValue);
     if (err) {
       Api.createAd(inputsValue).then(
         (response) => {

@@ -37,7 +37,38 @@ export default class Company {
 
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['company.hbs'](context);
-    
+    const openBudgetModalBtn = document.querySelector('#budgetModalButton');
+const closeBudgetModalBtn = document.querySelector('#closeBudgetModal');
+const budgetModal = document.querySelector('#budgetModal');
+const addBalanceBtn = document.querySelector('#addBalanceBtn');
+const balanceInput = document.querySelector('#amount');
+
+openBudgetModalBtn.addEventListener('click', () => {
+  budgetModal.style.display = 'block';
+});
+
+closeBudgetModalBtn.addEventListener('click', () => {
+  budgetModal.style.display = 'none';
+});
+
+addBalanceBtn.addEventListener('click', () => {
+  const balance = parseFloat(balanceInput.value);
+  const requestData = { };
+  requestData['amount'] = balanceInput.value;
+  console.log(requestData);
+  if (!isNaN(balance) && balance > 0) {
+    Api.addBalance(requestData)
+      .then((data) => {
+        console.log('Баланс пополнен:', data);
+        budgetModal.style.display = 'none';
+      })
+      .catch((error) => {
+        console.error('Ошибка при пополнении баланса:', error);
+      });
+  } else {
+    alert('Введите корректную сумму для пополнения.');
+  }
+});
     // Очищаем существующий список объявлений перед добавлением новых
     const adList = document.getElementById('ad-list');
     adList.innerHTML = '';
@@ -76,6 +107,9 @@ export default class Company {
       } else if (target.classList.contains('edit-button-unique')) {
         console.log('Кнопка "Получить ссылку" нажата');
         this.getUniqueLinkFromBackend();
+      } else if (target.classList.contains('edit-button-delete')) {       
+        console.log('Кнопка "Удалить" нажата');
+        this.deleteAdFromBackend();
       }
     });
 
@@ -95,13 +129,30 @@ export default class Company {
       });
   }
 
+  deleteAdFromBackend() {
+    // Отправьте запрос на бэкэнд для получения уникальной ссылки
+    const req = {};
+    req['ad_id']=context.currentAd;
+    Api.deleteAd(req)
+      .then((data) => {
+        console.log('Удален ссылка получена:', data);
+        context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
+        alert(context.uniqueLink)
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении уникальной ссылки:', error);
+        alert('Not work')
+      });
+  }
+
   showSelectedAd(ad) {
     const selectedAd = document.getElementById('selected-ad');
     selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>                    
      <button class="edit-button-unique">Получить ссылку</button> 
 
-    <button class="edit-button-edid">Изменить</button> `;
+    <button class="edit-button-edid">Изменить</button>
+    <button class="edit-button-delete">Удалить</button> `;
   }
+
+  
 }
-
-

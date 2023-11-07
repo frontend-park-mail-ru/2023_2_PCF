@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="sidebar">
         <div class="logo-container">
@@ -18,7 +19,7 @@
                 </li>
                 <li>
                     <img src="../../static/img/free-icon-wallet-482541.png" alt="Иконка бюджета">
-                    <a href="#">Бюджет</a>
+                    <a href="#" id="budgetModalButton">Бюджет</a>
                 </li>
                 <li>
                     <img src="../../static/img/free-icon-people-3633274.png" alt="Иконка аудитории">
@@ -40,6 +41,17 @@
         </div>
     </div>
     <main class="main-content">
+
+        <div id="budgetModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBudgetModal">&times;</span>
+            <h2>Пополнение баланса</h2>
+            <p>Введите сумму для пополнения:</p>
+            <input type="number" id="amount">
+            <button id="addBalanceBtn">Пополнить</button>
+        </div>
+        </div>
+
         <div class="container">
             <div class="lefted-box">
                 <div class="adlayout">
