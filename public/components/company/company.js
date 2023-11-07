@@ -3,6 +3,7 @@ import Api from '../../modules/api.js';
 const context = {
   userAds: [],
   mainDescription: null,
+  uniqueLink: String,
 };
 
 export default class Company {
@@ -11,6 +12,13 @@ export default class Company {
   }
 
   render() {
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '../../static/css/company.css';
+    document.head.appendChild(link);
+    
     Api.getAdsList()
       .then((data) => {
         context.userAds = data; // Устанавливаем полученные объявления в context
@@ -19,12 +27,6 @@ export default class Company {
       .catch((error) => {
         console.error('Ошибка:', error);
       });
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/list.css';
-    document.head.appendChild(link);
   }
 
   renderTemplate() {
@@ -58,6 +60,25 @@ export default class Company {
         adList.appendChild(listItem);
       });
     }
+
+    const getLinkButton = document.querySelector('.edit-button-unique');
+    getLinkButton.addEventListener('click', () => {
+      console.log('Кнопка "Получить ссылку" нажата');
+      this.getUniqueLinkFromBackend();
+    });
+  }
+
+  getUniqueLinkFromBackend() {
+    // Отправьте запрос на бэкэнд для получения уникальной ссылки
+    Api.getUniqueLink()
+      .then((data) => {
+        context.uniqueLink = data.uniqueLink; // Устанавливаем полученную уникальную ссылку в context
+        this.renderTemplate(); // Перерендерьте интерфейс, чтобы отобразить новую уникальную ссылку
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении уникальной ссылки:', error);
+        alert('Not work')
+      });
   }
 
   showSelectedAd(ad) {
