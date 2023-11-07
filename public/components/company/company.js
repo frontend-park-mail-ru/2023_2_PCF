@@ -7,6 +7,11 @@ const context = {
   uniqueLink: String,
 };
 
+function editAd(adID) {
+  // Перенаправление на страницу редактирования с передачей параметра adID
+  window.location.href = `/editpage?id=${adID}`;
+}
+
 export default class Company {
   constructor(parent = document.body) {
     this.parent = parent;
@@ -32,7 +37,7 @@ export default class Company {
 
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['company.hbs'](context);
-
+    
     // Очищаем существующий список объявлений перед добавлением новых
     const adList = document.getElementById('ad-list');
     adList.innerHTML = '';
@@ -63,11 +68,17 @@ export default class Company {
       });
     }
 
-    const getLinkButton = document.querySelector('.edit-button-unique');
-    getLinkButton.addEventListener('click', () => {
-      console.log('Кнопка "Получить ссылку" нажата');
-      this.getUniqueLinkFromBackend();
+    this.parent.addEventListener('click', (event) => {
+      const target = event.target;
+      if (target.classList.contains('edit-button-edid')) {
+        console.log('Кнопка "Изменить" нажата');
+        editAd(context.currentAd);
+      } else if (target.classList.contains('edit-button-unique')) {
+        console.log('Кнопка "Получить ссылку" нажата');
+        this.getUniqueLinkFromBackend();
+      }
     });
+
   }
 
   getUniqueLinkFromBackend() {
@@ -89,7 +100,7 @@ export default class Company {
     selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>                    
      <button class="edit-button-unique">Получить ссылку</button> 
 
-    <button class="edit-button">Изменить</button> `;
+    <button class="edit-button-edid">Изменить</button> `;
   }
 }
 

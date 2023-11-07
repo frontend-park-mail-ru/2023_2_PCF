@@ -29,6 +29,10 @@ export default class Api {
     return Ajax.post(BACKEND_URL + '/ad', data);
   }
 
+  static editAd(data = {}) {
+    return Ajax.post(BACKEND_URL + '/adedit', data);
+  }
+
   static deleteAd(data = {}) {
     return Ajax.post(BACKEND_URL + '/ad', data);
   }
