@@ -13,7 +13,6 @@ export default class Ajax {
               status = response.status;
               const contentType = response.headers.get('content-type');
               if ( contentType && contentType.indexOf('application/json') !== -1 ) {
-                console.log("d")
                 return response.json();
               } else {
                 return Promise.resolve(null);

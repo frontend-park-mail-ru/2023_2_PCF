@@ -41,6 +41,10 @@ export default class Api {
     return Ajax.get({url:BACKEND_URL + '/balanceget'});
   }
 
+  static getUniqueLink(adid) {
+    return Ajax.get({url:BACKEND_URL + '/aduniquelink?id=' + adid});
+  }
+
   static logout() {
     return Ajax.get(BACKEND_URL + URLS.logout);
   }

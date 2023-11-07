@@ -3,6 +3,7 @@ import Api from '../../modules/api.js';
 const context = {
   userAds: [],
   mainDescription: null,
+  currentAd: 1,
   uniqueLink: String,
 };
 
@@ -56,6 +57,7 @@ export default class Company {
         listItem.textContent = ad.name;
         listItem.addEventListener('click', () => {
           this.showSelectedAd(ad);
+          context.currentAd = ad.id;
         });
         adList.appendChild(listItem);
       });
@@ -70,10 +72,11 @@ export default class Company {
 
   getUniqueLinkFromBackend() {
     // Отправьте запрос на бэкэнд для получения уникальной ссылки
-    Api.getUniqueLink()
+    Api.getUniqueLink(context.currentAd)
       .then((data) => {
-        context.uniqueLink = data.uniqueLink; // Устанавливаем полученную уникальную ссылку в context
-        this.renderTemplate(); // Перерендерьте интерфейс, чтобы отобразить новую уникальную ссылку
+        console.log('Уникальная ссылка получена:', data);
+        context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
+        alert(context.uniqueLink)
       })
       .catch((error) => {
         console.error('Ошибка при получении уникальной ссылки:', error);
@@ -83,7 +86,10 @@ export default class Company {
 
   showSelectedAd(ad) {
     const selectedAd = document.getElementById('selected-ad');
-    selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>`;
+    selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>                    
+     <button class="edit-button-unique">Получить ссылку</button> 
+
+    <button class="edit-button">Изменить</button> `;
   }
 }
 
