@@ -190,7 +190,7 @@ h1, h2, h3 {
 }
 
 .edit-button-unique {
-    background-color: black;
+    background-color: #513bde;
     color: white;
     border: none;
     /* padding: 10px 20px; */
@@ -204,7 +204,43 @@ h1, h2, h3 {
 }
 
 .edit-button-unique:hover {
+    background-color: #6351da;
+}
+
+.edit-button-edid {
     background-color: #513bde;
+    color: white;
+    border: none;
+    /* padding: 10px 20px; */
+    margin-right: 20px;
+    border-radius: 20px;
+    width: 165px;
+    height: 52px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.edit-button-edid:hover {
+    background-color: #6351da;
+}
+
+.edit-button-delete {
+    background-color: rgb(188, 51, 51);
+    color: white;
+    border: none;
+    /* padding: 10px 20px; */
+    margin-right: 20px;
+    border-radius: 20px;
+    width: 165px;
+    height: 52px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.edit-button-delete:hover {
+    background-color: #e86a6a;
 }
 
 /* Стили для .description */

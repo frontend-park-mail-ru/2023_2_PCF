@@ -38,10 +38,10 @@ export default class Company {
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['company.hbs'](context);
     const openBudgetModalBtn = document.querySelector('#budgetModalButton');
-const closeBudgetModalBtn = document.querySelector('#closeBudgetModal');
-const budgetModal = document.querySelector('#budgetModal');
-const addBalanceBtn = document.querySelector('#addBalanceBtn');
-const balanceInput = document.querySelector('#amount');
+    const closeBudgetModalBtn = document.querySelector('#closeBudgetModal');
+    const budgetModal = document.querySelector('#budgetModal');
+    const addBalanceBtn = document.querySelector('#addBalanceBtn');
+    const balanceInput = document.querySelector('#amount');
 
 openBudgetModalBtn.addEventListener('click', () => {
   budgetModal.style.display = 'block';
@@ -78,19 +78,15 @@ addBalanceBtn.addEventListener('click', () => {
       context.userAds.parsedJson.forEach((ad, index) => {
         const listItem = document.createElement('div');
         listItem.innerHTML = `                        
-        <a href="${ad.id}">
-        <div class="currentAdElContainer">
-            <div class="currentAdElInnerBox">
-                <div class="currentAdElTopDecoration"></div>
-                <div class="currentAdElInnerBackground"></div>
-            </div>
-            <div class="currentAdElDay">${ad.id}</div>
-            <div class="currentAdElWeekday">Wed</div>
-            <div class="currentAdElTitle">${ad.name}</div>
-            <div class="currentAdElSubtitle">{{ ${ad.description}}}</div>
+        <div class="currentAdElContainer info-card">
+            <div class="circle" style="background: #D3E7CA;"></div>
+            <div class="currentAdElWeekday tet-large">БТ</div>
+            <div class="currentAdElTitle text-title">${ad.name}</div>
+            <div class="currentAdElSubtitle text-status">${ad.description}</div>
+            <div class="status-dot" style="background: #949494;">
+            <div class="arrows"></div>
         </div>
-        </a>`
-        listItem.textContent = ad.name;
+        `
         listItem.addEventListener('click', () => {
           this.showSelectedAd(ad);
           context.currentAd = ad.id;
@@ -130,14 +126,12 @@ addBalanceBtn.addEventListener('click', () => {
   }
 
   deleteAdFromBackend() {
-    // Отправьте запрос на бэкэнд для получения уникальной ссылки
     const req = {};
     req['ad_id']=context.currentAd;
     Api.deleteAd(req)
       .then((data) => {
         console.log('Удален ссылка получена:', data);
-        context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
-        alert(context.uniqueLink)
+        location.reload();
       })
       .catch((error) => {
         console.error('Ошибка при получении уникальной ссылки:', error);
@@ -147,9 +141,8 @@ addBalanceBtn.addEventListener('click', () => {
 
   showSelectedAd(ad) {
     const selectedAd = document.getElementById('selected-ad');
-    selectedAd.innerHTML = `<h2>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p><a href="${ad.website_link}">Cайт</a>                    
-     <button class="edit-button-unique">Получить ссылку</button> 
-
+    selectedAd.innerHTML = `<h2 box-title>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p>                   
+    <button class="edit-button-unique">Получить ссылку</button>
     <button class="edit-button-edid">Изменить</button>
     <button class="edit-button-delete">Удалить</button> `;
   }
