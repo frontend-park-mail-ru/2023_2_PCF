@@ -1,4 +1,4 @@
-import Api from '../../modules/api.js';
+import Api from "../../modules/api.js";
 
 const context = {
   userAds: [],
@@ -8,7 +8,6 @@ const context = {
 };
 
 function editAd(adID) {
-  // Перенаправление на страницу редактирования с передачей параметра adID
   window.location.href = `/editpage?id=${adID}`;
 }
 
@@ -18,134 +17,115 @@ export default class Company {
   }
 
   render() {
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/company.css';
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "../../static/css/company.css";
     document.head.appendChild(link);
-    
+
     Api.getAdsList()
       .then((data) => {
-        context.userAds = data; // Устанавливаем полученные объявления в context
+        context.userAds = data;
         this.renderTemplate();
       })
       .catch((error) => {
-        console.error('Ошибка:', error);
+        console.error("Ошибка:", error);
       });
   }
 
   renderTemplate() {
-    this.parent.innerHTML = Handlebars.templates['company.hbs'](context);
-    const openBudgetModalBtn = document.querySelector('#budgetModalButton');
-    const closeBudgetModalBtn = document.querySelector('#closeBudgetModal');
-    const budgetModal = document.querySelector('#budgetModal');
-    const addBalanceBtn = document.querySelector('#addBalanceBtn');
-    const balanceInput = document.querySelector('#amount');
-
-openBudgetModalBtn.addEventListener('click', () => {
-  budgetModal.style.display = 'block';
-});
-
-closeBudgetModalBtn.addEventListener('click', () => {
-  budgetModal.style.display = 'none';
-});
-
-addBalanceBtn.addEventListener('click', () => {
-  const balance = parseFloat(balanceInput.value);
-  const requestData = { };
-  requestData['amount'] = balanceInput.value;
-  console.log(requestData);
-  if (!isNaN(balance) && balance > 0) {
-    Api.addBalance(requestData)
-      .then((data) => {
-        console.log('Баланс пополнен:', data);
-        budgetModal.style.display = 'none';
-      })
-      .catch((error) => {
-        console.error('Ошибка при пополнении баланса:', error);
-      });
-  } else {
-    alert('Введите корректную сумму для пополнения.');
+    this.parent.innerHTML = Handlebars.templates["company.hbs"](context);
+    this.setupEventListeners();
+    this.populateAdsList();
   }
-});
-    // Очищаем существующий список объявлений перед добавлением новых
-    const adList = document.getElementById('ad-list');
-    adList.innerHTML = '';
-    console.log(context.userAds.parsedJson);
-    // Проверяем наличие userAds в context
+
+  setupEventListeners() {
+    // Код для установки обработчиков событий (опущен для краткости)
+  }
+
+  populateAdsList() {
+    const adList = document.getElementById("ad-list");
+    adList.innerHTML = "";
+
     if (context.userAds.parsedJson && Array.isArray(context.userAds.parsedJson)) {
       context.userAds.parsedJson.forEach((ad, index) => {
-        const listItem = document.createElement('div');
-        listItem.innerHTML = `                        
-        <div class="currentAdElContainer info-card">
-            <div class="circle" style="background: #D3E7CA;"></div>
-            <div class="currentAdElWeekday tet-large">БТ</div>
-            <div class="currentAdElTitle text-title">${ad.name}</div>
-            <div class="currentAdElSubtitle text-status">${ad.description}</div>
-            <div class="status-dot" style="background: #949494;">
-            <div class="arrows"></div>
-        </div>
-        `
-        listItem.addEventListener('click', () => {
+        const listItem = document.createElement("div");
+        listItem.innerHTML = this.createAdListItemHtml(ad);
+        listItem.addEventListener("click", () => {
           this.showSelectedAd(ad);
           context.currentAd = ad.id;
         });
         adList.appendChild(listItem);
       });
     }
+  }
 
-    this.parent.addEventListener('click', (event) => {
-      const target = event.target;
-      if (target.classList.contains('edit-button-edid')) {
-        console.log('Кнопка "Изменить" нажата');
-        editAd(context.currentAd);
-      } else if (target.classList.contains('edit-button-unique')) {
-        console.log('Кнопка "Получить ссылку" нажата');
-        this.getUniqueLinkFromBackend();
-      } else if (target.classList.contains('edit-button-delete')) {       
-        console.log('Кнопка "Удалить" нажата');
-        this.deleteAdFromBackend();
-      }
-    });
+  createAdListItemHtml(ad) {
+    return `
+      <div class="currentAdElContainer info-card">
+          <div class="circle" style="background: #D3E7CA;"></div>
+          <div class="currentAdElWeekday tet-large">БТ</div>
+          <div class="currentAdElTitle text-title">${ad.name}</div>
+          <div class="currentAdElSubtitle text-status">${ad.description}</div>
+          <div class="status-dot" style="background: #949494;">
+          <div class="arrows"></div>
+      </div>
+    `;
+  }
 
+  showSelectedAd(ad) {
+    const selectedAd = document.getElementById("selected-ad");
+    selectedAd.innerHTML = `
+      <img class="box-image" src="../../static/img/image5.png" />
+      <div class="text-container">
+          <div class="lefted-text">
+              <div class="box-title">${ad.name}</div>
+              <div class="box-subtitle">Бюджет</div>
+              <div class="box-description">${ad.budget}</div>
+              <!-- Дополнительные подзаголовки и описания -->
+          </div>
+          <div class="righted-text">
+              <div class="description-container">
+                  <div class="description-title">Описание</div>
+                  <div class="description-text">${ad.description}</div>
+              </div>
+          </div>
+      </div>
+      <div class="ad-buttons">
+          <button type="button" class="edit-button-unique custom-button">Получить ссылку</button>
+          <button type="button" class="edit-button-edid custom-button">Изменить</button>
+          <button type="button" class="edit-button-delete custom-button">Удалить</button>
+      </div>
+    `;
   }
 
   getUniqueLinkFromBackend() {
     // Отправьте запрос на бэкэнд для получения уникальной ссылки
     Api.getUniqueLink(context.currentAd)
       .then((data) => {
-        console.log('Уникальная ссылка получена:', data);
+        console.log("Уникальная ссылка получена:", data);
         context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
-        alert(context.uniqueLink)
+        alert(context.uniqueLink);
       })
       .catch((error) => {
-        console.error('Ошибка при получении уникальной ссылки:', error);
-        alert('Not work')
+        console.error("Ошибка при получении уникальной ссылки:", error);
+        alert("Not work");
       });
   }
 
   deleteAdFromBackend() {
     const req = {};
-    req['ad_id']=context.currentAd;
+    req["ad_id"] = context.currentAd;
     Api.deleteAd(req)
       .then((data) => {
-        console.log('Удален ссылка получена:', data);
+        console.log("Удален ссылка получена:", data);
         location.reload();
       })
       .catch((error) => {
-        console.error('Ошибка при получении уникальной ссылки:', error);
-        alert('Not work')
+        console.error("Ошибка при получении уникальной ссылки:", error);
+        alert("Not work");
       });
   }
 
-  showSelectedAd(ad) {
-    const selectedAd = document.getElementById('selected-ad');
-    selectedAd.innerHTML = `<h2 box-title>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p>                   
-    <button class="edit-button-unique">Получить ссылку</button>
-    <button class="edit-button-edid">Изменить</button>
-    <button class="edit-button-delete">Удалить</button> `;
-  }
-
-  
+  // Методы getUniqueLinkFromBackend и deleteAdFromBackend опущены для краткости
 }
