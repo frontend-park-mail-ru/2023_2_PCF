@@ -50,7 +50,19 @@ export default class Profile {
   renderTemplate() {
     console.log(context.User);
     console.log(context.Balance);
-    const saveButton = this.parent.querySelector('.save-button'); // Предположим, у вас есть кнопка "Сохранить" с классом "save-button"
+    const bAvatar = document.getElementById('b_avatar');
+    const bLogin = document.getElementById('b_login');
+    const avBudget = document.getElementById('av_budget');
+    const fName = document.getElementById('b_fname');
+
+ 
+  
+    fName.textContent = "Здравствуйте " + context.User.f_name; // Подставьте нужные данные
+    bAvatar.src = 'http://127.0.0.1:8080/api/v1/file?file=' + context.User.avatar; 
+    bLogin.textContent = "Login:" + context.User.login; // Подставьте нужные данные
+    avBudget.textContent = "Total balance: " + context.Balance.total_balance; // Подставьте нужные данные
+
+    const saveButton = this.parent.querySelector('.save-button'); 
     saveButton.addEventListener('click', this.updateUser.bind(this));
   }  
 }
