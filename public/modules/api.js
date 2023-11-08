@@ -57,6 +57,10 @@ export default class Api {
     return Ajax.get(BACKEND_URL + URLS.logout);
   }
 
+  static getAd(adID) {
+    return Ajax.get({url:BACKEND_URL + '/adget?adID=' + adID});
+  }
+
   static deleteAd(data) {
     return Ajax.post(BACKEND_URL + '/addelete', data);
   }

@@ -1,6 +1,9 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
 
+const context = {
+  ad: [],
+}
 // Получить параметры URL
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -17,6 +20,18 @@ export default class EditPage {
   }
 
   render() {
+
+    Api.getAd(adID).then(
+    (data) => { 
+      console.log(data);
+      context.ad = data.parsedJson;
+      this.renderTemplate();
+    }
+    ).catch((error) => {
+      console.error('Ошибка:', error);
+    }
+    );
+
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
@@ -24,9 +39,19 @@ export default class EditPage {
     document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['editpage.hbs']();
     this.form = this.parent.getElementsByClassName('createad')[0];
+
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
+  }
+
+  renderTemplate() {
+    const inputs = this.form.querySelectorAll('input');
+    inputs.forEach((input) => {
+      if (input.id === 'name' || input.id === 'description' || input.id === 'website_link' || input.id === 'budget' || input.id === 'target_id') {
+        input.value = context.ad[input.id];
+      }
+    });
   }
 
   onSubmit(event) {
