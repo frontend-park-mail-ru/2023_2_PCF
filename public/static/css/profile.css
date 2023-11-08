@@ -409,25 +409,34 @@ h1, h2, h3 {
     word-wrap: break-word;
 }
 
-/* .button-container {
-    margin-top: 30px;
-    width: 100%;
+.save-button {
+    margin-top: 50px;
+    width: 230px;
     height: 70px;
-    background: rgba(108, 93, 210, 0.20);
+    background: #6C5DD2;
     border-radius: 25px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    display: inline-flex;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Istok Web';
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border: none;
 }
 
-.button-label {
-    color: rgba(255, 255, 255, 0.20);
-    font-size: 20px;
-    font-family: "Istok Web";
-    font-weight: 700;
-    word-wrap: break-word;
-} */
+.save-button:active, .save-button:focus {
+    background: rgba(108, 93, 210, 0.20);
+    transition: none;
+}
+.save-button:hover {
+    background: #8F7DE7; /* Изменяем цвет фона при наведении курсора */
+}
+
+
+
 
 .custom-button {
     width: 250px;
@@ -477,3 +486,24 @@ h1, h2, h3 {
     object-fit: cover; /* Сохраняем соотношение сторон и обрезаем изображение при несоответствии размеров */
   }
   
+  .photo-upload-label:hover .gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+    background:rgba(255, 255, 255, 0.5);;
+}
+
+.gradient-box {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 240px;
+    height: 170px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.file-input {
+    display: none; 
+}
