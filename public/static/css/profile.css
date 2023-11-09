@@ -335,7 +335,6 @@ h1, h2, h3 {
 }
 .wrapper-card {
     display: flex;
-    justify-content: space-between;
     margin-right: 150px;
 }
 .footer-container {
@@ -354,6 +353,7 @@ h1, h2, h3 {
 }
 
 .info-card {
+    margin-right: 10%;
     width: 202px;
     height: 176px;
     position: relative;

@@ -68,7 +68,9 @@ export default class Profile {
     fName.textContent = "Здравствуйте, " + context.User.f_name; // Подставьте нужные данные
     bAvatar.src = Api.getImage(context.User.avatar); 
     bLogin.textContent = context.User.login; // Подставьте нужные данные
-    avBudget.textContent = "Общий баланс: " + context.Balance.total_balance; // Подставьте нужные данные
+    avBudget.textContent = `Общий баланс:  ${context.Balance.total_balance}
+    Доступный баланс: ${context.Balance.total_balance - context.Balance.reserved_balance}
+    Зарезирвированный баланс: ${context.Balance.reserved_balance}` // Подставьте нужные данные
     company.textContent = decodeURIComponent(context.User.s_name);
     ads.textContent = "Всего объявлений: " + context.Ads.length;
 
