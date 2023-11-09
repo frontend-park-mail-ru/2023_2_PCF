@@ -1,6 +1,6 @@
 import Api from '../../modules/api.js';
-import URLS from '../../modules/api.js';
-import BACKEND_URL from '../../modules/api.js';
+import { BACKEND_URL } from '../../modules/api.js';
+import { URLS } from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
 
 
@@ -91,17 +91,17 @@ export default class Profile {
       });
     }
 
+    const form = document.querySelector('#updateUserForm');
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach((input) => {
+      if (input.id === 'f_name' || input.id === 'l_name' || input.id === 'login' || input.id === 'password' || input.id === 's_name') {
+        input.value = context.User[input.id];
+      }
+    });
+
     const saveButton = this.parent.querySelector('.save-button'); 
-    saveButton.addEventListener('click', this.updateUser.bind(this));
-  }  
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('#updateUserForm');
-  const errorLabel = form.querySelector('.error-label');
-
-  form.addEventListener('submit', async (event) => {
-      event.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+    saveButton.addEventListener('click', async (event) => {
+      event.preventDefault();
 
       // Создаем объект FormData для сбора данных из формы
       const formData = new FormData(form);
@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (avatarInput != null && avatarInput.files.length > 0) {
         formData.append('avatar', avatarInput.files[0]);
-      } else {
-        formData.append('avatar', "");
+      } else { 
+        formData.append('avatar', null);
       }
 
       if (name != null && name.value.length > 0) {
@@ -160,27 +160,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       try {
           // Отправляем запрос на сервер
-          const response = await fetch(BACKEND_URL + URLS. useredit, requestOptions);
+          const response = await fetch(BACKEND_URL + "/useredit", requestOptions);
 
           if (response.ok) {
               // Обработка успешного ответа от сервера
-              errorLabel.classList.add('hidden');
-              alert('Данные пользователя успешно обновлены.');
               location.reload();
           } else {
               // Обработка ошибки
               const errorData = await response.json();
-              errorLabel.textContent = errorData.message;
-              errorLabel.classList.remove('hidden');
           }
       } catch (error) {
-          // Обработка сетевой ошибки
-          errorLabel.textContent = 'Ошибка при отправке запроса: ' + error;
-          errorLabel.classList.remove('hidden');
+          console.log(error);
       }
   });
-});
-
+  }  
+}
 
 
 

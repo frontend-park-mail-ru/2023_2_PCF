@@ -98,8 +98,8 @@
 
                     
                     <div class="lefted-box">  
-                        <h1>Редактирование профиля</h1>
-                        <form id="updateUserForm" method="post" enctype="multipart/form-data">
+                    <h1>Редактирование профиля</h1>
+                    <form id="updateUserForm" method="post" enctype="multipart/form-data">
                             <label for="avatar" class="photo-upload-label" method="post" enctype="multipart/form-data">
                                <input type="file" id="avatar" class="file-input" name="avatar" accept="image/*">
                                <div class="gradient-box">Выберите фото</div>
@@ -110,17 +110,17 @@
                         </div> --}}
                             <div class="input-container">
                                 <!-- <label for="name1" class="input-label">Имя</label> -->
-                                <input type="text" name="f_name" class="input-field" placeholder="Введите ваше имя">
+                                <input type="text" id="f_name" class="input-field" placeholder="Введите ваше имя">
                             </div>
                         
                             <div class="input-container">
                              <!-- <label for="name2" class="input-label">Имя</label> -->
-                                <input type="text" name="l_name" class="input-field" placeholder="Введите вашу фамилию">
+                                <input type="text" id="l_name" class="input-field" placeholder="Введите вашу фамилию">
                             </div>
-                        
+                             
                             <div class="input-container">
                             <!-- <label for="name1" class="input-label">Имя</label> -->
-                                <input type="text" name="s_name" class="input-field" placeholder="Введите название компании">
+                                <input type="text" id="s_name" class="input-field" placeholder="Введите название компании">
                             </div>
 
                             <div class="input-container">
@@ -130,13 +130,13 @@
                         
                             <div class="input-container">
                             <!-- <label for="name4" class="input-label">Имя</label> -->
-                                <input type="text" id="password" class="input-field" placeholder="Пароль">
+                                <input type="password" id="password" class="input-field" placeholder="Пароль">
                             </div>
                     
                             <div class="button-container" style="margin-left:8px">
                                 <button class="save-button" type="submit">Сохранить</button>
                             </div>
-                        </form>
+                    </form>
                     </div>
                 </div>
         </main>

@@ -483,6 +483,7 @@ h1, h2, h3 {
     font-size: 14px;
     font-family: "Istok Web";
    font-weight: 400;
+   height: 100%;
     width: 100%; /* чтобы поле ввода занимало всю доступную ширину */
     padding-left: 5px; /* добавить немного отступа слева */
 }
