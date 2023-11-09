@@ -46,7 +46,7 @@ export default class Api {
   }
 
   static getImage(filename) {
-    return Ajax.get({url:BACKEND_URL + '/file?file' + filename});
+    return BACKEND_URL + '/file?file=' + filename;
   }
 
   static getUniqueLink(adid) {

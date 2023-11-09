@@ -24,6 +24,19 @@ h1, h2, h3 {
     right: 10px; 
 }
 
+.menu-element{
+    display: flex;
+    width: 100%;
+}
+
+.menu-element img {
+    margin-top: 6%;
+}
+
+.menu-element:hover {
+    background-color: #6C5DD2
+}
+
 .main-content {
     background-color: #1F2027;
 }
@@ -85,6 +98,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center; 
     margin-bottom: 20px;
+
 }
 
 .menu ul li img {
@@ -104,9 +118,6 @@ h1, h2, h3 {
 }
 
 
-.menu ul li a:hover {
-    background-color: #6C5DD2;
-}
 .menu p{
     color: #61636A;
     font-size: 10px;
@@ -211,10 +222,11 @@ h1, h2, h3 {
     color: #fff;
 }
 
-.text-container {
+.text-info {
     display: flex;
-    align-items: center;
+    align-self: start;
 }
+
 .image-container-logo {
     margin-right: 25px; 
 }
@@ -234,7 +246,8 @@ h1, h2, h3 {
     font-size: 16px;
 }
 .text-container h3{
-    font-size: 14px;
+    font-size: 16px;
+    color:#61636A;
 }
 
 .info-container {
@@ -254,7 +267,6 @@ h1, h2, h3 {
 
 .wrapper {
     display: flex;
-    justify-content: space-between;
 }
 
 .card {
@@ -391,9 +403,9 @@ h1, h2, h3 {
     width: 75%;
     height: 58px;
     padding: 4px 17px;
-    background: #565C6A;
+    background: #323644;
     border-radius: 20px;
-    border: 2px #6C5DD2 solid;
+    border: 2px #323644 solid;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
@@ -410,7 +422,7 @@ h1, h2, h3 {
 }
 
 .save-button {
-    margin-top: 50px;
+    margin-top: 40px;
     width: 230px;
     height: 70px;
     background: #6C5DD2;
@@ -470,38 +482,40 @@ h1, h2, h3 {
     outline: none; /* убрать стандартный контур при фокусе */
     font-size: 14px;
     font-family: "Istok Web";
-    font-weight: 400;
+   font-weight: 400;
     width: 100%; /* чтобы поле ввода занимало всю доступную ширину */
     padding-left: 5px; /* добавить немного отступа слева */
 }
 
 .input-field::placeholder {
     color: rgba(255, 255, 255, 0.5); /* цвет подсказки в поле ввода */
+    margin-top: 5px;
 }
 
 #b_avatar {
-    width: 70px;
-    height: 70px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%; /* Скругляем углы, чтобы сделать круглым */
     object-fit: cover; /* Сохраняем соотношение сторон и обрезаем изображение при несоответствии размеров */
   }
   
   .photo-upload-label:hover .gradient-box {
     border: 2px solid rgba(68, 44, 177, 0.5); 
-    background:rgba(255, 255, 255, 0.5);;
+    background:rgba(255, 255, 255, 0.5);
 }
 
 .gradient-box {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 240px;
+    margin-left: 10px;
+    width: 230px;
     height: 170px;
     background: linear-gradient(0deg, #323644 0%, #323644 100%);
     border-radius: 23px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     transition: 0.3s;
 }
 .file-input {
