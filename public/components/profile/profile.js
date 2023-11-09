@@ -1,4 +1,6 @@
 import Api from '../../modules/api.js';
+import URLS from '../../modules/api.js';
+import BACKEND_URL from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
 
 
@@ -112,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const password = form.querySelector('#password');
       const login = form.querySelector('#login');
 
-      if (avatarInput.files.length > 0) {
+      if (avatarInput != null && avatarInput.files.length > 0) {
         formData.append('avatar', avatarInput.files[0]);
       } else {
         formData.append('avatar', "");
@@ -158,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       try {
           // Отправляем запрос на сервер
-          const response = await fetch('http://127.0.0.1:8080/api/v1/useredit', requestOptions);
+          const response = await fetch(BACKEND_URL + URLS. useredit, requestOptions);
 
           if (response.ok) {
               // Обработка успешного ответа от сервера
