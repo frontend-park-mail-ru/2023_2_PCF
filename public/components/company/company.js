@@ -107,7 +107,7 @@ addBalanceBtn.addEventListener('click', () => {
         adList.appendChild(listItem);
       });
       if (context.userAds.parsedJson.length > 7) {
-        adList.style.maxHeight = '500px'; // или любая другая подходящая высота
+        adList.style.maxHeight = '800px'; 
         adList.style.overflowY = 'auto';
     } else {
         adList.style.maxHeight = 'none';

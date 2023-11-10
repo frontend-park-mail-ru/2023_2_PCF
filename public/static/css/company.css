@@ -575,3 +575,107 @@ h1, h2, h3 {
     max-height: 500px; 
     overflow-y: auto; /* Включает вертикальную прокрутку, если содержимое выходит за пределы */
 }
+.outer-container {
+    display: none; /* скрыть по умолчанию */
+    width: 380px;
+    height: 272px;
+    z-index: 1;
+    position: fixed;
+    /* z-index: 999; */
+    top: 50%; /* центрирование по вертикали */
+    left: 50%; /* центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* точное центрирование */
+}
+.background-block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #242832;
+    border-radius: 34px;
+}
+.header-text, .currency-text, .input-text, .button-text {
+    position: absolute;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+    word-wrap: break-word;
+}
+
+.header-text {
+    left: 88px;
+    top: 19px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.button {
+    width: 143px;
+    height: 50px;
+    padding: 10px;
+    position: absolute;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.replenish-button {
+    background: #AD4343;
+    left: 28px;
+    top: 177px;
+    margin-right: 20px;
+}
+.replenish-cancel-button {
+    background: #131517;
+    left: 185px;
+    top: 176px;
+    margin-left: 20px;
+}
+
+.currency-text {
+    margin-left: 40px;
+    left: 297px;
+    top: 109px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.input-container {
+    width: 263px;
+    height: 70px;
+    padding: 8px 17px;
+    position: absolute;
+    background: #323644;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    gap: 10px;
+    left: 28px;
+    top: 74px;
+}
+.input-field {
+    width: 100%; /* Занимает всю доступную ширину в контейнере */
+    height: 100%; /* Занимает всю доступную высоту в контейнере */
+    border: none;
+    background: transparent; /* Прозрачный фон */
+    color: white; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    border-radius: 20px; /* Скругление углов */
+    padding: 0 10px; /* Небольшой отступ слева и справа */
+}
+
+
+.input-field:focus {
+    outline: none;
+   
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Скрывает кнопки увеличения/уменьшения в Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
