@@ -1,3 +1,5 @@
+import Api from './api.js';
+
 export default class Router {
   constructor(routes = new Map) {
     this.routes = routes;

@@ -83,7 +83,7 @@ export default class Profile {
         const card = document.createElement('div');
         card.classList.add('info-card');
         card.innerHTML = `                      
-          <img class="card-image" />
+          <img class="card-image" src="${Api.getImage(ad.image_link)}"/>
           <div class="card-title">${ad.name}</div>
           <div class="card-subtitle">Бюджет: ${ad.budget}</div>
         `;

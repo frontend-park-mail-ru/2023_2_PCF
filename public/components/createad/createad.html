@@ -56,8 +56,6 @@
         </div>
         <main class="main-content">
             <div class="container">
-
-    
                 <div class="centered-box">
                     <div class="left-block">
                     <div class="container xlarge">
@@ -79,21 +77,20 @@
                     </div>
                     <div class="flex-row">
                         <div class="container large">
-                            <input type="text" class="text-input" placeholder="Медиафайлы">
+                            <input type="text" class="text-input" placeholder="Медиафайлы" readonly>
                         </div>
-                        <button class="button-container">
+                        <div class="button-container">
                             <div class="cross-icon">
                                 <div class="horizontal-line"></div>
                                 <div class="vertical-line"></div>
                             </div>
-                            <div class="button-text">Загрузить</div>
-                        </button>
+                            <input type="file" class="button-text" accept="image/*">Загрузить</input>
+                        </div>
                     </div>
                 </div>
                     <div class="right-block">
                     <div class="label">Предпросмотр:</div>
                     <label for="photoUpload" class="photo-upload-label">
-                        <input type="file" id="photoUpload" class="file-input" accept="image/*">
                         <div class="gradient-box"></div>
                     </label>                        
                     <div class="label">Название:</div>
@@ -104,7 +101,7 @@
                             <div class="horizontal"></div>
                             <div class="vertical"></div>
                         </div>
-                        <div class="bold-label">Создать</div>
+                        <div class="bold-label" id="submit">Создать</div>
                     </button>
                 </div>
                 

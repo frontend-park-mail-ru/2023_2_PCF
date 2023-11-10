@@ -28,6 +28,10 @@ h1, h2, h3 {
     background-color: #1F2027;
 }
 
+.flex-row {
+    display: flex;
+}
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -192,13 +196,15 @@ h1, h2, h3 {
 }
 
 .button-container {
+    margin-left: 20px;
+    margin-top: 2.5%;
     display: flex;
     align-items: center;
     background: #131517;
     border-radius: 20px;
     padding: 10px;
     width: 152px;
-    height: 70px;
+    height: 61px;
     border: none;
     cursor: pointer;
     justify-content: center;
@@ -302,19 +308,16 @@ h1, h2, h3 {
     border: 2px solid rgba(68, 44, 177, 0.5); 
 }
 .action-box {
-    width: 262px;
-    height: 52px;
+    width: 200px;
+    height: 70px;
     padding: 10px;
     background: #131517;
     border-radius: 20px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    margin-right: 5%;
     gap: 10px;
-    position: absolute;
-    bottom: 50px; 
-    left: 50%; 
-    transform: translateX(-50%);
     border: none; /* Убрать стандартные стили кнопки */
     cursor: pointer; /* Сделать курсор рукой */
     font-family: inherit; /* Унаследовать шрифт */
@@ -323,6 +326,36 @@ h1, h2, h3 {
 }
 .action-box:hover {
     background: #6C5DD2;
+}
+
+.box {
+    margin-left: 35%;
+    margin-top: 70%;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+}
+
+.сancel-box {
+    display: flex;
+    width: 200px;
+    height: 70px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #AD4343;
+    border: none; /* Убрать стандартные стили кнопки */
+    cursor: pointer; /* Сделать курсор рукой */
+    font-family: inherit; /* Унаследовать шрифт */
+    color: inherit; /* Унаследовать цвет текста */
+    font-size: inherit; /* Унаследовать размер шрифта */
+}
+
+.cancel-box:hover {
+    background-color: #c66a6a;
 }
 
 .cross-icon {
@@ -379,5 +412,72 @@ h1, h2, h3 {
     
 }
 
+.preview-lable-title {
+    overflow: hidden; /* скрывает содержимое, выходящее за пределы */
+    word-wrap: break-word; /* переносит слова на новую строку */
+    white-space: normal;
+    width: 100%;
+    height: 20%;
+}
+
+.preview-label-description{
+    overflow: hidden; /* скрывает содержимое, выходящее за пределы */
+    word-wrap: break-word; /* переносит слова на новую строку */
+    white-space: normal;
+    width: 450px;
+    height: 270px;
+}
 
 
+/* Стилизация кнопки */
+.dropbtn {
+    background-color: #4F4F4F; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    padding: 16px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убрать границу */
+    cursor: pointer; /* Курсор в виде указателя */
+    width: 100%; /* Ширина кнопки */
+    text-align: left; /* Выравнивание текста по левому краю */
+    box-sizing: border-box; /* Чтобы padding не влиял на ширину кнопки */
+  }
+  
+  /* Контейнер для содержимого выпадающего меню */
+  .dropdown {
+    position: relative; /* Относительное позиционирование */
+    display: inline-block; /* Блок-строчный элемент */
+  }
+  
+  /* Содержимое выпадающего меню */
+  .dropdown-content {
+    display: none; /* Скрыть содержимое */
+    position: absolute; /* Абсолютное позиционирование */
+    background-color: #2E2E2E; /* Цвет фона */
+    min-width: 160px; /* Минимальная ширина */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Тень */
+    z-index: 1; /* Выше других элементов */
+  }
+  
+  /* Ссылки внутри выпадающего меню */
+  .dropdown-content a {
+    color: white; /* Цвет текста */
+    padding: 12px 16px; /* Внутренние отступы */
+    text-decoration: none; /* Убрать подчеркивание текста */
+    display: block; /* Блочный элемент */
+  }
+  
+  /* Стилизация активного элемента */
+  .dropdown-content a.active {
+    background-color: #5757FF; /* Цвет фона активного элемента */
+  }
+  
+  /* Показать выпадающее меню при наведении */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Стилизация кнопки при наведении */
+  .dropdown:hover .dropbtn {
+    background-color: #3E3E3E;
+  }
+  

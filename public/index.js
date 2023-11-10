@@ -1,6 +1,6 @@
 'use strict';
 
-
+import Api from './modules/api.js';
 import Router from './modules/router.js';
 import Login from './components/login/login.js';
 import Signup from './components/signup/signup.js';
@@ -29,7 +29,6 @@ const notfound = new NotFound(document.getElementById('root'), () => router.go('
 const notfound_audience = new NotFoundAudience(document.getElementById('root'), () => router.go('/notfound_audience'));
 const profile = new Profile(document.getElementById('root'), () => router.go('/profile'));
 
-
 router.add('/login', () => (login.render()));
 router.add('/signup', () => (signup.render()));
 router.add('/list', () => (list.render()));
@@ -41,5 +40,7 @@ router.add('/editpage', () => (editpage.render()));
 router.add('/notfound', () => (notfound.render()));
 router.add('/notfound_audience', () => (notfound_audience.render()));
 router.add('/profile', () => (profile.render()));
+router.add('/', () => (company.render()));
+
 
 router.start();
