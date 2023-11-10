@@ -41,8 +41,23 @@
         </div>
     </div>
     <main class="main-content">
-
-        <div id="budgetModal" class="modal">
+    <div id="budgetModal" class="outer-container">
+        <div class="background-block"></div>
+        <div class="header-text">Пополнить баланс:</div>
+        <div class="button replenish-button">
+            {{!-- <div class="button-text">Пополнить</div> --}}
+            <div id="addBalanceBtn" class="button-text">Пополнить</div>
+        </div>
+        <div class="button replenish-cancel-button">
+            <div class="button-text" id="closeBudgetModal">Отмена</div>
+        </div>
+        <div class="currency-text">Руб.</div>
+        <div class="input-container">
+            <input type="number" id="amount" class="input-field" placeholder="Сумма">
+        </div>
+    </div>
+    
+        {{!-- <div id="budgetModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeBudgetModal">&times;</span>
             <h2>Пополнение баланса</h2>
@@ -50,29 +65,31 @@
             <input type="number" id="amount">
             <button id="addBalanceBtn">Пополнить</button>
         </div>
-        </div>
+        </div> --}}
 
         <div class="container">
             <div class="lefted-box">
                 <div class="adlayout">
                     <div id="ad-list">
                     </div>
-                        <a href="/createad"><button class="edit-button">Создать</button></a>
+                        <div class="button-container">
+                            <a href="/createad">
+                                <button class="edit-button">Создать</button>
+                            </a>
+                        </div>
                     <div>
 
                     </div>
                 </div>
             </div>
 
-                <div class="centered-box">
-                <div class="left-panel">
-                </div>
-                <div class="right-panel">
-                    <div id="selected-ad">
-                        Здесь пока ничего нет:(
-                    </div>
+                <div class="centered-box" id="selected-ad">
 
-                </div>
+                    
+                        
+                        Здесь пока ничего нет:(
+                    
+
                 </div>
                   
 

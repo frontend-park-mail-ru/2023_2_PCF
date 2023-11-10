@@ -149,7 +149,8 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    /* justify-content: start; */
+    justify-content: center;
     border-radius: 35px;
     height: 940px;
     text-align: center;
@@ -172,17 +173,27 @@ h1, h2, h3 {
     color: #fff;
 }
 
+.adlayout {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Добавьте это, чтобы .adlayout занимал всю высоту .lefted-box */
+}
+
+.button-container {
+    margin-top: auto; /* Это прибьет .button-container к низу .adlayout */
+    width: 100%; /* Для соответствия ширине контейнера */
+}
+
 .edit-button {
     background-color: black;
     color: white;
     border: none;
-    /* padding: 10px 20px; */
     border-radius: 20px;
     width: 146px;
     height: 52px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px; 
+    margin: 10px auto; /* Центрирование кнопки в .button-container */
 }
 
 .edit-button:hover {
@@ -286,9 +297,19 @@ h1, h2, h3 {
     height: 50px;
     position: relative;
     margin-bottom: 40px;
+    margin-left: 0; 
+    padding: 0;
 }
 
+.arrow-svg {
+    position: absolute;
+    left: 0; /* Вы можете настроить это значение, чтобы подвинуть SVG к 'circle' */
+    top: 50%;
+    transform: translateY(-50%);
+}
 .circle {
+    /* position: relative; */
+    /* z-index: 1; */
     width: 57px;
     height: 50px;
     left: 30px;
@@ -349,9 +370,21 @@ h1, h2, h3 {
     position: absolute;
     border-radius: 9999px;
 }
+.container-block{
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 0;
+}
+.container-block svg {
+    flex-shrink: 0; /* Предотвратить сжатие SVG */
+    margin-right: 10px; /* Добавить небольшой отступ справа, если необходимо */
+}
 
 .info-card:hover {
     background-color: #705FCF; 
+    width: 130%;
+    border-radius: 15px;
 }
 .info-card {
     cursor: pointer; 
@@ -456,3 +489,193 @@ h1, h2, h3 {
     cursor: pointer;
   }
   
+
+
+
+.box-title, .box-subtitle, .box-description {
+    color: white;
+    font-family: Istok Web;
+    word-wrap: break-word;
+    margin-left: 10px;
+}
+
+.box-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.box-subtitle {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.box-description {
+    font-size: 14px;
+    font-weight: 400;
+}
+.description-title {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+    /* text-align: center;  */
+    word-wrap: break-word;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+}
+.description-text {
+    width: 515px;
+    height: 352px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    /* text-align: justify;  */
+    /* margin-top: 20px; */
+}
+.container-selected{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+    height: 100%;
+}
+.box-image {
+    /* top: 0; */
+    /* flex: 1; */
+    width: 100%; /* Изображение занимает 90% ширины своего контейнера */
+    height: 100%;
+    border-radius: 23px;
+}
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px; /* Расстояние от изображения до блоков ниже */
+}
+.left, .right {
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+}
+.buttons {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Расстояние от блоков ниже до кнопок */
+}
+.edit-button-unique, .edit-button-edid, .edit-button-delete {
+    margin: 0 10px; /* Расстояние между кнопками */
+}
+#ad-list {
+    max-height: 500px; 
+    overflow-y: auto; /* Включает вертикальную прокрутку, если содержимое выходит за пределы */
+}
+.outer-container {
+    display: none; /* скрыть по умолчанию */
+    width: 380px;
+    height: 272px;
+    z-index: 1;
+    position: fixed;
+    /* z-index: 999; */
+    top: 50%; /* центрирование по вертикали */
+    left: 50%; /* центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* точное центрирование */
+}
+.background-block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #242832;
+    border-radius: 34px;
+}
+.header-text, .currency-text, .input-text, .button-text {
+    position: absolute;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+    word-wrap: break-word;
+}
+
+.header-text {
+    left: 88px;
+    top: 19px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.button {
+    width: 143px;
+    height: 50px;
+    padding: 10px;
+    position: absolute;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.replenish-button {
+    background: #AD4343;
+    left: 28px;
+    top: 177px;
+    margin-right: 20px;
+}
+.replenish-cancel-button {
+    background: #131517;
+    left: 185px;
+    top: 176px;
+    margin-left: 20px;
+}
+
+.currency-text {
+    margin-left: 40px;
+    left: 297px;
+    top: 109px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.input-container {
+    width: 263px;
+    height: 70px;
+    padding: 8px 17px;
+    position: absolute;
+    background: #323644;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    gap: 10px;
+    left: 28px;
+    top: 74px;
+}
+.input-field {
+    width: 100%; /* Занимает всю доступную ширину в контейнере */
+    height: 100%; /* Занимает всю доступную высоту в контейнере */
+    border: none;
+    background: transparent; /* Прозрачный фон */
+    color: white; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    border-radius: 20px; /* Скругление углов */
+    padding: 0 10px; /* Небольшой отступ слева и справа */
+}
+
+
+.input-field:focus {
+    outline: none;
+   
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Скрывает кнопки увеличения/уменьшения в Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

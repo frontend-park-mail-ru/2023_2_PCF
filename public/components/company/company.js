@@ -77,10 +77,23 @@ addBalanceBtn.addEventListener('click', () => {
     if (context.userAds.parsedJson && Array.isArray(context.userAds.parsedJson)) {
       context.userAds.parsedJson.forEach((ad, index) => {
         const listItem = document.createElement('div');
-        listItem.innerHTML = `                        
+        listItem.innerHTML = ` 
+                      
         <div class="currentAdElContainer info-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="14" viewBox="0 0 23 14" fill="none" class="arrow-svg">
+        <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5.5 2.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5.5 2.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17.5 11.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17.5 11.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17.5 2.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17.5 2.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>    
             <div class="circle" style="background: #D3E7CA;"></div>
-            <div class="currentAdElWeekday tet-large">БТ</div>
+            <div class="currentAdElWeekday text-large">БТ</div>
             <div class="currentAdElTitle text-title">${ad.name}</div>
             <div class="currentAdElSubtitle text-status">${ad.description}</div>
             <div class="status-dot" style="background: #949494;">
@@ -93,6 +106,13 @@ addBalanceBtn.addEventListener('click', () => {
         });
         adList.appendChild(listItem);
       });
+      if (context.userAds.parsedJson.length > 7) {
+        adList.style.maxHeight = '800px'; 
+        adList.style.overflowY = 'auto';
+    } else {
+        adList.style.maxHeight = 'none';
+        adList.style.overflowY = 'hidden';
+    }
     }
 
     this.parent.addEventListener('click', (event) => {
@@ -138,13 +158,32 @@ addBalanceBtn.addEventListener('click', () => {
         alert('Not work')
       });
   }
-
   showSelectedAd(ad) {
     const selectedAd = document.getElementById('selected-ad');
-    selectedAd.innerHTML = `<h2 box-title>${ad.name}</h2><p>${ad.description}</p><p>${ad.budget}</p>                   
-    <button class="edit-button-unique">Получить ссылку</button>
-    <button class="edit-button-edid">Изменить</button>
-    <button class="edit-button-delete">Удалить</button> `;
+    selectedAd.innerHTML = `
+    <div class="container-selected">
+    <img id="photo_company" class="box-image" src="image.jpg" alt="Company Photo">
+    <div class="content">
+        <div class="left">
+          <div class="box-title">Название</div>
+            <div class="box-title">${ad.name}</div>
+            <div class="box-subtitle">Бюджет</div>
+            <div class="box-description">${ad.budget}</div>
+        </div>
+        <div class="right">
+            <div class="description-title">Описание</div>
+            <div class="description-text">${ad.description}</div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="edit-button-unique">Получить ссылку</button>
+        <button class="edit-button-edid">Изменить</button>
+        <button class="edit-button-delete">Удалить</button>
+    </div>
+</div> `;
+    const photoCompany = document.getElementById('photo_company');
+    photoCompany.src = Api.getImage(ad.image_link)
+
   }
 
   
