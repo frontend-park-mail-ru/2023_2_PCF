@@ -1,5 +1,6 @@
 
 body {
+    z-index: 0;
     font-family: 'Istok Web', sans-serif;
 }
 html, body {
@@ -130,17 +131,15 @@ h1, h2, h3 {
 }
 
 .lefted-box {
+    width: 25%;
     max-width: 100%;
-    flex: 0 0 20%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: start;
     border-radius: 35px;
-    height: 940px;
+    height: 980px;
     text-align: center;
     background-color: #242832;
-    padding: 33px 20px 20px 20px;
 }
 
 
@@ -153,7 +152,6 @@ h1, h2, h3 {
     justify-content: center;
     border-radius: 35px;
     height: 940px;
-    text-align: center;
     background-color: #242832;
     padding: 20px; /* Добавляем отступы внутри блока */
 }
@@ -185,7 +183,7 @@ h1, h2, h3 {
 }
 
 .edit-button {
-    background-color: black;
+    background-color: #131517;
     color: white;
     border: none;
     border-radius: 20px;
@@ -197,11 +195,11 @@ h1, h2, h3 {
 }
 
 .edit-button:hover {
-    background-color: #513bde;
+    background-color: #2d2d2d;
 }
 
 .edit-button-unique {
-    background-color: #513bde;
+    background-color: #131517;
     color: white;
     border: none;
     /* padding: 10px 20px; */
@@ -215,11 +213,11 @@ h1, h2, h3 {
 }
 
 .edit-button-unique:hover {
-    background-color: #6351da;
+    background-color: #2d2d2d;
 }
 
 .edit-button-edid {
-    background-color: #513bde;
+    background-color: #131517;
     color: white;
     border: none;
     /* padding: 10px 20px; */
@@ -233,7 +231,7 @@ h1, h2, h3 {
 }
 
 .edit-button-edid:hover {
-    background-color: #6351da;
+    background-color: #2d2d2d;
 }
 
 .edit-button-delete {
@@ -293,7 +291,6 @@ h1, h2, h3 {
 }
 
 .info-card {
-    width: 100%;
     height: 50px;
     position: relative;
     margin-bottom: 40px;
@@ -382,8 +379,9 @@ h1, h2, h3 {
 }
 
 .info-card:hover {
-    background-color: #705FCF; 
-    width: 130%;
+    background-color: #7f73c6; 
+    width: 80%;
+    padding: 2%;;
     border-radius: 15px;
 }
 .info-card {
@@ -392,7 +390,7 @@ h1, h2, h3 {
 }
 
 .info-card:active {
-    transform: scale(0.95); 
+    background-color: #705FCF; 
 }
 
 .custom-button {
@@ -521,12 +519,12 @@ h1, h2, h3 {
     font-weight: 700;
     /* text-align: center;  */
     word-wrap: break-word;
-    margin-top: 40px;
+    margin-top: 15%;
     margin-bottom: 10px;
 
 }
 .description-text {
-    width: 515px;
+    width: 400px;
     height: 352px;
     color: white;
     font-size: 14px;
@@ -539,7 +537,6 @@ h1, h2, h3 {
 .container-selected{
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%; 
     height: 100%;
 }
@@ -553,20 +550,27 @@ h1, h2, h3 {
 .content {
     flex: 1;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
     margin-top: 20px; /* Расстояние от изображения до блоков ниже */
 }
+
 .left, .right {
     display: flex;
     flex: 0;
     flex-direction: column;
 }
+
+.left {
+    margin-right: 5%;
+    width: 45%;
+}
+
+.right {
+    width: 50%;
+}
 .buttons {
     flex: 1;
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Расстояние от блоков ниже до кнопок */
 }
 .edit-button-unique, .edit-button-edid, .edit-button-delete {
     margin: 0 10px; /* Расстояние между кнопками */
@@ -679,3 +683,21 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+#photo_company {
+    height: 420px;
+}
+
+.currentAdElContainer {
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.info-card-items{
+    position: relative;
+    margin-left: 5%;
+}
+
+.blurred-background {
+    backdrop-filter: blur(5px);
+  }

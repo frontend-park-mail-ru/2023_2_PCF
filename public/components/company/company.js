@@ -43,61 +43,77 @@ export default class Company {
     const addBalanceBtn = document.querySelector('#addBalanceBtn');
     const balanceInput = document.querySelector('#amount');
 
-openBudgetModalBtn.addEventListener('click', () => {
-  budgetModal.style.display = 'block';
-});
+    openBudgetModalBtn.addEventListener('click', () => {
+      budgetModal.style.display = 'block';
+    });
 
-closeBudgetModalBtn.addEventListener('click', () => {
-  budgetModal.style.display = 'none';
-});
+    closeBudgetModalBtn.addEventListener('click', () => {
+      budgetModal.style.display = 'none';
+    });
 
-addBalanceBtn.addEventListener('click', () => {
-  const balance = parseFloat(balanceInput.value);
-  const requestData = { };
-  requestData['amount'] = balanceInput.value;
-  console.log(requestData);
-  if (!isNaN(balance) && balance > 0) {
-    Api.addBalance(requestData)
-      .then((data) => {
-        console.log('Баланс пополнен:', data);
-        budgetModal.style.display = 'none';
-      })
-      .catch((error) => {
-        console.error('Ошибка при пополнении баланса:', error);
-      });
-  } else {
-    alert('Введите корректную сумму для пополнения.');
-  }
-});
+    addBalanceBtn.addEventListener('click', () => {
+      document.body.classList.add('blurred-background');
+      const balance = parseFloat(balanceInput.value);
+      const requestData = { };
+      requestData['amount'] = balanceInput.value;
+      console.log(requestData);
+      if (!isNaN(balance) && balance > 0) {
+        Api.addBalance(requestData)
+          .then((data) => {
+            console.log('Баланс пополнен:', data);
+            budgetModal.style.display = 'none';
+          })
+          .catch((error) => {
+            console.error('Ошибка при пополнении баланса:', error);
+          });
+      } else {
+        alert('Введите корректную сумму для пополнения.');
+      }
+    });
     // Очищаем существующий список объявлений перед добавлением новых
     const adList = document.getElementById('ad-list');
     adList.innerHTML = '';
     console.log(context.userAds.parsedJson);
     // Проверяем наличие userAds в context
     if (context.userAds.parsedJson && Array.isArray(context.userAds.parsedJson)) {
+      let nameString = '';
+      let descrString = '';
       context.userAds.parsedJson.forEach((ad, index) => {
+        if (ad.name.length > 15) {
+          nameString = ad.name.substring(0, 15);
+        } else {
+          nameString = ad.name;
+        }
+
+        if (ad.description.length > 15) {
+          descrString = ad.description.substring(0, 15);
+        } else {
+          descrString = ad.description
+        }
+
         const listItem = document.createElement('div');
         listItem.innerHTML = ` 
-                      
         <div class="currentAdElContainer info-card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="14" viewBox="0 0 23 14" fill="none" class="arrow-svg">
-        <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M5.5 2.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M5.5 2.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M17.5 11.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M17.5 11.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M17.5 2.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M17.5 2.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        </svg>    
-            <div class="circle" style="background: #D3E7CA;"></div>
-            <div class="currentAdElWeekday text-large">БТ</div>
-            <div class="currentAdElTitle text-title">${ad.name}</div>
-            <div class="currentAdElSubtitle text-status">${ad.description}</div>
-            <div class="status-dot" style="background: #949494;">
-            <div class="arrows"></div>
+            <svg style="margin-left: 5%" xmlns="http://www.w3.org/2000/svg" width="23" height="14" viewBox="0 0 23 14" fill="none" class="arrow-svg">
+            <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5.5 2.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5.5 2.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17.5 11.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17.5 11.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17.5 2.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17.5 2.5L22 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>    
+            <div class="info-card-items">
+              <div class="circle" style="background: #D3E7CA;"></div>
+              <div class="currentAdElWeekday text-large">БТ</div>
+              <div class="currentAdElTitle text-title">${nameString}</div>
+              <div class="currentAdElSubtitle text-status">${descrString}</div>
+              <div class="status-dot" style="background: #949494;">
+              <div class="arrows"></div>
+            </div>
         </div>
         `
         listItem.addEventListener('click', () => {
@@ -107,7 +123,7 @@ addBalanceBtn.addEventListener('click', () => {
         adList.appendChild(listItem);
       });
       if (context.userAds.parsedJson.length > 7) {
-        adList.style.maxHeight = '800px'; 
+        adList.style.maxHeight = '1000px'; 
         adList.style.overflowY = 'auto';
     } else {
         adList.style.maxHeight = 'none';
@@ -165,10 +181,13 @@ addBalanceBtn.addEventListener('click', () => {
     <img id="photo_company" class="box-image" src="image.jpg" alt="Company Photo">
     <div class="content">
         <div class="left">
-          <div class="box-title">Название</div>
             <div class="box-title">${ad.name}</div>
             <div class="box-subtitle">Бюджет</div>
             <div class="box-description">${ad.budget}</div>
+            <div class="box-subtitle">Аудитория</div>
+            <div class="box-description">Аудитория 1</div>
+            <div class="box-subtitle">Сайт</div>
+            <div class="box-description">${ad.website_link}</div>
         </div>
         <div class="right">
             <div class="description-title">Описание</div>
