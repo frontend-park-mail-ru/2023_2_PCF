@@ -17,7 +17,7 @@ export default class Login {
     link.href = '../../static/css/login.css';
     document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['login.hbs']();
-    this.form = this.parent.getElementsByClassName('login')[0];
+    this.form = this.parent.getElementsByClassName('login-form')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('login-form__error-button')[0];
     this.errorLabel.classList.add('login-form__error-button--hidden')

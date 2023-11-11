@@ -16,10 +16,10 @@ export default class Signup {
     link.href = '../../static/css/signup.css';
     document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['signup.hbs']();
-    this.form = this.parent.getElementsByClassName('signup')[0];
+    this.form = this.parent.getElementsByClassName('signup-form')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
-    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
-    this.errorLabel.classList.add('hidden');
+    this.errorLabel = this.form.getElementsByClassName('signup-form__error-label')[0];
+    this.errorLabel.classList.add('signup-form__error-label--hidden')
   }
 
   onSubmit(event) {
@@ -70,8 +70,8 @@ export default class Signup {
   }
 
   showError(message) {
-    this.errorLabel.classList.remove('hidden')
-    this.errorLabel.classList.add('visible')
+    this.errorLabel.classList.remove('signup-form__error-label--hidden')
+    this.errorLabel.classList.add('signup-form__error-label--visible')
     this.errorLabel.innerHTML = message;
   }
 }

@@ -9,17 +9,7 @@ body {
     background-color: #f4f4f4;
 }
 
-.name-fields {
-    display: flex;
-    justify-content: space-between;
-}
-
-.name-fields input {
-    flex: 1; 
-    margin-right: 25px; 
-}
-
-.signup {
+.signup-form {
     background-color: #202129;
     color:white;
     margin-left: 42px;
@@ -30,29 +20,19 @@ body {
     width: 600px;
 }
 
-.signup h1 {
+.signup-form__header {
     font-size: 35px;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 13px;
 }
 
-/* .signup h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
-} */
-
-/* .signup p {
-    margin-bottom: 10px;
-} */
-.campaign-text {
+.signup-form__name {
     margin-bottom: 0;
 }
 
-.signup input[type="text"],
-.signup input[type="email"],
-.signup input[type="password"] {
+.signup-form__input {
+
     color: white;
     margin-top: 20px;
     width: 100%;
@@ -64,26 +44,43 @@ body {
     border-radius: 20px;
     font-size: 16px;
     text-align: center;
-}
-.signup input[type="email"],
-.signup input[type="password"] {
-    width: 554px;
 
 }
-.signup input[type="password"]{
+
+.signup-form__input[type="email"],
+.signup-form__input[type="password"] {
+    width: 554px;
+}
+
+.signup-form__input[type="text"] {
+    flex: 1;
+    margin-right: 25px;
+}
+
+.signup-form__name-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-form__input[type="password"]{
     /* background-color: #565C6A; */  /* это должен быть ховер */
 }
 
+.signup-form__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 574px;
+}
 
-.sign-create-account{
+.signup-form__create-button {
     background-color: #6C5DD2;
 }
 
-.sign-with-account{
+.signup-form__with-button {
     background-color: #565C6A;
 }
 
-.signup button {
+.signup-form__button {
     display: block;
     width: 274px;
     height: 60px;
@@ -94,30 +91,25 @@ body {
     font-size: 16px;
     cursor: pointer;
     margin: 0 ;
-
-}
-/* .sign-create-account{
-    background-color: #6C5DD2;
 }
 
-.sign-with-account{
-    background-color: #565C6A;
-} */
-
-.signup button:hover {
+.signup-form__button:hover {
     background-color: #513bde;
 }
 
-.name-fields-button{
-    display: flex;
-    justify-content: space-between;
-    width: 574px;
-}
-
-.error-label {
+.signup-form__error-label {
     padding: 10px;
     color: rgba(255, 0, 0, 0.54);
 }
+
+signup-form__error-label--visible {
+    visibility: visible;
+}
+
+signup-form__error-label--hidden {
+    visibility: hidden;
+}
+
 .logo-right-bottom {
     position: absolute;
     bottom: 0px; 
