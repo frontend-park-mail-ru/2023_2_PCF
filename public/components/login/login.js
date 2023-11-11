@@ -19,8 +19,8 @@ export default class Login {
     this.parent.innerHTML = Handlebars.templates['login.hbs']();
     this.form = this.parent.getElementsByClassName('login')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
-    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
-    this.errorLabel.classList.add('hidden')
+    this.errorLabel = this.form.getElementsByClassName('login-form__error-button')[0];
+    this.errorLabel.classList.add('login-form__error-button--hidden')
   }
 
   onSubmit(event) {
@@ -71,8 +71,8 @@ export default class Login {
   } 
 
   showError(message) {
-    this.errorLabel.classList.remove('hidden')
-    this.errorLabel.classList.add('visible')
+    this.errorLabel.classList.remove('login-form__error-button--hidden')
+    this.errorLabel.classList.add('login-form__error-button--visible')
     this.errorLabel.innerHTML = message;
   }
 }

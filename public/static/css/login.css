@@ -20,19 +20,20 @@ body {
     height: auto; 
 }
 
-.login {
+.login-form {
     background-color: #1F2027;
     margin-right: 116px;
     padding: 30px 40px;
     border-radius: 10px;
     /* box-shadow: 0 0 10px #3A3A47; */
 }
-.login a {
+
+.login-form__link {
     color: #6C5DD2;
    text-decoration: none;
 }
 
-.login h1 {
+.login-form__header {
     color: white;
     margin-bottom: 1px;
     font-size: 35px;
@@ -40,19 +41,19 @@ body {
     margin-top: 10px;
     margin-bottom: 13px;
 }
-.name-p{
+.login-form__name {
     font-size: 20px;
 }
-.login p {
+.login-form__paragraph {
     color: white;
     margin-bottom: 1px;
 }
 
-.container-input{
+.login-form__input{
     margin-top: 40px;
 }
-.login input[type="email"],
-.login input[type="password"] {
+.login-form__input [type="email"],
+.login-form__input [type="password"] {
     color: white;
     margin-top: 20px;
     width: 100%;
@@ -66,7 +67,7 @@ body {
     text-align: center;
 }
 
-.login button {
+.login-form__login-button {
     display: block;
     width: 190px;
     height: 60px;
@@ -81,7 +82,7 @@ body {
     margin-right: 115px;
 }
 
-.login button:hover {
+.login-form__login-button:hover {
     background-color: #513bde;
 }
 
@@ -94,7 +95,15 @@ body {
     z-index: 1000; 
 }
 
-.error-label {
+.login-form__error-button {
     padding: 10px;
     color: rgba(255, 0, 0, 0.54);
+}
+
+.login-form__error-button--visible {
+    visibility: visible;
+}
+
+login-form__error-button--hidden {
+    visibility: hidden;
 }
