@@ -1,5 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
+import '../../static/css/signup.css'
 
 export default class Signup {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -10,16 +11,17 @@ export default class Signup {
   }
 
   render() {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/signup.css';
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['signup.hbs']();
     this.form = this.parent.getElementsByClassName('signup-form')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
+<<<<<<< HEAD
     this.errorLabel = this.form.getElementsByClassName('signup-form__error-label')[0];
     this.errorLabel.classList.add('signup-form__error-label--hidden')
+=======
+    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
+    this.errorLabel.classList.add('hidden');
+
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
   }
 
   onSubmit(event) {

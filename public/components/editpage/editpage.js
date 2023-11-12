@@ -1,4 +1,5 @@
 import Api from '../../modules/api.js';
+<<<<<<< HEAD
 import { BACKEND_URL } from '../../modules/api.js';
 
 const context = {
@@ -11,6 +12,10 @@ const urlParams = new URLSearchParams(window.location.search);
 // Извлечь значение параметра "id"
 const adID = urlParams.get('id');
 
+=======
+import Validate from '../../modules/validate.js';
+import '../../static/css/editpage.css';
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 
 export default class EditPage {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -21,6 +26,7 @@ export default class EditPage {
   }
 
   render() {
+<<<<<<< HEAD
 
     Api.getAd(adID).then(
     (data) => { 
@@ -44,13 +50,15 @@ export default class EditPage {
     link.type = 'text/css';
     link.href = '../../static/css/editpage.css';
     document.head.appendChild(link);
+=======
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
     this.parent.innerHTML = Handlebars.templates['editpage.hbs']();
     this.form = this.parent.getElementsByClassName('createad')[0];
 
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
-  }
+      }
 
   renderTemplate() {
 

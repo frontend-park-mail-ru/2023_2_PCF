@@ -1,16 +1,23 @@
 import Api from '../../modules/api.js';
+<<<<<<< HEAD
 
 const context = {
   userTargets: [],
   mainDescription: null,
 };
 
+=======
+import Validate from '../../modules/validate.js';
+import '../../static/css/audience.css';
+import Template from './audience.hbs';
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 export default class Audience {
   constructor(parent = document.body) {
     this.parent = parent;
   }
 
   render() {
+<<<<<<< HEAD
     Api.getAudienceList()
       .then((data) => {
         context.userTargets = data; // Устанавливаем полученные объявления в context
@@ -25,6 +32,13 @@ export default class Audience {
     link.type = 'text/css';
     link.href = '../../static/css/list.css';
     document.head.appendChild(link);
+=======
+    this.parent.innerHTML = Template();
+    this.form = this.parent.getElementsByClassName('audience')[0];
+    this.form.addEventListener('submit', this.onSubmit.bind(this));
+    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
+    this.errorLabel.classList.add('hidden');
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
   }
 
   renderTemplate() {

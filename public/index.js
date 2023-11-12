@@ -1,6 +1,10 @@
 'use strict';
 
+<<<<<<< HEAD
 import Api from './modules/api.js';
+=======
+import './static/css/signup.css'
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 import Router from './modules/router.js';
 import Login from './components/login/login.js';
 import Signup from './components/signup/signup.js';
@@ -13,6 +17,16 @@ import NotFound from './components/notfound/notfound.js';
 import AudienceCreate from './components/audience_create/audience_create.js';
 import NotFoundAudience from './components/notfound_audience/notfound_audience.js';
 import Profile from './components/profile/profile.js';
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+        .then((reg) => {
+            console.log('sw registered', reg);
+        })
+        .catch((e) => {
+            console.error(e);
+        });
+}
 
 
 const router = new Router();

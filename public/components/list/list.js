@@ -1,5 +1,11 @@
 import Api from '../../modules/api.js';
+<<<<<<< HEAD
 
+=======
+import '../../static/css/list.css'
+
+let userAds = [];
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 const context = {
   userAds: [],
   mainDescription: null,
@@ -20,6 +26,7 @@ export default class List {
         console.error('Ошибка:', error);
       });
 
+<<<<<<< HEAD
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
@@ -27,6 +34,9 @@ export default class List {
     document.head.appendChild(link);
   }
 
+=======
+    }
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['list.hbs'](context);
 

@@ -1,8 +1,13 @@
 import Api from '../../modules/api.js';
+<<<<<<< HEAD
 import { BACKEND_URL } from '../../modules/api.js';
 const context = {
   Audience: [],
 };
+=======
+import Validate from '../../modules/validate.js';
+import '../../static/css/createad.css';
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 
 export default class CreateAd {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -13,12 +18,8 @@ export default class CreateAd {
   }
 
   render() {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/createad.css';
-    document.head.appendChild(link);
     this.parent.innerHTML = Handlebars.templates['createad.hbs']();
+<<<<<<< HEAD
     this.form = this.parent.querySelector('.createad'); 
   
     Api.getAudienceList().then((data) => {
@@ -31,6 +32,13 @@ export default class CreateAd {
 
 
   }
+=======
+    this.form = this.parent.getElementsByClassName('createad')[0];
+    this.form.addEventListener('submit', this.onSubmit.bind(this));
+    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
+    this.errorLabel.classList.add('hidden');
+      }
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 
   renderTemplate() {
     console.log(context.Audience);

@@ -1,4 +1,5 @@
 import Api from '../../modules/api.js';
+<<<<<<< HEAD
 
 const context = {
   userAds: [],
@@ -11,6 +12,10 @@ function editAd(adID) {
   // Перенаправление на страницу редактирования с передачей параметра adID
   window.location.href = `/editpage?id=${adID}`;
 }
+=======
+import Validate from '../../modules/validate.js';
+import '../../static/css/company.css';
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 
 export default class Company {
   constructor(parent = document.body) {
@@ -18,6 +23,7 @@ export default class Company {
   }
 
   render() {
+<<<<<<< HEAD
 
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -34,6 +40,14 @@ export default class Company {
         console.error('Ошибка:', error);
       });
   }
+=======
+    this.parent.innerHTML = Handlebars.templates['company.hbs']();
+    this.form = this.parent.getElementsByClassName('company')[0];
+    this.form.addEventListener('submit', this.onSubmit.bind(this));
+    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
+    this.errorLabel.classList.add('hidden');
+      }
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['company.hbs'](context);

@@ -2,6 +2,7 @@ import Api from '../../modules/api.js';
 import { BACKEND_URL } from '../../modules/api.js';
 import { URLS } from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
+import '../../static/css/profile.css';
 
 
 const context = {
@@ -21,6 +22,7 @@ export default class Profile {
   }
 
   render() {
+<<<<<<< HEAD
 
     Api.getBalance().then((datab) => {
       context.Balance = datab.parsedJson; // Устанавливаем полученные объявления в context
@@ -46,6 +48,8 @@ export default class Profile {
     link.type = 'text/css';
     link.href = '../../static/css/profile.css';
     document.head.appendChild(link);
+=======
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
     this.parent.innerHTML = Handlebars.templates['profile.hbs']();
     this.form = this.parent.getElementsByClassName('profile')[0];
     this.form.addEventListener('submit', async (event) => {
@@ -53,8 +57,13 @@ export default class Profile {
       await this.updateUser();
     });
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
+<<<<<<< HEAD
     this.errorLabel.classList.add('hidden');    
   }
+=======
+    this.errorLabel.classList.add('hidden');
+      }
+>>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
 
   renderTemplate() {
     console.log(context.Ads)
