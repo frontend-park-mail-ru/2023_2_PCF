@@ -24,11 +24,11 @@ h1, h2, h3 {
     right: 10px; 
 }
 
-.main-content {
+.createad {
     background-color: #1F2027;
 }
 
-.flex-row {
+.createad__flex-row {
     display: flex;
 }
 
@@ -59,10 +59,10 @@ h1, h2, h3 {
     font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
 }
 
-.container {
+.createad__container {
     display: flex;
     align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
-    justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
+    justify-content: space-between; /* Равномерное распределение между sidebar и createad */
     padding: 0px;
 }
 
@@ -118,7 +118,7 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-.main-content {
+.createad {
     flex-grow: 1;
     padding: 20px;
     margin: 0px 0; 
@@ -126,7 +126,7 @@ h1, h2, h3 {
 
 }
 
-.container {
+.createad__container {
     display: flex;
     justify-content: center; /* Размещаем блоки с пробелом между ними */
     align-items: flex-start; /* Выравниваем блоки сверху */
@@ -150,11 +150,11 @@ h1, h2, h3 {
     /* overflow: hidden; */
 }
 
-.left-block, .right-block {
+.createad__left-block, .createad__right-block {
     flex: 1;
     box-sizing: border-box
 }
-.centered-box .container {
+.centered-box .createad__container {
     background: #323644;
     border-radius: 20px;
     justify-content: flex-start;
@@ -164,38 +164,38 @@ h1, h2, h3 {
     padding: 4px 17px;
 }
 
-.centered-box .container.small {
+.centered-box .createad__container.small {
     width: 263px;
     height: 70px;
 }
 
-.centered-box .container.medium {
+.centered-box .createad__container.medium {
     width: 347px;
     height: 70px;
     margin-left: 36px;
 }
 
-.centered-box .container.large {
+.centered-box .createad__container.large {
     width: 512px;
     height: 70px;
 }
 
-.centered-box .container.xlarge {
+.centered-box .createad__container.xlarge {
     width: 676px;
     height: 70px;
 }
 
-.centered-box .container.xxlarge {
+.centered-box .createad__container.xxlarge {
     width: 676px;
     height: 224px;
 }
-.container.large {
+.createad__container.large {
     display: flex;
     justify-content: space-between; /* Распределяет пространство между элементами */
     align-items: center; /* Центрирует элементы по вертикали */
 }
 
-.button-container {
+.createad__button-container {
     margin-left: 20px;
     margin-top: 2.5%;
     display: flex;
@@ -213,11 +213,11 @@ h1, h2, h3 {
     transition: background-color 0.2s ease; /* Добавляет плавный переход для фона кнопки */
 }
 
-.button-container:hover {
+.createad__button-container:hover {
     background: #2a2a2a; /* Изменяет цвет фона кнопки при наведении */
 }
 
-.button-container:active {
+.createad__button-container:active {
     background: #0b0b0b; /* Изменяет цвет фона кнопки при нажатии */
 }
 
@@ -245,7 +245,7 @@ h1, h2, h3 {
     transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.button-text {
+.createad__button-text {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web', sans-serif;
@@ -283,7 +283,7 @@ h1, h2, h3 {
     resize: vertical;  
 }
 
-.label {
+.createad__label {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web';
@@ -292,7 +292,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-.gradient-box {
+.createad__gradient-box {
     width: 426px;
     height: 417px;
     background: linear-gradient(0deg, #323644 0%, #323644 100%);
@@ -304,10 +304,10 @@ h1, h2, h3 {
     display: none; 
 }
 
-.photo-upload-label:hover .gradient-box {
+.createad__photo-upload-label:hover .createad__gradient-box {
     border: 2px solid rgba(68, 44, 177, 0.5); 
 }
-.action-box {
+.createad__action-box {
     width: 200px;
     height: 70px;
     padding: 10px;
@@ -324,11 +324,11 @@ h1, h2, h3 {
     color: inherit; /* Унаследовать цвет текста */
     font-size: inherit; /* Унаследовать размер шрифта */
 }
-.action-box:hover {
+.createad__action-box:hover {
     background: #6C5DD2;
 }
 
-.box {
+.createad__box {
     margin-left: 35%;
     margin-top: 70%;
     justify-content: center;
@@ -336,7 +336,7 @@ h1, h2, h3 {
     display: flex;
 }
 
-.сancel-box {
+.createad__сancel-box {
     display: flex;
     width: 200px;
     height: 70px;
@@ -402,7 +402,7 @@ h1, h2, h3 {
     border: 1px white solid;
 }
 
-.bold-label {
+.createad__bold-label {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web';
@@ -412,7 +412,7 @@ h1, h2, h3 {
     
 }
 
-.preview-lable-title {
+.createad__preview-lable-title {
     overflow: hidden; /* скрывает содержимое, выходящее за пределы */
     word-wrap: break-word; /* переносит слова на новую строку */
     white-space: normal;
@@ -420,7 +420,7 @@ h1, h2, h3 {
     height: 20%;
 }
 
-.preview-label-description{
+.createad__preview-label-description{
     overflow: hidden; /* скрывает содержимое, выходящее за пределы */
     word-wrap: break-word; /* переносит слова на новую строку */
     white-space: normal;
