@@ -76,16 +76,16 @@ export default class Profile {
     company.textContent = decodeURIComponent(context.User.s_name);
     ads.textContent = "Всего объявлений: " + context.Ads.length;
 
-    const adList = document.querySelector('.wrapper-card');
+    const adList = document.querySelector('.profile__wrapper-card');
     adList.innerHTML = '';
     if (context.Ads && Array.isArray(context.Ads)) {
       context.Ads.slice(0, 3).forEach((ad, index) => {
         const card = document.createElement('div');
-        card.classList.add('info-card');
+        card.classList.add('profile__info-card');
         card.innerHTML = `                      
-          <img class="card-image" src="${Api.getImage(ad.image_url)}"/>
-          <div class="card-title">${ad.name}</div>
-          <div class="card-subtitle">Бюджет: ${ad.budget}</div>
+          <img class="profile__card-image" src="${Api.getImage(ad.image_url)}"/>
+          <div class="profile__card-title">${ad.name}</div>
+          <div class="profile__card-subtitle">Бюджет: ${ad.budget}</div>
         `;
         adList.appendChild(card);
       });
@@ -99,7 +99,7 @@ export default class Profile {
       }
     });
 
-    const saveButton = this.parent.querySelector('.save-button'); 
+    const saveButton = this.parent.querySelector('.profile__save-button'); 
     saveButton.addEventListener('click', async (event) => {
       event.preventDefault();
 

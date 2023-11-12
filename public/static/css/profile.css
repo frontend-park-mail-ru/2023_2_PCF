@@ -37,7 +37,7 @@ h1, h2, h3 {
     background-color: #6C5DD2
 }
 
-.main-content {
+.profile__main {
     background-color: #1F2027;
 }
 
@@ -68,7 +68,7 @@ h1, h2, h3 {
     font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
 }
 
-.container {
+.profile__container {
     display: flex;
     align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
     justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
@@ -125,7 +125,7 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-.main-content {
+.profile__main {
     flex-grow: 1;
     padding: 20px;
     margin: 0px 0; 
@@ -133,14 +133,14 @@ h1, h2, h3 {
 
 }
 
-.container {
+.profile__container {
     display: flex;
     justify-content: space-between; /* Размещаем блоки с пробелом между ними */
     align-items: flex-start; /* Выравниваем блоки сверху */
     margin: 20px 0; /* Добавляем отступы снизу и сверху */
 }
 
-.lefted-box {
+.profile__lefted-box {
     max-width: 100%;
     flex: 0 0 20%;
     display: flex;
@@ -155,7 +155,7 @@ h1, h2, h3 {
 }
 
 
-.centered-box {
+.profile__centered-box {
     flex: 0 0 70%; /* Занимаем 75% ширины контейнера */
     display: flex;
     flex-direction: column;
@@ -222,7 +222,7 @@ h1, h2, h3 {
     color: #fff;
 }
 
-.text-info {
+.profile__text-info {
     display: flex;
     align-self: start;
 }
@@ -231,7 +231,7 @@ h1, h2, h3 {
     margin-right: 25px; 
 }
 
-.centered-box .text-container {
+.profile__centered-box .profile__text-container {
     align-self: flex-start;   
     text-align: left;   
     margin-left: 15px;     
@@ -239,24 +239,24 @@ h1, h2, h3 {
     /* width: 100%;             */
 }
 
-.text-container h1{
+.profile__text-container h1{
     font-size: 24px;
 }
-.text-container h2{
+.profile__text-container h2{
     font-size: 16px;
 }
-.text-container h3{
+.profile__text-container h3{
     font-size: 16px;
     color:#61636A;
 }
 
-.info-container {
+.profile__info-container {
     text-align: left;
     width: 100%;
     padding: 20px;
     
 }
-.info-container h1{
+.profile__info-container h1{
     text-align: left; 
     color: white; 
     font-size: 24px; 
@@ -265,11 +265,11 @@ h1, h2, h3 {
 
 }
 
-.wrapper {
+.profile__wrapper {
     display: flex;
 }
 
-.card {
+.profile__card {
     position: relative;
     border-radius: 34px;
     border: 2px #6C5DD2 solid;
@@ -278,7 +278,7 @@ h1, h2, h3 {
     word-wrap: break-word;
     
 }
-.title {
+.profile__title {
     position: absolute;
     margin: 0;         
     padding-bottom: 5px; 
@@ -291,7 +291,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-.line {
+.profile__line {
     position: absolute;
     width: 248px;
     height: 0px;
@@ -300,12 +300,12 @@ h1, h2, h3 {
     top: 58px;
 }
 
-.card-large {
+.profile__card-large {
     width: 250px;
     height: 337px;
 }
 
-.card-medium, .card-small {
+.profile__card-medium, .profile__card-small {
     width: 250px;
     height: 215px;
 }
@@ -318,7 +318,7 @@ h1, h2, h3 {
     font-weight: 700;
 } */
 
-.border {
+.profile__border {
     width: 100%;
     height: 0px;
     position: absolute;
@@ -326,24 +326,24 @@ h1, h2, h3 {
     top: 74px;
 }
 
-.icon {
+.profile__icon {
     width: 29px;
     height: 29px;
     position: absolute;
     left: 30px;
     top: 23px;
 }
-.wrapper-card {
+.profile__wrapper-card {
     display: flex;
     margin-right: 150px;
 }
-.footer-container {
+.profile__footer-container {
     text-align: left;
     width: 100%;
     padding: 20px;
     
 }
-.footer-container h1{
+.profile__footer-container h1{
     text-align: left; 
     color: white; 
     font-size: 24px; 
@@ -352,14 +352,14 @@ h1, h2, h3 {
 
 }
 
-.info-card {
+.profile__info-card {
     margin-right: 10%;
     width: 202px;
     height: 176px;
     position: relative;
 }
 
-.card-image {
+.profile__card-image {
     width: 202px;
     height: 122px;
     left: 0px;
@@ -368,7 +368,7 @@ h1, h2, h3 {
     border-radius: 26px;
 }
 
-.card-title {
+.profile__card-title {
     left: 0px;
     top: 133px;
     position: absolute;
@@ -379,7 +379,7 @@ h1, h2, h3 {
     word-wrap: break-word;
 }
 
-.card-subtitle {
+.profile__card-subtitle {
     left: 0px;
     top: 156px;
     position: absolute;
@@ -390,7 +390,7 @@ h1, h2, h3 {
     word-wrap: break-word;
 }
 
-.lefted-box h1{
+.profile__lefted-box h1{
     text-align: left; 
     color: white; 
     font-size: 24px; 
@@ -399,7 +399,7 @@ h1, h2, h3 {
 
 }
 
-.input-container {
+.profile__input-container {
     width: 75%;
     height: 58px;
     padding: 4px 17px;
@@ -421,7 +421,7 @@ h1, h2, h3 {
     word-wrap: break-word;
 }
 
-.save-button {
+.profile__save-button {
     margin-top: 40px;
     width: 230px;
     height: 70px;
@@ -439,11 +439,11 @@ h1, h2, h3 {
     border: none;
 }
 
-.save-button:active, .save-button:focus {
+.profile__save-button:active, .profile__save-button:focus {
     background: rgba(108, 93, 210, 0.20);
     transition: none;
 }
-.save-button:hover {
+.profile__save-button:hover {
     background: #8F7DE7; /* Изменяем цвет фона при наведении курсора */
 }
 
@@ -475,7 +475,7 @@ h1, h2, h3 {
 .custom-button:active {
     transform: scale(0.95); /* небольшое уменьшение при нажатии */
 }
-.input-field {
+.profile__input-field {
     background: transparent; /* чтобы фон поля ввода соответствовал фону контейнера */
     border: none; /* убрать стандартные рамки */
     color: white; /* цвет текста */
@@ -488,7 +488,7 @@ h1, h2, h3 {
     padding-left: 5px; /* добавить немного отступа слева */
 }
 
-.input-field::placeholder {
+.profile__input-field::placeholder {
     color: rgba(255, 255, 255, 0.5); /* цвет подсказки в поле ввода */
     margin-top: 5px;
 }
@@ -500,12 +500,12 @@ h1, h2, h3 {
     object-fit: cover; /* Сохраняем соотношение сторон и обрезаем изображение при несоответствии размеров */
   }
   
-  .photo-upload-label:hover .gradient-box {
+  .profile__photo-upload-label:hover .profile__gradient-box {
     border: 2px solid rgba(68, 44, 177, 0.5); 
     background:rgba(255, 255, 255, 0.5);
 }
 
-.gradient-box {
+.profile__gradient-box {
     color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
@@ -519,6 +519,6 @@ h1, h2, h3 {
     margin-bottom: 30px;
     transition: 0.3s;
 }
-.file-input {
+.profile__file-input {
     display: none; 
 }
