@@ -576,6 +576,7 @@ h1, h2, h3 {
     max-height: 500px; 
     overflow-y: auto; /* Включает вертикальную прокрутку, если содержимое выходит за пределы */
 }
+
 .budget {
     display: none; /* скрыть по умолчанию */
     width: 380px;
@@ -594,14 +595,14 @@ h1, h2, h3 {
     background: #242832;
     border-radius: 34px;
 }
-.header-text, .budget__currency--text, .input-text, .budget__button__text {
+.budget__header--text, .budget__currency--text, .input-text, .budget__button__text {
     position: absolute;
     color: white;
     font-family: 'Istok Web', sans-serif;
     word-wrap: break-word;
 }
 
-.header-text {
+.budget__header--text {
     left: 88px;
     top: 19px;
     font-size: 20px;
@@ -620,13 +621,14 @@ h1, h2, h3 {
     gap: 10px;
 }
 
-.budget__replenish-button {
+.budget__replenish--cancel--button {
     background: #AD4343;
     left: 28px;
     top: 177px;
     margin-right: 20px;
 }
-.budget__replenish--cancel--button {
+
+.budget__replenish--button {
     background: #131517;
     left: 185px;
     top: 176px;
