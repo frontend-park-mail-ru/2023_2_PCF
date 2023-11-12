@@ -1,6 +1,6 @@
 'use strict';
 
-
+import './static/css/signup.css'
 import Router from './modules/router.js';
 import Login from './components/login/login.js';
 import Signup from './components/signup/signup.js';

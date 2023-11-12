@@ -4,12 +4,12 @@ const debug = require('debug');
 
 const SERVER_PORT = 80;
 
-const page404 = fs.readFileSync('./public/index.html');
+const page404 = fs.readFileSync('./bundle/index.html');
 
 const server = http.createServer((request, response) => {
   const {url} = request;
   debug.log('url: ' + url);
-  const normUrl = !url.includes('.') ? '/index.html' : url;
+  const normUrl = !url.includes('.') ? '/bundle/index.html' : url;
   let filepath;
   if (fs.existsSync('./public' + normUrl)) filepath = './public' + normUrl;
   else if (fs.existsSync('./static' + normUrl)) filepath = './static' + normUrl;

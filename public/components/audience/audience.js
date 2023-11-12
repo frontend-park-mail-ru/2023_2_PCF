@@ -1,7 +1,7 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
-import css from '../../static/css/audience.css';
-
+import '../../static/css/audience.css';
+import Template from './audience.hbs';
 export default class Audience {
   constructor(parent = document.body, submitCallback = () => {}) {
     this.parent = parent;
@@ -11,12 +11,11 @@ export default class Audience {
   }
 
   render() {
-    this.parent.innerHTML = Handlebars.templates['audience.hbs']();
+    this.parent.innerHTML = Template();
     this.form = this.parent.getElementsByClassName('audience')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
-    this.style = css;
   }
 
   onSubmit(event) {

@@ -1,6 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
-import css from '../../static/css/company.css';
+import '../../static/css/company.css';
 
 export default class Company {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -16,8 +16,7 @@ export default class Company {
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
-    this.style = css;
-  }
+      }
 
   onSubmit(event) {
     event.preventDefault();

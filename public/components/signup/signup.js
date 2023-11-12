@@ -1,6 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
-import css from '../../static/css/signup.css'
+import '../../static/css/signup.css'
 
 export default class Signup {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -16,7 +16,7 @@ export default class Signup {
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
-    this.style = css;
+
   }
 
   onSubmit(event) {

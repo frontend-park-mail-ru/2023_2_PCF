@@ -1,4 +1,5 @@
 node_modules
+bundle
 .idea
 .DS_Store
 public/main.bundle.js

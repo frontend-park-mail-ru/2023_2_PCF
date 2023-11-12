@@ -1,5 +1,5 @@
 import Api from '../../modules/api.js';
-import css from '../../static/css/list.css'
+import '../../static/css/list.css'
 
 let userAds = [];
 const context = {
@@ -26,8 +26,7 @@ export default class List {
     });
 
 
-  this.style = css;
-  }
+    }
   renderTemplate() {
     this.parent.innerHTML = Handlebars.templates['list.hbs'](context);
     // Обработчик для "Кнопка 1"

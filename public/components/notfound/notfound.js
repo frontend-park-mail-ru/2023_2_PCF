@@ -1,6 +1,6 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
-import css from '../../static/css/notfound.css';
+import '../../static/css/notfound.css';
 
 export default class NotFound {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -16,8 +16,7 @@ export default class NotFound {
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
     this.errorLabel.classList.add('hidden');
-    this.style = css;
-  }
+      }
 
   onSubmit(event) {
     event.preventDefault();
