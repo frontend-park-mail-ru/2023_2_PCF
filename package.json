@@ -77,15 +77,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-<<<<<<< HEAD
-    "build-templates": "handlebars public/components/profile/profile.hbs -f public/components/profile/profile.precompiled.js && handlebars public/components/notfound_audience/notfound_audience.hbs -f public/components/notfound_audience/notfound_audience.precompiled.js && handlebars public/components/notfound/notfound.hbs -f public/components/notfound/notfound.precompiled.js && handlebars public/components/editpage/editpage.hbs -f public/components/editpage/editpage.precompiled.js && handlebars public/components/createad/createad.hbs -f public/components/createad/createad.precompiled.js && handlebars public/components/audience/audience.hbs -f public/components/audience/audience.precompiled.js && handlebars public/components/company/company.hbs -f public/components/company/company.precompiled.js && handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js && handlebars public/components/signup/signup.hbs -f public/components/signup/signup.precompiled.js && handlebars public/components/list/list.hbs -f public/components/list/list.precompiled.js",
-    "eslint": "npx eslint ."
-=======
     "build-templates": "handlebars public/components/login/login.hbs -f public/components/login/login.precompiled.js && handlebars public/components/signup/signup.hbs -f public/components/signup/signup.precompiled.js && handlebars public/components/list/list.hbs -f public/components/list/list.precompiled.js",
     "eslint": "npx eslint .",
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production"
->>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
   },
   "author": "PCF",
   "license": "ISC",

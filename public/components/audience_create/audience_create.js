@@ -1,4 +1,6 @@
 import Api from '../../modules/api.js';
+import Template from '../audience/audience.hbs';
+import '../../static/css/audience.css';
 
 export default class CreateAudience {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -9,12 +11,7 @@ export default class CreateAudience {
   }
 
   render() {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/audience.css';
-    document.head.appendChild(link);
-    this.parent.innerHTML = Handlebars.templates['audience_create.hbs'](); 
+    this.parent.innerHTML = Template();
     this.form = this.parent.getElementsByClassName('createaudience')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];

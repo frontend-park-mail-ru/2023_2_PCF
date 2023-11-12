@@ -1,6 +1,7 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
 import '../../static/css/notfound.css';
+import Template from './notfound.hbs';
 
 export default class NotFound {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -11,7 +12,7 @@ export default class NotFound {
   }
 
   render() {
-    this.parent.innerHTML = Handlebars.templates['notfound.hbs']();
+    this.parent.innerHTML = Template();
     this.form = this.parent.getElementsByClassName('notfound')[0];
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];

@@ -1,6 +1,8 @@
 import Api from '../../modules/api.js';
-<<<<<<< HEAD
+import Validate from '../../modules/validate.js';
+import '../../static/css/editpage.css';
 import { BACKEND_URL } from '../../modules/api.js';
+import Template from './editpage.hbs';
 
 const context = {
   ad: [],
@@ -12,11 +14,6 @@ const urlParams = new URLSearchParams(window.location.search);
 // Извлечь значение параметра "id"
 const adID = urlParams.get('id');
 
-=======
-import Validate from '../../modules/validate.js';
-import '../../static/css/editpage.css';
->>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
-
 export default class EditPage {
   constructor(parent = document.body, submitCallback = () => {}) {
     this.parent = parent;
@@ -26,7 +23,6 @@ export default class EditPage {
   }
 
   render() {
-<<<<<<< HEAD
 
     Api.getAd(adID).then(
     (data) => { 
@@ -45,14 +41,7 @@ export default class EditPage {
       console.error('Ошибка:', error);
     });
 
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '../../static/css/editpage.css';
-    document.head.appendChild(link);
-=======
->>>>>>> 4cbdecbc8f6a3061b0214d920531121013e567ed
-    this.parent.innerHTML = Handlebars.templates['editpage.hbs']();
+    this.parent.innerHTML = Template();
     this.form = this.parent.getElementsByClassName('createad')[0];
 
     this.form.addEventListener('submit', this.onSubmit.bind(this));
@@ -60,9 +49,6 @@ export default class EditPage {
     this.errorLabel.classList.add('hidden');
       }
 
-  renderTemplate() {
-
-  }
 
   renderTemplate() {
     const inputs = this.form.querySelectorAll('input');

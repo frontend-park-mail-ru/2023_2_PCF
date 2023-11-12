@@ -1,4 +1,4 @@
-
+import '../../static/css/menu.css'
 export default class Menu {
     constructor(parent = document.body, submitCallback = () => {}) {
         this.parent = parent;
@@ -8,10 +8,6 @@ export default class Menu {
       }    
 
       render() {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '../../static/css/menu.css';
-        document.head.appendChild(link);
+
       }
 }
