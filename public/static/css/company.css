@@ -321,14 +321,14 @@ h1, h2, h3 {
     border-radius: 15px;
 }
 
-.text-title, .company__info__text--large, .company__info__text--status, .currency {
+.company__info__text--title, .company__info__text--large, .company__info__text--status, .currency {
     position: absolute;
     color: white;
     font-family: Istok Web;
     word-wrap: break-word;
 }
 
-.text-title {
+.company__info__text--title {
     left: 95px;
     top: 5px;
     font-size: 16px;
