@@ -522,3 +522,291 @@ h1, h2, h3 {
 .file-input {
     display: none; 
 }
+.profile {
+    background-color: #1F2027;
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0px 0; 
+    margin-left: 175px;  /* Это соответствует ширине вашего sidebar */
+
+}
+.profile__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+}
+.profile-info{
+    display: flex; 
+    align-items: center;
+}
+.profile-info__avatar {
+    margin-right: 50px; 
+}
+.profile__centered-box .profile-info {
+    align-self: flex-start;   
+    text-align: left;   
+    margin-left: 15px;     
+    color: white;
+    /* width: 100%;             */
+}
+.profile__centered-box,
+.profile__lefted-box {
+    background-color: #242832;
+    border-radius: 35px;
+    padding: 20px;
+    color: #fff;
+}
+
+.profile__centered-box {
+    flex: 0 0 70%; /* Занимаем 75% ширины контейнера */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 35px;
+    height: 100%;
+    text-align: center;
+    background-color: #242832;
+    padding: 20px; /* Добавляем отступы внутри блока */
+}
+.profile__lefted-box h1{
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 15px;    
+    margin-bottom: 40px; 
+
+}
+
+.profile__lefted-box {
+    max-width: 100%;
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 35px;
+    height: 100%;
+    text-align: center;
+    background-color: #242832;
+    padding: 33px 20px 20px 20px;
+}
+
+.profile-info__avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.profile-info__text-container h1,
+.profile-info__text-container h2 {
+    color: #fff;
+}
+.profile__info-container {
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    
+}
+.profile__info-container h1{
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 15px;    
+    margin-bottom: 40px; 
+
+}
+.profile__info-container,
+.profile__footer-container {
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 34px;
+    border: 2px solid #6C5DD2;
+    color: white;
+    position: relative;
+}
+
+.card__title {
+    font-size: 24px;
+    position: absolute;
+    top: 23px;
+    left: 79px;
+}
+
+.card--large {
+    width: 250px;
+    height: 337px;
+}
+
+.card--medium {
+    width: 250px;
+    height: 215px;
+}
+
+.profile__input-container {
+    width: 75%;
+    height: 58px;
+    padding: 4px 17px;
+    background: #323644;
+    border-radius: 20px;
+    border: 2px #323644 solid;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+    margin-bottom: 30px;
+}
+
+.profile__input-field {
+    background: transparent; /* чтобы фон поля ввода соответствовал фону контейнера */
+    border: none; /* убрать стандартные рамки */
+    color: white; /* цвет текста */
+    outline: none; /* убрать стандартный контур при фокусе */
+    font-size: 14px;
+    font-family: "Istok Web";
+   font-weight: 400;
+   height: 100%;
+    width: 100%; /* чтобы поле ввода занимало всю доступную ширину */
+    padding-left: 5px; /* добавить немного отступа слева */
+}
+
+.profile__input-field::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* цвет подсказки в поле ввода */
+    margin-top: 5px;
+}
+
+.profile__save-button {
+    margin-top: 40px;
+    width: 230px;
+    height: 70px;
+    background: #6C5DD2;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Istok Web';
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.profile__save-button:active, .profile__save-button:focus {
+    background: rgba(108, 93, 210, 0.20);
+    transition: none;
+}
+.profile__save-button:hover {
+    background: #8F7DE7; /* Изменяем цвет фона при наведении курсора */
+}
+
+.profile__wrapper {
+    display: flex;
+}
+
+
+.card {
+    position: relative;
+    border-radius: 34px;
+    border: 2px #6C5DD2 solid;
+    color: white;
+    font-family: 'Istok Web';
+    word-wrap: break-word;
+    
+}
+.card__line {
+    position: absolute;
+    width: 248px;
+    height: 0px;
+    border: 1px #6C5DD2 solid;
+    margin: 0; 
+    top: 58px;
+}
+.card__icon {
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    left: 30px;
+    top: 23px;
+}
+.profile__footer {
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    
+}
+.profile__footer h1{
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 15px;    
+    margin-bottom: 40px; 
+
+}
+.profile__cards {
+    display: flex;
+    margin-right: 150px;
+}
+.profile__card {
+    margin-right: 10%;
+    width: 202px;
+    height: 176px;
+    position: relative;
+}
+.profile__card-image {
+    width: 202px;
+    height: 122px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: 26px;
+}
+
+.profile__card-title {
+    left: 0px;
+    top: 133px;
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-family: "Istok Web";
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.profile__card-subtitle {
+    left: 0px;
+    top: 156px;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-family: "Istok Web";
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.profile__photo-upload-label:hover .profile__gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+    background:rgba(255, 255, 255, 0.5);
+}
+
+.profile__gradient-box {
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 10px;
+    width: 230px;
+    height: 170px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+.profile__file-input {
+    display: none; 
+}
