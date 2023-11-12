@@ -24,11 +24,8 @@ h1, h2, h3 {
     right: 10px; 
 }
 
-.main-content {
-    background-color: #1F2027;
-}
 
-.logo-container {
+.audience-sidebar__logo-container {
     display: flex;
     align-items: center;
     margin-top: 30px;
@@ -37,12 +34,7 @@ h1, h2, h3 {
     /* padding: 20px; */
 }
 
-.logo-container img {
-    width: 32px;
-    height: 46px;
-}
-
-.logo {
+.audience-sidebar__logo {
     width: 80px; /* Уменьшил размер логотипа */
     height: auto;
     margin-right: 10px; /* Добавил небольшой отступ между логотипом и текстом */
@@ -55,14 +47,15 @@ h1, h2, h3 {
     font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
 }
 
-.container {
+.audience-container {
     display: flex;
     align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
     justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
     padding: 0px;
+    margin: 20px 0; /* Добавляем отступы снизу и сверху */
 }
 
-.sidebar {
+.audience-sidebar {
     width: 175px;
     height: 100vh; /* Занимает всю высоту экрана */
     background-color: #242832;
@@ -76,25 +69,25 @@ h1, h2, h3 {
 }
 
 
-.menu ul {
+.audience-sidebar__menu ul {
     list-style-type: none;
     padding: 0;
 }
 
-.menu ul li {
+.audience-sidebar__menu ul li {
     display: flex;
     align-items: center; 
     margin-bottom: 20px;
 }
 
-.menu ul li img {
+.audience-sidebar__menu ul li img {
     width: 20px;
     height: 20px;
     margin-right: 10px; 
     margin-left: 10px;
 }
 
-.menu ul li a {
+.audience-sidebar__menu ul li a {
     color: #fff;
     text-decoration: none;
     display: block;
@@ -104,32 +97,25 @@ h1, h2, h3 {
 }
 
 
-.menu ul li a:hover {
+.audience-sidebar__menu ul li a:hover {
     background-color: #6C5DD2;
 }
-.menu p{
+.audience-sidebar__menu p{
     color: #61636A;
     font-size: 10px;
     margin-left: 10px;
     margin-bottom: 15px;
 }
 
-.main-content {
+.audience-content {
     flex-grow: 1;
     padding: 20px;
     margin: 0px 0; 
-    margin-left: 175px; 
-
+    margin-left: 175px;
+    background-color: #1F2027;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between; /* Размещаем блоки с пробелом между ними */
-    align-items: flex-start; /* Выравниваем блоки сверху */
-    margin: 20px 0; /* Добавляем отступы снизу и сверху */
-}
-
-.lefted-box {
+.audience-content__lefted-box{
     max-width: 100%;
     flex: 0 0 20%;
     display: flex;
@@ -147,7 +133,7 @@ h1, h2, h3 {
 }
 
 
-.centered-box {
+.audience-content__centered-box {
     /* max-width: 100%; */
     position: relative; /* если этого свойства еще нет */
 
@@ -312,7 +298,7 @@ h1, h2, h3 {
 }
 
 
-.region-info {
+.audience-block__region-info {
     display: flex;
     align-items: center;
     color: white;
@@ -323,26 +309,26 @@ h1, h2, h3 {
     margin-top: 40px
 }
 
-.region-title {
+.audience-block__region-title {
     margin-right: 10px; /* Отступ между "Выбранные регионы:" и иконкой */
 }
 
-.region-details {
+.audience-block__region-details {
     display: flex;
     align-items: center;
 }
 
-.icon {
+.audience-block__icon {
     margin-right: 10px; /* Отступ между иконкой и "Балашихой" */
 }
 
-.icon > div {
+.audience-block__icon > div {
     width: 8px;
     height: 8px;
     position: relative;
 }
 
-.icon > div > div {
+.audience-block__icon > div > div {
     width: 8px;
     height: 8px;
     left: 0px;
@@ -354,11 +340,11 @@ h1, h2, h3 {
 
 }
 
-.region-name {
+.audience-block__region-name {
     margin-top: 10px;
 }
 
-.custom-button {
+.audience-content__custom-button {
     margin-bottom: 20px;
     background: none;
     border: none;
@@ -368,7 +354,7 @@ h1, h2, h3 {
     bottom: 0;
 }
 
-.button-content {
+.audience-content__button-content {
     width: 180px;
     height: 42px;
     padding: 10px;
@@ -381,13 +367,13 @@ h1, h2, h3 {
     position: relative;
 }
 
-.plus-icon {
+.audience-content_plus-icon {
     width: 20px;
     height: 20px;
     position: relative;
 }
 
-.circle-border {
+.audience-content__circle-border {
     width: 20px;
     height: 20px;
     left: 0px;
@@ -398,7 +384,7 @@ h1, h2, h3 {
     border: 1.2px white solid;
 }
 
-.horizontal-line {
+.audience-content__horizontal-line {
     width: 14px;
     height: 0px;
     left: 3px;
@@ -407,7 +393,7 @@ h1, h2, h3 {
     border: 1px white solid;
 }
 
-.vertical-line {
+.audience-content__vertical-line {
     width: 17.5px;
     height: 0px;
     left: 11.8px;
@@ -418,17 +404,17 @@ h1, h2, h3 {
     border: 1px white solid;
 }
 
-.button-text {
+.audience-content__button-text {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 700;
 }
-.left-block, .right-block {
+.audience-block__left-block, .audience-block__right-block {
     flex: 1;
     box-sizing: border-box
 }
-.container-title {
+.audience-block__container-title {
     width: 340px;
     height: 403px;
     background: #323644;
@@ -441,7 +427,7 @@ h1, h2, h3 {
     align-self: flex-start;
 }
 
-.label {
+.audience-block__label {
     color: white;
     font-size: 14px;
     font-family: Istok Web;
@@ -470,12 +456,12 @@ h1, h2, h3 {
     text-align: right;
     padding-right: 1px;
 }
-.custom-dropdown {
+.audience-block__custom-dropdown {
     position: relative;
     display: inline-block;
 }
 
-.custom-dropdown .dropdown-content {
+.audience-block__custom-dropdown .dropdown-content {
     display: none;
     position: absolute;
     /* background: #000; */
@@ -486,16 +472,16 @@ h1, h2, h3 {
     font-family: 'Istok Web', sans-serif;
 }
 
-.custom-dropdown .dropdown-content div {
+.audience-block__custom-dropdown .dropdown-content div {
     padding: 10px;
     /* border-bottom: 1px solid #333; */
 }
 
-.custom-dropdown .dropdown-content div:last-child {
+.audience-block__custom-dropdown .dropdown-content div:last-child {
     border-bottom: none;
 }
 
-.custom-dropdown .arrow-icon {
+.audience-block__custom-dropdown .arrow-icon {
     margin-top: 30px;
     font-size: 16px;
     color: white;
@@ -503,7 +489,7 @@ h1, h2, h3 {
 }
 
 /* Отображение выпадающего меню при наведении */
-.custom-dropdown:hover .dropdown-content {
+.audience-block__custom-dropdown:hover .dropdown-content {
     display: block;
 }
 .interests-box {
@@ -522,7 +508,7 @@ h1, h2, h3 {
     font-weight: 400;
     word-wrap: break-word;
 }
-.gradient-box {
+.audience-block__gradient-box {
     width: 380px;
     height: 190px;
     background: linear-gradient(0deg, #323644 0%, #323644 100%);
@@ -532,14 +518,14 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
 }
-.text-entry-label {
+.audience-block__text-entry-label {
     width: 100%;
 }
 
-.text-upload-label:hover .gradient-box {
+.audience-block__text-upload-label:hover .gradient-box {
     border: 2px solid rgba(68, 44, 177, 0.5); 
 }
-.text-input {
+.audience-block__text-input {
     width: 100%;
     padding: 10px;
     margin: 0;
@@ -549,7 +535,7 @@ h1, h2, h3 {
     outline: none;
 }
 
-.demographics-info {
+.audience-block__demographics-info {
     color: white;
     font-size: 14px;
     font-family: 'Istok Web', sans-serif;
@@ -558,24 +544,24 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
 }
-.info-column {
+.audience-block__info-column {
     flex: 1; 
     margin-right: 20px;
 }
-.info-item {
+.audience-block__info-item {
     font-size: 12px;
     margin-top: 20px;
 }
-.info-item-right{
+.audience-block__info-item-right{
     margin-top: 20px;
     font-size: 16px;
 }
-.age-range-wrapper {
+.audience-block__age-range-wrapper {
     display: flex; 
     gap: 10px; /* Добавляем пространство между двумя блоками age-range */
 }
 
-.age-range {
+.audience-block__age-range {
     width: 65px;
     height: 35px;
     padding: 4px 17px;
@@ -591,7 +577,7 @@ h1, h2, h3 {
     letter-spacing: 0.40px;
     word-wrap: break-word;
 }
-.btn-container {
+.audience-block__btn-container {
     position: absolute;
     /* margin-top: 150px; */
     bottom: 50px; 
@@ -601,11 +587,11 @@ h1, h2, h3 {
     gap: 10px; /* расстояние между кнопками */
     /* padding-right: 100px; */
 }
-.btn-text {
+.audience-block__btn-text {
     word-wrap: break-word;
 }
 
-.cross-icon {
+.audience-block__cross-icon {
     position: relative;
     width: 20px;
     height: 20px;
@@ -621,7 +607,7 @@ h1, h2, h3 {
     transform-origin: 50% 50%;
 } */
 
-.btn {
+.audience-block__btn {
     width: 220px;
     height: 52px;
     padding: 10px;
@@ -640,12 +626,12 @@ h1, h2, h3 {
     transition: background-color 0.2s ease;
 }
 
-.edit-btn {
+.audience-block__edit-btn {
     background: #131517;
 color: white;
 }
 
-.delete-btn {
+.audience-block__delete-btn {
 background: #AD4343;
 color: white;
 gap: 20px;

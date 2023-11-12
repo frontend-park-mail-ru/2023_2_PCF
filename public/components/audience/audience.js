@@ -54,10 +54,10 @@ export default class Audience {
 
   showSelectedTarget(ad) {
     const selectedAd = document.getElementById('centered-box');
-    selectedAd.innerHTML = `<div class="lefted-block">
-    <div class="container-title">
-        <div class="label">Регион</div>
-        <div class="custom-dropdown">
+    selectedAd.innerHTML = `<div class="audience-block">
+    <div class="audience-block__container-title">
+        <div class="audience-block__label">Регион</div>
+        <div class="audience-block__custom-dropdown">
             <input type="text" class="input-field" placeholder="Поиск">
             <div class="arrow-icon">Россия &#8249;</div>
             <div class="dropdown-content">
@@ -73,49 +73,49 @@ export default class Audience {
         <div class="other-element"></div>
         
         </div>
-        <div class="region-info">
-            <div class="region-title">Выбранные регионы:
-            <div class="region-details">
-                <div class="icon">
+        <div class="audience-block__region-info">
+            <div class="audience-block__region-title">Выбранные регионы:
+            <div class="audience-block__region-details">
+                <div class="audience-block__icon">
                     <div>
                         <div></div>
                     </div>
                 </div>
-                <div class="region-name">Балашиха</div>
+                <div class="audience-block__region-name">Балашиха</div>
             </div>
             </div>
         </div>
     </div>
     
-    <div class="right-block">
-        <div class="gradient-box" id="textEntryContainer">
-            <label for="textEntry1" class="text-entry-label">
-                <input type="text" id="textEntry1" class="text-input" placeholder="Введите ключевые фразы, через запятую">
+    <div class="audience-block__right-block">
+        <div class="audience-block__gradient-box" id="textEntryContainer">
+            <label for="textEntry1" class="audience-block__text-entry-label">
+                <input type="text" id="textEntry1" class="audience-block__text-input" placeholder="Введите ключевые фразы, через запятую">
                 
             </label>
         </div>
     
-    <div class="gradient-box" id="textEntryContainer">
-    <label for="textEntry1" class="text-entry-label">
-        <input type="text" id="textEntry1" class="text-input" placeholder="Введите ключевые фразы, через запятую">
+    <div class="audience-block__gradient-box" id="textEntryContainer">
+    <label for="textEntry1" class="audience-block__text-entry-label">
+        <input type="text" id="textEntry1" class="audience-block__text-input" placeholder="Введите ключевые фразы, через запятую">
         
     </label>
 </div>
-<div class="gradient-box">
-    <label for="textEntry2" class="text-entry-label">
-        <input type="text" id="textEntry2" class="text-input" placeholder="Введите теги, через запятую">
+<div class="audience-block__gradient-box">
+    <label for="textEntry2" class="audience-block__text-entry-label">
+        <input type="text" id="textEntry2" class="audience-block__text-input" placeholder="Введите теги, через запятую">
     </label>
 </div>
-<div class="demographics-info">
-    <div class="info-column">
-        <div class="info-item">
+<div class="audience-block__demographics-info">
+    <div class="audience-block__info-column">
+        <div class="audience-block__info-item">
             <div style="font-size: 18px;">Демография</div>
         </div>
-        <div class="info-item">
+        <div class="audience-block__info-item">
             <div>Пол</div>
             <div>
                 <input type="checkbox" id="anyGender">
-                <label for="anyGendаer">Любой</label>
+                <label for="anyGender">Любой</label>
             </div>
             <div>
                 <input type="checkbox" id="femaleGender">
@@ -128,17 +128,17 @@ export default class Audience {
         </div>
     </div> <!-- Закрытие первой колонки -->
 
-    <div class="info-column info-item-right"> <!-- Начало второй колонки -->
-        <div class="info-item">
+    <div class="audience-block__info-column audience-block__info-item-right"> <!-- Начало второй колонки -->
+        <div class="audience-block__info-item">
             <div>Возраст</div>
         </div>
-        <div class="info-item">
-            <div class="age-range-wrapper"> 
-                <div class="age-range">
-                    <input type="text" id="ageFrom" class="text-input" placeholder="От">
+        <div class="audience-block__info-item">
+            <div class="audience-block__age-range-wrapper"> 
+                <div class="audience-block__age-range">
+                    <input type="text" id="ageFrom" class="audience-block__text-input" placeholder="От">
                 </div>
                 <div class="age-range">
-                    <input type="text" id="ageTo" class="text-input" placeholder="До">
+                    <input type="text" id="ageTo" class="audience-block__text-input" placeholder="До">
                 </div>
             </div>
         </div>
