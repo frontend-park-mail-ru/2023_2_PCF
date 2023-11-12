@@ -40,20 +40,20 @@
             </ul>
         </div>
     </div>
-    <main class="main-content">
-    <div id="budgetModal" class="outer-container">
-        <div class="background-block"></div>
-        <div class="header-text">Пополнить баланс:</div>
-        <div class="button replenish-button">
-            {{!-- <div class="button-text">Пополнить</div> --}}
-            <div id="addBalanceBtn" class="button-text">Пополнить</div>
+    <main class="company__main">
+    <div id="budgetModal" class="budget">
+       <div class="budget__background--block"></div>
+        <div class="budget__header--text">Пополнить баланс:</div>
+        <div class="budget__replenish-button">
+            {{!-- <div class="budget__button__text">Пополнить</div> --}}
+            <div id="addBalanceBtn" class="budget__button__text">Пополнить</div>
         </div>
-        <div class="button replenish-cancel-button" id="closeBudgetModal">
-            <div class="button-text" >Отмена</div>
+        <div class="budget__button budget__replenish--cancel--button" id="closeBudgetModal">
+            <div class="budget__button__text" >Отмена</div>
         </div>
-        <div class="currency-text">Руб.</div>
-        <div class="input-container">
-            <input type="number" id="amount" class="input-field" placeholder="Сумма">
+        <div class="budget__currency--text">Руб.</div>
+        <div class="budget__input">
+            <input type="number" id="amount" class="budget__input__field" placeholder="Сумма">
         </div>
     </div>
     
@@ -67,14 +67,14 @@
         </div>
         </div> --}}
 
-        <div class="container">
-            <div class="lefted-box">
-                <div class="adlayout">
-                    <div id="ad-list">
+        <div class="company__main__container">
+            <div class="company__main__container__left">
+                <div class="company__main__container__left__adlayout">
+                    <div id="company__main__container__left__adlayout__ads--list">
                     </div>
-                        <div class="button-container">
+                        <div class="company__button--container">
                             <a href="/createad">
-                                <button class="edit-button">
+                                <button class="company__edit--button">
                                     Создать    
                                 </button>
                             </a>
@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-                <div class="centered-box" id="selected-ad" style="color:white">
+                <div class="company__main__centered--box" id="selected-ad" style="color:white">
 
                     
                         

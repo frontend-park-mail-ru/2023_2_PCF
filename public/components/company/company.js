@@ -71,7 +71,7 @@ export default class Company {
       }
     });
     // Очищаем существующий список объявлений перед добавлением новых
-    const adList = document.getElementById('ad-list');
+    const adList = document.getElementById('company__main__container__left__adlayout__ads--list');
     adList.innerHTML = '';
     console.log(context.userAds.parsedJson);
     // Проверяем наличие userAds в context
@@ -93,7 +93,7 @@ export default class Company {
 
         const listItem = document.createElement('div');
         listItem.innerHTML = ` 
-        <div class="currentAdElContainer info-card">
+        <div class="company__ad__element--current company__info-card">
             <svg style="margin-left: 5%" xmlns="http://www.w3.org/2000/svg" width="23" height="14" viewBox="0 0 23 14" fill="none" class="arrow-svg">
             <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
             <path d="M5.5 11.5L1 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -106,13 +106,13 @@ export default class Company {
             <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
             <path d="M8.5 13L14.5 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
             </svg>    
-            <div class="info-card-items">
-              <div class="circle" style="background: #D3E7CA;"></div>
-              <div class="currentAdElWeekday text-large">БТ</div>
-              <div class="currentAdElTitle text-title">${nameString}</div>
-              <div class="currentAdElSubtitle text-status">${descrString}</div>
-              <div class="status-dot" style="background: #949494;">
-              <div class="arrows"></div>
+            <div class="company__info-card__items">
+              <div class="company__ad__element--current__status" style="background: #D3E7CA;"></div>
+              <div class="company__ad__element--current__weekday company__info__text--large">БТ</div>
+              <div class="company__ad__element--current__title company__info__text--title">${nameString}</div>
+              <div class="company__ad__element--current__subtitle company__info__text--status">${descrString}</div>
+              <div class="company__info__status--dot" style="background: #949494;">
+              <div class="company__arrows"></div>
             </div>
         </div>
         `
@@ -133,13 +133,13 @@ export default class Company {
 
     this.parent.addEventListener('click', (event) => {
       const target = event.target;
-      if (target.classList.contains('edit-button-edid')) {
+      if (target.classList.contains('company__ad__button--edit')) {
         console.log('Кнопка "Изменить" нажата');
         editAd(context.currentAd);
-      } else if (target.classList.contains('edit-button-unique')) {
+      } else if (target.classList.contains('company__ad__button--unique')) {
         console.log('Кнопка "Получить ссылку" нажата');
         this.getUniqueLinkFromBackend();
-      } else if (target.classList.contains('edit-button-delete')) {       
+      } else if (target.classList.contains('company__ad__button--delete')) {       
         console.log('Кнопка "Удалить" нажата');
         this.deleteAdFromBackend();
       }
@@ -177,30 +177,30 @@ export default class Company {
   showSelectedAd(ad) {
     const selectedAd = document.getElementById('selected-ad');
     selectedAd.innerHTML = `
-    <div class="container-selected">
-    <img id="photo_company" class="box-image" src="image.jpg" alt="Company Photo">
-    <div class="content">
-        <div class="left">
-            <div class="box-title">${ad.name}</div>
-            <div class="box-subtitle">Бюджет</div>
-            <div class="box-description">${ad.budget}</div>
-            <div class="box-subtitle">Аудитория</div>
-            <div class="box-description">Аудитория 1</div>
-            <div class="box-subtitle">Сайт</div>
-            <div class="box-description">${ad.website_link}</div>
+    <div class="company__ad__container--selected">
+    <img id="company__ad__photo" class="company__box--image" src="image.jpg" alt="Company Photo">
+    <div class="company__ad__content">
+        <div class="company__ad--left">
+            <div class="company__ad__box--title">${ad.name}</div>
+            <div class="company__ad__box--subtitle">Бюджет</div>
+            <div class="company__ad__box--description">${ad.budget}</div>
+            <div class="company__ad__box--subtitle">Аудитория</div>
+            <div class="company__ad__box--description">Аудитория 1</div>
+            <div class="company__ad__box--subtitle">Сайт</div>
+            <div class="company__ad__box--description">${ad.website_link}</div>
         </div>
-        <div class="right">
-            <div class="description-title">Описание</div>
-            <div class="description-text">${ad.description}</div>
+        <div class="company__ad--right">
+            <div class="company__ad__description--title">Описание</div>
+            <div class="company__ad__description--text">${ad.description}</div>
         </div>
     </div>
-    <div class="buttons">
-        <button class="edit-button-unique">Получить ссылку</button>
-        <button class="edit-button-edid">Изменить</button>
-        <button class="edit-button-delete">Удалить</button>
+    <div class="company__ad__buttons">
+        <button class="company__ad__button--unique">Получить ссылку</button>
+        <button class="company__ad__button--edit">Изменить</button>
+        <button class="company__ad__button--delete">Удалить</button>
     </div>
 </div> `;
-    const photoCompany = document.getElementById('photo_company');
+    const photoCompany = document.getElementById('company__ad__photo');
     photoCompany.src = Api.getImage(ad.image_link)
 
   }

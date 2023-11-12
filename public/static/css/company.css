@@ -25,10 +25,6 @@ h1, h2, h3 {
     right: 10px; 
 }
 
-.main-content {
-    background-color: #1F2027;
-}
-
 .logo-container {
     display: flex;
     align-items: center;
@@ -56,10 +52,10 @@ h1, h2, h3 {
     font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
 }
 
-.container {
+.company__main__container {
     display: flex;
     align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
-    justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
+    justify-content: space-between; /* Равномерное распределение между sidebar и company__main */
     padding: 0px;
 }
 
@@ -115,7 +111,8 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-.main-content {
+.company__main {
+    background-color: #1F2027;
     flex-grow: 1;
     padding: 20px;
     margin: 0px 0; 
@@ -123,14 +120,14 @@ h1, h2, h3 {
 
 }
 
-.container {
+.company__main__container {
     display: flex;
     justify-content: space-between; /* Размещаем блоки с пробелом между ними */
     align-items: flex-start; /* Выравниваем блоки сверху */
     margin: 20px 0; /* Добавляем отступы снизу и сверху */
 }
 
-.lefted-box {
+.company__main__container__left {
     width: 25%;
     max-width: 100%;
     display: flex;
@@ -143,7 +140,7 @@ h1, h2, h3 {
 }
 
 
-.centered-box {
+.company__main__centered--box {
     flex: 0 0 70%; /* Занимаем 75% ширины контейнера */
     display: flex;
     flex-direction: column;
@@ -171,7 +168,7 @@ h1, h2, h3 {
     color: #fff;
 }
 
-.adlayout {
+.company__main__container__left__adlayout {
     display: flex;
     flex-direction: column;
     height: 100%; /* Добавьте это, чтобы .adlayout занимал всю высоту .lefted-box */
@@ -182,7 +179,7 @@ h1, h2, h3 {
     width: 100%; /* Для соответствия ширине контейнера */
 }
 
-.edit-button {
+.company__edit--button {
     background-color: #131517;
     color: white;
     border: none;
@@ -194,11 +191,11 @@ h1, h2, h3 {
     margin: 10px auto; /* Центрирование кнопки в .button-container */
 }
 
-.edit-button:hover {
+.company__edit--button:hover {
     background-color: #2d2d2d;
 }
 
-.edit-button-unique {
+.company__ad__button--unique {
     background-color: #131517;
     color: white;
     border: none;
@@ -212,11 +209,11 @@ h1, h2, h3 {
     margin-top: 10px; 
 }
 
-.edit-button-unique:hover {
+.company__ad__button--unique:hover {
     background-color: #2d2d2d;
 }
 
-.edit-button-edid {
+.company__ad__button--edit {
     background-color: #131517;
     color: white;
     border: none;
@@ -230,11 +227,11 @@ h1, h2, h3 {
     margin-top: 10px; 
 }
 
-.edit-button-edid:hover {
+.company__ad__button--edit:hover {
     background-color: #2d2d2d;
 }
 
-.edit-button-delete {
+.company__ad__button--delete {
     background-color: rgb(188, 51, 51);
     color: white;
     border: none;
@@ -248,7 +245,7 @@ h1, h2, h3 {
     margin-top: 10px; 
 }
 
-.edit-button-delete:hover {
+.company__ad__button--delete:hover {
     background-color: #e86a6a;
 }
 
@@ -272,7 +269,7 @@ h1, h2, h3 {
     color: #fff;
 }
 
-.centered-box .text-container {
+.company__main__centered--box .text-container {
     align-self: flex-start;   
     text-align: left;   
     margin-left: 15px;     
@@ -290,7 +287,7 @@ h1, h2, h3 {
     font-size: 14px;
 }
 
-.info-card {
+.company__info-card {
     height: 50px;
     position: relative;
     margin-bottom: 40px;
@@ -300,11 +297,11 @@ h1, h2, h3 {
 
 .arrow-svg {
     position: absolute;
-    left: 0; /* Вы можете настроить это значение, чтобы подвинуть SVG к 'circle' */
+    left: 0; /* Вы можете настроить это значение, чтобы подвинуть SVG к 'company__ad__element--current__status' */
     top: 50%;
     transform: translateY(-50%);
 }
-.circle {
+.company__ad__element--current__status {
     /* position: relative; */
     /* z-index: 1; */
     width: 57px;
@@ -324,7 +321,7 @@ h1, h2, h3 {
     border-radius: 15px;
 }
 
-.text-title, .text-large, .text-status, .currency {
+.text-title, .company__info__text--large, .company__info__text--status, .currency {
     position: absolute;
     color: white;
     font-family: Istok Web;
@@ -338,14 +335,14 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-.text-large {
+.company__info__text--large {
     left: 38px;
     top: 4px;
     font-size: 32px;
     font-weight: 700;
 }
 
-.text-status {
+.company__info__text--status {
     left: 110px;
     top: 25px;
     font-size: 14px;
@@ -359,7 +356,7 @@ h1, h2, h3 {
     font-weight: 400;
 }
 
-.status-dot {
+.company__info__status--dot {
     width: 9px;
     height: 9px;
     left: 95px;
@@ -378,18 +375,18 @@ h1, h2, h3 {
     margin-right: 10px; /* Добавить небольшой отступ справа, если необходимо */
 }
 
-.info-card:hover {
+.company__info-card:hover {
     background-color: #7f73c6; 
     width: 80%;
     padding: 2%;;
     border-radius: 15px;
 }
-.info-card {
+.company__info-card {
     cursor: pointer; 
     transition: transform 0.1s; 
 }
 
-.info-card:active {
+.company__info-card:active {
     background-color: #705FCF; 
 }
 
@@ -452,7 +449,7 @@ h1, h2, h3 {
     border: 1px white solid;
 }
 
-.button-text {
+.budget__button__text {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web', sans-serif;
@@ -490,19 +487,18 @@ h1, h2, h3 {
 
 
 
-.box-title, .box-subtitle, .box-description {
+.company__ad__box--title, .company__ad__box--subtitle, .box-description {
     color: white;
     font-family: Istok Web;
     word-wrap: break-word;
-    margin-left: 10px;
 }
 
-.box-title {
+.company__ad__box--title {
     font-size: 28px;
     font-weight: 700;
 }
 
-.box-subtitle {
+.company__ad__box--subtitle {
     margin-top: 20px;
     font-size: 16px;
     font-weight: 700;
@@ -512,7 +508,7 @@ h1, h2, h3 {
     font-size: 14px;
     font-weight: 400;
 }
-.description-title {
+.company__ad__description--title {
     color: white;
     font-size: 16px;
     font-family: 'Istok Web', sans-serif;
@@ -523,7 +519,7 @@ h1, h2, h3 {
     margin-bottom: 10px;
 
 }
-.description-text {
+.company__ad__description--text{
     width: 400px;
     height: 352px;
     color: white;
@@ -534,52 +530,53 @@ h1, h2, h3 {
     /* text-align: justify;  */
     /* margin-top: 20px; */
 }
-.container-selected{
+.company__ad__container--selected{
     display: flex;
     flex-direction: column;
     width: 100%; 
     height: 100%;
 }
-.box-image {
+.company__box--image {
     /* top: 0; */
     /* flex: 1; */
     width: 100%; /* Изображение занимает 90% ширины своего контейнера */
-    height: 100%;
+    height: 45%;
     border-radius: 23px;
 }
-.content {
+.company__ad__content {
     flex: 1;
     display: flex;
     margin-top: 20px; /* Расстояние от изображения до блоков ниже */
 }
 
-.left, .right {
+.company__ad--left, .company__ad--right {
+    text-align: left;
     display: flex;
     flex: 0;
     flex-direction: column;
 }
 
-.left {
-    margin-right: 5%;
-    width: 45%;
-}
-
-.right {
+.company__ad--left {
+    margin-right: 10%;
     width: 50%;
 }
-.buttons {
+
+.company__ad--right {
+    width: 40%;
+}
+.company__ad__buttons {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-.edit-button-unique, .edit-button-edid, .edit-button-delete {
+.company__ad__button--unique, .company__ad__button--edit, .company__ad__button--delete {
     margin: 0 10px; /* Расстояние между кнопками */
 }
-#ad-list {
+#company__main__container__left__adlayout__ads--list {
     max-height: 500px; 
     overflow-y: auto; /* Включает вертикальную прокрутку, если содержимое выходит за пределы */
 }
-.outer-container {
+.budget {
     display: none; /* скрыть по умолчанию */
     width: 380px;
     height: 272px;
@@ -590,14 +587,14 @@ h1, h2, h3 {
     left: 50%; /* центрирование по горизонтали */
     transform: translate(-50%, -50%); /* точное центрирование */
 }
-.background-block {
+.budget__background--block {
     width: 100%;
     height: 100%;
     position: absolute;
     background: #242832;
     border-radius: 34px;
 }
-.header-text, .currency-text, .input-text, .button-text {
+.header-text, .budget__currency--text, .input-text, .budget__button__text {
     position: absolute;
     color: white;
     font-family: 'Istok Web', sans-serif;
@@ -611,7 +608,7 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-.button {
+.budget_button {
     width: 143px;
     height: 50px;
     padding: 10px;
@@ -623,27 +620,27 @@ h1, h2, h3 {
     gap: 10px;
 }
 
-.replenish-button {
+.budget__replenish-button {
     background: #AD4343;
     left: 28px;
     top: 177px;
     margin-right: 20px;
 }
-.replenish-cancel-button {
+.budget__replenish--cancel--button {
     background: #131517;
     left: 185px;
     top: 176px;
     margin-left: 20px;
 }
 
-.currency-text {
+.budget__currency--text {
     margin-left: 40px;
     left: 297px;
     top: 109px;
     font-size: 16px;
     font-weight: 400;
 }
-.input-container {
+.budget__input {
     width: 263px;
     height: 70px;
     padding: 8px 17px;
@@ -657,7 +654,7 @@ h1, h2, h3 {
     left: 28px;
     top: 74px;
 }
-.input-field {
+.budget__input__field {
     width: 100%; /* Занимает всю доступную ширину в контейнере */
     height: 100%; /* Занимает всю доступную высоту в контейнере */
     border: none;
@@ -669,7 +666,7 @@ h1, h2, h3 {
 }
 
 
-.input-field:focus {
+.budget__input__field:focus {
     outline: none;
    
 }
@@ -688,12 +685,12 @@ input[type=number] {
     height: 420px;
 }
 
-.currentAdElContainer {
+.company__ad__element--current {
     margin-top: 10%;
     margin-left: 10%;
 }
 
-.info-card-items{
+.company__info-card__items{
     position: relative;
     margin-left: 5%;
 }
