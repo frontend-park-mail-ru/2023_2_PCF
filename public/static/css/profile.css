@@ -1,0 +1,524 @@
+
+body {
+    font-family: 'Istok Web', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700; /* Применить полужирное начертание к заголовкам (если необходимо) */
+}
+  body {
+    background-color: #1F2027;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.logo-right-bottom {
+    display: none;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.menu-element{
+    display: flex;
+    width: 100%;
+}
+
+.menu-element img {
+    margin-top: 6%;
+}
+
+.menu-element:hover {
+    background-color: #6C5DD2
+}
+
+.profile__main {
+    background-color: #1F2027;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    /* padding: 20px; */
+}
+
+.logo-container img {
+    width: 32px;
+    height: 46px;
+}
+
+.logo {
+    width: 80px; /* Уменьшил размер логотипа */
+    height: auto;
+    margin-right: 10px; /* Добавил небольшой отступ между логотипом и текстом */
+}
+
+.logo-text p {
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px; /* Изменил размер шрифта для текста рядом с логотипом */
+}
+
+.profile__container {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю (для одной высоты) */
+    justify-content: space-between; /* Равномерное распределение между sidebar и main-content */
+    padding: 0px;
+}
+
+.sidebar {
+    width: 175px;
+    height: 100vh; /* Занимает всю высоту экрана */
+    background-color: #242832;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* border-radius: 35px; */
+    position: fixed; /* Фиксируем на одном месте */
+    top: 0; /* Прибиваем к верху */
+    left: 0; /* Прибиваем к левому краю */
+}
+
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+
+}
+
+.menu ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu p{
+    color: #61636A;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.profile__main {
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0px 0; 
+    margin-left: 175px;  /* Это соответствует ширине вашего sidebar */
+
+}
+
+.profile__container {
+    display: flex;
+    justify-content: space-between; /* Размещаем блоки с пробелом между ними */
+    align-items: flex-start; /* Выравниваем блоки сверху */
+    margin: 20px 0; /* Добавляем отступы снизу и сверху */
+}
+
+.profile__lefted-box {
+    max-width: 100%;
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 35px;
+    height: 940px;
+    text-align: center;
+    background-color: #242832;
+    padding: 33px 20px 20px 20px;
+}
+
+
+.profile__centered-box {
+    flex: 0 0 70%; /* Занимаем 75% ширины контейнера */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border-radius: 35px;
+    height: 940px;
+    text-align: center;
+    background-color: #242832;
+    padding: 20px; /* Добавляем отступы внутри блока */
+}
+
+.image-container {
+    border-radius: 35px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text {
+    color: #fff;
+}
+
+.edit-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 146px;
+    height: 52px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.edit-button:hover {
+    background-color: #513bde;
+}
+
+
+
+/* Стили для .description */
+.description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* Выравниваем текст слева */
+    max-width: 800px; /* Максимальная ширина текста */
+    margin-top: 20px; /* Отступ сверху над текстом */
+}
+
+.description h2 {
+    font-size: 24px; /* Размер шрифта для заголовка "Описание" */
+    margin-bottom: 10px;
+    color: white;
+}
+.description .text {
+    color: #fff;
+}
+
+.profile__text-info {
+    display: flex;
+    align-self: start;
+}
+
+.image-container-logo {
+    margin-right: 25px; 
+}
+
+.profile__centered-box .profile__text-container {
+    align-self: flex-start;   
+    text-align: left;   
+    margin-left: 15px;     
+    color: white;
+    /* width: 100%;             */
+}
+
+.profile__text-container h1{
+    font-size: 24px;
+}
+.profile__text-container h2{
+    font-size: 16px;
+}
+.profile__text-container h3{
+    font-size: 16px;
+    color:#61636A;
+}
+
+.profile__info-container {
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    
+}
+.profile__info-container h1{
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 15px;    
+    margin-bottom: 40px; 
+
+}
+
+.profile__wrapper {
+    display: flex;
+}
+
+.profile__card {
+    position: relative;
+    border-radius: 34px;
+    border: 2px #6C5DD2 solid;
+    color: white;
+    font-family: 'Istok Web';
+    word-wrap: break-word;
+    
+}
+.profile__title {
+    position: absolute;
+    margin: 0;         
+    padding-bottom: 5px; 
+    font-size: 24px;  
+    line-height: 1.2; 
+    left: 79px;
+    top: 23px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.profile__line {
+    position: absolute;
+    width: 248px;
+    height: 0px;
+    border: 1px #6C5DD2 solid;
+    margin: 0; 
+    top: 58px;
+}
+
+.profile__card-large {
+    width: 250px;
+    height: 337px;
+}
+
+.profile__card-medium, .profile__card-small {
+    width: 250px;
+    height: 215px;
+}
+
+/* .title {
+    position: absolute;
+    left: 79px;
+    top: 23px;
+    font-size: 24px;
+    font-weight: 700;
+} */
+
+.profile__border {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    left: 0px;
+    top: 74px;
+}
+
+.profile__icon {
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    left: 30px;
+    top: 23px;
+}
+.profile__wrapper-card {
+    display: flex;
+    margin-right: 150px;
+}
+.profile__footer-container {
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    
+}
+.profile__footer-container h1{
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 15px;    
+    margin-bottom: 40px; 
+
+}
+
+.profile__info-card {
+    margin-right: 10%;
+    width: 202px;
+    height: 176px;
+    position: relative;
+}
+
+.profile__card-image {
+    width: 202px;
+    height: 122px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: 26px;
+}
+
+.profile__card-title {
+    left: 0px;
+    top: 133px;
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-family: "Istok Web";
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.profile__card-subtitle {
+    left: 0px;
+    top: 156px;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-family: "Istok Web";
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.profile__lefted-box h1{
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 15px;    
+    margin-bottom: 40px; 
+
+}
+
+.profile__input-container {
+    width: 75%;
+    height: 58px;
+    padding: 4px 17px;
+    background: #323644;
+    border-radius: 20px;
+    border: 2px #323644 solid;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+    margin-bottom: 30px;
+}
+
+.input-label {
+    color: white;
+    font-size: 14px;
+    font-family: "Istok Web";
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.profile__save-button {
+    margin-top: 40px;
+    width: 230px;
+    height: 70px;
+    background: #6C5DD2;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Istok Web';
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.profile__save-button:active, .profile__save-button:focus {
+    background: rgba(108, 93, 210, 0.20);
+    transition: none;
+}
+.profile__save-button:hover {
+    background: #8F7DE7; /* Изменяем цвет фона при наведении курсора */
+}
+
+
+
+
+.custom-button {
+    width: 250px;
+    height: 70px;
+    margin-top: 100px;
+    background: rgba(108, 93, 210, 0.20); /* Примерный фон из предыдущего вопроса */
+    border-radius: 25px;
+    border: none; /* убрать стандартные рамки */
+    color: rgba(255, 255, 255, 0.20); /* цвет текста из предыдущего вопроса */
+    font-size: 20px;
+    font-family: "Istok Web";
+    font-weight: 700;
+    padding: 10px 30px; /* отступы вокруг текста кнопки */
+    cursor: pointer; /* указатель руки при наведении на кнопку */
+    outline: none; /* убрать стандартный контур при фокусе */
+    transition: 0.3s; /* плавный переход для наведения и активного состояния */
+}
+
+.custom-button:hover {
+    background: #6C5DD2; /* темнее при наведении */
+    color: white; /* белый текст при наведении */
+}
+
+.custom-button:active {
+    transform: scale(0.95); /* небольшое уменьшение при нажатии */
+}
+.profile__input-field {
+    background: transparent; /* чтобы фон поля ввода соответствовал фону контейнера */
+    border: none; /* убрать стандартные рамки */
+    color: white; /* цвет текста */
+    outline: none; /* убрать стандартный контур при фокусе */
+    font-size: 14px;
+    font-family: "Istok Web";
+   font-weight: 400;
+   height: 100%;
+    width: 100%; /* чтобы поле ввода занимало всю доступную ширину */
+    padding-left: 5px; /* добавить немного отступа слева */
+}
+
+.profile__input-field::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* цвет подсказки в поле ввода */
+    margin-top: 5px;
+}
+
+#b_avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Скругляем углы, чтобы сделать круглым */
+    object-fit: cover; /* Сохраняем соотношение сторон и обрезаем изображение при несоответствии размеров */
+  }
+  
+  .profile__photo-upload-label:hover .profile__gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+    background:rgba(255, 255, 255, 0.5);
+}
+
+.profile__gradient-box {
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 10px;
+    width: 230px;
+    height: 170px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+.profile__file-input {
+    display: none; 
+}

@@ -1,0 +1,100 @@
+
+<div class="container">
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="../../static/img/logo_ad.png" alt="Логотип" class="logo">
+            <div class="logo-text">
+                <p>AdHub</p>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <img src="../../static/img/free-icon-home-7941430_2.png" alt="Иконка главной">
+                    <a href="/company">Главная</a>
+                </li>
+                <li>
+                    <img src="../../static/img/free-icon-front-end-6489421_2.png" alt="Иконка кампании">
+                    <a href="/company">Кампания</a>
+                </li>
+                <li>
+                    <img src="../../static/img/free-icon-wallet-482541.png" alt="Иконка бюджета">
+                    <a href="#" id="budgetModalButton">Бюджет</a>
+                </li>
+                <li>
+                    <img src="../../static/img/free-icon-people-3633274.png" alt="Иконка аудитории">
+                    <a href="/audience">Аудитория</a>
+                </li>
+                <li>
+                    <img src="../../static/img/free-icon-cogwheel-6186867_2.png" alt="Иконка настроек">
+                    <a href="#">Настройки</a>
+                </li>
+                <li>
+                    <img src="../../static/img/free-icon-user-4743186.png" alt="Иконка профиля">
+                    <a href="/profile">Профиль</a>
+                </li>
+                <li>
+                    <img src="../../static/img/free-icon-notification-8860191.png" alt="Иконка уведомлений">
+                    <a href="#">Уведомления</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main class="company__main">
+    <div id="budgetModal" class="budget">
+       <div class="budget__background--block"></div>
+        <div class="budget__header--text">Пополнить баланс:</div>
+        <div class="budget_button budget__replenish--button">
+            {{!-- <div class="budget__button__text">Пополнить</div> --}}
+            <div id="addBalanceBtn" class="budget__button__text">Пополнить</div>
+        </div>
+        <div class="budget_button budget__replenish--cancel--button" id="closeBudgetModal">
+            <div class="budget__button__text" >Отмена</div>
+        </div>
+        <div class="budget__currency--text">Руб.</div>
+        <div class="budget__input">
+            <input type="number" id="amount" class="budget__input__field" placeholder="Сумма">
+        </div>
+    </div>
+    
+        {{!-- <div id="budgetModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBudgetModal">&times;</span>
+            <h2>Пополнение баланса</h2>
+            <p>Введите сумму для пополнения:</p>
+            <input type="number" id="amount">
+            <button id="addBalanceBtn">Пополнить</button>
+        </div>
+        </div> --}}
+
+        <div class="company__main__container">
+            <div class="company__main__container__left">
+                <div class="company__main__container__left__adlayout">
+                    <div id="company__main__container__left__adlayout__ads--list">
+                    </div>
+                        <div class="company__button--container">
+                            <a href="/createad">
+                                <button class="company__edit--button">
+                                    Создать    
+                                </button>
+                            </a>
+                        </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+                <div class="company__main__centered--box" id="selected-ad" style="color:white">
+
+                    
+                        
+                        Здесь пока ничего нет:(
+                    
+
+                </div>
+                  
+
+        </div>
+    </main>
+</div>

@@ -1,0 +1,117 @@
+.signup_body {
+    background-image: url('../img/register_page.png');
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.signup-form {
+    background-color: #202129;
+    color:white;
+    margin-left: 42px;
+    margin-bottom: 195px;
+    margin-top: 106px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.signup-form__header {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+
+.signup-form__name {
+    margin-bottom: 0;
+}
+
+.signup-form__input {
+
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #323644;
+    background-color: #323644;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+.signup-form__input[type="email"],
+.signup-form__input[type="password"] {
+    width: 554px;
+}
+
+.signup-form__input[type="text"] {
+    flex: 1;
+    margin-right: 25px;
+}
+
+.signup-form__name-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-form__input[type="password"]{
+    /* background-color: #565C6A; */  /* это должен быть ховер */
+}
+
+.signup-form__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 574px;
+}
+
+.signup-form__create-button {
+    background-color: #6C5DD2;
+}
+
+.signup-form__with-button {
+    background-color: #565C6A;
+}
+
+.signup-form__button {
+    display: block;
+    width: 274px;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 ;
+}
+
+.signup-form__button:hover {
+    background-color: #513bde;
+}
+
+.signup-form__error-label {
+    padding: 10px;
+    color: rgba(255, 0, 0, 0.54);
+}
+
+signup-form__error-label--visible {
+    visibility: visible;
+}
+
+signup-form__error-label--hidden {
+    visibility: hidden;
+}
+
+.logo-right-bottom {
+    position: absolute;
+    bottom: 0px; 
+    right: 0px; 
+}

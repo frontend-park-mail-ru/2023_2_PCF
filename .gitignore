@@ -1,0 +1,6 @@
+node_modules
+bundle
+.idea
+.DS_Store
+public/main.bundle.js
+public/main.bundle.js.LICENSE.txt
