@@ -19,11 +19,11 @@ export default class Api {
   }
 
   static getAdsList() {
-    return Ajax.get({url:BACKEND_URL + '/ad'});
+    return Ajax.get({url: BACKEND_URL + '/ad'});
   }
 
   static getAudienceList() {
-    return Ajax.get({url:BACKEND_URL + '/targetlist'});
+    return Ajax.get({url: BACKEND_URL + '/targetlist'});
   }
 
   static createAd(data = {}) {
@@ -39,11 +39,11 @@ export default class Api {
   }
 
   static getUser(data = {}) {
-    return Ajax.get({url:BACKEND_URL + '/usergetbytoken'});
+    return Ajax.get({url: BACKEND_URL + '/usergetbytoken'});
   }
 
   static getBalance(data = {}) {
-    return Ajax.get({url:BACKEND_URL + '/balanceget'});
+    return Ajax.get({url: BACKEND_URL + '/balanceget'});
   }
 
   static getImage(filename) {
@@ -51,7 +51,7 @@ export default class Api {
   }
 
   static getUniqueLink(adid) {
-    return Ajax.get({url:BACKEND_URL + '/aduniquelink?id=' + adid});
+    return Ajax.get({url: BACKEND_URL + '/aduniquelink?id=' + adid});
   }
 
   static logout() {
@@ -59,7 +59,7 @@ export default class Api {
   }
 
   static getAd(adID) {
-    return Ajax.get({url:BACKEND_URL + '/adget?adID=' + adID});
+    return Ajax.get({url: BACKEND_URL + '/adget?adID=' + adID});
   }
 
   static deleteAd(data) {
