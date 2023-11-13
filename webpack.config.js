@@ -38,7 +38,7 @@ module.exports = {
             filename: path.resolve(__dirname, 'bundle/index.html'),
             cache: false,
         }),
-        new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
+        new MiniCssExtractPlugin({ filename: "[name].bundle.css" }),
     ],
     devtool: 'inline-source-map',
     devServer: {
