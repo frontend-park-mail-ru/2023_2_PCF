@@ -46,7 +46,7 @@ export default class CreateAd {
       if (file) {
           var reader = new FileReader();
           reader.onload = function(e) {
-              document.querySelector('.preview-image').src = e.target.result;
+              document.querySelector('.createad__preview-image').src = e.target.result;
           };
           reader.readAsDataURL(file);
       }
@@ -63,7 +63,7 @@ export default class CreateAd {
 
     this.form.querySelector('#name').addEventListener('input', (event) => {
       // Ensure the event listener is using the event parameter to get the current value.
-      const previewTitle = document.querySelector('.preview-title'); // Ensure this element exists in your HTML.
+      const previewTitle = document.querySelector('.createad__preview-title'); // Ensure this element exists in your HTML.
       if (previewTitle) {
         previewTitle.textContent = event.target.value; // Use event.target.value to get the current input's value.
       }
@@ -72,7 +72,7 @@ export default class CreateAd {
     // Attach event listeners to the description input field.
     this.form.querySelector('#description').addEventListener('input', (event) => {
       // Ensure the event listener is using the event parameter to get the current value.
-      const previewDescription = document.querySelector('.preview-desription'); // Ensure this element exists in your HTML.
+      const previewDescription = document.querySelector('.createad__preview-desription'); // Ensure this element exists in your HTML.
       if (previewDescription) {
         previewDescription.textContent = event.target.value; // Use event.target.value to get the current input's value.
       }

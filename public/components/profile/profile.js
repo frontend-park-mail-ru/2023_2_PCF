@@ -42,14 +42,7 @@ export default class Profile {
     .catch((error) => {
       console.error('Ошибка:', error);
     });
-    this.parent.innerHTML = Template();
-    this.form = this.parent.getElementsByClassName('profile')[0];
-    this.form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      await this.updateUser();
-    });
-    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
-    this.errorLabel.classList.add('hidden');    
+    this.parent.innerHTML = Template(); 
   }
 
   renderTemplate() {
@@ -171,7 +164,6 @@ export default class Profile {
   });
   }  
 }
-
 
 
 

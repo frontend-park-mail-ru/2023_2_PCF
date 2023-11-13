@@ -1,0 +1,19 @@
+body {
+    z-index: 0;
+    font-family: 'Istok Web', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700; /* Применить полужирное начертание к заголовкам (если необходимо) */
+}
+  body {
+    background-color: #1F2027;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

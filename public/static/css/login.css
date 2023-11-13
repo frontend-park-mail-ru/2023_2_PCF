@@ -1,10 +1,9 @@
-body {
+.login_body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100vh;
-    padding: 20px;
     background-color: #f4f4f4;
     background-image: url('../img/image_index.png');
     background-size: cover;

@@ -1,18 +1,15 @@
 import Api from '../../modules/api.js';
-import Validate from '../../modules/validate.js';
 import '../../static/css/editpage.css';
 import { BACKEND_URL } from '../../modules/api.js';
 import Template from './editpage.hbs';
-
 const context = {
   ad: [],
   Audience: [],
 }
-// Получить параметры URL
 const urlParams = new URLSearchParams(window.location.search);
 
-// Извлечь значение параметра "id"
 const adID = urlParams.get('id');
+
 
 export default class EditPage {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -42,7 +39,7 @@ export default class EditPage {
     });
 
     this.parent.innerHTML = Template();
-    this.form = this.parent.getElementsByClassName('createad')[0];
+    this.form = this.parent.querySelector('#createAd');
 
     this.form.addEventListener('submit', this.onSubmit.bind(this));
     this.errorLabel = this.form.getElementsByClassName('error-label')[0];
@@ -57,9 +54,9 @@ export default class EditPage {
         input.value = context.ad[input.id];
       }
     });
-    document.querySelector('.preview-image').src = Api.getImage(context.ad.image_link);
-    document.querySelector('.preview-desription').textContent = context.ad.description;
-    document.querySelector('.preview-title').textContent = context.ad.name;
+    document.querySelector('.editpage__preview-image').src = Api.getImage(context.ad.image_link);
+    document.querySelector('.editpage__preview-desription').textContent = context.ad.description;
+    document.querySelector('.editpage__preview-title').textContent = context.ad.name;
 
     console.log(context.Audience);
 
@@ -74,7 +71,7 @@ export default class EditPage {
       if (file) {
           var reader = new FileReader();
           reader.onload = function(e) {
-              document.querySelector('.preview-image').src = e.target.result;
+              document.querySelector('.editpage__preview-image').src = e.target.result;
           };
           reader.readAsDataURL(file);
       }
@@ -90,19 +87,16 @@ export default class EditPage {
     });
 
     this.form.querySelector('#name').addEventListener('input', (event) => {
-      // Ensure the event listener is using the event parameter to get the current value.
-      const previewTitle = document.querySelector('.preview-title'); // Ensure this element exists in your HTML.
+      const previewTitle = document.querySelector('.editpage__preview-title');
       if (previewTitle) {
-        previewTitle.textContent = event.target.value; // Use event.target.value to get the current input's value.
+        previewTitle.textContent = event.target.value;
       }
     });
   
-    // Attach event listeners to the description input field.
     this.form.querySelector('#description').addEventListener('input', (event) => {
-      // Ensure the event listener is using the event parameter to get the current value.
-      const previewDescription = document.querySelector('.preview-desription'); // Ensure this element exists in your HTML.
+      const previewDescription = document.querySelector('.editpage__preview-desription'); 
       if (previewDescription) {
-        previewDescription.textContent = event.target.value; // Use event.target.value to get the current input's value.
+        previewDescription.textContent = event.target.value; 
       }
     });
 
@@ -136,7 +130,7 @@ export default class EditPage {
     const requestOptions = {
       method: 'POST',
       mode: 'cors',
-      credentials: 'include', // Если требуется передача авторизационных данных
+      credentials: 'include',
       body: formData,
   };
 

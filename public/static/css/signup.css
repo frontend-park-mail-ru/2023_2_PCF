@@ -1,4 +1,4 @@
-body {
+.signup_body {
     background-image: url('../img/register_page.png');
     font-family: 'Montserrat', sans-serif;
     display: flex;
