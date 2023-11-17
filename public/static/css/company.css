@@ -465,7 +465,6 @@
 }
 
 .budget {
-    display: none; /* скрыть по умолчанию */
     width: 380px;
     height: 272px;
     z-index: 1;

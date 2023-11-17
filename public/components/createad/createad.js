@@ -56,7 +56,7 @@ export default class CreateAd {
     context.Audience.forEach((audience) => {
       let op = document.createElement('option');
       op.class = 'dropdown-content';
-      op.textContent = "Аудитория" + audience.id;
+      op.textContent = audience.name;
       op.value = audience.id;
       targetList.appendChild(op);
     });

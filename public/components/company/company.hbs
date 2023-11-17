@@ -1,4 +1,20 @@
 
+    <div id="budgetModal" class="budget">
+       <div class="budget__background--block"></div>
+        <div class="budget__header--text">Пополнить баланс:</div>
+        <div class="budget_button budget__replenish--button">
+            {{!-- <div class="budget__button__text">Пополнить</div> --}}
+            <div id="addBalanceBtn" class="budget__button__text">Пополнить</div>
+        </div>
+        <div class="budget_button budget__replenish--cancel--button" id="closeBudgetModal">
+            <div class="budget__button__text" >Отмена</div>
+        </div>
+        <div class="budget__currency--text">Руб.</div>
+        <div class="budget__input">
+            <input type="number" id="amount" class="budget__input__field" placeholder="Сумма">
+        </div>
+    </div>
+    
 <div class="container">
     <div class="sidebar">
         <div class="logo-container">
@@ -18,7 +34,7 @@
                         <img src="../../static/img/company.png" alt="Иконка">
                         <a href="/company">Кампания</a>
                     </li>
-                    <li>
+                    <li id="budgetModalButton">
                         <img src="../../static/img/wallet.png" alt="Иконка">
                         <a href="#">Бюджет</a>
                     </li>
@@ -43,22 +59,6 @@
         </div>
     </div>
     <main class="company__main">
-    <div id="budgetModal" class="budget">
-       <div class="budget__background--block"></div>
-        <div class="budget__header--text">Пополнить баланс:</div>
-        <div class="budget_button budget__replenish--button">
-            {{!-- <div class="budget__button__text">Пополнить</div> --}}
-            <div id="addBalanceBtn" class="budget__button__text">Пополнить</div>
-        </div>
-        <div class="budget_button budget__replenish--cancel--button" id="closeBudgetModal">
-            <div class="budget__button__text" >Отмена</div>
-        </div>
-        <div class="budget__currency--text">Руб.</div>
-        <div class="budget__input">
-            <input type="number" id="amount" class="budget__input__field" placeholder="Сумма">
-        </div>
-    </div>
-    
         {{!-- <div id="budgetModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeBudgetModal">&times;</span>
