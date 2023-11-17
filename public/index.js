@@ -12,7 +12,7 @@ import EditPage from './components/editpage/editpage.js';
 import AudienceCreate from './components/audience_create/audience_create.js';
 import Profile from './components/profile/profile.js';
 import Announcement from './components/announcement/announcement.js';
-
+import ProfileAd from './components/profilead/profilead.js';
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
@@ -36,6 +36,8 @@ const createad = new CreateAd(document.getElementById('root'), () => router.go('
 const editpage = new EditPage(document.getElementById('root'), () => router.go('/editpage'));
 const profile = new Profile(document.getElementById('root'), () => router.go('/profile'));
 const announcement = new Announcement(document.getElementById('root'), () => router.go('/announcement'));
+const profilead = new ProfileAd(document.getElementById('root'), () => router.go('/profilead'));
+
 
 router.add('/login', () => (login.render()));
 router.add('/signup', () => (signup.render()));
@@ -46,6 +48,8 @@ router.add('/createad', () => (createad.render()));
 router.add('/editpage', () => (editpage.render()));
 router.add('/profile', () => (profile.render()));
 router.add('/announcement', () => (announcement.render()));
+router.add('/profilead', () => (profilead.render()));
+
 router.add('/', () => (company.render()));
 
 
