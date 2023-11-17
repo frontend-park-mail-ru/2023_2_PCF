@@ -1,0 +1,371 @@
+
+.announcement {
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0px 0; 
+    margin-left: 175px;  /* Это соответствует ширине вашего sidebar */
+
+}
+
+.announcement__container {
+    display: flex;
+    justify-content: center; /* Размещаем блоки с пробелом между ними */
+    align-items: flex-start; /* Выравниваем блоки сверху */
+    margin: 20px 0; /* Добавляем отступы снизу и сверху */
+}
+
+
+.centered-box {
+    position: relative;
+    flex: 0 0 70%; 
+    display: flex;
+    /* flex-direction: row;  */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 35px;
+    height: 940px;
+    background-color: #242832;
+    padding: 20px; 
+    gap: 20px; 
+    position: relative;
+
+    /* overflow: hidden; */
+}
+
+.announcement__left-block, .announcement__right-block {
+    flex: 1;
+    box-sizing: border-box
+}
+.centered-box .announcement__container {
+    background: #323644;
+    border-radius: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+    padding: 4px 17px;
+}
+
+.centered-box .announcement__container.small {
+    width: 263px;
+    height: 70px;
+}
+
+.centered-box .announcement__container.medium {
+    width: 347px;
+    height: 70px;
+    margin-left: 36px;
+}
+
+.centered-box .announcement__container.large {
+    width: 512px;
+    height: 70px;
+}
+
+.centered-box .announcement__container.xlarge {
+    width: 676px;
+    height: 70px;
+}
+
+.centered-box .announcement__container.xxlarge {
+    width: 676px;
+    height: 224px;
+}
+.announcement__container.large {
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Центрирует элементы по вертикали */
+}
+
+.announcement__button-container {
+    position: absolute;
+    margin-left: 45%;
+    margin-bottom: 50%;
+    display: flex;
+    align-items: center;
+    background: #131517;
+    border-radius: 20px;
+    padding: 10px;
+    width: 152px;
+    height: 61px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    gap: 10px;
+    outline: none; /* Убирает стандартный outline */
+    transition: background-color 0.2s ease; /* Добавляет плавный переход для фона кнопки */
+}
+
+.announcement__button-container:hover {
+    background: #2a2a2a; /* Изменяет цвет фона кнопки при наведении */
+}
+
+.announcement__button-container:active {
+    background: #0b0b0b; /* Изменяет цвет фона кнопки при нажатии */
+}
+
+
+.cross-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.horizontal-line, .vertical-line {
+    position: absolute;
+    height: 2px;
+    width: 14px;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform-origin: 50% 50%;
+}
+
+.horizontal-line {
+    transform: translate(-50%, -50%);
+}
+
+.vertical-line {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.announcement__button-text {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 700;
+}
+
+
+.text-input {
+    flex-grow: 1; /* Позволяет input расти и занимать все доступное пространство */
+    margin-right: 10px; /* Добавляет небольшой отступ справа от input */
+}
+
+
+
+.text {
+    color: white;
+    font-size: 14px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.text-input, .text-input:focus {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    color: white;  
+    box-sizing: border-box; 
+}
+
+.text-input textarea {
+    resize: vertical;  
+}
+
+.announcement__label {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web';
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.announcement__gradient-box {
+    width: 426px;
+    height: 417px;
+    background: linear-gradient(0deg, #323644 0%, #323644 100%);
+    border-radius: 23px;
+    margin-bottom: 20px;
+
+}
+.file-input {
+    display: none; 
+}
+
+.announcement__photo-upload-label:hover .announcement__gradient-box {
+    border: 2px solid rgba(68, 44, 177, 0.5); 
+}
+.announcement__action-box {
+    width: 200px;
+    height: 70px;
+    padding: 10px;
+    background: #131517;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    gap: 10px;
+    border: none; /* Убрать стандартные стили кнопки */
+    cursor: pointer; /* Сделать курсор рукой */
+    font-family: inherit; /* Унаследовать шрифт */
+    color: inherit; /* Унаследовать цвет текста */
+    font-size: inherit; /* Унаследовать размер шрифта */
+}
+.announcement__action-box:hover {
+    background: #6C5DD2;
+}
+
+.announcement__box {
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    margin-bottom: 30px;
+    align-items: center;
+    position: absolute;
+    /* margin-top: 50px; */
+    /* transform: translate(-50%, -50%); */
+}
+
+.announcement__сancel-box {
+    display: flex;
+    width: 200px;
+    height: 70px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #AD4343;
+    border: none; /* Убрать стандартные стили кнопки */
+    cursor: pointer; /* Сделать курсор рукой */
+    font-family: inherit; /* Унаследовать шрифт */
+    color: inherit; /* Унаследовать цвет текста */
+    font-size: inherit; /* Унаследовать размер шрифта */
+}
+
+.cancel-box:hover {
+    background-color: #c66a6a;
+}
+
+.cross-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.cross-icon > div {
+    position: absolute;
+    border: 2px white solid;
+    background: rgba(217, 217, 217, 0);
+    border-radius: 7px;
+}
+
+.circle-border {
+    width: 20px;
+    height: 20px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: rgba(217, 217, 217, 0);
+    border-radius: 7px;
+    border: 1.2px white solid;
+}
+
+.horizontal {
+    width: 14px;
+    height: 0px;
+    left: 3px;
+    top: 11px;
+    position: absolute;
+    border: 1px white solid;
+}
+
+.vertical {
+    width: 17.5px;
+    height: 0px;
+    left: 11.8px;
+    top: 1px;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    border: 1px white solid;
+}
+
+.announcement__bold-label {
+    color: white;
+    font-size: 16px;
+    font-family: 'Istok Web';
+    font-weight: 700;
+    word-wrap: break-word;
+    
+    
+}
+
+.announcement__preview-lable-title {
+    overflow: hidden; /* скрывает содержимое, выходящее за пределы */
+    word-wrap: break-word; /* переносит слова на новую строку */
+    white-space: normal;
+    width: 100%;
+    height: 20%;
+}
+
+.announcement__preview-label-description{
+    overflow: hidden; /* скрывает содержимое, выходящее за пределы */
+    word-wrap: break-word; /* переносит слова на новую строку */
+    white-space: normal;
+    width: 450px;
+    height: 270px;
+}
+
+
+/* Стилизация кнопки */
+.dropbtn {
+    background-color: #4F4F4F; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    padding: 16px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убрать границу */
+    cursor: pointer; /* Курсор в виде указателя */
+    width: 100%; /* Ширина кнопки */
+    text-align: left; /* Выравнивание текста по левому краю */
+    box-sizing: border-box; /* Чтобы padding не влиял на ширину кнопки */
+  }
+  
+  /* Контейнер для содержимого выпадающего меню */
+  .dropdown {
+    position: relative; /* Относительное позиционирование */
+    display: inline-block; /* Блок-строчный элемент */
+  }
+  
+  /* Содержимое выпадающего меню */
+  .dropdown-content {
+    display: none; /* Скрыть содержимое */
+    position: absolute; /* Абсолютное позиционирование */
+    background-color: #2E2E2E; /* Цвет фона */
+    min-width: 160px; /* Минимальная ширина */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Тень */
+    z-index: 1; /* Выше других элементов */
+  }
+  
+  /* Ссылки внутри выпадающего меню */
+  .dropdown-content a {
+    color: white; /* Цвет текста */
+    padding: 12px 16px; /* Внутренние отступы */
+    text-decoration: none; /* Убрать подчеркивание текста */
+    display: block; /* Блочный элемент */
+  }
+  
+  /* Стилизация активного элемента */
+  .dropdown-content a.active {
+    background-color: #5757FF; /* Цвет фона активного элемента */
+  }
+  
+  /* Показать выпадающее меню при наведении */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Стилизация кнопки при наведении */
+  .dropdown:hover .dropbtn {
+    background-color: #3E3E3E;
+  }
+  
