@@ -1,4 +1,4 @@
-const CACHE_NAME = 'main';
+/*const CACHE_NAME = 'main';
 const CACHE_URLS = [
     '/',
     'index.html',
@@ -27,3 +27,4 @@ this.addEventListener('fetch', (event) => {
             })
     );
 });
+*/

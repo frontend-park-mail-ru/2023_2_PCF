@@ -1,6 +1,6 @@
 import Api from '../../modules/api.js';
-import Template from '../audience/audience.hbs';
-import '../../static/css/audience.css';
+import Template from '../audience_create/audience_create.hbs';
+import '../../static/css/audience_create.css';
 
 export default class CreateAudience {
   constructor(parent = document.body, submitCallback = () => {}) {
@@ -12,44 +12,46 @@ export default class CreateAudience {
 
   render() {
     this.parent.innerHTML = Template();
-    this.form = this.parent.getElementsByClassName('createaudience')[0];
-    this.form.addEventListener('submit', this.onSubmit.bind(this));
-    this.errorLabel = this.form.getElementsByClassName('error-label')[0];
-    this.errorLabel.classList.add('hidden');
+    this.form = this.parent.getElementsByClassName('edit-btn')[0];
+    this.form.addEventListener('click', this.onSubmit.bind(this));
   }
 
   onSubmit(event) {
     console.log('onSubmit');
     event.preventDefault();
-    const inputs = this.form.querySelectorAll('input');
-    const inputsValue = {};
-    let errMessage = 'Неверные данные.';
-    let err = true;
-    inputs.forEach((input) => {
-      // Проверьте идентификаторы полей и добавьте их в inputsValue
-      if (input.id === 'name' || input.id === 'gender' || input.id === 'min_age' || input.id === 'max_age' || input.id === 'interests' || input.id === 'tags' || input.id === 'keys' || input.id === 'regions') {
-        inputsValue[input.id] = input.value;
-      }
+    const regions = this.form.querySelectorAll('.regions');
+    const region = "";
+    regions.forEach((reg) => {
+      region += reg.value;}) 
+    
+    const genderCheckboxes = document.querySelectorAll(".gender");
+    let Gender = "";
+    genderCheckboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            Gender = checkbox.value;
+        }
     });
 
-    if (err) {
+    const inputsValue = {};
+    const inputs = document.querySelectorAll('input');
+    console.log(inputs);
+    inputs.forEach((input) => {
+      console.log(input.name);
+      if (input.name === 'name' || input.name === 'min_age' || input.name === 'max_age' || input.name === 'interests' || input.name === 'tags' || input.name === 'keys') {
+        inputsValue[input.name] = input.value;
+      }
+    });
+    console.log(inputsValue);
+    inputsValue['regions'] = region;
+    inputsValue['gender'] = Gender;
+
       Api.createAudience(inputsValue).then(
         (response) => {
           if (response.status === 201) {
             this.submitCallback();
           } else {
-            this.showError(errMessage);
           }
         },
       );
-    } else {
-      this.showError(errMessage);
-    }
-  }
-
-  showError(message) {
-    this.errorLabel.classList.remove('hidden');
-    this.errorLabel.classList.add('visible');
-    this.errorLabel.innerHTML = message;
   }
 }

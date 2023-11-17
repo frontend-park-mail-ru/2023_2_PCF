@@ -1,6 +1,7 @@
 import Api from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
 import '../../static/css/company.css';
+import '../../static/css/budget.css';
 import Template from './company.hbs';
 
 const context = {
@@ -39,17 +40,19 @@ export default class Company {
     const budgetModal = document.querySelector('#budgetModal');
     const addBalanceBtn = document.querySelector('#addBalanceBtn');
     const balanceInput = document.querySelector('#amount');
+    const cont = document.querySelector('.container')
 
     openBudgetModalBtn.addEventListener('click', () => {
+      cont.classList.add('blurred-background');
       budgetModal.style.display = 'block';
     });
 
     closeBudgetModalBtn.addEventListener('click', () => {
+      cont.classList.remove('blurred-background');
       budgetModal.style.display = 'none';
     });
 
     addBalanceBtn.addEventListener('click', () => {
-      document.body.classList.add('blurred-background');
       const balance = parseFloat(balanceInput.value);
       const requestData = { };
       requestData['amount'] = balanceInput.value;
@@ -59,6 +62,7 @@ export default class Company {
           .then((data) => {
             console.log('Баланс пополнен:', data);
             budgetModal.style.display = 'none';
+            cont.classList.remove('blurred-background');
           })
           .catch((error) => {
             console.error('Ошибка при пополнении баланса:', error);
@@ -182,7 +186,7 @@ export default class Company {
             <div class="company__ad__box--subtitle">Бюджет</div>
             <div class="company__ad__box--description">${ad.budget}</div>
             <div class="company__ad__box--subtitle">Аудитория</div>
-            <div class="company__ad__box--description">Аудитория 1</div>
+            <div class="company__ad__box--description"></div>
             <div class="company__ad__box--subtitle">Сайт</div>
             <div class="company__ad__box--description">${ad.website_link}</div>
         </div>
