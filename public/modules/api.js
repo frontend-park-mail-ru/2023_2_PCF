@@ -72,4 +72,8 @@ export default class Api {
   static createAudience(data = {}) {
     return Ajax.post(BACKEND_URL + '/targetcreate', data)
   }
+
+  static editAudience(data = {}) {
+    return Ajax.post(BACKEND_URL + '/targetedit', data)
+  }
 }
