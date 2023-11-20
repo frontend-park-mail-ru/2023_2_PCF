@@ -61,6 +61,7 @@
     "safer-buffer": "^2.1.2",
     "send": "^0.18.0",
     "serve-static": "^1.15.0",
+    "serviceworker-webpack5-plugin": "^2.0.0",
     "setprototypeof": "^1.2.0",
     "side-channel": "^1.0.4",
     "source-map": "^0.6.1",

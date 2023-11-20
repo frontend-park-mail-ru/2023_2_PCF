@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack5-plugin');
 
 module.exports = {
     entry: {
@@ -33,6 +34,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new ServiceWorkerWebpackPlugin({
+            entry: path.join(__dirname, 'public/sw.js'),
+        }),
         new HtmlWebpackPlugin({
             template: 'public/index.html',
             filename: path.resolve(__dirname, 'bundle/index.html'),
