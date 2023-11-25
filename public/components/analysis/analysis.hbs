@@ -45,14 +45,56 @@
     <main class="analysis">
         <div class="analysis__container">
             <div class="centered-box">
-            <p style="color:white; font-size:16px;">Средняя оценка пользователя: </p>
-            {{!-- <p style="color:white; font-size:32px;">Лёня воронин был оппом и мы его грохнули</p> --}}
-
-            <div id="survey_rate"></div>
-            <div id="survey_count"></div>
-            <div id="survey_id"></div>
-            <div id="survey_type"></div>      
+            <div class="top-containers">
+            <div class="left-container">
+                <p style="color:white; font-size:16px;">Средняя оценка пользователя: </p>
+                <div class="analysis__survey__title" id="survey_rate">rating</div>    
+                <div class="analysis__survey__title" id="survey_count">count</div>
+                <div class="analysis__survey__title" id="survey_id">id</div>
+                <div class="analysis__survey__title" id="survey_type">type</div>
             </div>
+            
+            <!-- Правый контейнер -->
+            <div class="right-container">
+                <div class="password-container">
+                    <input id="password" type="text" class="password-input" placeholder="Вопрос">
+                </div>                
+                <div class="password-container">
+                    <input id="password" type="text" class="password-input" placeholder="Тип">
+                </div> 
+                <button id="saveButton" class="analysis__button">Сохранить</button> 
+            </div>
+            </div>
+
+            <div class="analysis__additional-blocks">
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block"></div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block"></div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block"></div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block">Создать</div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block">Создать</div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block">Создать</div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block">Создать</div>
+                </a>
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block">Создать</div>
+                </a>
+            </div>
+
+        </div>
+            
         </div>
     </main>
 

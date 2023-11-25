@@ -19,8 +19,9 @@
     position: relative;
     flex: 0 0 70%; 
     display: flex;
-    /* flex-direction: row;  */
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    top: 0;
     text-align: center;
     justify-content: center;
     border-radius: 35px;
@@ -28,11 +29,15 @@
     background-color: #242832;
     padding: 20px; 
     gap: 20px; 
-    position: relative;
-
+    display: flex;
+    justify-content: space-between;
     /* overflow: hidden; */
 }
-
+.top-containers {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение дочерних элементов */
+    width: 100%; /* Ширина, соответствующая ширине centered-box */
+}
 .analysis__left-block, .analysis__right-block {
     flex: 1;
     box-sizing: border-box
@@ -369,3 +374,122 @@
     background-color: #3E3E3E;
   }
   
+  .centered-box input[type=text], .analysis__button {
+    width: 80%; /* Ширина элементов в процентах от ширины контейнера */
+    padding: 12px 20px;
+    margin: 10px 0; /* Отступ сверху и снизу */
+    display: block; /* Занимает всю ширину строки */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.analysis__button{
+    background-color: #6C5DD2;
+    width: 335px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.analysis__button:hover {
+    background-color: #6C5DD2;
+}
+
+.password-container {
+    width: 300px; 
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 4px 17px;
+    background: #323644;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.password-label {
+    color: white;
+    font-size: 14px;
+    font-family: Istok Web;
+    font-weight: 400;
+}
+
+.password-input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%; 
+    height: 100%;
+    color: white;
+    font-size: 14px;
+    font-family: Istok Web;
+    height: 90%;
+}
+.password-input, .password-input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="text"], input[type="text"]:focus {
+    border: none !important;
+    outline: none !important;
+}
+.left-container{
+    margin-left: 30px;
+}
+.right-container{
+    margin-right: 30px;
+}
+.left-container, .right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 50px;
+}
+
+.analysis__survey__title{
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.analysis__additional-blocks {
+    display: flex;
+    width: 100%;
+    justify-content: space-around; /* Распределение блоков равномерно */
+    margin-top: 20px; 
+    padding-top: 20px;
+    display: flex;
+    overflow-x: auto; /* Появление горизонтального скроллбара при необходимости */
+    max-width: calc(7 * 100px + 6 * 20px); /* Пример максимальной ширины */
+    gap: 20px;
+}
+
+.analysis__small-block {
+    width: 100px; /* Ширина блока */
+    height: 100px; /* Высота блока */
+    color: white;
+    /* font-weight: 900; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    border: 2px solid #6C5DD2;
+    background: #565C6A;
+}
+.analysis__animated-link {
+    display: inline-block; /* Обеспечивает правильное отображение анимации */
+    transition: transform 0.3s ease; /* Плавная анимация увеличения */
+}
+
+.analysis__animated-link:hover {
+    transform: scale(1.05); /* Увеличение размера при наведении */
+}
