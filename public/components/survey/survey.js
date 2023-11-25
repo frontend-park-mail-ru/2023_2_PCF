@@ -3,7 +3,7 @@ import Template from './survey.hbs';
 import '../../static/css/survey.css';
 
 const context = {
-    type: 2,
+    type: 1,
     question: 'Как дела?',
     currentAd: 1,
     uniqueLink: String,
@@ -41,6 +41,8 @@ export default class Survey {
             for (let i = 0; i <= 10; i++) {
                 ratingsBlock.innerHTML += `<div class="survey__rating">${i}</div>`
             }
+            rateBtn.innerHTML += `<p class="survey__lefted_title">фу, вы так себе</p>
+            <p class="survey__right_title">вы очень крутые!</p>`;
         }
 
         question.innerHTML = context.question;

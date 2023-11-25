@@ -52,8 +52,26 @@
     outline: none; 
 }
 
+
 .survey__rate-button {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    justify-content: center;
     text-align: center;
+    position: relative;
+}
+
+.survey__lefted_title {
+    position: absolute;
+    left: 0;
+    color: white;
+}
+
+.survey__right_title {
+    position: absolute;
+    right: 0;
+    color: white; 
 }
 
 button {
