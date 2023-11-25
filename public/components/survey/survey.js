@@ -15,14 +15,6 @@ export default class Survey {
     }
 
     render() {
-        // Api.getSurvey()
-        //     .then((data) => {
-        //         context.userAds = data; // Устанавливаем полученные объявления в context
-        //         this.renderTemplate();
-        //     })
-        //     .catch((error) => {
-        //         console.error('Ошибка:', error);
-        //     });
         this.renderTemplate()
     }
 
@@ -30,7 +22,18 @@ export default class Survey {
         this.parent.innerHTML = Template(context);
         const rateBtn = document.querySelector('#rateBtn');
         const question = document.querySelector('#question')
-        const ratings = document.querySelector('#ratings')
+        const ratings = document.querySelectorAll('#ratings .rating'); 
 
+        ratings.forEach((rating, index) => {
+            rating.addEventListener('click', () => {
+                // Сброс цвета всех блоков
+                ratings.forEach(r => r.style.backgroundColor = '');
+    
+                // Закрашиваем текущий блок и все предыдущие
+                for (let i = 0; i <= index; i++) {
+                    ratings[i].style.backgroundColor = '#6C5DD2';
+                }
+            });
+        });
     }
 }

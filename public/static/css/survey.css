@@ -1,0 +1,79 @@
+.survey {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #242832; */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #242832;
+}
+
+.survey__question h1 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.survey__ratings {
+    display: flex;
+    color: white;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.survey__ratings div {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.survey__ratings div:hover {
+    background-color: #6C5DD2;
+    color: white;
+    border-color: #6C5DD2;
+}
+
+.survey__ratings div:focus {
+    background-color: #6C5DD2;
+    color: white;
+    border-color: #6C5DD2;
+    outline: none; 
+}
+
+.survey__rate-button {
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6C5DD2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3e357b;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #6C5DD2; 
+    border: none;
+    background: transparent;
+}
