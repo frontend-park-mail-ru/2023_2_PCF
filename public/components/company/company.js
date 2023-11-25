@@ -44,13 +44,13 @@ export default class Company {
     const surveyIFrame = document.querySelector('#survey-iframe');
 
     // surveyIFrame.style.display = "none";
-    surveyIFrame.innerHTML = 'Здесь пока ничего нет:('
+    // surveyIFrame.innerHTML = 'Здесь пока ничего нет:('
     //  if (context.userAds.length > 0) {
       surveyIFrame.style.display = "block";
       var iframe = document.createElement("iframe");
       iframe.setAttribute("src", "/survey");
-      iframe.style.width = "auto";
-      iframe.style.height = "auto";
+      iframe.style.width = "602px";
+      iframe.style.height = "200px";
       iframe.style.border = "none";
       surveyIFrame.appendChild(iframe);
      // }
