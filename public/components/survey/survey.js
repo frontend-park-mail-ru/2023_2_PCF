@@ -3,8 +3,8 @@ import Template from './survey.hbs';
 import '../../static/css/survey.css';
 
 const context = {
-    type: String,
-    question: String,
+    type: 2,
+    question: 'Как дела?',
     currentAd: 1,
     uniqueLink: String,
 };
@@ -23,12 +23,28 @@ export default class Survey {
         const rateBtn = document.querySelector('#rateBtn');
         const question = document.querySelector('#question');
         const closeBtn = document.querySelector('#closeBtn');
-        const ratings = document.querySelectorAll('#ratings .rating');
+        const ratingsBlock = document.querySelector('.survey__ratings');
         const errorBtn = document.querySelector('#errorBtn');
         errorBtn.classList.remove('survey__error-button--visible');
         errorBtn.classList.add('survey__error-button--hidden');
         let rated = false;
 
+
+        if (context.type === 1) {
+            ratingsBlock.innerHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                ratingsBlock.innerHTML += `<div class="survey__rating">${i}</div>`
+            }
+        }
+        if (context.type === 2) {
+            ratingsBlock.innerHTML = '';
+            for (let i = 0; i <= 10; i++) {
+                ratingsBlock.innerHTML += `<div class="survey__rating">${i}</div>`
+            }
+        }
+
+        question.innerHTML = context.question;
+        const ratings = document.querySelectorAll('.survey__rating');
         ratings.forEach((rating, index) => {
             rating.addEventListener('click', () => {
                 rated = true;

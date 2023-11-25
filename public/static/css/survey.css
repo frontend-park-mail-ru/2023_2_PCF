@@ -9,7 +9,7 @@
     background-color: #242832;
 }
 
-.survey__question h1 {
+.survey__question {
     font-size: 24px;
     color: white;
     text-align: center;
@@ -24,7 +24,7 @@
     margin-bottom: 20px;
 }
 
-.survey__ratings div {
+.survey__rating {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -35,13 +35,13 @@
     transition: all 0.3s;
 }
 
-.survey__ratings div:hover {
+.survey__rating:hover {
     background-color: #6C5DD2;
     color: white;
     border-color: #6C5DD2;
 }
 
-.survey__ratings div:focus {
+.survey__rating:focus {
     background-color: #6C5DD2;
     color: white;
     border-color: #6C5DD2;

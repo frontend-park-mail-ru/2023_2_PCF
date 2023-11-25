@@ -49,8 +49,8 @@ export default class Company {
       surveyIFrame.style.display = "block";
       var iframe = document.createElement("iframe");
       iframe.setAttribute("src", "/survey");
-      iframe.style.width = "400px";
-      iframe.style.height = "300px";
+      iframe.style.width = "auto";
+      iframe.style.height = "auto";
       iframe.style.border = "none";
       surveyIFrame.appendChild(iframe);
      // }
