@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="../../static/img/logo_ad.png" alt="Логотип" class="logo">
+            <div class="logo-text">
+                <p>AdHub</p>
+            </div>
+        </div>
+        <div class="menu">
+                <ul>
+                    <p>Admin tools</p>
+                    <li>
+                        <img src="../../static/img/icon.png" alt="Иконка">
+                        <a href="/company">Главная</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/company.png" alt="Иконка">
+                        <a href="/company">Кампания</a>
+                    </li>
+                    <li id="budgetModalButton">
+                        <img src="../../static/img/wallet.png" alt="Иконка">
+                        <a href="#">Бюджет</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/audience.png" alt="Иконка">
+                        <a href="/audience">Аудитория</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/settings.png" alt="Иконка">
+                        <a href="#">Настройки</a>
+                    </li>
+                    <p>Profile</p>
+                    <li>
+                        <img src="../../static/img/profile.png" alt="Иконка">
+                        <a href="/profile">Профиль</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/notification.png" alt="Иконка">
+                        <a href="#">Уведомления</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main class="analysis">
+        <div class="analysis__container">
+            <div class="centered-box">
+            <div class="top-containers">
+            <div class="left-container">
+                <p style="color:white; font-size:16px;">Средняя оценка пользователя: </p>
+                <div class="analysis__survey__title" id="survey_rate">rating</div>    
+                <div class="analysis__survey__title" id="survey_count">count</div>
+                <div class="analysis__survey__title" id="survey_id">id</div>
+                <div class="analysis__survey__title" id="survey_type">type</div>
+            </div>
+            
+            <!-- Правый контейнер -->
+            <form class="right-container" id="saveSurvey">
+                <div class="password-container">
+                    <input id="question" type="text" class="password-input" placeholder="Вопрос">
+                </div>                
+                <div class="password-container">
+                    <input id="type" type="text" class="password-input" placeholder="Тип">
+                </div> 
+            </form>
+            
+            <button id="saveButtonSur" class="analysis__button">Сохранить</button> 
+            </div>
+
+            <div class="analysis__additional-blocks" id="analysis__additional-blocks">
+                <a class="analysis__animated-link">
+                    <div class="analysis__small-block">Создать</div>
+                </a>
+            </div>
+
+        </div>
+            
+        </div>
+    </main>
+
+
+</div>

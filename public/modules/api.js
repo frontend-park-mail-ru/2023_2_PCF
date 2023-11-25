@@ -5,9 +5,13 @@ export const URLS = {
   signup: '/user',
   ad: '/ad',
   useredit: '/useredit',
+  surveyGet: '/survey/get',
+  surveyStat: '/survey/stat',
+  surveyRate: '/survey/rate',
 };
 
 export const BACKEND_URL = 'http://127.0.0.1:8080/api/v1';
+export const BACKEND_URL_SURVEY = 'http://127.0.0.1:8084/api/v1';
 
 export default class Api {
   static login(data={}) {
@@ -75,5 +79,21 @@ export default class Api {
 
   static editAudience(data = {}) {
     return Ajax.post(BACKEND_URL + '/targetedit', data)
+  }
+
+  static getSurveyGet(id) {
+    return Ajax.get({ url: BACKEND_URL_SURVEY + URLS.surveyGet + "?id=" + id});
+  }
+
+  static getSurveyStat(id) {
+    return Ajax.get({ url: BACKEND_URL_SURVEY + URLS.surveyStat + "?id=" + id});
+  }
+
+  static createSurvey(data = {}) {
+    return Ajax.post(BACKEND_URL_SURVEY + '/survey/survey', data)
+  }
+
+  static surveryList() {
+    return Ajax.get(BACKEND_URL_SURVEY + "/survey/getList")
   }
 }

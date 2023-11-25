@@ -12,6 +12,7 @@ import EditPage from './components/editpage/editpage.js';
 import AudienceCreate from './components/audience_create/audience_create.js';
 import Profile from './components/profile/profile.js';
 import Survey from "./components/survey/survey";
+import Analysis from './components/analysis/analysis.js';
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
@@ -35,6 +36,10 @@ const createad = new CreateAd(document.getElementById('root'), () => router.go('
 const editpage = new EditPage(document.getElementById('root'), () => router.go('/editpage'));
 const profile = new Profile(document.getElementById('root'), () => router.go('/profile'));
 const survey = new Survey(document.getElementById('root'), () => router.go('/login'));
+const analysis = new Analysis(document.getElementById('root'), () => router.go('/analysis'));
+
+
+
 router.add('/login', () => (login.render()));
 router.add('/signup', () => (signup.render()));
 router.add('/company', () => (company.render()));
@@ -44,6 +49,8 @@ router.add('/createad', () => (createad.render()));
 router.add('/editpage', () => (editpage.render()));
 router.add('/profile', () => (profile.render()));
 router.add('/survey', () => survey.render());
+router.add('/analysis', () => (analysis.render()));
+
 router.add('/', () => (company.render()));
 
 
