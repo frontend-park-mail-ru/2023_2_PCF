@@ -1,4 +1,4 @@
-import Api from '../../modules/api.js';
+import Api, { BACKEND_URL_SURVEY } from '../../modules/api.js';
 import { BACKEND_URL } from '../../modules/api.js';
 import { URLS } from '../../modules/api.js';
 import Validate from '../../modules/validate.js';
@@ -7,14 +7,8 @@ import Template from './analysis.hbs';
 
 
 const context = {
-  count: null,
-  avg_rate:null,
-  survey_id:null,
-  type:null,
-  User: [],
-  Balance: [],
-  Ads: [],
-  mainDescription: null,
+  survey: [],
+  current: 0,
 };
 
 export default class Analysis {
@@ -27,52 +21,93 @@ export default class Analysis {
   }
 
   render() {
-    Api.getBalance().then((datab) => {
-      context.Balance = datab.parsedJson; // Устанавливаем полученные объявления в context
+    Api.surveryList().then((datab) => {
+      context.SurveyData = datab.parsedJson;
+      this.renderTemplate(); // Устанавливаем полученные объявления в context
     }).catch((error) => {
-      console.error('Ошибка:', error);
-    });
-
-    Api.getAdsList().then((dataad) => {
-      context.Ads = dataad.parsedJson;
-    }).catch((error) => {
-      console.error('Ошибка:', error);
-    });
-
-    Api.getUser().then((data) => {
-      context.User = data.parsedJson; // Устанавливаем полученные объявления в context
-      this.fetchSurveyData();
-    })
-    .catch((error) => {
-      console.error('Ошибка:', error);
     });
     this.parent.innerHTML = Template(); 
   }
-  fetchSurveyData() {
-    Api.getSurveyData().then((surveyData) => {
-      context.count = surveyData.count;
-      context.avg_rate = surveyData.avg_rate;
-      context.survey_id = surveyData.survey_id;
-      context.type = surveyData.type;
-      this.renderTemplate();
-    }).catch((error) => {
-      console.error('Ошибка:', error);
-    });
-  }
 
   renderTemplate() {
+    const subButton =  document.querySelector('.analysis__button')
+    console.log(subButton)
+    subButton.addEventListener('click', () => {
+      console.log("sdasadasdas")
+      this.submit()
+    });
+
+    survList = getElementById("analysis__additional-blocks")
+    context.survey.parsedJson.forEach((sur, index) => {
+        
+      const listItem = document.createElement('div');
+      listItem.innerHTML = ` 
+        <a class="analysis__animated-link">
+          <div class="analysis__small-block">
+            <p>Опрос ${sur.id}</p>
+          </div>
+        </a>
+      `
+      listItem.addEventListener('click', () => {
+        this.showSelectedSurvey(sur.id);
+        context.current = sur.id;
+      });
+      survList.appendChild(listItem);
+    });
+  }   
+
+  showSelectedSurvey(currSurv) {
     const surveyRate = document.getElementById('survey_rate');
     const surveyCount = document.getElementById('survey_count');
     const surveyId = document.getElementById('survey_id');
-    const surveyType = document.getElementById('survey_type');
+    rate = {}
 
-  surveyRate.textContent = `Средний рейтинг: ${context.SurveyData.avg_rate}`;
-  surveyCount.textContent = `Количество отзывов: ${context.SurveyData.count}`;
-  surveyId.textContent = `ID опроса: ${context.SurveyData.survey_id}`;
-  surveyType.textContent = `Тип опроса: ${context.type}`;
+    Api.getSurveyStat(currSurv).then((data) => {
+      rate = data.parsedJson; // Устанавливаем полученные объявления в context
+    }).catch((error) => {
+      console.error('Ошибка:', error);
+      this.renderTemplate();
+    });
 
-  }  
+    surveyRate.textContent = `Средний рейтинг: ${context.rate.avg_rate}`;
+    surveyCount.textContent = `Количество отзывов: ${context.rate.count}`;
+    surveyId.textContent = `ID опроса: ${context.rate.survey_id}`;
+  }
+
+  submit() {
+    console.log("clcik")
+    const form = document.querySelector('#saveSurvey');
+    const formData = new FormData(form);
+
+      // Создаем объект для отправки файлов (если выбран файл для аватара)
+      const  question = form.querySelector('#question');
+      const type = form.querySelector('#type');
+
+      formData.append('question', question)
+      formData.append('type', type)
+
+    const requestOptions = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include', // Если требуется передача авторизационных данных
+      body: formData,
+  };
+
+  try {
+      // Отправляем запрос на сервер
+      const response = fetch(BACKEND_URL_SURVEY + "/survey/survey", requestOptions);
+
+      if (response.ok) {
+        console.log("ok")
+      } else {
+          // Обработка ошибки
+          const errorData = response.json();
+      }
+  } catch (error) {
+      console.log(error);
+  }
+  }
+
 }
-
 
 
