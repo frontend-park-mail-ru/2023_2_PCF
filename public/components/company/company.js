@@ -40,7 +40,13 @@ export default class Company {
     const budgetModal = document.querySelector('#budgetModal');
     const addBalanceBtn = document.querySelector('#addBalanceBtn');
     const balanceInput = document.querySelector('#amount');
-    const cont = document.querySelector('.container')
+    const cont = document.querySelector('.container');
+    const surveyIFrame = document.querySelector('#survey-iframe');
+
+    surveyIFrame.style.display = "none";
+     if (context.userAds.length > 0) {
+      surveyIFrame.style.display = "block";
+     }
 
     openBudgetModalBtn.addEventListener('click', () => {
       cont.classList.add('blurred-background');
