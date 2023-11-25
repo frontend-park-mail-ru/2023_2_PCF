@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="../../static/img/logo_ad.png" alt="Логотип" class="logo">
+            <div class="logo-text">
+                <p>AdHub</p>
+            </div>
+        </div>
+        <div class="menu">
+                <ul>
+                    <p>Admin tools</p>
+                    <li>
+                        <img src="../../static/img/icon.png" alt="Иконка">
+                        <a href="/company">Главная</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/company.png" alt="Иконка">
+                        <a href="/company">Кампания</a>
+                    </li>
+                    <li id="budgetModalButton">
+                        <img src="../../static/img/wallet.png" alt="Иконка">
+                        <a href="#">Бюджет</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/audience.png" alt="Иконка">
+                        <a href="/audience">Аудитория</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/settings.png" alt="Иконка">
+                        <a href="#">Настройки</a>
+                    </li>
+                    <p>Profile</p>
+                    <li>
+                        <img src="../../static/img/profile.png" alt="Иконка">
+                        <a href="/profile">Профиль</a>
+                    </li>
+                    <li>
+                        <img src="../../static/img/notification.png" alt="Иконка">
+                        <a href="#">Уведомления</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main class="analysis">
+        <div class="analysis__container">
+            <div class="centered-box">
+            <p style="color:white; font-size:16px;">Средняя оценка пользователя: </p>
+            {{!-- <p style="color:white; font-size:32px;">Лёня воронин был оппом и мы его грохнули</p> --}}
+
+            <div id="survey_rate"></div>
+            <div id="survey_count"></div>
+            <div id="survey_id"></div>
+            <div id="survey_type"></div>      
+            </div>
+        </div>
+    </main>
+
+
+</div>

@@ -5,6 +5,7 @@ export const URLS = {
   signup: '/user',
   ad: '/ad',
   useredit: '/useredit',
+  surveyData: '/surveydata',
 };
 
 export const BACKEND_URL = 'http://127.0.0.1:8080/api/v1';
@@ -75,5 +76,9 @@ export default class Api {
 
   static editAudience(data = {}) {
     return Ajax.post(BACKEND_URL + '/targetedit', data)
+  }
+
+  static getSurveyData() {
+    return Ajax.get({ url: BACKEND_URL + URLS.surveyData });
   }
 }
