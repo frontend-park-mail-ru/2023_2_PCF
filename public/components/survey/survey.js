@@ -3,7 +3,7 @@ import Template from './survey.hbs';
 import '../../static/css/survey.css';
 
 const context = {
-    type: 1,
+    type: 2,
     question: 'Как дела?',
     currentAd: 1,
     uniqueLink: String,

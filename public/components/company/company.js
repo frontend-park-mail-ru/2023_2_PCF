@@ -50,7 +50,7 @@ export default class Company {
       var iframe = document.createElement("iframe");
       iframe.setAttribute("src", "/survey");
       iframe.style.width = "602px";
-      iframe.style.height = "200px";
+      iframe.style.height = "250px";
       iframe.style.border = "none";
       surveyIFrame.appendChild(iframe);
      // }
