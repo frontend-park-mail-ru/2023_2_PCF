@@ -43,10 +43,25 @@ export default class Company {
     const cont = document.querySelector('.container');
     const surveyIFrame = document.querySelector('#survey-iframe');
 
-    surveyIFrame.style.display = "none";
-     if (context.userAds.length > 0) {
+    // surveyIFrame.style.display = "none";
+    surveyIFrame.innerHTML = 'Здесь пока ничего нет:('
+    //  if (context.userAds.length > 0) {
       surveyIFrame.style.display = "block";
-     }
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", "/survey");
+      iframe.style.width = "400px";
+      iframe.style.height = "300px";
+      iframe.style.border = "none";
+      surveyIFrame.appendChild(iframe);
+     // }
+
+    // скрываем iframe если внутри него нажата кнопка закрытия
+    window.addEventListener('message', (event) => {
+      if (event.data === 'surveyClosed') {
+        iframe.style.display = "none";
+      }
+    });
+
 
     openBudgetModalBtn.addEventListener('click', () => {
       cont.classList.add('blurred-background');

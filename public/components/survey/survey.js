@@ -21,11 +21,17 @@ export default class Survey {
     renderTemplate() {
         this.parent.innerHTML = Template(context);
         const rateBtn = document.querySelector('#rateBtn');
-        const question = document.querySelector('#question')
-        const ratings = document.querySelectorAll('#ratings .rating'); 
+        const question = document.querySelector('#question');
+        const closeBtn = document.querySelector('#closeBtn');
+        const ratings = document.querySelectorAll('#ratings .rating');
+        const errorBtn = document.querySelector('#errorBtn');
+        errorBtn.classList.remove('survey__error-button--visible');
+        errorBtn.classList.add('survey__error-button--hidden');
+        let rated = false;
 
         ratings.forEach((rating, index) => {
             rating.addEventListener('click', () => {
+                rated = true;
                 // Сброс цвета всех блоков
                 ratings.forEach(r => r.style.backgroundColor = '');
     
@@ -35,5 +41,21 @@ export default class Survey {
                 }
             });
         });
+
+        closeBtn.addEventListener('click',() => {
+            console.log('surveyClosed postMessage sent');
+            window.parent.postMessage('surveyClosed');
+        });
+
+        rateBtn.addEventListener('click', () => {
+            if (rated) {
+
+            } else {
+                errorBtn.classList.remove('survey__error-button--hidden');
+                errorBtn.classList.add('survey__error-button--visible');
+                errorBtn.innerHTML = 'Пожалуйста, выберите оценку';
+            }
+
+        })
     }
 }

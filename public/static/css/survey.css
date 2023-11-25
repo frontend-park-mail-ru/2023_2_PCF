@@ -67,7 +67,7 @@ button:hover {
     background-color: #3e357b;
 }
 
-.close-button {
+.survey__close-button {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -76,4 +76,19 @@ button:hover {
     color: #6C5DD2; 
     border: none;
     background: transparent;
+}
+
+.survey__error-button {
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #6C5DD2;
+}
+
+.survey__error-button--visible {
+    visibility: visible;
+}
+
+.survey__error-button--hidden {
+    visibility: hidden;
 }
