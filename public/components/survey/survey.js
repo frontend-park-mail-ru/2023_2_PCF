@@ -15,14 +15,15 @@ export default class Survey {
     }
 
     render() {
-        Api.getSurvey()
-            .then((data) => {
-                context.userAds = data; // Устанавливаем полученные объявления в context
-                this.renderTemplate();
-            })
-            .catch((error) => {
-                console.error('Ошибка:', error);
-            });
+        // Api.getSurvey()
+        //     .then((data) => {
+        //         context.userAds = data; // Устанавливаем полученные объявления в context
+        //         this.renderTemplate();
+        //     })
+        //     .catch((error) => {
+        //         console.error('Ошибка:', error);
+        //     });
+        this.renderTemplate()
     }
 
     renderTemplate() {
