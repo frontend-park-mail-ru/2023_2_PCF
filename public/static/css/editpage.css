@@ -6,20 +6,6 @@
     padding: 0px;
 }
 
-.sidebar {
-    width: 175px;
-    height: 100vh; /* Занимает всю высоту экрана */
-    background-color: #242832;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    /* border-radius: 35px; */
-    position: fixed; /* Фиксируем на одном месте */
-    top: 0; /* Прибиваем к верху */
-    left: 0; /* Прибиваем к левому краю */
-}
-
-
 .menu ul {
     list-style-type: none;
     padding: 0;

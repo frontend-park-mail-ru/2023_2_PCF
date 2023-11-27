@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: start;
     border-radius: 35px;
-    height: 980px;
+    height: 900px;
     text-align: center;
     background-color: #242832;
 }
@@ -35,7 +35,7 @@
     /* justify-content: start; */
     justify-content: center;
     border-radius: 35px;
-    height: 940px;
+    height: 860px;
     background-color: #242832;
     padding: 20px; /* Добавляем отступы внутри блока */
 }
@@ -179,7 +179,7 @@
     position: relative;
     margin-bottom: 40px;
     margin-left: 0; 
-    padding: 0;
+    padding: 2%;
 }
 
 .arrow-svg {
@@ -265,7 +265,6 @@
 .company__info-card:hover {
     background-color: #7f73c6; 
     width: 80%;
-    padding: 2%;;
     border-radius: 15px;
 }
 .company__info-card {
@@ -276,103 +275,6 @@
 .company__info-card:active {
     background-color: #705FCF; 
 }
-
-.custom-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    position: absolute;
-    bottom: 0;
-}
-
-.button-content {
-    width: 146px;
-    height: 52px;
-    padding: 10px;
-    background: #131517;
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    display: inline-flex;
-    position: relative;
-}
-
-.plus-icon {
-    width: 20px;
-    height: 20px;
-    position: relative;
-}
-
-.circle-border {
-    width: 20px;
-    height: 20px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    background: rgba(217, 217, 217, 0);
-    border-radius: 7px;
-    border: 1.2px white solid;
-}
-
-.horizontal-line {
-    width: 14px;
-    height: 0px;
-    left: 3px;
-    top: 11px;
-    position: absolute;
-    border: 1px white solid;
-}
-
-.vertical-line {
-    width: 17.5px;
-    height: 0px;
-    left: 11.8px;
-    top: 1px;
-    position: absolute;
-    transform: rotate(90deg);
-    transform-origin: 0 0;
-    border: 1px white solid;
-}
-
-.budget__button__text {
-    color: white;
-    font-size: 16px;
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 700;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    position: relative;
-  }
-  
-  .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-
-
 
 .company__ad__box--title, .company__ad__box--subtitle, .box-description {
     color: white;
@@ -464,101 +366,6 @@
     overflow-y: auto; /* Включает вертикальную прокрутку, если содержимое выходит за пределы */
 }
 
-.budget {
-    display: none; /* скрыть по умолчанию */
-    width: 380px;
-    height: 272px;
-    z-index: 1;
-    position: fixed;
-    /* z-index: 999; */
-    top: 50%; /* центрирование по вертикали */
-    left: 50%; /* центрирование по горизонтали */
-    transform: translate(-50%, -50%); /* точное центрирование */
-}
-.budget__background--block {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: #242832;
-    border-radius: 34px;
-}
-.budget__header--text, .budget__currency--text, .input-text, .budget__button__text {
-    position: absolute;
-    color: white;
-    font-family: 'Istok Web', sans-serif;
-    word-wrap: break-word;
-}
-
-.budget__header--text {
-    left: 88px;
-    top: 19px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.budget_button {
-    width: 143px;
-    height: 50px;
-    padding: 10px;
-    position: absolute;
-    border-radius: 20px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.budget__replenish--cancel--button {
-    background: #AD4343;
-    left: 28px;
-    top: 177px;
-    margin-right: 20px;
-}
-
-.budget__replenish--button {
-    background: #131517;
-    left: 185px;
-    top: 176px;
-    margin-left: 20px;
-}
-
-.budget__currency--text {
-    margin-left: 40px;
-    left: 297px;
-    top: 109px;
-    font-size: 16px;
-    font-weight: 400;
-}
-.budget__input {
-    width: 263px;
-    height: 70px;
-    padding: 8px 17px;
-    position: absolute;
-    background: #323644;
-    border-radius: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; /* Выравнивание по центру по вертикали */
-    gap: 10px;
-    left: 28px;
-    top: 74px;
-}
-.budget__input__field {
-    width: 100%; /* Занимает всю доступную ширину в контейнере */
-    height: 100%; /* Занимает всю доступную высоту в контейнере */
-    border: none;
-    background: transparent; /* Прозрачный фон */
-    color: white; /* Цвет текста */
-    font-size: 16px; /* Размер шрифта */
-    border-radius: 20px; /* Скругление углов */
-    padding: 0 10px; /* Небольшой отступ слева и справа */
-}
-
-
-.budget__input__field:focus {
-    outline: none;
-   
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -586,4 +393,11 @@ input[type=number] {
 
 .blurred-background {
     backdrop-filter: blur(5px);
-  }
+}
+
+@media screen and (max-width: 1280px) {
+    .company__main {
+        margin-top: 25px;
+        margin-left: 0;
+    }
+}

@@ -75,20 +75,6 @@ h1, h2, h3 {
     padding: 0px;
 }
 
-.sidebar {
-    width: 175px;
-    height: 100vh; /* Занимает всю высоту экрана */
-    background-color: #242832;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    /* border-radius: 35px; */
-    position: fixed; /* Фиксируем на одном месте */
-    top: 0; /* Прибиваем к верху */
-    left: 0; /* Прибиваем к левому краю */
-}
-
-
 .menu ul {
     list-style-type: none;
     padding: 0;
@@ -148,7 +134,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: start;
     border-radius: 35px;
-    height: 940px;
+    height: 900px;
     text-align: center;
     background-color: #242832;
     padding: 33px 20px 20px 20px;
@@ -162,7 +148,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: start;
     border-radius: 35px;
-    height: 940px;
+    height: 910px;
     text-align: center;
     background-color: #242832;
     padding: 20px; /* Добавляем отступы внутри блока */
@@ -506,12 +492,12 @@ h1, h2, h3 {
 }
 
 .profile__gradient-box {
+    margin: 0 auto;
     color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 10px;
     width: 230px;
     height: 170px;
     background: linear-gradient(0deg, #323644 0%, #323644 100%);
@@ -521,4 +507,25 @@ h1, h2, h3 {
 }
 .profile__file-input {
     display: none; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1280px) {
+    .profile__main {
+        margin-left: 0;
+    }
+
+    .profile__container {
+        flex-direction: column;
+        margin-top: 50px;   
+    }
+    
+    .profile__centered-box {
+        width: 96%;
+        margin-bottom: 20px;   
+    }
 }
