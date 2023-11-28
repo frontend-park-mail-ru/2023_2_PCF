@@ -86,3 +86,11 @@ export interface ProfileAdContext {
   currentAd: 1;
   uniqueLink: String;
 }
+
+export interface ProfilePadContext {
+  userPads: BaseResponseItem;
+  mainDescription: null;
+  currentAd: 1;
+  uniqueLink: String;
+}
+

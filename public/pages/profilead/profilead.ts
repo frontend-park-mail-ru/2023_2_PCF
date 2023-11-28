@@ -1,11 +1,12 @@
-import { ProfileAdContext } from "common/types.js";
+import { ProfilePadContext } from "common/types.js";
 import Api from "../../modules/api.js";
 import Validate from "../../modules/validate.js";
 import "../../static/css/profilead.css";
 import Template from "./profilead.hbs";
+import { BACKEND_URL } from "../../modules/api.js";
 
-const context: ProfileAdContext = {
-  userAds: {
+const context: ProfilePadContext = {
+  userPads: {
     status: "",
     parsedJson: [],
   },
@@ -13,11 +14,6 @@ const context: ProfileAdContext = {
   currentAd: 1,
   uniqueLink: "",
 };
-
-function editAd(adID: number) {
-  // Перенаправление на страницу редактирования с передачей параметра adID
-  window.location.href = `/editpage?id=${adID}`;
-}
 
 export default class ProfileAd {
   parent: HTMLElement;
@@ -27,14 +23,14 @@ export default class ProfileAd {
   }
 
   render() {
-    // Api.getAdsList()
-    //   .then((data) => {
-    //     context.userAds = data; // Устанавливаем полученные объявления в context
-    //     this.renderTemplate();
-    //   })
-    //   .catch((error) => {
-    //     console.error("Ошибка:", error);
-    //   });
+     Api.getPad()
+       .then((data) => {
+         context.userPads = data; // Устанавливаем полученные объявления в context
+         this.renderTemplate();
+       })
+       .catch((error) => {
+         console.error("Ошибка:", error);
+       });
 
     this.renderTemplate();
   }
@@ -56,15 +52,15 @@ export default class ProfileAd {
 
     if (adList) {
       adList.innerHTML = "";
-      console.log(context.userAds.parsedJson);
+      console.log(context.userPads.parsedJson);
       // Проверяем наличие userAds в context
       if (
-        context.userAds.parsedJson &&
-        Array.isArray(context.userAds.parsedJson)
+        context.userPads.parsedJson &&
+        Array.isArray(context.userPads.parsedJson)
       ) {
         let nameString = "";
         let descrString = "";
-        context.userAds.parsedJson.forEach((ad, index) => {
+        context.userPads.parsedJson.forEach((ad, index) => {
           if (ad.name.length > 15) {
             nameString = ad.name.substring(0, 15);
           } else {
@@ -108,7 +104,7 @@ export default class ProfileAd {
           });
           adList.appendChild(listItem);
         });
-        if (context.userAds.parsedJson.length > 7) {
+        if (context.userPads.parsedJson.length > 7) {
           adList.style.maxHeight = "1000px";
           adList.style.overflowY = "auto";
         } else {
@@ -120,39 +116,22 @@ export default class ProfileAd {
 
     this.parent.addEventListener("click", (event: any) => {
       const target = event.target;
-      if (target.classList.contains("profilead__ad__button--edit")) {
+      if (target.classList.contains("profilead__action-box")) {
         console.log('Кнопка "Изменить" нажата');
-        editAd(context.currentAd);
-      } else if (target.classList.contains("profilead__ad__button--unique")) {
-        console.log('Кнопка "Получить ссылку" нажата');
-        this.getUniqueLinkFromBackend();
-      } else if (target.classList.contains("profilead__ad__button--delete")) {
+        this.editPad(context.currentAd);
+      } else if (target.classList.contains("profilead__сancel-box")) {
         console.log('Кнопка "Удалить" нажата');
         this.deleteAdFromBackend();
       }
     });
   }
 
-  getUniqueLinkFromBackend() {
-    // Отправьте запрос на бэкэнд для получения уникальной ссылки
-    Api.getUniqueLink(context.currentAd)
-      .then((data) => {
-        console.log("Уникальная ссылка получена:", data);
-        context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
-        alert(context.uniqueLink);
-      })
-      .catch((error) => {
-        console.error("Ошибка при получении уникальной ссылки:", error);
-        alert("Not work");
-      });
-  }
-
   deleteAdFromBackend() {
     const req = {
-      ad_id: 0,
+      pad_id: 0,
     };
-    req["ad_id"] = context.currentAd;
-    Api.deleteAd(req)
+    req["pad_id"] = context.currentAd;
+    Api.deletePad(req)
       .then((data) => {
         console.log("Удален ссылка получена:", data);
         location.reload();
@@ -166,37 +145,51 @@ export default class ProfileAd {
     const selectedAd = document.getElementById("selected-ad");
 
     if (selectedAd) {
-      selectedAd.innerHTML = `
-      <div class="profilead__ad__container--selected">
-      <img id="profilead__ad__photo" class="profilead__box--image" src="image.jpg" alt="profilead Photo">
-      <div class="profilead__ad__content">
-          <div class="profilead__ad--left">
-              <div class="profilead__ad__box--title">${ad.name}</div>
-              <div class="profilead__ad__box--subtitle">Бюджет</div>
-              <div class="profilead__ad__box--description">${ad.budget}</div>
-              <div class="profilead__ad__box--subtitle">Аудитория</div>
-              <div class="profilead__ad__box--description">Аудитория 1</div>
-              <div class="profilead__ad__box--subtitle">Сайт</div>
-              <div class="profilead__ad__box--description">${ad.website_link}</div>
-          </div>
-          <div class="profilead__ad--right">
-              <div class="profilead__ad__description--title">Описание</div>
-              <div class="profilead__ad__description--text">${ad.description}</div>
-          </div>
-      </div>
-      <div class="profilead__ad__buttons">
-          <button class="profilead__ad__button--unique">Получить ссылку</button>
-          <button class="profilead__ad__button--edit">Изменить</button>
-          <button class="profilead__ad__button--delete">Удалить</button>
-      </div>
-  </div> `;
-      const photoprofilead = document.getElementById(
-        "profilead__ad__photo"
-      ) as HTMLImageElement;
 
-      if (photoprofilead) {
-        photoprofilead.src = Api.getImage(ad.image_link);
+    }
+  }
+
+  async editPad(id: number) {
+    const form = document.querySelector("#announcement") as HTMLFormElement;
+    if (form) {
+      const formData = new FormData(form);
+      console.log("submit");
+      const inputs = form.querySelectorAll("input");
+      inputs.forEach((input: any) => {
+        if (
+          input.id === "name" ||
+          input.id === "description" ||
+          input.id === "website_link" ||
+          input.id === "price"
+        ) {
+          formData.append(input.id, input.value);
+        }
+      });
+      
+      let input = document.querySelector(".dropdown") as HTMLInputElement;
+      if (input) {
+        formData.append("target_id", input.value);
+      }
+  
+      try {
+        const response = await fetch(BACKEND_URL + "/padedit", {
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+          body: formData,
+        });
+  
+        if (response.ok) {
+          location.href = "/profilead";
+        } else {
+          // Обработка ошибки
+          const errorData = response.json();
+        }
+      } catch (error) {
+        console.log(error);
       }
     }
   }
 }
+
+

@@ -76,4 +76,12 @@ export default class Api {
   static editAudience(data = {}) {
     return Ajax.post(BACKEND_URL + '/targetedit', data)
   }
+
+  static getPad() {
+    return Ajax.get({url: BACKEND_URL + '/pad'})
+  }
+
+  static deletePad(data) {
+    return Ajax.post(BACKEND_URL + '/paddelete', data);
+  }
 }

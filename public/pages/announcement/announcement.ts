@@ -46,42 +46,7 @@ export default class Announcement {
   renderTemplate() {
     console.log(context.Audience);
 
-    const fileUpload = document.getElementById(
-      "file-upload"
-    ) as HTMLInputElement;
-
-    if (fileUpload) {
-      fileUpload.addEventListener("change", function () {
-        var fileName = "";
-        if (fileUpload && fileUpload.files && fileUpload.files.length > 0) {
-          fileName = fileUpload.files[0].name;
-
-          const fileNameElement = document.getElementById(
-            "file-name-display"
-          ) as HTMLInputElement;
-
-          if (fileNameElement) {
-            fileNameElement.value = fileName;
-          }
-
-          var file = fileUpload.files[0];
-          if (file) {
-            var reader = new FileReader();
-            reader.onload = function (e: any) {
-              const previewImage = document.querySelector(
-                ".announcement__preview-image"
-              ) as HTMLImageElement;
-              if (previewImage) {
-                previewImage.src = e.target.result;
-              }
-            };
-            reader.readAsDataURL(file);
-          }
-        }
-      });
-    }
-
-    let targetList = document.querySelector(".dropdown");
+    let targetList = document.querySelector("#target_id");
     context.Audience.forEach((audience: any) => {
       let op = document.createElement("option");
       op.className = "dropdown-content";
@@ -93,34 +58,6 @@ export default class Announcement {
     });
 
     if (this.form) {
-      const nameElement = this.form.querySelector("#name");
-
-      if (nameElement) {
-        nameElement.addEventListener("input", (event: any) => {
-          // Ensure the event listener is using the event parameter to get the current value.
-          const previewTitle = document.querySelector(
-            ".announcement__preview-title"
-          ); // Ensure this element exists in your HTML.
-          if (previewTitle) {
-            previewTitle.textContent = event.target.value; // Use event.target.value to get the current input's value.
-          }
-        });
-      }
-
-      const descriptionElement = this.form.querySelector("#name");
-
-      if (descriptionElement) {
-        descriptionElement.addEventListener("input", (event: any) => {
-          // Ensure the event listener is using the event parameter to get the current value.
-          const previewDescription = document.querySelector(
-            ".announcement__preview-desription"
-          ); // Ensure this element exists in your HTML.
-          if (previewDescription) {
-            previewDescription.textContent = event.target.value; // Use event.target.value to get the current input's value.
-          }
-        });
-      }
-
       const submitBtn = document.querySelector("#submitBtn");
 
       if (submitBtn) {
@@ -130,6 +67,12 @@ export default class Announcement {
       }
     }
   }
+
+  /*Name        string `json:"name"`
+  Description string `json:"description"`
+  WebsiteLink string `json:"website_link"`
+  Price       string `json:"price"`
+  TargetId    string `json:"target_id"`*/
 
   async submit() {
     const form = document.querySelector("#announcement") as HTMLFormElement;
@@ -142,36 +85,27 @@ export default class Announcement {
           input.id === "name" ||
           input.id === "description" ||
           input.id === "website_link" ||
-          input.id === "budget"
+          input.id === "price"
         ) {
           formData.append(input.id, input.value);
-        } else if (input.id === "file-upload") {
-          if (input.files[0] != null) {
-            formData.append("image", input.files[0]);
-          } else {
-            formData.append("image", "");
-          }
         }
       });
-
+      
       let input = document.querySelector(".dropdown") as HTMLInputElement;
       if (input) {
         formData.append("target_id", input.value);
       }
 
-      const requestOptions = {
-        method: "POST",
-        // mode: "cors",
-        // credentials: "include", // Если требуется передача авторизационных данных
-        body: formData,
-      };
-
       try {
-        // Отправляем запрос на сервер
-        const response = await fetch(BACKEND_URL + "/ad", requestOptions);
+        const response = await fetch(BACKEND_URL + "/pad", {
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+          body: formData,
+        });
 
         if (response.ok) {
-          location.href = "/company";
+          location.href = "/profilead";
         } else {
           // Обработка ошибки
           const errorData = response.json();

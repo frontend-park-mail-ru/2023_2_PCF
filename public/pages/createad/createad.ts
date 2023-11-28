@@ -157,17 +157,15 @@ export default class CreateAd {
     let input = document.querySelector(".dropdown") as HTMLInputElement;
 
     formData.append("target_id", input?.value);
-
-    const requestOptions = {
-      method: "POST",
-      // mode: "cors",
-      // credentials: "include", // Если требуется передача авторизационных данных
-      body: formData,
-    };
-
+    
     try {
       // Отправляем запрос на сервер
-      const response = await fetch(BACKEND_URL + "/ad", requestOptions);
+      const response = await fetch(BACKEND_URL + "/ad", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        body: formData,
+      });
 
       if (response.ok) {
         location.href = "/company";
