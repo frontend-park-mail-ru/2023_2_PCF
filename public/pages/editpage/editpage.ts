@@ -65,7 +65,9 @@ export default class EditPage {
     this.errorLabel = this.form.getElementsByClassName(
       "error-label"
     )[0] as HTMLElement;
-    this.errorLabel.classList.add("hidden");
+    if (this.errorLabel) {
+      this.errorLabel.classList.add("hidden");
+    }
   }
 
   renderTemplate() {

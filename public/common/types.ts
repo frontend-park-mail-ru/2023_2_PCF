@@ -54,6 +54,20 @@ export interface CompanyItem {
   image_link: string;
 }
 
+export interface ProfileAdItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  website_link: string;
+  earnings_value: number;
+  views_value: number;
+  clicks_value: number;
+  audience: string;
+  html: string;
+  js: string;
+}
+
 export interface EditPageContext {
   ad: CompanyItem;
   Audience: AudienceItem[];
@@ -93,4 +107,3 @@ export interface ProfilePadContext {
   currentAd: 1;
   uniqueLink: String;
 }
-

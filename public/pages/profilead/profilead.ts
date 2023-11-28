@@ -4,6 +4,7 @@ import Validate from "../../modules/validate.js";
 import "../../static/css/profilead.css";
 import Template from "./profilead.hbs";
 import { BACKEND_URL } from "../../modules/api.js";
+import SelectedAd from "./components/SelectedAd/index";
 
 const context: ProfilePadContext = {
   userPads: {
@@ -17,20 +18,38 @@ const context: ProfilePadContext = {
 
 export default class ProfileAd {
   parent: HTMLElement;
+  selectedAd: any;
 
   constructor(parent = document.body) {
     this.parent = parent;
+    this.selectedAd = new SelectedAd();
   }
 
   render() {
-     Api.getPad()
-       .then((data) => {
-         context.userPads = data; // Устанавливаем полученные объявления в context
-         this.renderTemplate();
-       })
-       .catch((error) => {
-         console.error("Ошибка:", error);
-       });
+    Api.getPad()
+      .then((data) => {
+        context.userPads = data; // Устанавливаем полученные объявления в context
+        //  this.renderTemplate(); // Вернуть при деплое
+      })
+      .catch((error) => {
+        console.error("Ошибка:", error);
+      });
+
+    context.userPads.parsedJson = [
+      {
+        id: 1,
+        name: "Name",
+        description: "Description",
+        price: "500",
+        website_link: "link",
+        earnings_value: 50,
+        views_value: 75,
+        clicks_value: 65,
+        audience: "Audience",
+        html: "html string",
+        js: "js string",
+      },
+    ];
 
     this.renderTemplate();
   }
@@ -145,7 +164,7 @@ export default class ProfileAd {
     const selectedAd = document.getElementById("selected-ad");
 
     if (selectedAd) {
-
+      this.selectedAd.render(ad);
     }
   }
 
@@ -165,12 +184,12 @@ export default class ProfileAd {
           formData.append(input.id, input.value);
         }
       });
-      
+
       let input = document.querySelector(".dropdown") as HTMLInputElement;
       if (input) {
         formData.append("target_id", input.value);
       }
-  
+
       try {
         const response = await fetch(BACKEND_URL + "/padedit", {
           method: "POST",
@@ -178,7 +197,7 @@ export default class ProfileAd {
           credentials: "include",
           body: formData,
         });
-  
+
         if (response.ok) {
           location.href = "/profilead";
         } else {
@@ -191,5 +210,3 @@ export default class ProfileAd {
     }
   }
 }
-
-

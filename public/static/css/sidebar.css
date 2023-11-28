@@ -658,6 +658,7 @@ gap: 20px;
     }
 
     .sidebar__menu {
+        font-size: 2rem;
         display: none;
     }
     
