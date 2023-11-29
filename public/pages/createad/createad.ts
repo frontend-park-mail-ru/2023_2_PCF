@@ -141,9 +141,10 @@ export default class CreateAd {
           input.id === "name" ||
           input.id === "description" ||
           input.id === "website_link" ||
-          input.id === "budget"
+          input.id === "budget" ||
+          input.id === "click_cost"
         ) {
-          formData.append(input.id, input.value);
+          formData.append(input.id, input.value.toString());
         } else if (input.id === "file-upload") {
           if (input.files[0] != null) {
             formData.append("image", input.files[0]);
@@ -156,7 +157,7 @@ export default class CreateAd {
 
     let input = document.querySelector(".dropdown") as HTMLInputElement;
 
-    formData.append("target_id", input?.value);
+    formData.append("target_id", input.value.toString());
     
     try {
       // Отправляем запрос на сервер

@@ -1,56 +1,83 @@
-import { ProfileAdItem } from "common/types";
+import { ProfilePadItem } from "common/types";
 
 class SelectedAd {
-  render = (ad: ProfileAdItem) => {
+  render = (pad: ProfilePadItem) => {
     const selectedAd = document.getElementById("selected-ad");
     if (selectedAd) {
       selectedAd.innerHTML = `
       <div class="content-wrapper">
         <div class="text-blocks">
-            <div class="title">${ad.name}</div>
+            <div class="title">${pad.name}</div>
             <div class="subtitle">Аудитория</div>
             <div class="info-box">
-                <input type="text" class="info-input" placeholder="Аудитория" id="target_id" value="${ad.audience}"/>
+                <select
+                    class="text-input dropdown"
+                    id="target_id"
+                >
+                    <option value="${pad.target_id}">${pad.target_id}</option>
+                </select>
             </div>
             
             <div class="subtitle">Ссылка</div>
             <div class="info-box">
-                <input type="text" class="info-input" placeholder="Введите ссылку" id="website_link" value="${ad.website_link}"/>
+                <input type="text" class="info-input" placeholder="Введите ссылку" id="website_link" value="${pad.website_link}"/>
             </div>
 
             <div class="subtitle">Минимальная цена клика</div>
             <div class="info-box">
-                <input type="text" class="info-input" placeholder="Введите цену" id="price" value="${ad.price}"/>
+                <input type="text" class="info-input" placeholder="Введите цену" id="price" value="${pad.price}"/>
             </div>
         </div>
 
         <div class="description-box">
-            <input type="text" class="description-input" placeholder="Описание" id="description" value="${ad.description}">
+            <input type="text" class="description-input" placeholder="Описание" id="description" value="${pad.description}">
         </div>
 
         </div>
         <div class="earning-info-wrapper">
             <div class="earning-info">
                 <div class="earning-title">Заработано</div>
-                <div class="earning-value" id="earningValue">${ad.earnings_value}</div>
+                <div class="earning-value" id="earningValue">${pad.balance}</div>
             </div>
             <div class="earning-info">
                 <div class="earning-title">Клики</div>
-                <div class="earning-value" id="clicksValue">${ad.clicks_value}</div>
+                <div class="earning-value" id="clicksValue">${pad.clicks}</div>
             </div>
             <div class="earning-info">
                 <div class="earning-title">Показы</div>
-                <div class="earning-value" id="viewsValue">${ad.views_value}</div>
+                <div class="earning-value" id="viewsValue">${pad.views}</div>
             </div>
         </div>
         <div class="ad-info-wrapper">
           <div class="ad-box">
-              <input type="text" class="ad-input" placeholder="HTML" value="${ad.html}">
+              <input type="text" class="ad-input" placeholder="HTML" value="&lt;div id=&quot;banner-container&quot;&gt;&lt;/div&gt;">
           </div>
           <div class="ad-box">
-              <input type="text" class="ad-input" placeholder="JS" value="${ad.js}">
-          </div>
-        </div>
+              <input type="text" class="ad-input" placeholder="JS" value="
+              &lt;script&gt;
+              document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+                  fetchBanner();
+              });
+              
+              function fetchBanner() {
+                  fetch(&quot;/getad?id=${pad.id}&quot;)
+                      .then(response =&gt; {
+                          if (!response.ok) {
+                              throw new Error(&#39;Network response was not ok&#39;);
+                          }
+                          return response.json();
+                      })
+                      .then(data =&gt; {
+                          const bannerContainer = document.getElementById(&#39;banner-container&#39;);
+                          bannerContainer.innerHTML = data;
+                      })
+                      .catch(error =&gt; {
+                          console.error(&#39;Fetch error:&#39;, error);
+                      });
+              }
+              &lt;/script&gt;
+              ">
+         </div>
 
         <div class="profilead__box">
           <button class="profilead__action-box" id="submitBtn">

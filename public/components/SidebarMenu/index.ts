@@ -60,20 +60,24 @@ function SidebarMenu() {
     ) as HTMLElement;
 
     if (mobileButton) {
-      mobileButton.addEventListener("click", () => {
-        if (mobileMenu.style.display === "none") {
-          mobileMenu.style.display = "block";
-          desktopSidebarLogo.style.display = "none";
-          desktopSidebarContainer.style.display = "none";
-          sidebar.style.display = "none";
-        } else {
-          mobileMenu.style.display = "none";
-          desktopSidebarLogo.style.display = "block";
-          desktopSidebarContainer.style.display = "block";
-          sidebar.style.backgroundColor = "#000";
-          sidebar.style.display = "flex";
-        }
-      });
+      mobileButton.addEventListener(
+        "click",
+        () => {
+          if (mobileMenu.style.display === "none") {
+            mobileMenu.style.display = "block";
+            desktopSidebarLogo.style.display = "none";
+            desktopSidebarContainer.style.display = "none";
+            sidebar.style.display = "none";
+          } else {
+            mobileMenu.style.display = "none";
+            desktopSidebarLogo.style.display = "block";
+            desktopSidebarContainer.style.display = "block";
+            sidebar.style.backgroundColor = "#000";
+            sidebar.style.display = "flex";
+          }
+        },
+        { once: true }
+      );
 
       const mobileMenuCloseButton = document.querySelector(
         ".sidebar-mobile__menu__close-button"
@@ -94,11 +98,7 @@ function SidebarMenu() {
       if (menuButtons) {
         menuButtons.forEach((mb) => {
           mb.addEventListener("click", () => {
-            const mmcb = document.querySelector(
-              ".sidebar-mobile__menu__close-button"
-            ) as HTMLElement;
-
-            if (mmcb.style.display !== "none") {
+            if (window.innerWidth <= 1280) {
               mobileMenu.style.display = "block";
               desktopSidebarLogo.style.display = "none";
               desktopSidebarContainer.style.display = "none";

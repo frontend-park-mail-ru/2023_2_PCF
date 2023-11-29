@@ -204,7 +204,8 @@ export default class EditPage {
           input.id === "name" ||
           input.id === "description" ||
           input.id === "website_link" ||
-          input.id === "budget"
+          input.id === "budget" ||
+          input.id === "click_cost"
         ) {
           formData.append(input.id, input.value);
         } else if (input.id === "file-upload") {
@@ -221,22 +222,15 @@ export default class EditPage {
         formData.append("target_id", input.value);
       }
 
-      const requestOptions = {
-        method: "POST",
-        // mode: "cors",
-        // credentials: "include",
-        body: formData,
-      };
-
       try {
-        const response = fetch(BACKEND_URL + "/adedit", requestOptions).then(
+        const response = fetch(BACKEND_URL + "/adedit", {
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+          body: formData,
+        }).then(
           (response) => {
-            if (response.status < 300) {
               location.href = "/company";
-            } else {
-              // Обработка ошибки
-              return response.json();
-            }
           }
         );
       } catch (error) {

@@ -38,7 +38,7 @@ export default class Company {
 
   render() {
     // MOCKUP
-    const userAds: CompanyItem[] = [
+    /*const userAds: CompanyItem[] = [
       {
         id: 1,
         name: "Название #1",
@@ -49,16 +49,16 @@ export default class Company {
       },
     ];
     context.userAds = { status: "", parsedJson: userAds };
-    this.renderTemplate();
+    this.renderTemplate();*/
 
-    // Api.getAdsList()
-    //   .then((data) => {
-    //     context.userAds = data; // Устанавливаем полученные объявления в context
-    //     this.renderTemplate();
-    //   })
-    //   .catch((error) => {
-    //     console.error("Ошибка:", error);
-    //   });
+    Api.getAdsList()
+      .then((data) => {
+        context.userAds = data; // Устанавливаем полученные объявления в context
+        this.renderTemplate();
+      })
+      .catch((error) => {
+        console.error("Ошибка:", error);
+      });
   }
 
   renderTemplate() {

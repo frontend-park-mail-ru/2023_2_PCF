@@ -3,7 +3,7 @@ import "../../static/css/audience.css";
 import Api from "../../modules/api";
 
 interface AddBudgetRequestData {
-  amount: number;
+  amount: string;
 }
 
 function BudgetModal() {
@@ -44,13 +44,13 @@ function BudgetModal() {
       });
 
       addBalanceBtn?.addEventListener("click", () => {
-        const balance = parseFloat(balanceInput.value);
+        const balance = balanceInput.value;
         const requestData: AddBudgetRequestData = {
-          amount: 0,
+          amount: "",
         };
-        requestData["amount"] = Number(balanceInput.value);
+        requestData["amount"] = balanceInput.value;
         console.log(requestData);
-        if (!isNaN(balance) && balance > 0) {
+        if (balance != "") {
           Api.addBalance(requestData)
             .then((data) => {
               console.log("Баланс пополнен:", data);

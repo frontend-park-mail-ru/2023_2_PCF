@@ -39,7 +39,8 @@ export default class Profile {
   render() {
     Api.getBalance()
       .then((datab) => {
-        context.Balance = datab.parsedJson; // Устанавливаем полученные объявления в context
+        context.Balance.total_balance = datab.parsedJson.total_balance; // Устанавливаем полученные объявления в context
+        context.Balance.reserved_balance = datab.parsedJson.reserved_balance
       })
       .catch((error) => {
         console.error("Ошибка:", error);
@@ -54,8 +55,13 @@ export default class Profile {
       });
 
     Api.getUser()
-      .then((data) => {
-        context.User = data.parsedJson; // Устанавливаем полученные объявления в context
+      .then((data) => { // Устанавливаем полученные объявления в context
+        context.User.f_name = data.parsedJson;
+        context.User.s_name =  data.parsedJson.s_name;
+        context.User.avatar = data.parsedJson.avatar;
+        context.User.login = data.parsedJson.login;
+        context.User.l_name = data.parsedJson.l_name;
+        context.User.password = data.parsedJson.password;
         this.renderTemplate();
       })
       .catch((error) => {
@@ -76,7 +82,7 @@ export default class Profile {
     console.log(context.Ads);
     console.log(context.User);
     console.log(context.Balance);
-    context.User = {
+    /*context.User = {
       f_name: "1",
       s_name: "2",
       avatar: "3",
@@ -88,7 +94,7 @@ export default class Profile {
     context.Balance = {
       total_balance: 0,
       reserved_balance: 0,
-    };
+    };*/
     const bAvatar = document.getElementById("b_avatar") as HTMLInputElement;
     const bLogin = document.getElementById("b_login");
     const avBudget = document.getElementById("av_budget");
