@@ -35,7 +35,7 @@ export default class ProfileAd {
         console.error("Ошибка:", error);
       });
 
-    context.userPads.parsedJson = [
+    /*context.userPads.parsedJson = [
       {
         id: 1,
         name: "Name",
@@ -49,7 +49,7 @@ export default class ProfileAd {
         html: "html string",
         js: "js string",
       },
-    ];
+    ]; */
 
     this.renderTemplate();
   }
