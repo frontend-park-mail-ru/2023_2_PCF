@@ -35,7 +35,7 @@
   align-items: flex-start; /* Выравниваем содержимое по левому краю */
   justify-content: flex-start; 
   border-radius: 35px;
-  height: 1000px;
+  height: 950px;
   min-height: 1000px;
   background-color: #242832;
   padding: 20px; /* Добавляем отступы внутри блока */
@@ -631,7 +631,7 @@ input[type=number] {
 .content-wrapper {
   display: flex;
   justify-content: space-between; /* Располагаем элементы на противоположных концах */
-  width: 100%;
+  width: 60%;
   padding-bottom: 20px;
 }
 
@@ -641,9 +641,9 @@ input[type=number] {
 }
 
 .description-box {
-  width: 100%;
+  width: 400px;
   height: 306px;
-  padding: 8px 17px;
+  padding: 45px 220px;
   margin-top: 20px;
   margin-right: 10px;
   background: #323644;
@@ -702,20 +702,23 @@ input[type=number] {
   width: 100%; /* Занимаем всю доступную ширину */
 }
 .ad-box {
+  max-width: 100%; /* Ограничьте максимальную ширину контейнера */
+  max-height: 300px; /* Задайте максимальную высоту контейнера, при необходимости измените значение */
+  overflow: auto;
   width: 350px;
   height: 250px;
-  padding: 8px 17px;
   background: #323644;
   border-radius: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-  margin-left: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .ad-input {
-  width: 100%; /* Растягиваем на всю ширину контейнера */
+  width: 30%; /* Растягиваем на всю ширину контейнера */
   height: 100%; /* Растягиваем на всю высоту контейнера */
   padding: 8px; /* Добавляем внутренний отступ */
   border: none; /* Убираем границу */
@@ -749,8 +752,8 @@ input[type=number] {
 }
 
 .profilead__box {
-  margin-left: 30%;
-  margin-top: 70px;
+  margin-top: 5%;
+  margin-left: 26%;
       /* transform: translate(0%, -100%); */
   /* justify-content: center;
   position: absolute; */
@@ -855,4 +858,12 @@ input[type=number] {
   .profilead__main__centered--box {
     width: 97%;
   }
+
+  #selected-ad{
+    width: 97%;
+  }
+}
+
+#selected-ad{
+  width: 50%;
 }

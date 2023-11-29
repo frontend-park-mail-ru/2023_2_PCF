@@ -50,46 +50,47 @@ class SelectedAd {
         </div>
         <div class="ad-info-wrapper">
           <div class="ad-box">
-              <input type="text" class="ad-input" placeholder="HTML" value="&lt;div id=&quot;banner-container&quot;&gt;&lt;/div&gt;">
+              <pr type="text" class="ad-input" placeholder="HTML">&lt;div id=&quot;banner-container&quot;&gt;&lt;/div&gt;</pr>
           </div>
           <div class="ad-box">
-              <input type="text" class="ad-input" placeholder="JS" value="
+              <pre class="ad-input" placeholder="JS">
               &lt;script&gt;
-              document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-                  fetchBanner();
-              });
-              
-              function fetchBanner() {
-                  fetch(&quot;http://84.23.53.167:8080/api/v1/getad?id=${pad.id}&quot;)
-                  .then(response =&gt; {
-                      console.log(response)
-                      return response.text()
-                  })
-                  .then(data =&gt; {
-                      console.log(data)
-                      const bannerContainer = document.getElementById(&#39;banner-container&#39;);
-                      bannerContainer.innerHTML = data;
-                  })
-                  .catch(error =&gt; {
-                      console.error(&#39;Fetch error:&#39;, error);
-                  });
-              }
-              &lt;/script&gt;
-              ">
+                document.addEventListener('DOMContentLoaded', function() {
+                    fetchBanner();
+                });
+                
+                function fetchBanner() {
+                    fetch("http://84.23.53.167:8080/api/v1/getad?id=${pad.id}")
+                    .then(response =&gt; {
+                    console.log(response)
+                    return response.text()
+                    })
+                    .then(data =&gt; {
+                    console.log(data)
+                    const bannerContainer = document.getElementById('banner-container');
+                    bannerContainer.innerHTML = data;
+                    })
+                    .catch(error =&gt; {
+                    console.error('Fetch error:', error);
+                    });
+                }
+                &lt;/script&gt;
+              </pre>
          </div>
 
-        <div class="profilead__box">
-          <button class="profilead__action-box" id="submitBtn">
-              <div class="profilead__bold-label">Редактировать</div>
-          </button>
-          <button class="profilead__сancel-box" id="cancelBtn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                  <rect x="1.5" y="1" width="18" height="18" rx="6" stroke="white" stroke-width="2"/>
-                  <line x1="3.5" y1="10" x2="17.5" y2="10" stroke="white" stroke-width="2"/>
-              </svg>
-              <div class="profilead__bold-label">Удалить</div>
-          </button>
         </div>
+        <div class="profilead__box">
+        <button class="profilead__action-box" id="submitBtn">
+            <div class="profilead__bold-label">Редактировать</div>
+        </button>
+        <button class="profilead__сancel-box" id="cancelBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                <rect x="1.5" y="1" width="18" height="18" rx="6" stroke="white" stroke-width="2"/>
+                <line x1="3.5" y1="10" x2="17.5" y2="10" stroke="white" stroke-width="2"/>
+            </svg>
+            <div class="profilead__bold-label">Удалить</div>
+        </button>
+      </div>
       </div>`;
     }
   };
