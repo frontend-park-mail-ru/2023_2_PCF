@@ -29,6 +29,7 @@ export default class ProfileAd {
     Api.getPad()
       .then((data) => {
         context.userPads = data; // Устанавливаем полученные объявления в context
+        console.log(context.userPads)
         this.renderTemplate(); // Вернуть при деплое
       })
       .catch((error) => {
