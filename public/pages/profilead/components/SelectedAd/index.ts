@@ -60,20 +60,19 @@ class SelectedAd {
               });
               
               function fetchBanner() {
-                  fetch(&quot;/getad?id=${pad.id}&quot;)
-                      .then(response =&gt; {
-                          if (!response.ok) {
-                              throw new Error(&#39;Network response was not ok&#39;);
-                          }
-                          return response.json();
-                      })
-                      .then(data =&gt; {
-                          const bannerContainer = document.getElementById(&#39;banner-container&#39;);
-                          bannerContainer.innerHTML = data;
-                      })
-                      .catch(error =&gt; {
-                          console.error(&#39;Fetch error:&#39;, error);
-                      });
+                  fetch(&quot;http://84.23.53.167:8080/api/v1/getad?id=${pad.id}&quot;)
+                  .then(response =&gt; {
+                      console.log(response)
+                      return response.text()
+                  })
+                  .then(data =&gt; {
+                      console.log(data)
+                      const bannerContainer = document.getElementById(&#39;banner-container&#39;);
+                      bannerContainer.innerHTML = data;
+                  })
+                  .catch(error =&gt; {
+                      console.error(&#39;Fetch error:&#39;, error);
+                  });
               }
               &lt;/script&gt;
               ">

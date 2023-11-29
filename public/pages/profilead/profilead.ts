@@ -51,7 +51,7 @@ export default class ProfileAd {
       },
     ]; */
 
-    this.renderTemplate();
+    //this.renderTemplate();
   }
 
   renderTemplate() {
