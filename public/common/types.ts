@@ -49,21 +49,25 @@ export interface CompanyItem {
   id: number;
   name: string;
   budget: number;
+  audience: string;
   website_link: string;
   description: string;
   image_link: string;
+  price: number;
 }
 
-export interface ProfilePadItem {
+export interface ProfileAdItem {
   id: number;
   name: string;
   description: string;
-  price: string;
+  price: number;
   website_link: string;
-  balance: string;
-  views: number;
-  clicks: number;
-  target_id: string;
+  earnings_value: number;
+  views_value: number;
+  clicks_value: number;
+  audience: string;
+  html: string;
+  js: string;
 }
 
 export interface EditPageContext {

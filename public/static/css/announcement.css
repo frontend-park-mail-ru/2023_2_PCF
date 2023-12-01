@@ -15,7 +15,7 @@
 }
 
 
-.centered-box {
+.centered-box-announcement {
   position: relative;
   flex: 0 0 70%; 
   display: flex;
@@ -37,7 +37,7 @@
   flex: 1;
   box-sizing: border-box
 }
-.centered-box .announcement__container {
+.centered-box-announcement .announcement__container {
   background: #323644;
   border-radius: 20px;
   justify-content: flex-start;
@@ -47,28 +47,28 @@
   padding: 4px 17px;
 }
 
-.centered-box .announcement__container.small {
+.centered-box-announcement .announcement__container.small {
   width: 263px;
   height: 70px;
 }
 
-.centered-box .announcement__container.medium {
+.centered-box-announcement .announcement__container.medium {
   width: 347px;
   height: 70px;
   margin-left: 36px;
 }
 
-.centered-box .announcement__container.large {
+.centered-box-announcement .announcement__container.large {
   width: 512px;
   height: 70px;
 }
 
-.centered-box .announcement__container.xlarge {
+.centered-box-announcement .announcement__container.xlarge {
   width: 676px;
   height: 70px;
 }
 
-.centered-box .announcement__container.xxlarge {
+.centered-box-announcement .announcement__container.xxlarge {
   width: 676px;
   height: 224px;
 }
@@ -374,4 +374,19 @@
     margin-top: 25px;
     margin-left: 0;
   }
+}
+
+#error-message {
+  width: 100%;
+  color: red;
+  margin-bottom: 80px;
+  margin-left: 0px;
+  text-align: center;
+}
+
+#description {
+  resize: none;
+  font-size: 14px;
+  font-family: "Istok Web", sans-serif;
+  outline: none;
 }

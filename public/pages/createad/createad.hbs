@@ -1,6 +1,6 @@
 <main class="createad">
     <div class="createad__container">
-        <div class="centered-box">
+        <div class="centered-box-createad">
         <div class="createad__">
             <div class="createad__left-block">
                 <form id="createAd">
@@ -8,17 +8,14 @@
                         <input type="text" class="text-input" placeholder="Заголовок" id="name" maxlength="32">
                     </div>
                     <div class="createad__container xxlarge">
-                        <input class="text-input" placeholder="Описание" id="description" maxlength="950">
+                        <textarea class="text-input" placeholder="Описание" id="description" maxlength="950"></textarea>
                     </div>
                     <div class="createad__container xlarge">
                         <input type="text" class="text-input" placeholder="Ссылка на сайт" id="website_link">
                     </div>
-                    <div style="display: flex;">
-                        <div class="createad__container">
+                    <div>
+                        <div class="createad__container small">
                             <input type="text" class="text-input" placeholder="Бюджет" id="budget">
-                        </div>
-                        <div class="createad__container" style="margin-left:20px">
-                            <input type="text" class="text-input" placeholder="Цена за клик" id="click_cost">
                         </div>
                         <div class="createad__container medium">
                             <select type="text" class="text-input dropdown" placeholder="Аудитория" id="target_id">
@@ -26,7 +23,11 @@
                         </div>
                     </div>
                     <div class="createad__flex-row">
-                        <label class="createad__button-container" for="file-upload">
+                        
+                        <div class="createad__container large">
+                            <input type="text" class="text-input" id="file-name-display" placeholder="Медиафайлы">
+                        </div>
+<label class="createad__button-container" for="file-upload">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <rect x="1" y="1" width="18" height="18" rx="6" stroke="white" stroke-width="2"/>
                                 <line x1="3" y1="10" x2="17" y2="10" stroke="white" stroke-width="2"/>
@@ -35,13 +36,12 @@
                             <div class="createad__button-text">Загрузить</div>
                             <input id="file-upload" type="file" style="display: none;" />
                         </label>
-                        <div class="createad__container large">
-                            <input type="text" class="text-input" id="file-name-display" placeholder="Медиафайлы">
-                        </div>
-
                     
                     </div>
                 </form>
+                        <div id="error-message">
+
+        </div>
             </div>
             </div>
             <div class="createad__box">
@@ -61,7 +61,7 @@
                         <div class="createad__right-block">
                 <div class="createad__label">Предпросмотр:</div>
                 <label for="photoUpload" class="createad__photo-upload-label">
-                    <img class="createad__gradient-box createad__preview-image"></img>
+                    <img class="createad__gradient-box createad__preview-image" src="../../static/img/img_placeholder.svg"></img>
                 </label>
                 <div class="createad__label">Название:
                     <div class="createad__preview-label-title">

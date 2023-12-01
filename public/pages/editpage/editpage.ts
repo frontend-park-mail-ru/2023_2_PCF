@@ -8,10 +8,12 @@ const context: EditPageContext = {
   ad: {
     id: 0,
     name: "",
+    audience: "",
     budget: 0,
     website_link: "",
     description: "",
     image_link: "",
+    price: 0,
   },
   Audience: [],
 };
@@ -33,23 +35,23 @@ export default class EditPage {
   }
 
   render() {
-    Api.getAd(adID)
-      .then((data) => {
-        console.log(data);
-        context.ad = data.parsedJson;
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAd(adID)
+    //   .then((data) => {
+    //     console.log(data);
+    //     context.ad = data.parsedJson;
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
-    Api.getAudienceList()
-      .then((data) => {
-        context.Audience = data.parsedJson;
-        this.renderTemplate();
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAudienceList()
+    //   .then((data) => {
+    //     context.Audience = data.parsedJson;
+    //     this.renderTemplate();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
     const templateResult = Template({});
     const tempContainer = document.createElement("div");
@@ -204,8 +206,7 @@ export default class EditPage {
           input.id === "name" ||
           input.id === "description" ||
           input.id === "website_link" ||
-          input.id === "budget" ||
-          input.id === "click_cost"
+          input.id === "budget"
         ) {
           formData.append(input.id, input.value);
         } else if (input.id === "file-upload") {
@@ -222,15 +223,22 @@ export default class EditPage {
         formData.append("target_id", input.value);
       }
 
+      const requestOptions = {
+        method: "POST",
+        // mode: "cors",
+        // credentials: "include",
+        body: formData,
+      };
+
       try {
-        const response = fetch(BACKEND_URL + "/adedit", {
-          method: "POST",
-          mode: "cors",
-          credentials: "include",
-          body: formData,
-        }).then(
+        const response = fetch(BACKEND_URL + "/adedit", requestOptions).then(
           (response) => {
+            if (response.status < 300) {
               location.href = "/company";
+            } else {
+              // Обработка ошибки
+              return response.json();
+            }
           }
         );
       } catch (error) {

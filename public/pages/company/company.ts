@@ -38,27 +38,29 @@ export default class Company {
 
   render() {
     // MOCKUP
-    /*const userAds: CompanyItem[] = [
+    const userAds: CompanyItem[] = [
       {
         id: 1,
         name: "Название #1",
+        audience: "Аудитория #1",
         description: "Описание #1",
         budget: 100,
-        website_link: "",
+        website_link: "http://...",
         image_link: "",
+        price: 123,
       },
     ];
     context.userAds = { status: "", parsedJson: userAds };
-    this.renderTemplate();*/
+    this.renderTemplate();
 
-    Api.getAdsList()
-      .then((data) => {
-        context.userAds = data; // Устанавливаем полученные объявления в context
-        this.renderTemplate();
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAdsList()
+    //   .then((data) => {
+    //     context.userAds = data; // Устанавливаем полученные объявления в context
+    //     this.renderTemplate();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
   }
 
   renderTemplate() {
@@ -83,36 +85,36 @@ export default class Company {
       );
     }
 
-    this.parent.addEventListener("click", (event) => {
-      const target: HTMLElement | null = event.target as HTMLElement;
-      if (target) {
-        console.log(target);
-        if (target.classList.contains("company__ad__button--edit")) {
-          console.log('Кнопка "Изменить" нажата');
-          editAd(context.currentAd);
-        } else if (target.classList.contains("company__ad__button--unique")) {
-          console.log('Кнопка "Получить ссылку" нажата');
-          this.getUniqueLinkFromBackend();
-        } else if (target.classList.contains("company__ad__button--delete")) {
-          console.log('Кнопка "Удалить" нажата');
-          this.deleteAdFromBackend();
-        }
-      }
-    });
+    // this.parent.addEventListener("click", (event) => {
+    //   const target: HTMLElement | null = event.target as HTMLElement;
+    //   if (target) {
+    //     console.log(target);
+    //     if (target.classList.contains("company__ad__button--edit")) {
+    //       console.log('Кнопка "Изменить" нажата');
+    //       editAd(context.currentAd);
+    //     } else if (target.classList.contains("company__ad__button--unique")) {
+    //       console.log('Кнопка "Получить ссылку" нажата');
+    //       this.getUniqueLinkFromBackend();
+    //     } else if (target.classList.contains("company__ad__button--delete")) {
+    //       console.log('Кнопка "Удалить" нажата');
+    //       this.deleteAdFromBackend();
+    //     }
+    //   }
+    // });
   }
 
   getUniqueLinkFromBackend() {
     // Отправьте запрос на бэкэнд для получения уникальной ссылки
-    Api.getUniqueLink(context.currentAd)
-      .then((data) => {
-        console.log("Уникальная ссылка получена:", data);
-        context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
-        alert(context.uniqueLink);
-      })
-      .catch((error) => {
-        console.error("Ошибка при получении уникальной ссылки:", error);
-        alert("Not work");
-      });
+    // Api.getUniqueLink(context.currentAd)
+    //   .then((data) => {
+    //     console.log("Уникальная ссылка получена:", data);
+    //     context.uniqueLink = data.parsedJson; // Устанавливаем полученную уникальную ссылку в context
+    //     alert(context.uniqueLink);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка при получении уникальной ссылки:", error);
+    //     alert("Not work");
+    //   });
   }
 
   deleteAdFromBackend() {

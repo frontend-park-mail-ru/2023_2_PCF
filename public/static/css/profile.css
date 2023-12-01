@@ -310,6 +310,21 @@ h1, h2, h3 {
     position: absolute;
     left: 0px;
     top: 74px;
+    padding: 10px;
+}
+
+#profile__border__inner {
+    padding-left: 5px;
+    margin-left: 10px;
+    border-left: 2px #6C5DD2 solid;
+}
+
+#available_budget {
+    margin-top: 10px;
+}
+
+#reserved_budget {
+    margin-top: 10px;
 }
 
 .profile__icon {
@@ -321,7 +336,7 @@ h1, h2, h3 {
 }
 .profile__wrapper-card {
     display: flex;
-    margin-right: 150px;
+    justify-content: center;
 }
 .profile__footer-container {
     text-align: left;
@@ -408,7 +423,7 @@ h1, h2, h3 {
 }
 
 .profile__save-button {
-    margin-top: 40px;
+    margin-top: 10px;
     width: 230px;
     height: 70px;
     background: #6C5DD2;
@@ -528,4 +543,21 @@ h1, h2, h3 {
         width: 96%;
         margin-bottom: 20px;   
     }
+}
+
+.custom-create-button {
+    width: 200px;
+    height: 70px;
+    margin-top: 20px;
+    background: rgba(108, 93, 210, 1); /* Примерный фон из предыдущего вопроса */
+    border-radius: 25px;
+    border: none; /* убрать стандартные рамки */
+    color: rgba(255, 255, 255, 1); /* цвет текста из предыдущего вопроса */
+    font-size: 20px;
+    font-family: "Istok Web";
+    font-weight: 700;
+    padding: 10px 30px; /* отступы вокруг текста кнопки */
+    cursor: pointer; /* указатель руки при наведении на кнопку */
+    outline: none; /* убрать стандартный контур при фокусе */
+    transition: 0.3s; /* плавный переход для наведения и активного состояния */
 }

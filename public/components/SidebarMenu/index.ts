@@ -2,6 +2,8 @@ import Template from "./template.hbs";
 import "../../static/css/sidebar.css";
 
 function SidebarMenu() {
+  var removeListener = false;
+
   const content = document.createElement("div");
   content.className = "sidebar";
   content.innerHTML = Template({});
@@ -60,10 +62,12 @@ function SidebarMenu() {
     ) as HTMLElement;
 
     if (mobileButton) {
+      if (removeListener) mobileButton.removeEventListener("click", () => {});
+
       mobileButton.addEventListener(
         "click",
         () => {
-          if (mobileMenu.style.display === "none") {
+          if (!removeListener && mobileMenu.style.display === "none") {
             mobileMenu.style.display = "block";
             desktopSidebarLogo.style.display = "none";
             desktopSidebarContainer.style.display = "none";
@@ -75,9 +79,12 @@ function SidebarMenu() {
             sidebar.style.backgroundColor = "#000";
             sidebar.style.display = "flex";
           }
+          removeListener = true;
         },
         { once: true }
       );
+
+      console.log(mobileButton);
 
       const mobileMenuCloseButton = document.querySelector(
         ".sidebar-mobile__menu__close-button"

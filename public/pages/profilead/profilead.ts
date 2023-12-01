@@ -26,17 +26,16 @@ export default class ProfileAd {
   }
 
   render() {
-    Api.getPad()
-      .then((data) => {
-        context.userPads = data; // Устанавливаем полученные объявления в context
-        console.log(context.userPads)
-        this.renderTemplate(); // Вернуть при деплое
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getPad()
+    //   .then((data) => {
+    //     context.userPads = data; // Устанавливаем полученные объявления в context
+    //     //  this.renderTemplate(); // Вернуть при деплое
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
-    /*context.userPads.parsedJson = [
+    context.userPads.parsedJson = [
       {
         id: 1,
         name: "Name",
@@ -50,9 +49,9 @@ export default class ProfileAd {
         html: "html string",
         js: "js string",
       },
-    ]; */
+    ];
 
-    //this.renderTemplate();
+    this.renderTemplate();
   }
 
   renderTemplate() {
@@ -134,16 +133,16 @@ export default class ProfileAd {
       }
     }
 
-    this.parent.addEventListener("click", (event: any) => {
-      const target = event.target;
-      if (target.classList.contains("profilead__action-box")) {
-        console.log('Кнопка "Изменить" нажата');
-        this.editPad(context.currentAd);
-      } else if (target.classList.contains("profilead__сancel-box")) {
-        console.log('Кнопка "Удалить" нажата');
-        this.deleteAdFromBackend();
-      }
-    });
+    // this.parent.addEventListener("click", (event: any) => {
+    //   const target = event.target;
+    //   if (target.classList.contains("profilead__action-box")) {
+    //     console.log('Кнопка "Изменить" нажата');
+    //     this.editPad(context.currentAd);
+    //   } else if (target.classList.contains("profilead__сancel-box")) {
+    //     console.log('Кнопка "Удалить" нажата');
+    //     this.deleteAdFromBackend();
+    //   }
+    // });
   }
 
   deleteAdFromBackend() {

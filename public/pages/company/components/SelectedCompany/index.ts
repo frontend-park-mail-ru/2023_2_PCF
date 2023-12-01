@@ -11,11 +11,13 @@ class SelectedCompany {
           <div class="company__ad__content">
             <div class="company__ad--left">
               <div class="company__ad__box--title">${ad.name}</div>
+              <div class="company__ad__box--subtitle">Аудитория</div>
+              <div class="company__ad__box--description">${ad.audience}</div>
               <div class="company__ad__box--subtitle">Бюджет</div>
               <div class="company__ad__box--description">${ad.budget}</div>
-              <div class="company__ad__box--subtitle">Аудитория</div>
-              <div class="company__ad__box--description"></div>
-              <div class="company__ad__box--subtitle">Сайт</div>
+              <div class="company__ad__box--subtitle">Цена за клик</div>
+              <div class="company__ad__box--description">${ad.price}</div>
+              <div class="company__ad__box--subtitle">Ссылка</div>
               <div class="company__ad__box--description">${ad.website_link}</div>
             </div>
             <div class="company__ad--right">

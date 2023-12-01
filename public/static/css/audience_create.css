@@ -1113,3 +1113,11 @@ gap: 20px;
         margin-bottom: 25px;
     }
 }
+
+#error-message {
+    width: 100%;
+    margin-left: -194px;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}

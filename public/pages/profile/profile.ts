@@ -37,36 +37,30 @@ export default class Profile {
   }
 
   render() {
-    Api.getBalance()
-      .then((datab) => {
-        context.Balance.total_balance = datab.parsedJson.total_balance; // Устанавливаем полученные объявления в context
-        context.Balance.reserved_balance = datab.parsedJson.reserved_balance
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getBalance()
+    //   .then((datab) => {
+    //     context.Balance = datab.parsedJson; // Устанавливаем полученные объявления в context
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
-    Api.getAdsList()
-      .then((dataad) => {
-        context.Ads = dataad.parsedJson;
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAdsList()
+    //   .then((dataad) => {
+    //     context.Ads = dataad.parsedJson;
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
-    Api.getUser()
-      .then((data) => { // Устанавливаем полученные объявления в context
-        context.User.f_name = data.parsedJson;
-        context.User.s_name =  data.parsedJson.s_name;
-        context.User.avatar = data.parsedJson.avatar;
-        context.User.login = data.parsedJson.login;
-        context.User.l_name = data.parsedJson.l_name;
-        context.User.password = data.parsedJson.password;
-        this.renderTemplate();
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getUser()
+    //   .then((data) => {
+    //     context.User = data.parsedJson; // Устанавливаем полученные объявления в context
+    //     this.renderTemplate();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
     const templateResult = Template({});
     const tempContainer = document.createElement("div");
@@ -82,7 +76,7 @@ export default class Profile {
     console.log(context.Ads);
     console.log(context.User);
     console.log(context.Balance);
-    /*context.User = {
+    context.User = {
       f_name: "1",
       s_name: "2",
       avatar: "3",
@@ -94,10 +88,12 @@ export default class Profile {
     context.Balance = {
       total_balance: 0,
       reserved_balance: 0,
-    };*/
+    };
     const bAvatar = document.getElementById("b_avatar") as HTMLInputElement;
     const bLogin = document.getElementById("b_login");
-    const avBudget = document.getElementById("av_budget");
+    const totalBudget = document.getElementById("total_budget");
+    const availableBudget = document.getElementById("available_budget");
+    const reservedBudget = document.getElementById("reserved_budget");
     const fName = document.getElementById("b_fname");
     const company = document.getElementById("b_company");
     const ads = document.getElementById("ads");
@@ -108,21 +104,50 @@ export default class Profile {
     if (bAvatar) {
       bAvatar.src = Api.getImage(context.User.avatar);
     }
-    if (fName && bLogin && avBudget && company && ads) {
+    if (
+      fName &&
+      bLogin &&
+      totalBudget &&
+      availableBudget &&
+      reservedBudget &&
+      company &&
+      ads
+    ) {
       bLogin.textContent = context.User.login; // Подставьте нужные данные
       if (fName) {
-        avBudget.textContent = `Общий баланс:  ${context.Balance.total_balance}
-    Доступный баланс: ${
-      context.Balance.total_balance - context.Balance.reserved_balance
-    }
-    Зарезирвированный баланс: ${context.Balance.reserved_balance}`; // Подставьте нужные данные
+        totalBudget.textContent = `Общий:  ${context.Balance.total_balance}`;
+        reservedBudget.textContent = `Зарезирвировано: ${context.Balance.reserved_balance}`;
+        availableBudget.textContent = `Доступный: ${
+          context.Balance.total_balance - context.Balance.reserved_balance
+        }`;
+
+        // Подставьте нужные данные
         company.textContent = decodeURIComponent(context.User.s_name);
-        ads.textContent = "Всего объявлений: " + context.Ads.length;
+        const text = document.createElement("div");
+        text.innerHTML = `                      
+          Всего объявлений: ${context.Ads.length}
+            `;
+        ads.appendChild(text);
+        if (!context.Ads.length) {
+          let card = document.createElement("div");
+          card.innerHTML = `                      
+              <a href="/createad"><button type="button" class="custom-create-button">Создать</button></a>
+            `;
+
+          ads.appendChild(card);
+          // const activeAds = document.querySelector("#active-ads");
+
+          // if (activeAds) {
+          //   activeAds.innerHTML =
+          //     '<button type="button" class="custom-create-button">Создать</button>';
+          // }
+        } else {
+          ads.textContent = "Всего объявлений: " + context.Ads.length;
+        }
 
         const adList = document.querySelector(".profile__wrapper-card");
         if (adList) {
-          adList.innerHTML = "";
-          if (context.Ads && Array.isArray(context.Ads)) {
+          if (context.Ads && Array.isArray(context.Ads) && context.Ads.length) {
             context.Ads.slice(0, 3).forEach((ad, index) => {
               const card = document.createElement("div");
               card.classList.add("profile__info-card");
@@ -138,7 +163,7 @@ export default class Profile {
           } else {
             const card = document.createElement("div");
             card.innerHTML = `                      
-                <button type="button" class="audience-content__custom-button">Создать</button>
+              <a href="/createad"><button type="button" class="custom-create-button">Создать</button></a>
               `;
 
             adList.appendChild(card);

@@ -35,7 +35,7 @@
   align-items: flex-start; /* Выравниваем содержимое по левому краю */
   justify-content: flex-start; 
   border-radius: 35px;
-  height: 950px;
+  height: 1000px;
   min-height: 1000px;
   background-color: #242832;
   padding: 20px; /* Добавляем отступы внутри блока */
@@ -265,11 +265,11 @@
 
 .profilead__info-card:hover {
   background-color: #7f73c6; 
-  width: 80%;
-  padding: 2%;;
   border-radius: 15px;
 }
 .profilead__info-card {
+  width: 80%;
+  padding: 2%;
   cursor: pointer; 
   transition: transform 0.1s; 
 }
@@ -631,7 +631,7 @@ input[type=number] {
 .content-wrapper {
   display: flex;
   justify-content: space-between; /* Располагаем элементы на противоположных концах */
-  width: 60%;
+  width: 100%;
   padding-bottom: 20px;
 }
 
@@ -641,9 +641,9 @@ input[type=number] {
 }
 
 .description-box {
-  width: 400px;
+  width: 100%;
   height: 306px;
-  padding: 45px 220px;
+  padding: 8px 17px;
   margin-top: 20px;
   margin-right: 10px;
   background: #323644;
@@ -666,6 +666,7 @@ input[type=number] {
   font-size: 14px;
   font-family: 'Istok Web', sans-serif;
   outline: none; /* Убираем контур при фокусе */
+  resize: none;
 }
 .earning-info {
   flex: 1;
@@ -700,25 +701,22 @@ input[type=number] {
   display: flex; /* Включаем Flexbox */
   justify-content: space-between; /* Равномерно распределяем пространство между элементами */
   width: 100%; /* Занимаем всю доступную ширину */
+  gap: 20px;
 }
 .ad-box {
-  max-width: 100%; /* Ограничьте максимальную ширину контейнера */
-  max-height: 300px; /* Задайте максимальную высоту контейнера, при необходимости измените значение */
-  overflow: auto;
   width: 350px;
   height: 250px;
+  padding: 8px 17px;
   background: #323644;
   border-radius: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .ad-input {
-  width: 30%; /* Растягиваем на всю ширину контейнера */
+  width: 100%; /* Растягиваем на всю ширину контейнера */
   height: 100%; /* Растягиваем на всю высоту контейнера */
   padding: 8px; /* Добавляем внутренний отступ */
   border: none; /* Убираем границу */
@@ -752,8 +750,7 @@ input[type=number] {
 }
 
 .profilead__box {
-  margin-top: 5%;
-  margin-left: 26%;
+  margin-top: 70px;
       /* transform: translate(0%, -100%); */
   /* justify-content: center;
   position: absolute; */
@@ -761,9 +758,9 @@ input[type=number] {
   justify-content: center;
   bottom: 0;
   /* margin-bottom: 30px; */
-
   align-items: center;
   /* position: absolute; */
+  width: 100%;
 }
 
 .profilead__сancel-box {
@@ -853,17 +850,10 @@ input[type=number] {
     width: 100%;
     height: 300px;
     margin-bottom: 25px;
+    overflow: auto;
   }
 
   .profilead__main__centered--box {
     width: 97%;
   }
-
-  #selected-ad{
-    width: 97%;
-  }
-}
-
-#selected-ad{
-  width: 50%;
 }

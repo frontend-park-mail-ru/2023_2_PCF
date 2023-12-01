@@ -19,7 +19,7 @@ export default class Router {
 
   go(path) {
     console.log("go  " + path);
-    if (this.current === path) return;
+    // if (this.current === path) return;
     this.resetPage(); // Сбрасываем контент страницы
     this.current = path;
     window.history.pushState(null, null, path);

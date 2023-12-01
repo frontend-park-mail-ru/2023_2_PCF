@@ -33,14 +33,14 @@ export default class CreateAd {
 
     this.form = this.parent.querySelector(".createad");
 
-    Api.getAudienceList()
-      .then((data) => {
-        context.Audience = data.parsedJson;
-        this.renderTemplate();
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAudienceList()
+    //   .then((data) => {
+    //     context.Audience = data.parsedJson;
+    //     this.renderTemplate();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
   }
 
   renderTemplate() {
@@ -141,10 +141,9 @@ export default class CreateAd {
           input.id === "name" ||
           input.id === "description" ||
           input.id === "website_link" ||
-          input.id === "budget" ||
-          input.id === "click_cost"
+          input.id === "budget"
         ) {
-          formData.append(input.id, input.value.toString());
+          formData.append(input.id, input.value);
         } else if (input.id === "file-upload") {
           if (input.files[0] != null) {
             formData.append("image", input.files[0]);
@@ -157,8 +156,8 @@ export default class CreateAd {
 
     let input = document.querySelector(".dropdown") as HTMLInputElement;
 
-    formData.append("target_id", input.value.toString());
-    
+    formData.append("target_id", input?.value);
+
     try {
       // Отправляем запрос на сервер
       const response = await fetch(BACKEND_URL + "/ad", {

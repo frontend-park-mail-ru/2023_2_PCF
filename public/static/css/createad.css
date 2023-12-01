@@ -15,7 +15,7 @@
 }
 
 
-.centered-box {
+.centered-box-createad {
     flex: 0 0 90%; 
     display: flex;
     flex-direction: row; 
@@ -35,7 +35,7 @@
     flex: 1;
     box-sizing: border-box
 }
-.centered-box .createad__container {
+.centered-box-createad .createad__container {
     background: #323644;
     border-radius: 20px;
     justify-content: flex-start;
@@ -45,28 +45,28 @@
     padding: 4px 17px;
 }
 
-.centered-box .createad__container.small {
+.centered-box-createad .createad__container.small {
     width: 263px;
     height: 70px;
 }
 
-.centered-box .createad__container.medium {
+.centered-box-createad .createad__container.medium {
     width: 347px;
     height: 70px;
-    margin-left: 36px;
+    margin-left: 26px;
 }
 
-.centered-box .createad__container.large {
+.centered-box-createad .createad__container.large {
     width: 512px;
     height: 70px;
 }
 
-.centered-box .createad__container.xlarge {
+.centered-box-createad .createad__container.xlarge {
     width: 676px;
     height: 70px;
 }
 
-.centered-box .createad__container.xxlarge {
+.centered-box-createad .createad__container.xxlarge {
     width: 676px;
     height: 224px;
 }
@@ -77,9 +77,9 @@
 }
 
 .createad__button-container {
-    position: absolute;
-    margin-left: 45%;
-    margin-bottom: 50%;
+    /* position: absolute; */
+    /* margin-left: 45 */
+    /* margin-bottom: 50%; */
     display: flex;
     align-items: center;
     background: #131517;
@@ -211,11 +211,11 @@
 }
 
 .createad__box {
-    margin-left: 35%;
-    margin-top: 70%;
     justify-content: center;
     position: absolute;
     display: flex;
+    width: 100%;
+    bottom: 40px;
 }
 
 .createad__сancel-box {
@@ -363,3 +363,44 @@
     background-color: #3E3E3E;
   }
   
+.createad__flex-row {
+    width: 720px;
+    display: flex;
+    align-items: center;
+}
+
+.createad__button-container {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+    .centered-box-createad {
+        flex-direction: column !important; 
+        height: 1640px !important;
+    }
+
+    .createad {
+        margin-left: 0 !important;
+        margin-top: 50px !important;
+        text-align: center;
+    }
+
+    .createad__box {
+        margin-top: 170%;
+    }
+
+    .createad__right-block {
+        width: 100%;
+        text-align: center;
+    }
+
+    .createad__flex-row {
+    margin: 0 auto;
+
+    }
+}
+
+.createad__preview-image {
+    width: 50%;
+    padding: 0 90px 0 90px;
+}

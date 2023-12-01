@@ -29,16 +29,16 @@ export default class Audience {
   }
 
   render() {
-    Api.getAudienceList()
-      .then((data) => {
-        context.userTargets = data; // Устанавливаем полученные объявления в context
-        this.renderTemplate();
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAudienceList()
+    //   .then((data) => {
+    //     context.userTargets = data; // Устанавливаем полученные объявления в context
+    //     this.renderTemplate();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
 
-    /*const audience: AudienceItem[] = [
+    const audience: AudienceItem[] = [
       {
         id: 1,
         image_link: "",
@@ -55,7 +55,7 @@ export default class Audience {
     console.log(audience);
 
     context.userTargets.parsedJson = audience; // Устанавливаем полученные объявления в context
-    this.renderTemplate();*/
+    this.renderTemplate();
   }
 
   renderTemplate() {
@@ -73,8 +73,9 @@ export default class Audience {
 
   onSubmit(event: { preventDefault: () => void }) {
     event.preventDefault();
+    if (this.form) {
       const regions: NodeListOf<HTMLInputElement> =
-        document.querySelectorAll(".regions");
+        this.form.querySelectorAll(".regions");
       let region = "";
       regions.forEach((reg) => {
         region += reg.value;
@@ -111,10 +112,11 @@ export default class Audience {
       inputsValue["gender"] = Gender;
 
       Api.editAudience(inputsValue).then((response) => {
-        if (response) {
+        if (response.status === 200) {
           location.reload();
         } else {
         }
       });
+    }
   }
 }

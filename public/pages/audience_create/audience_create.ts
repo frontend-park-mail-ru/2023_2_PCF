@@ -117,12 +117,25 @@ export default class CreateAudience {
       inputsValue["regions"] = region;
       inputsValue["gender"] = Gender;
 
-      Api.createAudience(inputsValue).then((response) => {
-        if (response.status === 201) {
-          this.submitCallback();
-        } else {
-        }
-      });
+      Api.createAudience(inputsValue)
+        .then((response) => {
+          if (response.status === 201) {
+            this.submitCallback();
+          } else {
+            const errMessage = document.querySelector("#error-message");
+
+            if (errMessage) {
+              errMessage.innerHTML = response?.parsedJson?.message;
+            }
+          }
+        })
+        .catch((error) => {
+          const errMessage = document.querySelector("#error-message");
+
+          if (errMessage) {
+            errMessage.innerHTML = error;
+          }
+        });
     }
   }
 }

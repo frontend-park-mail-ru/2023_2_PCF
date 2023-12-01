@@ -33,14 +33,14 @@ export default class Announcement {
 
     this.form = this.parent.querySelector(".announcement");
 
-    Api.getAudienceList()
-      .then((data) => {
-        context.Audience = data.parsedJson;
-        this.renderTemplate();
-      })
-      .catch((error) => {
-        console.error("Ошибка:", error);
-      });
+    // Api.getAudienceList()
+    //   .then((data) => {
+    //     context.Audience = data.parsedJson;
+    //     this.renderTemplate();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка:", error);
+    //   });
   }
 
   renderTemplate() {
@@ -90,7 +90,7 @@ export default class Announcement {
           formData.append(input.id, input.value);
         }
       });
-      
+
       let input = document.querySelector(".dropdown") as HTMLInputElement;
       if (input) {
         formData.append("target_id", input.value);

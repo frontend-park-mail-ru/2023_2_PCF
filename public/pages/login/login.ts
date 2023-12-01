@@ -31,7 +31,6 @@ export default class Login {
 
   onSubmit(event: any) {
     event.preventDefault();
-    console.log("Click")
     if (this.form) {
       const inputs = this.form.querySelectorAll("input");
       const inputsValue: any = {};
@@ -42,6 +41,7 @@ export default class Login {
           if (Validate.Password(input.value)) {
             inputsValue[input.id] = input.value;
             err = true;
+            return;
           } else {
             errMessage = "Неверный пароль. Введите пароль от 6ти символов.";
             err = false;
@@ -51,6 +51,7 @@ export default class Login {
           if (Validate.Email(input.value)) {
             inputsValue[input.id] = input.value;
             err = true;
+            return;
           } else {
             errMessage = "Неверный формат EMail.";
             err = false;

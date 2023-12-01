@@ -60,7 +60,7 @@
 }
 
 
-.centered-box {
+.centered-box-editpage {
     flex: 0 0 90%; 
     display: flex;
     flex-direction: row; 
@@ -80,7 +80,7 @@
     flex: 1;
     box-sizing: border-box
 }
-.centered-box .editpage__container {
+.centered-box-editpage .editpage__container {
     background: #323644;
     border-radius: 20px;
     justify-content: flex-start;
@@ -90,28 +90,28 @@
     padding: 4px 17px;
 }
 
-.centered-box .editpage__container.small {
+.centered-box-editpage .editpage__container.small {
     width: 263px;
     height: 70px;
 }
 
-.centered-box .editpage__container.medium {
+.centered-box-editpage .editpage__container.medium {
     width: 347px;
     height: 70px;
-    margin-left: 36px;
+    margin-left: 26px;
 }
 
-.centered-box .editpage__container.large {
+.centered-box-editpage .editpage__container.large {
     width: 512px;
     height: 70px;
 }
 
-.centered-box .editpage__container.xlarge {
+.centered-box-editpage .editpage__container.xlarge {
     width: 676px;
     height: 70px;
 }
 
-.centered-box .editpage__container.xxlarge {
+.centered-box-editpage .editpage__container.xxlarge {
     width: 676px;
     height: 224px;
 }
@@ -122,9 +122,6 @@
 }
 
 .editpage__button-container {
-    position: absolute;
-    margin-left: 45%;
-    margin-bottom: 50%;
     display: flex;
     align-items: center;
     background: #131517;
@@ -138,6 +135,7 @@
     gap: 10px;
     outline: none; /* Убирает стандартный outline */
     transition: background-color 0.2s ease; /* Добавляет плавный переход для фона кнопки */
+    margin-left: 10px;
 }
 
 .editpage__button-container:hover {
@@ -256,10 +254,10 @@
 }
 
 .editpage__box {
-    margin-left: 35%;
-    margin-top: 70%;
+    width: 100%;
     justify-content: center;
     position: absolute;
+    bottom: 50px;
     display: flex;
 }
 
@@ -407,4 +405,44 @@
   .dropdown:hover .dropbtn {
     background-color: #3E3E3E;
   }
-  
+
+  .editpage__flex-row {
+    width: 720px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1280px) {
+    .editpage__flex-row {
+        margin: 0 auto;
+
+    }
+
+    .centered-box-editpage {
+        flex-direction: column !important; 
+        height: 1640px !important;
+    }
+
+    .editpage {
+        margin-left: 0 !important;
+        margin-top: 50px !important;
+    }
+
+    .editpage__box {
+        margin-left: 1%;
+    }
+
+    .editpage__right-block {
+        width: 100%;
+        text-align: center;
+    }
+
+    .editpage__left-block {
+        text-align: center;
+    }
+    }
+
+.createad__preview-image {
+    width: 50%;
+    padding: 0 90px 0 90px;
+}
