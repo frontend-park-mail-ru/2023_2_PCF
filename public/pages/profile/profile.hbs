@@ -1,0 +1,88 @@
+<main class="profile__main">
+        <div class="profile__container">
+            <div class="profile__centered-box">
+                <div class="profile__text-info">
+                    <img id="b_avatar"></img>
+                    <div class="profile__text-container">
+                        <h1 id="b_fname">Название компании</h1>
+                        <h2 id="b_company">ООО “Яндекс”, младший менеджер в отделе продвижения</h2>
+                        <h2 id="b_login">yandexMP1202@ya-corp.ru</h2>
+                    </div>
+                </div>
+                <div class="profile__info-container">
+                    <h1>Общие сведения</h1>
+                    <div class="profile__wrapper">
+                        <div class="profile__card profile__card-large">
+                            <div class="profile__title">Бюджет</div>
+                            <div class="profile__line"></div>
+                            <div class="profile__border">
+                                <div id="total_budget" style="margin-left: 5%;"></div>
+                                <div id="profile__border__inner">
+                                    <div id="available_budget" style="margin-left: 5%;"></div>
+                                    <div id="reserved_budget" style="margin-left: 5%;"></div>
+                                </div>
+                            </div>
+                            <img class="profile__icon" src="../../static/img/free-icon-wallet-482541-3.png" />
+                            <!-- ... остальные элементы внутри блока ... -->
+                        </div>
+                        <div class="profile__card profile__card-medium" style="margin-left:7%">
+                            <div class="profile__title">Объявления</div>
+                            <div class="profile__line"></div>
+                            <div class="profile__border">
+                                <div id="ads" style="margin-left: 5%;"></div>
+                            </div>
+                            <img class="profile__icon" src="../../static/img/free-icon-wallet-482541-2.png" />
+                            <!-- ... остальные элементы внутри блока ... -->
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__footer-container">
+                    <h1>Активные объявления</h1>
+                    <div id="active-ads" class="profile__wrapper-card"></div>
+                </div>
+            </div>
+
+            
+            <div class="profile__lefted-box">  
+            <h1>Редактирование профиля</h1>
+            <form id="updateUserForm" method="post" enctype="multipart/form-data">
+                    <label for="avatar" class="profile__photo-upload-label" method="post" enctype="multipart/form-data">
+                        <input type="file" id="avatar" class="profile__file-input" name="avatar" accept="image/*">
+                        <div class="profile__gradient-box">Выберите фото</div>
+                    </label>
+                {{!-- <form id="updateUserForm" method="post" enctype="multipart/form-data">
+                <div class="input-container">
+                    <input type="file" id="avatar" name="avatar" class="input-field" accept="image/*">
+                </div> --}}
+                    <div class="profile__input-container">
+                        <!-- <label for="name1" class="input-label">Имя</label> -->
+                        <input type="text" id="f_name" class="profile__input-field" placeholder="Введите ваше имя">
+                    </div>
+                
+                    <div class="profile__input-container">
+                        <!-- <label for="name2" class="input-label">Имя</label> -->
+                        <input type="text" id="l_name" class="profile__input-field" placeholder="Введите вашу фамилию">
+                    </div>
+                        
+                    <div class="profile__input-container">
+                    <!-- <label for="name1" class="input-label">Имя</label> -->
+                        <input type="text" id="s_name" class="profile__input-field" placeholder="Введите название компании">
+                    </div>
+
+                    <div class="profile__input-container">
+                    <!-- <label for="name3" class="input-label">Имя</label> -->
+                        <input type="text" id="login" class="profile__input-field" placeholder="Введите вашу почту">
+                    </div>
+                
+                    <div class="profile__input-container">
+                    <!-- <label for="name4" class="input-label">Имя</label> -->
+                        <input type="password" id="password" class="profile__input-field" placeholder="Пароль">
+                    </div>
+            
+                    <div class="button-container" style="margin-left:8px">
+                        <button class="profile__save-button" type="submit">Сохранить</button>
+                    </div>
+            </form>
+            </div>
+        </div>
+</main>

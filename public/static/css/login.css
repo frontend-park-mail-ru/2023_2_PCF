@@ -28,8 +28,10 @@
 }
 
 .login-form__link {
+    position:relative;
+    top: 1px;
     color: #6C5DD2;
-   text-decoration: none;
+    text-decoration: none;
 }
 
 .login-form__header {
@@ -68,6 +70,7 @@
 }
 
 .login-form__login-button {
+    left: 2px;
     display: block;
     width: 190px;
     height: 60px;
