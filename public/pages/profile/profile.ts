@@ -37,30 +37,30 @@ export default class Profile {
   }
 
   render() {
-    // Api.getBalance()
-    //   .then((datab) => {
-    //     context.Balance = datab.parsedJson; // Устанавливаем полученные объявления в context
-    //   })
-    //   .catch((error) => {
-    //     console.error("Ошибка:", error);
-    //   });
+    Api.getBalance()
+       .then((datab) => {
+         context.Balance = datab.parsedJson; // Устанавливаем полученные объявления в context
+       })
+       .catch((error) => {
+         console.error("Ошибка:", error);
+       });
 
-    // Api.getAdsList()
-    //   .then((dataad) => {
-    //     context.Ads = dataad.parsedJson;
-    //   })
-    //   .catch((error) => {
-    //     console.error("Ошибка:", error);
-    //   });
+     Api.getAdsList()
+       .then((dataad) => {
+         context.Ads = dataad.parsedJson;
+       })
+       .catch((error) => {
+         console.error("Ошибка:", error);
+       });
 
-    // Api.getUser()
-    //   .then((data) => {
-    //     context.User = data.parsedJson; // Устанавливаем полученные объявления в context
-    //     this.renderTemplate();
-    //   })
-    //   .catch((error) => {
-    //     console.error("Ошибка:", error);
-    //   });
+     Api.getUser()
+       .then((data) => {
+         context.User = data.parsedJson; // Устанавливаем полученные объявления в context
+         this.renderTemplate();
+       })
+       .catch((error) => {
+         console.error("Ошибка:", error);
+       });
 
     const templateResult = Template({});
     const tempContainer = document.createElement("div");
@@ -135,12 +135,12 @@ export default class Profile {
             `;
 
           ads.appendChild(card);
-          // const activeAds = document.querySelector("#active-ads");
+          const activeAds = document.querySelector("#active-ads");
 
-          // if (activeAds) {
-          //   activeAds.innerHTML =
-          //     '<button type="button" class="custom-create-button">Создать</button>';
-          // }
+          if (activeAds) {
+             activeAds.innerHTML =
+               '<button type="button" class="custom-create-button">Создать</button>';
+         }
         } else {
           ads.textContent = "Всего объявлений: " + context.Ads.length;
         }
