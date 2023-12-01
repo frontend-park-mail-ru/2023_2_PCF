@@ -37,6 +37,7 @@
     position: fixed; /* Фиксируем на одном месте */
     top: 0; /* Прибиваем к верху */
     left: 0; /* Прибиваем к левому краю */
+    width: 12%;
 }
 
 
@@ -68,14 +69,26 @@
 }
 
 
-.sidebar__menu ul li a:hover {
-    background-color: #6C5DD2;
+.sidebar__menu ul li:hover {
+    border-radius: 0% 15px 15px 0%;
+    background-color: #8177be;
+    width: 92%;
+    height: 50px;
+    margin-bottom: 7.5%;
 }
+
+.sidebar__button-active{
+    border-radius: 0% 15px 15px 0%;
+    background-color: #6C5DD2;
+    width: 92%;
+    height: 50px;
+    margin-bottom: 7.25%;
+}
+
 .sidebar__menu p{
     color: #61636A;
     font-size: 10px;
     margin-left: 10px;
-    margin-bottom: 15px;
 }
 
 .content {

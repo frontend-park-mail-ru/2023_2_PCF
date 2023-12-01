@@ -50,10 +50,10 @@ class SelectedAd {
         </div>
         <div class="ad-info-wrapper">
           <div class="ad-box">
-              <input type="text" class="ad-input" placeholder="HTML" value="${ad.html}">
+              <textarea type="text" class="ad-input" placeholder="HTML" value="${ad.html}"></textarea>
           </div>
           <div class="ad-box">
-              <input type="text" class="ad-input" placeholder="JS" value="${ad.js}">
+              <textarea type="text" class="ad-input" placeholder="JS" value="${ad.js}"></textarea>
           </div>
         </div>
 

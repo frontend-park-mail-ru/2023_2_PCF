@@ -657,7 +657,7 @@ input[type=number] {
 
 .description-input {
   width: 100%; /* Растягиваем на всю ширину контейнера */
-  height: 100%; /* Растягиваем на всю высоту контейнера */
+  height: 95%; /* Растягиваем на всю высоту контейнера */
   padding: 8px; /* Добавляем внутренний отступ */
   border: none; /* Убираем границу */
   border-radius: 20px; /* Закругляем углы */
@@ -717,7 +717,7 @@ input[type=number] {
 
 .ad-input {
   width: 100%; /* Растягиваем на всю ширину контейнера */
-  height: 100%; /* Растягиваем на всю высоту контейнера */
+  height: 95%; /* Растягиваем на всю высоту контейнера */
   padding: 8px; /* Добавляем внутренний отступ */
   border: none; /* Убираем границу */
   border-radius: 20px; /* Закругляем углы */
@@ -726,6 +726,7 @@ input[type=number] {
   font-size: 14px;
   font-family: 'Istok Web', sans-serif;
   outline: none; /* Убираем контур при фокусе */
+  resize: none;
 }
 
 .profilead__action-box {
