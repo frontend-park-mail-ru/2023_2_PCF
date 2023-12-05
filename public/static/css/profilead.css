@@ -431,6 +431,16 @@
   height: 45%;
   border-radius: 23px;
 }
+.audience-content__button-content{
+  color: white;
+  text-decoration: none;
+  cursor:pointer;
+}
+.profilead-content__button-text{
+  color: white;
+  text-decoration: none;
+  cursor:pointer;
+}
 .profilead__ad__content {
   flex: 1;
   display: flex;

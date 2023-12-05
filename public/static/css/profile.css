@@ -438,6 +438,7 @@ h1, h2, h3 {
     font-weight: 700;
     transition: background-color 0.3s;
     border: none;
+    cursor: pointer;
 }
 
 .profile__save-button:active, .profile__save-button:focus {
@@ -513,12 +514,13 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
     width: 230px;
     height: 170px;
     background: linear-gradient(0deg, #323644 0%, #323644 100%);
     border-radius: 23px;
     margin-bottom: 30px;
-    transition: 0.3s;
+    /* transition: 0.5s; */
 }
 .profile__file-input {
     display: none; 

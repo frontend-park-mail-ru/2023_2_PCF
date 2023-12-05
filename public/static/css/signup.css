@@ -19,6 +19,12 @@
     border-radius: 10px;
     width: 600px;
 }
+.signup-form__link{
+    position:relative;
+    top: 1px;
+    color: #6C5DD2;
+    text-decoration: none;
+}
 
 .signup-form__header {
     font-size: 35px;
