@@ -110,12 +110,22 @@
     position: absolute;
     background: #282c37;
     border-radius: 34px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .budget__header--text, .budget__currency--text, .input-text, .budget__button__text {
     position: absolute;
     color: white;
     font-family: 'Istok Web', sans-serif;
     word-wrap: break-word;
+}
+.budget_button.budget__replenish--button:hover {
+    background-color: #6C5DD2; 
+    color: #fff; 
+}
+
+.budget_button.budget__replenish--cancel--button:hover {
+    background-color: #e74c3c;
+    color: #fff; 
 }
 
 .budget__header--text {
@@ -126,6 +136,7 @@
 }
 
 .budget_button {
+    cursor: pointer;
     width: 143px;
     height: 50px;
     padding: 10px;

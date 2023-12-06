@@ -586,8 +586,9 @@ input[type=number] {
 }
 
 .profilead__ad__element--current {
-  margin-top: 10%;
-  margin-left: 10%;
+  /* margin-top: 10%; */
+  margin: 10% auto;
+  /* margin-left: 10%; */
 }
 
 .profilead__info-card__items{

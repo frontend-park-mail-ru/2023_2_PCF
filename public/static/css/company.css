@@ -381,8 +381,10 @@ input[type=number] {
 }
 
 .company__ad__element--current {
-    margin-top: 10%;
-    margin-left: 10%;
+    /* margin-top: 10%;
+    margin-left: 10%; */
+    margin: 10% auto;
+
 }
 
 .company__info-card__items{

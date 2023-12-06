@@ -97,8 +97,8 @@
     align-items: center;
     justify-content: start;
     border-radius: 35px;
-    margin-left: 60px;
-    height: 860px;
+    margin-left: 40px;
+    height: 874px;
     text-align: center;
     background-color: #242832;
     padding: 33px 20px 20px 20px;
@@ -108,7 +108,7 @@
 
 .audience-content__centered-box {
     margin-left: 30%;
-    width: 775px;
+    width: 850px;
     display: flex;
     flex-direction: row;
     position: absolute;;
